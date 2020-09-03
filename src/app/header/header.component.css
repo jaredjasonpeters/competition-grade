@@ -55,27 +55,29 @@
     width: 60%;
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     /* border: 2px solid yellow; */
 
 }
 #navigation a {
     /* border: 2px solid red; */
     position: relative;
-    max-width: 10%;
     flex-grow: 1;
-    flex-basis: 10%;
+    margin: 0 .5em 0 .5em;
+    flex-basis: auto;
     text-align: center;
     letter-spacing: .25em;
+    cursor: pointer;
 }
 #navigation a:before {
     content: '';
-    width: 100%;
+    width: calc(100% - 80px);
     position: absolute;
     top: 0;
-    left: 0;
+    left: 40px;
     border-top: 5px solid var(--cg_gold);
-    transition: opacity 1s ease-in-out;
+    transition: opacity .5s ease-in;
     opacity: 0;
 }
 #navigation a:hover:before{

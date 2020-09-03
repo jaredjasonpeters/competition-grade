@@ -7,7 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent }
+  { path: '', component: HomepageComponent },
+  { path: "**", component: HelloComponent }
 ];
 
 @NgModule({

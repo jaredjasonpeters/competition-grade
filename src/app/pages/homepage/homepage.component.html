@@ -1,10 +1,10 @@
 <section id="content_section">
     <mat-grid-list gutterSize="1em" cols="3" rowHeight="500px">
-        <mat-grid-tile id='tile_a'>a</mat-grid-tile>
-        <mat-grid-tile id="tile_b">b</mat-grid-tile>
+        <mat-grid-tile id='tile_a' rowspan="2">a</mat-grid-tile>
+        <mat-grid-tile id="tile_b" colspan="2">
+            <mat-grid-tile-header>Possible Caption goes here</mat-grid-tile-header>
+        </mat-grid-tile>
         <mat-grid-tile id="tile_c">c</mat-grid-tile>
         <mat-grid-tile id="tile_d">d</mat-grid-tile>
-        <mat-grid-tile id="tile_e">e</mat-grid-tile>
-        <mat-grid-tile id="tile_f">f</mat-grid-tile>
     </mat-grid-list>
 </section>

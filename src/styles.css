@@ -6,5 +6,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 :root{
     
     --cg_gold: #c6b460;
+    --cg_gray: #c4c4c4;
+    --cg_speed: #f57f20;
+    --cg_power: #662d91;
+    --cg_agility: #367654;
 
 }

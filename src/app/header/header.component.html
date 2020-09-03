@@ -1,6 +1,6 @@
 <mat-toolbar id="header">
     <mat-toolbar-row id="logo_container">
-        <a [routerLink]='' id="logo_link">
+        <a routerLink="" id="logo_link">
             <img src="../../assets/Competition_Grade_Logo_Final_ShieldOnly.png" alt="Competition Grade" />
         </a>
         <div id="wm_container">
@@ -9,12 +9,17 @@
     </mat-toolbar-row>
     <mat-toolbar-row id="nav_container">
         <nav id="navigation">
-            <a>Home</a>
-            <a>Speed</a>
-            <a>Power</a>
-            <a>Agility</a>
-            <a>Videos</a>
-            <a>Where to buy</a>
+            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+            <a routerLink="speed" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" class=" speed">Speed</a>
+            <a routerLink="power" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" class="power">Power</a>
+            <a routerLink="agility" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" class=" agility">Agility</a>
+            <a routerLink="videos" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}">Videos</a>
+            <a routerLink="distributors" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}">Where to buy</a>
         </nav>
     </mat-toolbar-row>
 </mat-toolbar>

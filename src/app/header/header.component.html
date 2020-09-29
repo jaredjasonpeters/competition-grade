@@ -1,25 +1,77 @@
 <mat-toolbar id="header">
-    <mat-toolbar-row id="logo_container">
-        <a routerLink="" id="logo_link">
-            <img src="../../assets/Competition_Grade_Logo_Final_ShieldOnly.png" alt="Competition Grade" />
-        </a>
-        <div id="wm_container">
-            <img src="../../assets/Competition_Grade_Logo_Final_WM_only.png" alt="Competition Grade Wordmark" />
-        </div>
-    </mat-toolbar-row>
-    <mat-toolbar-row id="nav_container">
-        <nav id="navigation">
-            <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-            <a routerLink="speed" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-true}" class=" speed">Speed</a>
-            <a routerLink="power" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-true}" class="power">Power</a>
-            <a routerLink="agility" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-true}" class=" agility">Agility</a>
-            <a routerLink="videos" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-true}">Videos</a>
-            <a routerLink="distributors" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-true}">Where to buy</a>
-        </nav>
-    </mat-toolbar-row>
+  <mat-toolbar-row id="top_designs_container">
+    <a routerLink="" id="logo_link">
+      <img
+        src="../../assets/Competition_Grade_Logo_Final.png"
+        alt="Competition Grade"
+      />
+    </a>
+    <div id="wm_container">
+      <img
+        src="../../assets/Competition_Grade_Logo_WebsiteLogo.png"
+        alt="Competition Grade Wordmark"
+      />
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row id="nav_container">
+    <div id="tagline_container">
+      <img
+        id="tagline"
+        src="../../assets/Competition_Grade_Tagline.png"
+        alt=""
+      />
+    </div>
+    <nav id="navigation">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a
+        routerLink="speed"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Products</a
+      >
+      <a
+        routerLink="power"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Why Competition Grade?</a
+      >
+      <a
+        routerLink="agility"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Verification Program</a
+      >
+      <a
+        routerLink="videos"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Projects</a
+      >
+      <a
+        routerLink="distributors"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Locate a Distributor</a
+      >
+    </nav>
+    <div id="social_links_container">
+      <a href="https://twitter.com " target="_blank" rel="noopener"
+        ><img src="../../assets/twitter_logo_gold.png" alt=""
+      /></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"
+        ><img src="../../assets/instagram_logo_gold.png" alt=""
+      /></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener"
+        ><img src="../../assets/facebook_logo_gold.png" alt=""
+      /></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener"
+        ><img src="../../assets/youtube_logo_gold.png" alt=""
+      /></a>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>

@@ -1,7 +1,19 @@
 #content_section {
-    padding: 1em 0 1em 0;
 }
 
-[id ^="tile_"]{
-    background:grey;
+[id^="tile_"] {
+  background: grey;
+}
+
+#tile_c {
+  background: black;
+}
+#tile_d {
+  background: var(--cg_gold);
+}
+#tile_e {
+  background: green;
+}
+.internal_gridlist {
+  min-width: 100%;
 }

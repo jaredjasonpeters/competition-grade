@@ -1,12 +1,27 @@
 <section id="content_section">
-  <mat-grid-list gutterSize="6px" cols="6" rowHeight="725px">
-    <mat-grid-tile id="tile_a" rowspan="1" colspan="4">a</mat-grid-tile>
-    <mat-grid-tile id="tile_b" rowspan="1" colspan="2">
+  <mat-grid-list gutterSize="6px" cols="6" rowHeight="690px">
+    <mat-grid-tile id="tile_a" rowspan="1" colspan="4">
+      <img src="" />
+    </mat-grid-tile>
+    <mat-grid-tile id="menu_right" rowspan="1" colspan="2">
       <div class="internal_gridlist">
-        <mat-grid-list gutterSize="6px" cols="1" rowHeight="75px">
-          <mat-grid-tile id="tile_c" rowspan="4">c</mat-grid-tile>
-          <mat-grid-tile id="tile_d" rowspan="2">d</mat-grid-tile>
-          <mat-grid-tile id="tile_e" rowspan="3">e</mat-grid-tile>
+        <mat-grid-list gutterSize="6px" cols="1" rowHeight="5:1">
+          <mat-grid-tile id="tile_c" rowspan="3"
+            ><div id="intro_video_container">Intro Video</div>
+          </mat-grid-tile>
+          <mat-grid-tile id="tile_d" rowspan="1">
+            Featured Projects
+          </mat-grid-tile>
+          <mat-grid-tile id="tile_e" rowspan="2">
+            <div class="internal_gridlist">
+              <mat-grid-list cols="2" rowHeight="5:1">
+                <mat-grid-tile class="social_media_tile">1</mat-grid-tile>
+                <mat-grid-tile class="social_media_tile">2</mat-grid-tile>
+                <mat-grid-tile class="social_media_tile">3</mat-grid-tile>
+                <mat-grid-tile class="social_media_tile">4</mat-grid-tile>
+              </mat-grid-list>
+            </div>
+          </mat-grid-tile>
         </mat-grid-list>
       </div>
     </mat-grid-tile>

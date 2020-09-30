@@ -5,20 +5,58 @@
     </mat-grid-tile>
     <mat-grid-tile id="menu_right" rowspan="1" colspan="2">
       <div class="internal_gridlist">
-        <mat-grid-list gutterSize="6px" cols="1" rowHeight="5:1">
-          <mat-grid-tile id="tile_c" rowspan="3"
-            ><div id="intro_video_container">Intro Video</div>
+        <mat-grid-list
+          id="menu_right_gridlist"
+          gutterSize="6px"
+          cols="1"
+          rowHeight="11:1"
+        >
+          <mat-grid-tile id="tile_intro_video" rowspan="5">
+            <div id="intro_video_container">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/n-IokW0LbwQ"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
           </mat-grid-tile>
-          <mat-grid-tile id="tile_d" rowspan="1">
-            Featured Projects
-          </mat-grid-tile>
-          <mat-grid-tile id="tile_e" rowspan="2">
+          <mat-grid-tile id="tile_featured" rowspan="2">
             <div class="internal_gridlist">
-              <mat-grid-list cols="2" rowHeight="5:1">
-                <mat-grid-tile class="social_media_tile">1</mat-grid-tile>
-                <mat-grid-tile class="social_media_tile">2</mat-grid-tile>
-                <mat-grid-tile class="social_media_tile">3</mat-grid-tile>
-                <mat-grid-tile class="social_media_tile">4</mat-grid-tile>
+              <mat-grid-list
+                id="featured_gridlist"
+                gutterSize="6px"
+                cols="3"
+                rowHeight="fit"
+              >
+                <mat-grid-tile class="one" rowspan="1">1</mat-grid-tile>
+                <mat-grid-tile class="two" rowspan="1">2</mat-grid-tile>
+                <mat-grid-tile class="three" rowspan="1">3</mat-grid-tile>
+              </mat-grid-list>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile id="tile_social" rowspan="4">
+            <div class="internal_gridlist">
+              <mat-grid-list
+                id="social_gridlist"
+                gutterSize="6px"
+                cols="3"
+                rowHeight="fit"
+              >
+                <mat-grid-tile class="social_media_tile one" rowspan="2"
+                  >1</mat-grid-tile
+                >
+                <mat-grid-tile class="social_media_tile two" rowspan="1"
+                  >2</mat-grid-tile
+                >
+                <mat-grid-tile class="social_media_tile three" rowspan="2"
+                  >3</mat-grid-tile
+                >
+                <mat-grid-tile class="social_media_tile four" rowspan="1"
+                  >4</mat-grid-tile
+                >
               </mat-grid-list>
             </div>
           </mat-grid-tile>

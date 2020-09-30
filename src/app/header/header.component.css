@@ -119,7 +119,7 @@ navigation a:visited {
 
 #navigation a:before {
   content: "";
-  width: calc(100% - 40px);
+  width: calc(100% - (100vw - 40px));
   position: absolute;
   top: 0;
   left: 20px;
@@ -155,4 +155,6 @@ navigation a:visited {
 }
 
 #social_links_container a {
+  /* border: 2px solid white; */
+  display: flex;
 }

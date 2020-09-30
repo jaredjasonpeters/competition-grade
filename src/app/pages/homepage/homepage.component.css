@@ -16,7 +16,7 @@
 }
 #tile_featured {
   background: var(--cg_gold);
-  background: black;
+  background: white;
   /* border: 2px solid white; */
 }
 #tile_social {
@@ -35,10 +35,6 @@
 }
 
 #menu_right_gridlist {
-}
-
-.social_media_tile {
-  /* border: 2px solid white; */
 }
 
 #intro_video_container {
@@ -65,15 +61,37 @@
   height: 100%;
 }
 
-.one {
-  background: red;
+.social_grid_twitter {
 }
-.two {
+
+.social_grid_twitter::before {
+  content: url("../../../assets/twitter_logo_gold.png");
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.social_grid_instagram {
   background: green;
 }
-.three {
-  background: yellow;
+
+.social_grid_instagram::before {
+  content: url("../../../assets/instagram_logo_gold.png");
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
-.four {
-  background: blue;
+
+.demo {
+  background: var(--cg_silver);
+}
+
+.slider_main {
+  object-fit: contain;
+  width: 100%;
 }

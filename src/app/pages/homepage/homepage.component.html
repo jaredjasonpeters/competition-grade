@@ -1,7 +1,10 @@
 <section id="content_section">
   <mat-grid-list gutterSize="6px" cols="6" rowHeight="690px">
     <mat-grid-tile id="tile_a" rowspan="1" colspan="4">
-      <img src="" />
+      <img
+        class="slider_main"
+        src="../../../assets/Competition_Grade_SliderImage_Main.png"
+      />
     </mat-grid-tile>
     <mat-grid-tile id="menu_right" rowspan="1" colspan="2">
       <div class="internal_gridlist">
@@ -31,9 +34,9 @@
                 cols="3"
                 rowHeight="fit"
               >
-                <mat-grid-tile class="one" rowspan="1">1</mat-grid-tile>
-                <mat-grid-tile class="two" rowspan="1">2</mat-grid-tile>
-                <mat-grid-tile class="three" rowspan="1">3</mat-grid-tile>
+                <mat-grid-tile class="demo" rowspan="1">1</mat-grid-tile>
+                <mat-grid-tile class="demo" rowspan="1">2</mat-grid-tile>
+                <mat-grid-tile class="demo" rowspan="1">3</mat-grid-tile>
               </mat-grid-list>
             </div>
           </mat-grid-tile>
@@ -42,20 +45,21 @@
               <mat-grid-list
                 id="social_gridlist"
                 gutterSize="6px"
-                cols="3"
+                cols="2"
                 rowHeight="fit"
               >
-                <mat-grid-tile class="social_media_tile one" rowspan="2"
-                  >1</mat-grid-tile
-                >
-                <mat-grid-tile class="social_media_tile two" rowspan="1"
+                <mat-grid-tile class="social_grid_twitter" rowspan="1">
+                  <a
+                    class="twitter-timeline"
+                    data-lang="en"
+                    data-width="300"
+                    data-height="235"
+                    data-theme="dark"
+                    href="https://twitter.com/CompGradeSeed?ref_src=twsrc%5Etfw"
+                  ></a>
+                </mat-grid-tile>
+                <mat-grid-tile class="social_grid_instagram" rowspan="1"
                   >2</mat-grid-tile
-                >
-                <mat-grid-tile class="social_media_tile three" rowspan="2"
-                  >3</mat-grid-tile
-                >
-                <mat-grid-tile class="social_media_tile four" rowspan="1"
-                  >4</mat-grid-tile
                 >
               </mat-grid-list>
             </div>

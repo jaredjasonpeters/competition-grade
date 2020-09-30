@@ -1,14 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-:root{
-    
-    --cg_gold: #c6b460;
-    --cg_gray: #c4c4c4;
-    --cg_speed: #f57f20;
-    --cg_power: #662d91;
-    --cg_agility: #367654;
-
+:root {
+  --cg_gold: #c6b460;
+  --cg_silver: #c4c4c4;
+  --cg_speed: #f57f20;
+  --cg_power: #662d91;
+  --cg_agility: #367654;
 }

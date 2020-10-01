@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>CompetitionGrade</title>
+    <title>Competition Grade Seed</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -18,57 +18,14 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-
     <script
       async
       src="https://platform.twitter.com/widgets.js"
       charset="utf-8"
     ></script>
-
-    <script>
-      function checkIframeLoaded() {
-        // Get a handle to the iframe element
-        var iframe = document.getElementById("twitter-widget-0");
-        var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-        // Check if loading is complete
-        if (iframeDoc.readyState == "complete") {
-          //iframe.contentWindow.alert("Hello");
-          iframe.contentWindow.onload = function () {
-            console.log("HI I HAVE LOADED");
-          };
-          // The loading is complete, call the function we want executed once the iframe is loaded
-          iframe.style.height = "100%";
-
-          afterLoading(iframeDoc);
-          return;
-        }
-
-        // If we are here, it is not loaded. Set things up so we check   the status again in 100 milliseconds
-        window.setTimeout(checkIframeLoaded, 100);
-      }
-
-      function afterLoading(iframeDoc) {
-        console.log("IFRAME", iframeDoc);
-
-        let viewport = iframeDoc.body.querySelector(".timeline-Viewport");
-        viewport.style.overflow = "hidden";
-
-        let twitter_logo = iframeDoc.body.querySelector(
-          ".timeline-Tweet-brand"
-        );
-        twitter_logo.style.display = "none";
-
-        let header = iframeDoc.body.querySelector(".timeline-Header");
-        header.style.display = "none";
-        let footer = iframeDoc.body.querySelector(".timeline-Footer");
-        footer.style.display = "none";
-        console.log("HEADER", header);
-      }
-    </script>
   </head>
 
-  <body onload="checkIframeLoaded()" class="mat-typography">
+  <body class="mat-typography">
     <app-root></app-root>
   </body>
 </html>

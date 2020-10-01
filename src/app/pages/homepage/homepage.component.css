@@ -7,7 +7,7 @@
 }
 
 [id^="tile_"] {
-  background: grey;
+  /* background: grey; */
 }
 
 #tile_intro_video {
@@ -81,11 +81,30 @@
   right: 5px;
 }
 
-.demo {
-  background: var(--cg_silver);
-}
-
 .slider_main {
   object-fit: contain;
   width: 100%;
+}
+
+[class$="_tile"]:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+[class$="_tile"] {
+  filter: grayscale(100%);
+  transition: filter 500ms ease;
+}
+
+.speed_tile {
+  background: var(--cg_speed);
+}
+.power_tile {
+  background: var(--cg_power);
+}
+.agility_tile {
+  background: var(--cg_agility);
+}
+
+.series {
+  mix-blend-mode: screen;
 }

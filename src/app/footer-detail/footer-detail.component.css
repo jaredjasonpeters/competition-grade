@@ -1,0 +1,38 @@
+#footer_detail_container {
+  display: flex;
+  justify-content: flex-end;
+  background: black;
+  color: white;
+  width: 100%;
+  height: 35px;
+  font-family: Orbitron;
+  font-weight: 700;
+  letter-spacing: var(--lspace);
+  margin: 0;
+  /* border: 2px solid red; */
+}
+
+#footer_detail_container span {
+  flex-basis: 20%;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+  text-align: center;
+  font-size: 0.6em;
+
+  border-top: 4px solid var(--cg_gold);
+  /* border-bottom: 4px solid var(--cg_gold); */
+  /* border: 2px solid red; */
+  padding: 2px 0 2px 0;
+  margin-left: calc(100vw / 12);
+  margin-right: 5%;
+}
+
+#footer_detail_options {
+  flex-basis: 70%;
+  justify-self: flex-end;
+  height: 100%;
+  background: var(--cg_silver);
+  margin: 0;
+  /* border: 2px solid green; */
+}

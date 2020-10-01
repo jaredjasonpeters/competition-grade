@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { InstagramFeedComponent } from './components/instagram-feed/instagram-feed.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterDetailComponent } from './footer-detail/footer-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomepageComponent,
     InstagramFeedComponent,
+    FooterDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule, HttpClientModule],
   providers: [],

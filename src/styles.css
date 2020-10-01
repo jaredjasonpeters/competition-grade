@@ -6,6 +6,7 @@
 html,
 body {
   height: 100%;
+  /* background: black; */
 }
 body {
   margin: 0;
@@ -18,6 +19,7 @@ body {
   --cg_speed: #f57f20;
   --cg_power: #662d91;
   --cg_agility: #367654;
+  --lspace: 0.25em;
 }
 
 .internal_gridlist {

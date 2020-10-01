@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -15,4 +18,11 @@ body {
   --cg_speed: #f57f20;
   --cg_power: #662d91;
   --cg_agility: #367654;
+}
+
+.internal_gridlist {
+  min-width: 100%;
+  padding: 6px;
+  /* border: 2px solid yellow; */
+  height: 100%;
 }

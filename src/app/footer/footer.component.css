@@ -1,6 +1,33 @@
+* {
+  font-family: Orbitron;
+  font-size: 0.98em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.distributors {
+  border-bottom: 4px solid var(--cg_gold);
+  font-family: Orbitron;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  font-size: 0.75em;
+}
+
 #footer {
+  height: 130px;
   border-top: 6px solid white;
   min-height: 130px;
   background: black;
   color: white;
+}
+
+#company_block {
+}
+
+#footer_gridlist,
+#distributor_gridlist {
+  height: 100%;
+}
+mat-grid-tile {
+  border: 2px solid red;
 }

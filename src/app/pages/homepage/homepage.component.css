@@ -23,12 +23,6 @@
   background: black;
   /* border: 2px solid blue; */
 }
-.internal_gridlist {
-  min-width: 100%;
-  padding: 6px;
-  /* border: 2px solid yellow; */
-  height: 100%;
-}
 
 #menu_right {
   background: var(--cg_gold);

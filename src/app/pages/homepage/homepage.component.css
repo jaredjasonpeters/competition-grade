@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-[id^="tile_"] {
-  /* background: grey; */
-}
-
 #tile_intro_video {
   background: black;
   /* border: 2px solid red; */
@@ -93,20 +89,21 @@
 
 [class$="_tile"]:hover {
   filter: grayscale(0%);
-  cursor: pointer;
 }
 [class$="_tile"] {
   filter: grayscale(100%);
   transition: filter 500ms ease;
+  background: var(--cg_gold);
+  cursor: pointer;
 }
 
-.speed_tile {
+.speed_tile:hover {
   background: var(--cg_speed);
 }
-.power_tile {
+.power_tile:hover {
   background: var(--cg_power);
 }
-.agility_tile {
+.agility_tile:hover {
   background: var(--cg_agility);
 }
 

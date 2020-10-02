@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './material.module';
-
 import { AppRoutingModule } from './app-routing.module';
+
+import { MaterialModule } from './material.module';
+import { BrowserModule, Title } from '@angular/platform-browser';
+
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,8 +23,8 @@ import { FooterDetailComponent } from './footer-detail/footer-detail.component';
     InstagramFeedComponent,
     FooterDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule, HttpClientModule],
-  providers: [],
+  imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
+  providers: [Title],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

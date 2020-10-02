@@ -8,8 +8,7 @@
 
 #footer {
   background: black;
-  height: 160px;
-  min-height: 160px;
+  height: 150px;
   border-top: 6px solid white;
   min-height: 130px;
   background: black;
@@ -24,7 +23,7 @@
 }
 
 .distributor_plot {
-  height: 100%;
+  /* border: 2px solid white; */
 }
 
 .distributor_container:hover img {
@@ -48,11 +47,10 @@
   /* border-radius: 100%; */
   background: white;
   width: 100%;
-  height: 90%;
-  margin-bottom: auto;
+  /* height: 90%; */
   /* border: 4px solid var(--cg_gold); */
-  border-radius: 5px 5px 5px 5px;
-  /* border: 2px solid red; */
+  border-radius: 0 0 5px 5px;
+  border-top: 4px solid var(--cg_gold);
   padding: 6px;
 }
 
@@ -62,7 +60,7 @@
   object-fit: contain;
   filter: grayscale(100%);
 }
-div.distributor_container::before {
+/* .distributor_container::before {
   content: "";
   position: absolute;
   top: -20px;
@@ -73,7 +71,7 @@ div.distributor_container::before {
   overflow: hidden;
   background: var(--cg_gold);
   z-index: 1;
-}
+} */
 
 .internal_gridlist {
   padding-top: 0;
@@ -103,8 +101,10 @@ mat-nav-list {
   /* border: 2px solid red; */
   height: 100%;
   width: 100%;
+  padding-top: 20px;
   line-height: 1em;
   color: var(--cg_gold);
+  /* border: 2px solid red; */
 }
 
 mat-nav-list span {
@@ -112,20 +112,32 @@ mat-nav-list span {
   font-size: 0.7em;
   letter-spacing: var(--lspace);
   margin-bottom: 10px;
+  /* border: 2px solid white; */
+  text-align: center;
 }
 mat-nav-list a {
   max-height: 15px;
   font-size: 0.6em;
   color: var(--cg_gold);
   letter-spacing: var(--lspace);
-  margin-top: 4px;
+  margin-top: 2px;
   /* border: 2px solid white; */
+  margin-left: 25%;
 }
 
 :host /deep/ .mat-list-item-content {
   height: 15px !important;
+  text-align: center;
 }
 
 mat-nav-list a:hover {
   color: var(--cg_silver);
+}
+
+#distributor_info_list {
+  color: white;
+}
+
+#distributor_info_list a {
+  color: white;
 }

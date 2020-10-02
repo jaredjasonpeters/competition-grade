@@ -35,14 +35,24 @@
                 rowHeight="fit"
               >
                 <mat-grid-tile class="speed_tile" rowspan="1"
-                  ><img src="../../../assets/speed_series.png" class="series"
-                /></mat-grid-tile>
+                  ><a [routerLink]="['/speed']">
+                    <img
+                      src="../../../assets/speed_series.png"
+                      class="series" /></a
+                ></mat-grid-tile>
                 <mat-grid-tile class="power_tile" rowspan="1"
-                  ><img src="../../../assets/power_series.png" class="series"
-                /></mat-grid-tile>
+                  ><a [routerLink]="['/power']">
+                    <img
+                      src="../../../assets/power_series.png"
+                      class="series" /></a
+                ></mat-grid-tile>
                 <mat-grid-tile class="agility_tile" rowspan="1"
-                  ><img src="../../../assets/agility_series.png" class="series"
-                /></mat-grid-tile>
+                  ><a [routerLink]="['agility']"
+                    ><img
+                      src="../../../assets/agility_series.png"
+                      class="series"
+                  /></a>
+                </mat-grid-tile>
               </mat-grid-list>
             </div>
           </mat-grid-tile>

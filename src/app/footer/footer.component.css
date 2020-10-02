@@ -3,12 +3,27 @@
   font-size: 0.98em;
   font-weight: 900;
   text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+#footer {
+  background: black;
+  height: 160px;
+  border-top: 6px solid white;
+  min-height: 130px;
+  background: black;
+  padding: 6px;
+  color: white;
 }
 
 .distributor_container a {
   height: 100%;
   width: 100%;
   display: block;
+}
+
+.distributor_plot {
+  height: 100%;
 }
 
 .distributor_container:hover img {
@@ -32,8 +47,11 @@
   /* border-radius: 100%; */
   background: white;
   width: 100%;
-  height: 100%;
+  height: 90%;
+  margin-bottom: auto;
   /* border: 4px solid var(--cg_gold); */
+  border-radius: 5px 5px 5px 5px;
+  /* border: 2px solid red; */
   padding: 6px;
 }
 
@@ -60,22 +78,16 @@ div.distributor_container::before {
   padding-top: 0;
 }
 
-#footer {
-  background: black;
-  height: 175px;
-  border-top: 6px solid white;
-  min-height: 130px;
-  background: black;
-  padding: 6px;
-  color: white;
-}
-
 #verified_seal img {
   height: 100%;
   object-fit: contain;
 }
 
 #company_block {
+}
+
+#distributor_block {
+  /* border: 2px solid red; */
 }
 
 #footer_gridlist,

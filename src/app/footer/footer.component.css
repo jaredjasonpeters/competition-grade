@@ -141,3 +141,7 @@ mat-nav-list a:hover {
 #distributor_info_list a {
   color: white;
 }
+
+#distributor_info_list a:hover {
+  color: var(--cg_silver);
+}

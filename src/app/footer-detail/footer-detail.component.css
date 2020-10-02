@@ -78,3 +78,12 @@
 #footer_detail_options ul li:last-child {
   border: none;
 }
+
+#copyright_statement {
+  font-size: 0.7em;
+  margin: auto 0 auto 0;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Roboto;
+  font-weight: 600;
+}

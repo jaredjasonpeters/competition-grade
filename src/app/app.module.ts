@@ -24,7 +24,13 @@ import { FooterDetailComponent } from './footer-detail/footer-detail.component';
     FooterDetailComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
-  providers: [Title],
+  providers: [
+    Title,
+    {
+      provide: Window,
+      useValue: window,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

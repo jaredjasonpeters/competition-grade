@@ -58,6 +58,11 @@
 .social_grid_twitter {
 }
 
+.twitter-timeline {
+  text-decoration: none;
+  color: white;
+}
+
 /* .social_grid_twitter::before {
   content: url("../../../assets/twitter_logo_gold.png");
   width: 30px;

@@ -5,17 +5,12 @@
     cols="3"
     rowHeight="fit"
   >
-    <mat-grid-tile class="speed_tile" rowspan="1"
-      ><a [routerLink]="['/speed']">
-        <img src="../../../assets/speed_series.png" class="series" /></a
-    ></mat-grid-tile>
-    <mat-grid-tile class="power_tile" rowspan="1"
-      ><a [routerLink]="['/power']">
-        <img src="../../../assets/power_series.png" class="series" /></a
-    ></mat-grid-tile>
-    <mat-grid-tile class="agility_tile" rowspan="1"
-      ><a [routerLink]="['agility']"
-        ><img src="../../../assets/agility_series.png" class="series"
+    <mat-grid-tile
+      *ngFor="let link of links"
+      class="{{ link.title }}_tile"
+      rowspan="1"
+      ><a [routerLink]="['/' + link.title]">
+        <img src="{{ link.imagePath }}" class="series"
       /></a>
     </mat-grid-tile>
   </mat-grid-list>

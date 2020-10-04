@@ -1,0 +1,28 @@
+[class$="_tile"]:hover {
+  filter: grayscale(0%);
+}
+[class$="_tile"] {
+  filter: grayscale(100%);
+  transition: filter 500ms ease;
+  background: var(--cg_silver);
+  cursor: pointer;
+}
+
+.speed_tile:hover {
+  background: var(--cg_speed);
+}
+.power_tile:hover {
+  background: var(--cg_power);
+}
+.agility_tile:hover {
+  background: var(--cg_agility);
+}
+
+.series {
+  mix-blend-mode: screen;
+}
+
+#featured_gridlist {
+  height: 100%;
+  width: 100%;
+}

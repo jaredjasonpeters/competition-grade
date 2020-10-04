@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterDetailComponent } from './footer-detail/footer-detail.component';
 import { MenuRightComponent } from './components/menu-right/menu-right.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { FeaturedLinksComponent } from './components/featured-links/featured-links.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
     FooterDetailComponent,
     MenuRightComponent,
     ImageSliderComponent,
+    FeaturedLinksComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
   providers: [

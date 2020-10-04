@@ -15,6 +15,7 @@ import { FooterDetailComponent } from './footer-detail/footer-detail.component';
 import { MenuRightComponent } from './components/menu-right/menu-right.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { FeaturedLinksComponent } from './components/featured-links/featured-links.component';
+import { TwitterFeedComponent } from './components/twitter-feed/twitter-feed.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FeaturedLinksComponent } from './components/featured-links/featured-lin
     MenuRightComponent,
     ImageSliderComponent,
     FeaturedLinksComponent,
+    TwitterFeedComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
   providers: [

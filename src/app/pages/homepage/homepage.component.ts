@@ -10,8 +10,6 @@ import {
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-declare var twttr;
-
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -22,7 +20,5 @@ export class HomepageComponent implements OnInit {
     titleService.setTitle('Competition Grade Seed');
   }
 
-  ngOnInit(): void {
-    twttr.widgets.load();
-  }
+  ngOnInit(): void {}
 }

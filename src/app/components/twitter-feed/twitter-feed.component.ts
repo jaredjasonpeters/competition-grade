@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
 
 declare var twttr;
 
@@ -7,10 +12,14 @@ declare var twttr;
   templateUrl: './twitter-feed.component.html',
   styleUrls: ['./twitter-feed.component.css'],
 })
-export class TwitterFeedComponent implements OnInit {
+export class TwitterFeedComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   ngOnInit(): void {
-    twttr.widgets.load();
+    if (twttr) {
+      twttr.widgets.load();
+    }
   }
+
+  ngAfterViewInit(): void {}
 }

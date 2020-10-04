@@ -16,6 +16,7 @@ import { MenuRightComponent } from './components/menu-right/menu-right.component
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { FeaturedLinksComponent } from './components/featured-links/featured-links.component';
 import { TwitterFeedComponent } from './components/twitter-feed/twitter-feed.component';
+import { FeaturedVideoComponent } from './components/featured-video/featured-video.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TwitterFeedComponent } from './components/twitter-feed/twitter-feed.com
     ImageSliderComponent,
     FeaturedLinksComponent,
     TwitterFeedComponent,
+    FeaturedVideoComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
   providers: [

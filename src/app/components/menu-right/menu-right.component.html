@@ -6,16 +6,7 @@
     rowHeight="14:1"
   >
     <mat-grid-tile id="video_tile" rowspan="7">
-      <div id="video_container">
-        <iframe
-          width="100%"
-          height="100%"
-          [src]="videoUrl"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
+      <app-featured-video></app-featured-video>
     </mat-grid-tile>
     <mat-grid-tile id="featured_tile" rowspan="2">
       <app-featured-links></app-featured-links>

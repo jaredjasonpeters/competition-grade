@@ -1,0 +1,72 @@
+<div class="internal_gridlist">
+  <mat-grid-list
+    id="menu_right_gridlist"
+    gutterSize="6px"
+    cols="1"
+    rowHeight="14:1"
+  >
+    <mat-grid-tile id="tile_intro_video" rowspan="7">
+      <div id="intro_video_container">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/OmNwBlr0Kkk"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile id="tile_featured" rowspan="2">
+      <div class="internal_gridlist">
+        <mat-grid-list
+          id="featured_gridlist"
+          gutterSize="6px"
+          cols="3"
+          rowHeight="fit"
+        >
+          <mat-grid-tile class="speed_tile" rowspan="1"
+            ><a [routerLink]="['/speed']">
+              <img src="../../../assets/speed_series.png" class="series" /></a
+          ></mat-grid-tile>
+          <mat-grid-tile class="power_tile" rowspan="1"
+            ><a [routerLink]="['/power']">
+              <img src="../../../assets/power_series.png" class="series" /></a
+          ></mat-grid-tile>
+          <mat-grid-tile class="agility_tile" rowspan="1"
+            ><a [routerLink]="['agility']"
+              ><img src="../../../assets/agility_series.png" class="series"
+            /></a>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile id="tile_social" rowspan="5">
+      <div class="internal_gridlist">
+        <mat-grid-list
+          id="social_gridlist"
+          gutterSize="6px"
+          cols="2"
+          rowHeight="fit"
+        >
+          <mat-grid-tile class="social_grid_twitter" rowspan="1">
+            <a
+              class="twitter-timeline"
+              data-lang="en"
+              data-width="300"
+              data-height="235"
+              data-theme="dark"
+              data-chrome="noheader nofooter noborders noscrollbar transparent"
+              href="https://twitter.com/CompGradeSeed?ref_src=twsrc%5Etfw"
+            >
+              <img src="../../../../assets/twitter_logo_gold.png" />
+            </a>
+          </mat-grid-tile>
+          <mat-grid-tile class="social_grid_instagram" rowspan="1">
+            <app-instagram-feed></app-instagram-feed>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

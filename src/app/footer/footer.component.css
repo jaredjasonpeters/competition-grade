@@ -136,6 +136,7 @@ mat-nav-list a:hover {
 
 #distributor_info_list {
   color: white;
+  border-left: 2px solid gray;
 }
 
 #distributor_info_list a {

@@ -12,6 +12,8 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { InstagramFeedComponent } from './components/instagram-feed/instagram-feed.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterDetailComponent } from './footer-detail/footer-detail.component';
+import { MenuRightComponent } from './components/menu-right/menu-right.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { FooterDetailComponent } from './footer-detail/footer-detail.component';
     HomepageComponent,
     InstagramFeedComponent,
     FooterDetailComponent,
+    MenuRightComponent,
+    ImageSliderComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
   providers: [

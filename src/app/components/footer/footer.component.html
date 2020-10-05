@@ -1,0 +1,51 @@
+<footer id="footer">
+  <div class="internal_gridlist">
+    <mat-grid-list
+      id="footer_gridlist"
+      gutterSize="6px"
+      cols="{{ footerLength }}"
+      rowHeight="fit"
+    >
+      <mat-grid-tile id="company_block" rowspan="1" colspan="1">
+        <a href="https://dlfpickseed.com/usa">
+          <img
+            src="../../assets/Product_of_DLFPickseed.png"
+            alt="product of dlf pickseed"
+          />
+        </a>
+      </mat-grid-tile>
+      <mat-grid-tile
+        id="distributor_block"
+        rowspan="1"
+        colspan="{{ distributorsLength }}"
+      >
+        <app-distributors></app-distributors>
+      </mat-grid-tile>
+      <mat-grid-tile id="verified_seal" rowspan="1" colspan="1">
+        <img
+          src="../../assets/Competition_Grade_Verified_Seal.png"
+          alt="Competition Grade Verified Seal"
+        />
+      </mat-grid-tile>
+      <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
+        <mat-nav-list id="distributor_portal_list">
+          <span>Distributor Portal</span>
+          <a mat-list-item>>> Marketing Materials</a>
+          <a mat-list-item>>> Marketing Assets</a>
+          <a mat-list-item>>> Marketing Guidelines</a>
+        </mat-nav-list>
+      </mat-grid-tile>
+      <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
+        <mat-nav-list id="distributor_info_list">
+          <span>Become A Distributor</span>
+          <a mat-list-item>>> Contact Us</a>
+          <a mat-list-item>>> Distributor Levels</a>
+          <a mat-list-item>>> Benefits & Rewards</a>
+        </mat-nav-list>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="1" colspan="1">
+        <img src="../../assets/CompetitionGrade_ChatIcon.png" alt="Chat Icon" />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</footer>

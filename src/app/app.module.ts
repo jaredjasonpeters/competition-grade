@@ -21,6 +21,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/products/product/product.component';
 import { SeriesComponent } from './pages/products/series/series.component';
 import { DistributorsComponent } from './components/distributors/distributors.component';
+import { FooterListComponent } from './components/footer-list/footer-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { DistributorsComponent } from './components/distributors/distributors.co
     ProductComponent,
     SeriesComponent,
     DistributorsComponent,
+    FooterListComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
   providers: [

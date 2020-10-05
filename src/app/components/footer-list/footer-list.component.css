@@ -1,0 +1,58 @@
+#distributor_info span:hover,
+#distributor_portal span:hover {
+  cursor: default;
+}
+
+#distributor_info,
+#distributor_portal {
+  /* border: 2px solid red; */
+}
+
+#distributor_info_list {
+  color: white;
+}
+
+#distributor_info_list a {
+  color: white;
+}
+
+#distributor_info_list a:hover {
+  color: var(--cg_silver);
+}
+
+mat-nav-list {
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  line-height: 1em;
+  color: var(--cg_gold);
+  /* border: 2px solid red; */
+}
+
+mat-nav-list span {
+  display: block;
+  font-size: 0.7em;
+  letter-spacing: var(--lspace);
+  margin-bottom: 10px;
+  /* border: 2px solid white; */
+  text-align: center;
+}
+mat-nav-list a {
+  max-height: 15px;
+  font-size: 0.6em;
+  color: var(--cg_gold);
+  letter-spacing: var(--lspace);
+  margin-top: 2px;
+  /* border: 2px solid white; */
+  margin-left: 25%;
+}
+
+:host /deep/ .mat-list-item-content {
+  height: 15px !important;
+  text-align: center;
+}
+
+mat-nav-list a:hover {
+  color: var(--cg_silver);
+}

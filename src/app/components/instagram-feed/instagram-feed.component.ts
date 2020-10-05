@@ -7,14 +7,16 @@ import {
   ViewChild,
 } from '@angular/core';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'app-instagram-feed',
   templateUrl: './instagram-feed.component.html',
   styleUrls: ['./instagram-feed.component.css'],
 })
 export class InstagramFeedComponent implements OnInit {
-  appId = 1238879886490476;
-  appSecret = '390feb8442f5555c709b9e0210e210bd';
+  appId = environment.appId;
+  appSecret = environment.appSecret;
 
   accessToken;
 

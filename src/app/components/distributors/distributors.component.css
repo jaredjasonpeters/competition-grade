@@ -33,6 +33,7 @@
   /* border-radius: 100%; */
   background: white;
   width: 100%;
+  min-height: 100%;
   /* height: 90%; */
   /* border: 4px solid var(--cg_gold); */
   border-radius: 0 0 5px 5px;
@@ -42,9 +43,13 @@
 
 .distributor_container img {
   width: 100%;
-  height: 100%;
+  height: 90px;
+  max-height: 90px;
   object-fit: contain;
+  object-position: center;
+  margin: auto;
   filter: grayscale(100%);
+  /* border: 2px solid red; */
 }
 /* .distributor_container::before {
   content: "";

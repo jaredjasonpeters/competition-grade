@@ -17,9 +17,14 @@ export class DistributorsService {
       imagePath: '../../assets/tom_irwin_logo.jpg',
     },
     {
-      companyName: 'Bwi',
-      websiteUrl: '"http://bwicompanies.com"',
+      companyName: 'BWI',
+      websiteUrl: 'http://bwicompanies.com',
       imagePath: '../../assets/bwi_logo.png',
+    },
+    {
+      companyName: 'Wilbur-Ellis',
+      websiteUrl: 'https://ag.wilburellis.com/',
+      imagePath: '../../assets/wilbur_ellis_logo.jpg',
     },
   ];
 

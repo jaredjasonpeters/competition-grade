@@ -42,6 +42,11 @@ app-distributors {
   cursor: default;
 }
 
+#distributor_info,
+#distributor_portal {
+  /* border: 2px solid red; */
+}
+
 #distributor_info_list {
   color: white;
 }
@@ -96,4 +101,14 @@ mat-nav-list a {
 
 mat-nav-list a:hover {
   color: var(--cg_silver);
+}
+
+#chat_block {
+  /* border: 2px solid white; */
+}
+
+#chat_block img {
+  margin-left: auto;
+  margin-right: 10px;
+  /* border: 2px solid red; */
 }

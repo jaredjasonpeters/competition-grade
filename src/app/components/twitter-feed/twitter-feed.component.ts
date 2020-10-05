@@ -12,7 +12,7 @@ declare var twttr;
   templateUrl: './twitter-feed.component.html',
   styleUrls: ['./twitter-feed.component.css'],
 })
-export class TwitterFeedComponent implements OnInit, AfterViewInit {
+export class TwitterFeedComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
@@ -20,6 +20,4 @@ export class TwitterFeedComponent implements OnInit, AfterViewInit {
       twttr.widgets.load();
     }
   }
-
-  ngAfterViewInit(): void {}
 }

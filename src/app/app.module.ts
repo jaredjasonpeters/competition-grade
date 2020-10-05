@@ -17,6 +17,9 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
 import { FeaturedLinksComponent } from './components/featured-links/featured-links.component';
 import { TwitterFeedComponent } from './components/twitter-feed/twitter-feed.component';
 import { FeaturedVideoComponent } from './components/featured-video/featured-video.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductComponent } from './pages/products/product/product.component';
+import { SeriesComponent } from './pages/products/series/series.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { FeaturedVideoComponent } from './components/featured-video/featured-vid
     FeaturedLinksComponent,
     TwitterFeedComponent,
     FeaturedVideoComponent,
+    ProductsComponent,
+    ProductComponent,
+    SeriesComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
   providers: [

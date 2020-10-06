@@ -1,11 +1,15 @@
+import { DOCUMENT } from '@angular/common';
 import {
   AfterViewChecked,
   AfterViewInit,
   Component,
+  Inject,
+  OnDestroy,
   OnInit,
+  Renderer2,
+  TemplateRef,
+  ViewContainerRef,
 } from '@angular/core';
-
-declare var twttr;
 
 @Component({
   selector: 'app-twitter-feed',
@@ -13,11 +17,26 @@ declare var twttr;
   styleUrls: ['./twitter-feed.component.css'],
 })
 export class TwitterFeedComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private doc: Document
+  ) {}
 
   ngOnInit(): void {
-    if (twttr) {
-      twttr.widgets.load();
+    function loadTwitterStream(renderer, doc): void {
+      const head = doc.getElementsByTagName('head')[0];
+
+      const twitterScript = renderer.createElement('script');
+
+      renderer.setAttribute(twitterScript, 'async', 'true');
+      renderer.setAttribute(
+        twitterScript,
+        'src',
+        'https://platform.twitter.com/widgets.js'
+      );
+      renderer.setAttribute(twitterScript, 'charset', 'utf-8');
+      renderer.appendChild(head, twitterScript);
     }
+    loadTwitterStream(this.renderer, this.doc);
   }
 }

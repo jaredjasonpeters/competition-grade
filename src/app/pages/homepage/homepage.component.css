@@ -22,7 +22,8 @@ app-menu-right {
   height: 100%;
 }
 
-.slider_main {
-  object-fit: contain;
+app-image-slider {
+  position: relative;
   width: 100%;
+  height: 100%;
 }

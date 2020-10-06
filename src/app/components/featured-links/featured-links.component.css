@@ -4,7 +4,7 @@
 [class$="_tile"] {
   filter: grayscale(100%);
   transition: filter 500ms ease;
-  background: var(--cg_silver);
+  background: black;
   cursor: pointer;
 }
 
@@ -25,4 +25,5 @@
 #featured_gridlist {
   height: 100%;
   width: 100%;
+  background: black;
 }

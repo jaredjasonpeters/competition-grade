@@ -1,0 +1,32 @@
+:host {
+  position: relative;
+  background: black;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  width: auto;
+  height: auto;
+  border-radius: 100%;
+  /* border: 2px solid red; */
+  background: rgba(255, 255, 255, 0.2);
+}
+.circle:hover {
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+mat-icon {
+  /* border: 2px solid red; */
+  color: var(--cg_gold);
+}
+
+.slider_main {
+  object-fit: contain;
+  width: 100%;
+}

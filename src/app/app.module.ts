@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MaterialModule } from './material.module';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -43,7 +44,13 @@ import { FooterListComponent } from './components/footer-list/footer-list.compon
     DistributorsComponent,
     FooterListComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, MaterialModule, HttpClientModule],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    MaterialModule,
+    MatIconModule,
+    HttpClientModule,
+  ],
   providers: [
     Title,
     {

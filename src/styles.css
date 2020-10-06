@@ -13,6 +13,14 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
 :root {
   --cg_gold: #c6b460;
   --cg_silver: #c4c4c4;

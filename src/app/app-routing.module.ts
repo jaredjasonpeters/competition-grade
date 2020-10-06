@@ -16,8 +16,8 @@ export const routes: Routes = [
       { path: ':name/:id', component: ProductComponent },
     ],
   },
-
-  { path: '**', component: HelloComponent },
+  { path: 'not-found', component: HelloComponent },
+  { path: '**', redirectTo: 'not-found' },
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+#series_header_container {
+  border: 2px solid grey;
+}
+
+#series_logo_container {
+  width: 100%;
+  height: 100%;
+  background: var(--cg_speed);
+  padding: 10px;
+  /* border: 2px solid blue; */
+}
+
+#series_logo_container img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  margin-left: auto;
+  /* border: 2px solid red; */
+}
+
+#series_description_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--cg_silver);
+  color: black;
+  padding: 40px;
+  /* border: 2px solid red; */
+}
+
+#series_description_container h3 {
+  font-family: Roboto;
+  font-weight: 800;
+  font-size: 2em;
+  line-height: normal;
+  /* border: 2px solid red; */
+}

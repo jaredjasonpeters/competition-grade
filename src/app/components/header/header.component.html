@@ -29,11 +29,15 @@
         >Home</a
       >
       <a
+        *ngIf="!disableProducts; else disabledLink"
         routerLink="products"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Products</a
       >
+      <ng-template #disabledLink>
+        <a>Products</a>
+      </ng-template>
       <a
         routerLink="why-competition-grade"
         routerLinkActive="active"

@@ -1,0 +1,23 @@
+#products_container {
+  background: black;
+}
+
+#products_nav {
+  display: flex;
+  justify-content: space-evenly;
+  background: white;
+  margin-bottom: 0;
+}
+
+#products_nav a {
+  margin: 0;
+  color: black;
+}
+
+#products_container img {
+  max-height: 480px;
+  margin-top: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}

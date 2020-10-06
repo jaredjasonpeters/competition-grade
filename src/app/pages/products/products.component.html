@@ -1,2 +1,14 @@
-<p>products works!</p>
-<router-outlet></router-outlet>
+<div id="products_container">
+  <nav id="products_nav">
+    <a routerLink="speed" (click)="onProductSelected()">Speed</a>
+    <a routerLink="speed" (click)="onProductSelected()">Power</a>
+    <a routerLink="speed" (click)="onProductSelected()">Agility</a>
+  </nav>
+  <img
+    *ngIf="!selected"
+    id="nav_footer_image"
+    src="../../../assets/Competition_Grade_SliderImage_Main.png"
+    alt=""
+  />
+  <router-outlet></router-outlet>
+</div>

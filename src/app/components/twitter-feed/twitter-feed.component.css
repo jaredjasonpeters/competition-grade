@@ -1,3 +1,16 @@
 :host {
+  width: 100%;
+  height: 100%;
   background: var(--cg_gold);
+}
+
+.twitter-timeline {
+  position: relative;
+  background: none;
+}
+
+.twitter-timeline img {
+  display: block;
+  margin: auto;
+  margin-top: 30%;
 }

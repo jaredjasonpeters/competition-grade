@@ -1,6 +1,6 @@
-<mat-nav-list id="distributor_portal_list">
-  <span>Distributor Portal</span>
-  <a mat-list-item>>> Marketing Materials</a>
-  <a mat-list-item>>> Marketing Assets</a>
-  <a mat-list-item>>> Marketing Guidelines</a>
+<mat-nav-list id="{{ type }}_list">
+  <span>Distributor {{ type.split("_")[1] }}</span>
+  <div *ngFor="let link of links">
+    <a [routerLink]="link.url" mat-list-item>>> {{ link.text }}</a>
+  </div>
 </mat-nav-list>

@@ -12,11 +12,11 @@
   color: white;
 }
 
-#distributor_info_list a {
+#distributor_info_list div a {
   color: white;
 }
 
-#distributor_info_list a:hover {
+#distributor_info_list div a:hover {
   color: var(--cg_silver);
 }
 
@@ -28,6 +28,7 @@ mat-nav-list {
   line-height: 1em;
   color: var(--cg_gold);
   /* border: 2px solid red; */
+  margin-left: 20px;
 }
 
 mat-nav-list span {
@@ -36,7 +37,7 @@ mat-nav-list span {
   letter-spacing: var(--lspace);
   margin-bottom: 10px;
   /* border: 2px solid white; */
-  text-align: center;
+  /* text-align: center; */
 }
 mat-nav-list a {
   max-height: 15px;
@@ -45,7 +46,7 @@ mat-nav-list a {
   letter-spacing: var(--lspace);
   margin-top: 2px;
   /* border: 2px solid white; */
-  margin-left: 25%;
+  text-align: center;
 }
 
 :host /deep/ .mat-list-item-content {

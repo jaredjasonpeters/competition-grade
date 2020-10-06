@@ -22,7 +22,17 @@
         <app-distributors></app-distributors>
       </mat-grid-tile>
       <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
-        <app-footer-list></app-footer-list>
+        <app-footer-list
+          type="distributor_portal"
+          [links]="[
+            { text: 'Marketing Materials', url: '/portal/marketing/materials' },
+            { text: 'Marketing Assets', url: '/portal/marketing/assets' },
+            {
+              text: 'Marketing Guidelines',
+              url: '/portal/marketing/guidelines'
+            }
+          ]"
+        ></app-footer-list>
       </mat-grid-tile>
       <mat-grid-tile id="verified_seal" rowspan="1" colspan="1">
         <img
@@ -30,15 +40,16 @@
           alt="Competition Grade Verified Seal"
         />
       </mat-grid-tile>
-      <!-- <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
-        <mat-nav-list id="distributor_info_list">
-          <span>Become A Distributor</span>
-          <a mat-list-item>>> Contact Us</a>
-          <a mat-list-item>>> Distributor Levels</a>
-          <a mat-list-item>>> Benefits & Rewards</a>
-        </mat-nav-list>
-      </mat-grid-tile> -->
-      <!-- <app-footer-list></app-footer-list> -->
+      <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
+        <app-footer-list
+          type="distributor_info"
+          [links]="[
+            { text: 'Contact Us', url: 'contact-us' },
+            { text: 'Distributor Levels', url: 'distributor-levels' },
+            { text: 'Benefits & Rewards', url: 'benefits-and-rewards' }
+          ]"
+        ></app-footer-list>
+      </mat-grid-tile>
       <mat-grid-tile id="chat_block" rowspan="1" colspan="1">
         <img src="../../assets/CompetitionGrade_ChatIcon.png" alt="Chat Icon" />
       </mat-grid-tile>

@@ -16,7 +16,7 @@ export class DistributorsComponent implements OnInit {
   constructor(private distributorsService: DistributorsService) {}
 
   ngOnInit(): void {
-    this.distributors = this.distributorsService.getAll();
+    this.distributors = this.distributorsService.getPremium();
     this.length = this.distributorsService.getLength();
   }
 

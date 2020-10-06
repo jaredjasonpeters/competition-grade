@@ -4,6 +4,8 @@ export interface Distributors {
   companyName: string;
   websiteUrl: string;
   imagePath: string;
+  partnerLevel?: 'Premium' | 'Standard';
+  placement: number;
 }
 
 @Injectable({
@@ -15,16 +17,22 @@ export class DistributorsService {
       companyName: 'Tom Irwin',
       websiteUrl: 'http://tomirwin.com',
       imagePath: '../../assets/tom_irwin_logo.jpg',
+      partnerLevel: 'Premium',
+      placement: 1,
     },
     {
       companyName: 'BWI',
       websiteUrl: 'http://bwicompanies.com',
       imagePath: '../../assets/bwi_logo.png',
+      partnerLevel: 'Premium',
+      placement: 3,
     },
     {
       companyName: 'Wilbur-Ellis',
       websiteUrl: 'https://ag.wilburellis.com/',
       imagePath: '../../assets/wilbur_ellis_logo.jpg',
+      partnerLevel: 'Premium',
+      placement: 2,
     },
   ];
 
@@ -32,6 +40,12 @@ export class DistributorsService {
 
   getAll(): Distributors[] {
     return this.distributors;
+  }
+
+  getPremium(): Distributors[] {
+    return this.distributors
+      .filter((distributor) => distributor.partnerLevel === 'Premium')
+      .sort((a, b) => a.placement - b.placement);
   }
 
   getLength(): number {

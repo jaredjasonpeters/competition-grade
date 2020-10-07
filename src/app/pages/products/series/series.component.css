@@ -53,6 +53,7 @@
 
 #series_content_description_container {
   background: white;
+  z-index: 3;
 }
 
 #series_content_description {
@@ -63,10 +64,14 @@
 }
 
 #series_tag_container {
-  border: 2px solid yellow;
+  z-index: 2;
+  background: white;
+  filter: drop-shadow(20px 0 0.45rem rgba(0,0,0,0.4));
 }
 #series_formulation_container {
-  border: 2px solid orange;
+  background: url('../../../../assets/perennial_ryegrass_seed_bg.png');
+  object-fit: contain;
+  object-position: cover;
 }
 
 

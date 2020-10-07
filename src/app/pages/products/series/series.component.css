@@ -59,14 +59,35 @@
 #series_content_description {
   font-family: Roboto;
   font-weight: 500;
+  text-align: justify;
+  text-justify: inter-word;
   padding: 6%;
   color: black;
 }
 
+.internal_gridlist {
+  padding-top: 7%;
+}
+
 #series_tag_container {
+ 
   z-index: 2;
   background: white;
   filter: drop-shadow(20px 0 0.45rem rgba(0,0,0,0.4));
+  padding: 6%;
+  /* border: 2px solid yellow; */
+}
+
+.tag {
+  /* border: 2px solid red; */
+}
+
+#series_tag_container img {
+  max-width: 100px;
+  max-height: 100%;
+  /* object-position: center;
+  object-fit: contain; */
+  border: .5px solid black;
 }
 #series_formulation_container {
   background: url('../../../../assets/perennial_ryegrass_seed_bg.png');

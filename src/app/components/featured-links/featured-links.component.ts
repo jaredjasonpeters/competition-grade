@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductsService } from 'src/app/shared/products.service';
 
 @Component({
   selector: 'app-featured-links',
@@ -21,7 +23,22 @@ export class FeaturedLinksComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(
+    private productsService: ProductsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
+
+  onProductSelected(title): void {
+    console.log('SELECTED FEATURE');
+    this.productsService.setProductSelected(true);
+    this.router.navigate(['/products', title]);
+
+    // [routerLink] = "['/products', link.title]"
+
+    // this.productsService.productSelectedEvent.subscribe(
+    //   (bool) => (this.selected = bool)
+    // );
+  }
 }

@@ -32,7 +32,6 @@
         *ngIf="!disableProducts; else disabledLink"
         routerLink="products"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
         >Products</a
       >
       <ng-template #disabledLink>

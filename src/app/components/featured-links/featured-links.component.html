@@ -9,7 +9,7 @@
       *ngFor="let link of links"
       class="{{ link.title }}_tile"
       rowspan="1"
-      ><a [routerLink]="['/products', link.title]">
+      ><a (click)="onProductSelected(link.title)">
         <img src="{{ link.imagePath }}" class="series"
       /></a>
     </mat-grid-tile>

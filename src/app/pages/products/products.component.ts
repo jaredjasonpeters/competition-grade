@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ProductsService } from '../../shared/products.service';
 
 @Component({
@@ -6,22 +7,31 @@ import { ProductsService } from '../../shared/products.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent implements OnInit {
-  selected: boolean;
+export class ProductsComponent implements OnInit, OnDestroy {
+  selected: boolean = false;
+  productsSubscription: Subscription;
 
-  constructor(private productsService: ProductsService) {}
-
-  ngOnInit(): void {
-    this.productsService.setProductSelected(false);
-    this.productsService.productSelectedEvent.subscribe(
+  constructor(private productsService: ProductsService) {
+    // this.productsService.setProductSelected(true);
+    this.productsSubscription = this.productsService.productSelectedEvent.subscribe(
       (bool) => (this.selected = bool)
     );
   }
 
+  ngOnInit(): void {
+    console.log('INIT PRODUCTS');
+    // this.onProductSelected();
+  }
+
   onProductSelected(): void {
+    console.log('ON PRODUCT SELECTED');
     this.productsService.setProductSelected(true);
-    this.productsService.productSelectedEvent.subscribe(
+    this.productsSubscription = this.productsService.productSelectedEvent.subscribe(
       (bool) => (this.selected = bool)
     );
+  }
+
+  ngOnDestroy(): void {
+    this.productsSubscription.unsubscribe();
   }
 }

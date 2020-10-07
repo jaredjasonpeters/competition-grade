@@ -14,24 +14,13 @@ export class HeaderComponent implements OnInit {
     private productsService: ProductsService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.productsService.productSelectedEvent.subscribe((bool) => {
-      this.disableProducts = bool;
-      console.log('DISABLED PROD', this.disableProducts);
-    });
-    let last_url = '';
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        if (
-          last_url.match(/\/products\/(speed)?(power)?(agility)*/g) !== null &&
-          event.url.match(/\/products\/(speed)?(power)?(agility)*/g) === null
-        ) {
-          this.disableProducts = false;
-        }
-        last_url = event.url;
-      }
-    });
+
+  }
+
+  openMenu() {
+    alert('opening menu');
   }
 }

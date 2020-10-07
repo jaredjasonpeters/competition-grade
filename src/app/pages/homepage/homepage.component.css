@@ -7,10 +7,6 @@ mat-grid-list {
   height: 100%;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 #menu_right {
   background: var(--cg_gold);
   width: 100%;

@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "competition-grade"
+  "defaultProject": "competition-grade",
+  "cli": {
+    "analytics": "7689bb97-4030-47d5-9ae8-5825c5f9d63b"
+  }
 }

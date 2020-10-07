@@ -9,11 +9,10 @@ import { SeriesComponent } from './pages/products/series/series.component';
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
   {
-    path: 'products',
-    component: ProductsComponent,
+    path: 'products/:name',
+    component: SeriesComponent,
     children: [
-      { path: ':name', component: SeriesComponent },
-      { path: ':name/:id', component: ProductComponent },
+      { path: ':id', component: ProductComponent },
     ],
   },
   { path: 'not-found', component: HelloComponent },
@@ -25,5 +24,5 @@ export const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {
-  constructor() {}
+  constructor() { }
 }

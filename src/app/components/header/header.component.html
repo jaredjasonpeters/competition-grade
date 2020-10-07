@@ -1,77 +1,35 @@
 <mat-toolbar id="header">
   <mat-toolbar-row id="top_designs_container">
     <a routerLink="" id="logo_link">
-      <img
-        src="../../assets/Competition_Grade_Logo_Final.png"
-        alt="Competition Grade"
-      />
+      <img src="../../assets/Competition_Grade_Logo_Final.png" alt="Competition Grade" />
     </a>
     <div id="wm_container">
-      <img
-        src="../../assets/Competition_Grade_Logo_WebsiteLogo.png"
-        alt="Competition Grade Wordmark"
-      />
+      <img src="../../assets/Competition_Grade_Logo_WebsiteLogo.png" alt="Competition Grade Wordmark" />
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row id="nav_container">
     <div id="tagline_container">
-      <img
-        id="tagline"
-        src="../../assets/Competition_Grade_Tagline.png"
-        alt=""
-      />
+      <img id="tagline" src="../../assets/Competition_Grade_Tagline.png" alt="" />
     </div>
     <nav id="navigation">
-      <a
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
-      <a
-        *ngIf="!disableProducts; else disabledLink"
-        routerLink="products"
-        routerLinkActive="active"
-        >Products</a
-      >
-      <ng-template #disabledLink>
-        <a>Products</a>
-      </ng-template>
-      <a
-        routerLink="why-competition-grade"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Why Competition Grade?</a
-      >
-      <a
-        routerLink="verification"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Verification Program</a
-      >
-      <a
-        routerLink="projects"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Projects</a
-      >
-      <a
-        routerLink="locate"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Locate a Distributor</a
-      >
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a (click)="openMenu()">Products</a>
+
+      <a routerLink="why-competition-grade" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Why
+        Competition Grade?</a>
+      <a routerLink="verification" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Verification
+        Program</a>
+      <a routerLink="projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
+      <a routerLink="locate" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Locate a
+        Distributor</a>
     </nav>
     <div id="social_links_container">
-      <a href="https://twitter.com " target="_blank" rel="noopener"
-        ><img src="../../assets/twitter_logo_gold.png" alt=""
-      /></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener"
-        ><img src="../../assets/instagram_logo_gold.png" alt=""
-      /></a>
-      <a href="https://facebook.com" target="_blank" rel="noopener"
-        ><img src="../../assets/facebook_logo_gold.png" alt=""
-      /></a>
+      <a href="https://twitter.com " target="_blank" rel="noopener"><img src="../../assets/twitter_logo_gold.png"
+          alt="" /></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"><img src="../../assets/instagram_logo_gold.png"
+          alt="" /></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener"><img src="../../assets/facebook_logo_gold.png"
+          alt="" /></a>
       <!-- <a href="https://youtube.com" target="_blank" rel="noopener"
         ><img src="../../assets/youtube_logo_gold.png" alt=""
       /></a> -->

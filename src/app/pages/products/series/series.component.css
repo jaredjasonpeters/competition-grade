@@ -1,5 +1,5 @@
 #series_header_container {
-  border: 2px solid grey;
+  /* border: 2px solid grey; */
 }
 
 #series_logo_container {
@@ -32,9 +32,62 @@
 }
 
 #series_description_container h3 {
+  height: 100%;
   font-family: Roboto;
-  font-weight: 800;
-  font-size: 2em;
+  font-weight: 600;
+  font-size: 1.6em;
   line-height: normal;
+  /* color: white; */
   /* border: 2px solid red; */
+}
+
+#series_content_container {
+  height: 100%;
+  width: 100%;
+ background: red;
+}
+
+/* <mat-grid-tile id="series_content_description"></mat-grid-tile>
+<mat-grid-tile id="series_tag_container"></mat-grid-tile>
+<mat-grid-tile id="series_formulation_container"></mat-grid-tile> */
+
+#series_content_description_container {
+  background: white;
+}
+
+#series_content_description {
+  font-family: Roboto;
+  font-weight: 500;
+  padding: 6%;
+  color: black;
+}
+
+#series_tag_container {
+  border: 2px solid yellow;
+}
+#series_formulation_container {
+  border: 2px solid orange;
+}
+
+
+
+#menu_right {
+  width: 100%;
+  height: 100%;
+  background: var(--cg_gold);
+}
+
+mat-grid-list {
+  width: 100%;
+  height: 100%;
+}
+
+app-image-slider {
+  width: 100%;
+  height: 100%;
+}
+
+app-menu-right {
+  width: 100%;
+  height: 100%;
 }

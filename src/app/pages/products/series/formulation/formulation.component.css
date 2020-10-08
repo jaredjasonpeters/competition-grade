@@ -7,17 +7,117 @@
     min-height: 575px;
 }
 
+.round {
+    border-radius: 100%;
+    filter: drop-shadow(0 10px 0.55rem rgba(0,0,0,0.6));
+    
+}
+
+#relative_circle {
+    /* background: rgba(255, 255, 255, 0.4); */
+    width: 550px;
+    height: 550px;
+    border-radius: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#primary_circle {
+    /* mix-blend-mode: multiply; */
+    position: absolute;
+    /* border: 70px solid var(--cg_speed); */
+    background: var(--cg_speed);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    opacity: .9;
+  
+}
+#secondary_circle {
+    z-index: 2;
+    /* mix-blend-mode: color; */
+    position: absolute;
+    /* border: 20px solid var(--cg_silver); */
+    background: var(--cg_silver);
+    width: 29%; 
+    height: 29%;
+    margin: auto;
+    opacity: .9;
+}
+#tertiary_circle {
+    z-index: 3;
+    /* mix-blend-mode: multiply; */
+    position: absolute;
+    /* border: 20px solid var(--four_turf); */
+    background: var(--four_turf);
+    width: 14%; 
+    height: 14%;
+    margin: auto;
+    opacity: .9;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tertiary_circle img {
+    display: none;
+}
+
+
+
+
+
+
+
+
 mat-grid-tile[id$="_formulation"] {
-    filter: drop-shadow(20px 0 0.45rem rgba(0,0,0,0.4));
+    filter: drop-shadow(0 20px 0.45rem rgba(0,0,0,0.4));
    
+}
+
+.internal_gridlist {
+    padding: 0;
 }
 
 #primary_formulation {
     background: var(--cg_speed);
 }
 #secondary_formulation {
-    background: var(--cg_gold);
-}
-#tertiary_formulation {
     background: var(--cg_silver);
 }
+#tertiary_formulation {
+    background: var(--four_turf);
+}
+
+#formulation_percentage {
+    /* border: 2px solid blue; */
+    color: white;
+    font-size: 3.75em;
+    font-family: Roboto Condensed;
+    font-weight: 700;
+}
+
+#formulation_blend {
+    background: white;
+    text-align: center;
+    font-family: Roboto Condensed;
+    font-weight: 700;
+    line-height: 1.1em;
+    /* border: 2px solid red; */
+}
+
+#four_turf_logo {
+ width: 90%;
+ height: 90%;
+ object-fit: contain;
+ object-position: center;
+}
+
+
+
+
+
+
+

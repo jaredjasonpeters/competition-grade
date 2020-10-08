@@ -44,7 +44,7 @@
 #series_content_container {
   height: 100%;
   width: 100%;
- background: red;
+ /* background: red; */
 }
 
 /* <mat-grid-tile id="series_content_description"></mat-grid-tile>
@@ -95,12 +95,20 @@
 }
 
 #series_formulation_container {
- 
+}
+
+#series_formulation_container::before {
+  content: '';
   background: url('../../../../assets/perennial_ryegrass_seed_bg.png');
   background-repeat: no-repeat;
   object-fit: contain;
   object-position: center;
-  /* border: 2px solid black; */
+  position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 1;
 }
 
 

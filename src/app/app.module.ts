@@ -23,6 +23,7 @@ import { ProductComponent } from './pages/products/product/product.component';
 import { SeriesComponent } from './pages/products/series/series.component';
 import { DistributorsComponent } from './components/distributors/distributors.component';
 import { FooterListComponent } from './components/footer-list/footer-list.component';
+import { FormulationComponent } from './pages/products/series/formulation/formulation.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FooterListComponent } from './components/footer-list/footer-list.compon
     SeriesComponent,
     DistributorsComponent,
     FooterListComponent,
+    FormulationComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -60,4 +62,4 @@ import { FooterListComponent } from './components/footer-list/footer-list.compon
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

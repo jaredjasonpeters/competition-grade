@@ -1,0 +1,23 @@
+#formulation_breakdown_container {
+    /* border: 2px solid blue; */
+    min-height: 575px;
+}
+#formulation_graphic_container {
+    /* border: 2px solid white; */
+    min-height: 575px;
+}
+
+mat-grid-tile[id$="_formulation"] {
+    filter: drop-shadow(20px 0 0.45rem rgba(0,0,0,0.4));
+   
+}
+
+#primary_formulation {
+    background: var(--cg_speed);
+}
+#secondary_formulation {
+    background: var(--cg_gold);
+}
+#tertiary_formulation {
+    background: var(--cg_silver);
+}

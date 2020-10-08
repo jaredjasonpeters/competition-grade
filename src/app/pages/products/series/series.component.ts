@@ -12,4 +12,8 @@ export class SeriesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onTagSelect(): void {
+    alert('Tag Selected');
+  }
+
 }

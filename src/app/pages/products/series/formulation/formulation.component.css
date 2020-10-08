@@ -65,6 +65,17 @@
     display: none;
 }
 
+#Bag {
+   height: 95%
+}
+
+#BagFill {
+    fill: var(--cg_silver);
+    mix-blend-mode: multiply;
+}
+#Outline {
+    fill: white;
+}
 
 
 

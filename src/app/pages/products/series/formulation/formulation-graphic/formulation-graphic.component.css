@@ -34,12 +34,11 @@
   }
 
   #Primary {
-    fill: var(--cg_speed);
+    
     /* transform: translateY(-30%); */
-    animation: primary_show_70 2s 1;
     animation-delay: .5s;
     animation-play-state: paused;
-    transform: translateY(-30%);
+   
   }
 
   #clip_container:hover #bag_clip {
@@ -55,10 +54,9 @@
 
   #Secondary {
     fill: var(--cg_silver);
-    animation: secondary_four_turf_10 2s 1;
     animation-delay: .5s;
     animation-play-state: paused;
-    transform: translateY(-10%);
+ 
     
   }
 
@@ -75,6 +73,30 @@
       }
   }
 
+  @keyframes primary_show_90 {
+        from {
+            transform: translateY(0);
+      }
+      to {
+          transform: translateY(-10%);
+      }
+  }
+  @keyframes primary_show_85 {
+        from {
+            transform: translateY(0);
+      }
+      to {
+          transform: translateY(-15%);
+      }
+  }
+  @keyframes primary_show_80 {
+        from {
+            transform: translateY(0);
+      }
+      to {
+          transform: translateY(-20%);
+      }
+  }
   @keyframes primary_show_70 {
         from {
             transform: translateY(0);
@@ -84,11 +106,72 @@
       }
   }
 
-  @keyframes secondary_four_turf_10 {
+
+  @keyframes four_turf_show_15 {
+      from {
+          transform: translateY(0)
+      }
+      to {
+          transform: translateY(-15%);
+      }
+  }
+  @keyframes four_turf_show_10 {
       from {
           transform: translateY(0)
       }
       to {
           transform: translateY(-10%);
       }
+  }
+  @keyframes four_turf_show_5 {
+      from {
+          transform: translateY(0)
+      }
+      to {
+          transform: translateY(-5%);
+      }
+  }
+
+  .showFourTurf15{
+    animation: four_turf_show_15 2s 1;
+    transform: translateY(-15%);
+  }
+  .showFourTurf10 {
+    animation: four_turf_show_10 2s 1;
+    transform: translateY(-10%);
+  }
+  .showFourTurf5 {
+    animation: four_turf_show_5 2s 1;
+    transform: translateY(-5%);
+  }
+  .showFourTurf0 {
+    /* animation: four_turf_show_10 2s 1;
+    transform: translateY(-10%); */
+  }
+  .showPrimary90 {
+    animation: primary_show_90 2s 1;
+    transform: translateY(-10%);
+  }
+  .showPrimary85 {
+    animation: primary_show_85 2s 1;
+    transform: translateY(-15%);
+  }
+  .showPrimary80 {
+    animation: primary_show_80 2s 1;
+    transform: translateY(-20%);
+  }
+  .showPrimary70 {
+    animation: primary_show_70 2s 1;
+    transform: translateY(-30%);
+  }
+
+
+  .fill_speed {
+    fill: var(--cg_speed);
+  }
+  .fill_power {
+    fill: var(--cg_power);
+  }
+  .fill_agility{
+    fill: var(--cg_agility);
   }

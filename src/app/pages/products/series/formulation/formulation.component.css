@@ -67,10 +67,10 @@
   height: 100%;
 }
 
-.cls-3 {
+#bag_clip {
   transition: opacity 1.25s ease-in-out;
 }
-.cls-3:hover {
+#bag_clip:hover {
   opacity: 0;
 }
 

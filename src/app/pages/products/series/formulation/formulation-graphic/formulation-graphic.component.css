@@ -1,0 +1,94 @@
+
+:host {
+    position: relative;
+}
+
+#Bag {
+    height: 100%;
+  }
+  
+  #bag_clip {
+    transition: opacity 1.25s ease-in-out;
+    animation: bag_artwork_fade 1s 1;
+    animation-play-state: paused;
+  
+  }
+
+  #seeds_clip {
+    mix-blend-mode: multiply;
+    opacity: .8;
+  }
+  #bag_clip:hover {
+    opacity: 0;
+  }
+
+  
+  #BagFill {
+    fill: var(--cg_silver);
+    mix-blend-mode: multiply;
+  }
+  #Outline {
+    fill: var(--cg_gold);
+    opacity: 1;
+    /* mix-blend-mode: overlay; */
+  }
+
+  #Primary {
+    fill: var(--cg_speed);
+    /* transform: translateY(-30%); */
+    animation: primary_show_70 2s 1;
+    animation-delay: .5s;
+    animation-play-state: paused;
+    transform: translateY(-30%);
+  }
+
+  #clip_container:hover #bag_clip {
+      animation-play-state: running;
+  }
+
+  #clip_container:hover  #Primary {
+    animation-play-state: running;
+}
+#clip_container:hover #Secondary {
+    animation-play-state: running;
+}
+
+  #Secondary {
+    fill: var(--cg_silver);
+    animation: secondary_four_turf_10 2s 1;
+    animation-delay: .5s;
+    animation-play-state: paused;
+    transform: translateY(-10%);
+    
+  }
+
+  #Tertiary {
+    fill: var(--four_turf);
+  }
+
+  @keyframes bag_artwork_fade {
+      0%,50% {
+          opacity: 1;
+      }
+      100% {
+          opacity: 0;
+      }
+  }
+
+  @keyframes primary_show_70 {
+        from {
+            transform: translateY(0);
+      }
+      to {
+          transform: translateY(-30%);
+      }
+  }
+
+  @keyframes secondary_four_turf_10 {
+      from {
+          transform: translateY(0)
+      }
+      to {
+          transform: translateY(-10%);
+      }
+  }

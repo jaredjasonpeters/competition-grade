@@ -1,6 +1,6 @@
 <mat-grid-list rowHeight="fit" cols="6">
-  <mat-grid-tile id="formulation_graphic_container" colspan="5">
-    <!-- <div id="relative_circle">
+    <mat-grid-tile id="formulation_graphic_container" colspan="5">
+        <!-- <div id="relative_circle">
             <div id="primary_circle" class="round"></div>
             <div id="secondary_circle" class="round"></div>
             <div id="tertiary_circle" class="round">
@@ -8,88 +8,39 @@
                     alt="verified seal" />
             </div>
         </div> -->
-
-    <svg
-      id="Bag"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 243 375"
-    >
-      <defs>
-        <style>
-          .cls-1 {
-            fill: none;
-          }
-
-          .cls-2 {
-            fill: #fff;
-          }
-
-          .clip {
-            clip-path: url(#clip-path);
-          }
-        </style>
-        <clipPath id="clip-path">
-          <path
-            id="BagFill"
-            class="cls-1"
-            d="M30.17,34.6H44.5c2,9.79-2,15.38-5.46,23.77S34.27,77.25,34.27,87V343.63c0,7,2,10.49,7.5,10.49H201.4c5.46,0,7.51-3.5,7.51-10.49V87c0-9.79-1.37-20.28-4.78-28.67s-7.5-14-5.46-23.77H213V26.12H30.17Z"
-          />
-        </clipPath>
-      </defs>
-      <path
-        id="Outline"
-        class="cls-2"
-        d="M30.13,24.12h-2V36.6H42.83c.91,6.36-1.09,10.79-3.58,16.29-.67,1.5-1.37,3-2,4.72C34,65.42,32.27,75.87,32.27,87V343.63c0,3.09,0,12.49,9.46,12.49H201.44c9.46,0,9.46-9.4,9.46-12.49V87c0-11.17-1.75-21.62-4.92-29.43-.68-1.68-1.38-3.22-2.06-4.72-2.48-5.5-4.49-9.93-3.58-16.29H215V24.12H30.13ZM213.05,34.6H198.71c-2,9.79,2,15.38,5.46,23.77S209,77.25,209,87V343.63c0,7-2,10.49-7.51,10.49H41.73c-5.46,0-7.51-3.5-7.51-10.49V87c0-9.79,1.37-20.28,4.78-28.67s7.51-14,5.46-23.77H30.13V26.12H213.05Z"
-      />
-      <g id="bag_clip" class="clip">
-        <image
-          width="600"
-          height="857"
-          transform="translate(-16.02 13.01) scale(0.44 0.42)"
-          xlink:href="./assets/LargeBag_Mock_COMPGRADE_web.png"
-        />
-      </g>
-    </svg>
-  </mat-grid-tile>
-  <mat-grid-tile id="formulation_breakdown_container" colspan="1">
-    <div class="internal_gridlist">
-      <mat-grid-list gutterSize="5%" cols="1" rowHeight="30%">
-        <mat-grid-tile id="primary_formulation">
-          <div class="internal_gridlist">
-            <mat-grid-list cols="1" rowHeight="50%">
-              <mat-grid-tile id="formulation_percentage">70%</mat-grid-tile>
-              <mat-grid-tile id="formulation_blend"
-                >3-Way Perennial Ryegrass Blend</mat-grid-tile
-              >
+        <app-formulation-graphic></app-formulation-graphic>
+    </mat-grid-tile>
+    <mat-grid-tile id="formulation_breakdown_container" colspan="1">
+        <div class="internal_gridlist">
+            <mat-grid-list gutterSize="5%" cols="1" rowHeight="30%">
+                <mat-grid-tile id="primary_formulation">
+                    <div class="internal_gridlist">
+                        <mat-grid-list cols="1" rowHeight="50%">
+                            <mat-grid-tile id="formulation_percentage">70%</mat-grid-tile>
+                            <mat-grid-tile id="formulation_blend">3-Way Perennial Ryegrass Blend</mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile id="secondary_formulation">
+                    <div class="internal_gridlist">
+                        <mat-grid-list cols="1" rowHeight="50%">
+                            <mat-grid-tile id="formulation_percentage">20%</mat-grid-tile>
+                            <mat-grid-tile id="formulation_blend">Kentucky Bluegrass Blend</mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile id="tertiary_formulation">
+                    <div class="internal_gridlist">
+                        <mat-grid-list cols="1" rowHeight="50%">
+                            <mat-grid-tile id="formulation_percentage">10%</mat-grid-tile>
+                            <mat-grid-tile id="formulation_blend">
+                                <img id="four_turf_logo" src="../../../../../assets/4turf_logo.png"
+                                    alt="4turf perennial ryegrass" />
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
             </mat-grid-list>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile id="secondary_formulation">
-          <div class="internal_gridlist">
-            <mat-grid-list cols="1" rowHeight="50%">
-              <mat-grid-tile id="formulation_percentage">20%</mat-grid-tile>
-              <mat-grid-tile id="formulation_blend"
-                >Kentucky Bluegrass Blend</mat-grid-tile
-              >
-            </mat-grid-list>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile id="tertiary_formulation">
-          <div class="internal_gridlist">
-            <mat-grid-list cols="1" rowHeight="50%">
-              <mat-grid-tile id="formulation_percentage">10%</mat-grid-tile>
-              <mat-grid-tile id="formulation_blend">
-                <img
-                  id="four_turf_logo"
-                  src="../../../../../assets/4turf_logo.png"
-                  alt="4turf perennial ryegrass"
-                />
-              </mat-grid-tile>
-            </mat-grid-list>
-          </div>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
-  </mat-grid-tile>
+        </div>
+    </mat-grid-tile>
 </mat-grid-list>

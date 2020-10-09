@@ -24,6 +24,7 @@ import { SeriesComponent } from './pages/products/series/series.component';
 import { DistributorsComponent } from './components/distributors/distributors.component';
 import { FooterListComponent } from './components/footer-list/footer-list.component';
 import { FormulationComponent } from './pages/products/series/formulation/formulation.component';
+import { FormulationGraphicComponent } from './pages/products/series/formulation/formulation-graphic/formulation-graphic.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FormulationComponent } from './pages/products/series/formulation/formul
     DistributorsComponent,
     FooterListComponent,
     FormulationComponent,
+    FormulationGraphicComponent,
   ],
   imports: [
     AppRoutingModule,

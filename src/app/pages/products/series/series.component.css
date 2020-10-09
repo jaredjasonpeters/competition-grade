@@ -99,7 +99,7 @@
 
 #series_formulation_container::before {
   content: '';
-  background: url('../../../../assets/perennial_ryegrass_seed_bg.png');
+  background: url('../../../../assets/turfgrass_backdrop.png');
   background-repeat: no-repeat;
   object-fit: contain;
   object-position: center;
@@ -108,7 +108,7 @@
       right: 0px;
       bottom: 0px;
       left: 0px;
-      opacity: 1;
+      opacity: .9;
 }
 
 

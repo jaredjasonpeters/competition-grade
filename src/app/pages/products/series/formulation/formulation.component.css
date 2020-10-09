@@ -1,3 +1,8 @@
+
+app-formulation-graphic {
+    height: 100%;
+}
+
 #formulation_breakdown_container {
   /* border: 2px solid blue; */
   min-height: 575px;
@@ -5,6 +10,8 @@
 #formulation_graphic_container {
   /* border: 2px solid white; */
   min-height: 575px;
+
+ 
 }
 
 .round {
@@ -63,24 +70,7 @@
   display: none;
 }
 
-#Bag {
-  height: 100%;
-}
 
-#bag_clip {
-  transition: opacity 1.25s ease-in-out;
-}
-#bag_clip:hover {
-  opacity: 0;
-}
-
-#BagFill {
-  fill: var(--cg_silver);
-  mix-blend-mode: multiply;
-}
-#Outline {
-  fill: white;
-}
 
 mat-grid-tile[id$="_formulation"] {
   filter: drop-shadow(0 20px 0.45rem rgba(0, 0, 0, 0.4));

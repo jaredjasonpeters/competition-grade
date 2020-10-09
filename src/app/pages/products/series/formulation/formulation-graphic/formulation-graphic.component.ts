@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulation-graphic.component.css']
 })
 export class FormulationGraphicComponent implements OnInit {
-
+  four_turf_percentage = 15;
+  primary_percentage = 50;
+  series_color = 'speed'
   constructor() { }
 
   ngOnInit(): void {

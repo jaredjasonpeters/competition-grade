@@ -9,6 +9,7 @@ export class FormulationGraphicComponent implements OnInit {
   four_turf_percentage = 15;
   primary_percentage = 50;
   series_color = 'speed'
+  animation_status = 'paused';
   constructor() { }
 
   ngOnInit(): void {

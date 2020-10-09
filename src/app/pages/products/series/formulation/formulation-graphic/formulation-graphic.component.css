@@ -8,19 +8,15 @@
   }
   
   #bag_clip {
-    transition: opacity 1.25s ease-in-out;
-    animation: bag_artwork_fade 1s 1;
-    animation-play-state: paused;
-  
   }
 
   #seeds_clip {
     mix-blend-mode: multiply;
     opacity: .8;
   }
-  #bag_clip:hover {
+  /* #bag_clip:hover {
     opacity: 0;
-  }
+  } */
 
   
   #BagFill {
@@ -37,25 +33,25 @@
     
     /* transform: translateY(-30%); */
     animation-delay: .5s;
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
    
   }
 
-  #clip_container:hover #bag_clip {
+  /* #clip_container:hover #bag_clip {
       animation-play-state: running;
-  }
+  } */
 
-  #clip_container:hover  #Primary {
+  /* #clip_container:hover  #Primary {
     animation-play-state: running;
 }
 #clip_container:hover #Secondary {
     animation-play-state: running;
-}
+} */
 
   #Secondary {
     fill: var(--cg_silver);
     animation-delay: .5s;
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
  
     
   }
@@ -236,4 +232,19 @@
   }
   .fill_agility{
     fill: var(--cg_agility);
+  }
+
+  .paused {
+      animation-play-state: paused;
+      opacity: 1;
+  }
+
+  .running {
+      animation-play-state: running;
+  }
+
+  .fade_bag_artwork {
+    transition: opacity 1.25s ease-in-out;
+    animation: bag_artwork_fade 1s 1;
+    opacity: 0;
   }

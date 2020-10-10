@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { SeriesFormulationService } from '../../../shared/series-formulation.service';
 
 @Component({
@@ -7,12 +7,20 @@ import { SeriesFormulationService } from '../../../shared/series-formulation.ser
   styleUrls: ['./series.component.css'],
 })
 export class SeriesComponent implements OnInit {
-  constructor(private seriesFormulationService: SeriesFormulationService) {}
+  constructor(
+    private seriesFormulationService: SeriesFormulationService,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {}
 
   onTagSelect(event): void {
-    console.log('EVENT', event);
+    const images = [...document.querySelectorAll('.activeTag')];
+    images.forEach((image) => {
+      this.renderer.removeClass(image, 'activeTag');
+    });
+
+    this.renderer.addClass(event.target, 'activeTag');
     this.seriesFormulationService.getFormulation(event.target.id);
   }
 }

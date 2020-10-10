@@ -15,7 +15,7 @@ export class SeriesComponent implements OnInit {
   ngOnInit(): void {}
 
   onTagSelect(event): void {
-    const images = [...document.querySelectorAll('.activeTag')];
+    const images = Array.from(document.querySelectorAll('.activeTag'));
     images.forEach((image) => {
       this.renderer.removeClass(image, 'activeTag');
     });

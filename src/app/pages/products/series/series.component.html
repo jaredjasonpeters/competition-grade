@@ -1,6 +1,11 @@
 <mat-grid-list gutterSize="6px" rowHeight="690px" cols="6">
   <mat-grid-tile colspan="4">
-    <mat-grid-list id="series_header_container" gutterSize="0" rowHeight="115px" cols="6">
+    <mat-grid-list
+      id="series_header_container"
+      gutterSize="0"
+      rowHeight="115px"
+      cols="6"
+    >
       <mat-grid-tile colspan="2">
         <div id="series_logo_container">
           <img src="../../../../assets/speed_series.png" alt="speed series" />
@@ -9,39 +14,59 @@
       <mat-grid-tile colspan="4">
         <div id="series_description_container">
           <h3>
-            Perennial ryegrass-based blends using varieties with market-leading wear
-            tolerance and disease resistance
+            Perennial ryegrass-based blends using varieties with market-leading
+            wear tolerance and disease resistance
           </h3>
         </div>
       </mat-grid-tile>
-      <mat-grid-tile colspan=6 rowspan=5>
+      <mat-grid-tile colspan="6" rowspan="5">
         <div id="series_content_container">
           <mat-grid-list gutterSize="0" rowHeight="100%" cols="8">
-            <mat-grid-tile id="series_content_description_container" colspan="2">
+            <mat-grid-tile
+              id="series_content_description_container"
+              colspan="2"
+            >
               <p id="series_content_description">
-                Built around the rapid establishment of DLF Pickseed industry leading Perennial ryegrass cultivars and
-                including the flexibility of Proprietary 4turf™ technology, Speed Series is provides the highest
-                standard of fill in for repair and where Perennial ryegrass is the permanent turf. With multi-cultivar
-                blends, we engineer turf that includes the characteristics necessary for truly Competition Grade turf;
-                Grey leaf spot resistance, spreading characteristics, quick establishment and late fall – early spring
-                growth.
-                <br>
-                <br>
-                Perennial ryegrass is a great choice for “in the dirt” sports like football as winter overseeding of
-                bermudagrass and repair of permanent Kentucky Bluegrass turf. Speed Series is ideal for season long
-                interseeding or overseeding of wear spots, like goalie boxes, between the hash marks and center field.
+                Built around the rapid establishment of DLF Pickseed industry
+                leading Perennial ryegrass cultivars and including the
+                flexibility of Proprietary 4turf™ technology, Speed Series is
+                provides the highest standard of fill in for repair and where
+                Perennial ryegrass is the permanent turf. With multi-cultivar
+                blends, we engineer turf that includes the characteristics
+                necessary for truly Competition Grade turf; Grey leaf spot
+                resistance, spreading characteristics, quick establishment and
+                late fall – early spring growth.
+                <br />
+                <br />
+                Perennial ryegrass is a great choice for “in the dirt” sports
+                like football as winter overseeding of bermudagrass and repair
+                of permanent Kentucky Bluegrass turf. Speed Series is ideal for
+                season long interseeding or overseeding of wear spots, like
+                goalie boxes, between the hash marks and center field.
               </p>
             </mat-grid-tile>
             <mat-grid-tile id="series_tag_container" colspan="1">
               <div class="internal_gridlist">
                 <mat-grid-list gutterSize="6px" rowHeight="175px" cols="1">
-                  <mat-grid-tile class="tag" rowspan="1" (click)="onTagSelect()">
+                  <mat-grid-tile
+                    class="tag"
+                    rowspan="1"
+                    (click)="onTagSelect($event)"
+                  >
                     <img src="../../../../assets/speed_series_tag_101.jpg" />
                   </mat-grid-tile>
-                  <mat-grid-tile class="tag" rowspan="1" (click)="onTagSelect()">
+                  <mat-grid-tile
+                    class="tag"
+                    rowspan="1"
+                    (click)="onTagSelect($event)"
+                  >
                     <img src="../../../../assets/speed_series_tag_104.jpg" />
                   </mat-grid-tile>
-                  <mat-grid-tile class="tag" rowspan="1" (click)="onTagSelect()">
+                  <mat-grid-tile
+                    class="tag"
+                    rowspan="1"
+                    (click)="onTagSelect($event)"
+                  >
                     <img src="../../../../assets/speed_series_tag_104.jpg" />
                   </mat-grid-tile>
                 </mat-grid-list>

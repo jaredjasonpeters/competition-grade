@@ -1,49 +1,82 @@
-<svg id="Bag" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 243 375">
-    <defs>
-        <style>
-            .fill_none {
-                fill: none;
-            }
+<svg
+  id="Bag"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 243 375"
+>
+  <defs>
+    <style>
+      .fill_none {
+        fill: none;
+      }
 
-            .clip {
-                clip-path: url(#clip-path);
-            }
+      .clip {
+        clip-path: url(#clip-path);
+      }
 
-            .fill_black {
-                fill: #011010;
-            }
+      .fill_black {
+        fill: #011010;
+      }
 
-            .fill_white {
-                fill: #fff;
-            }
-        </style>
-        <clipPath id="clip-path">
-            <path id="BagFill" class="fill_none"
-                d="M34.17,34.6H44.5c2,9.79-2,15.38-5.46,23.77S34.27,77.25,34.27,87V343.63L34,354.12H209s-.09-3.5-.09-10.49V87c0-9.79-1.37-20.28-4.78-28.67s-7.5-14-5.46-23.77H208V26.12H34.17Z" />
-        </clipPath>
-    </defs>
-    <g id="clip_container">
-        <g class="clip">
-            <rect id="Tertiary" x="15" y="20" width="216" height="340" />
-        </g>
-        <g class="clip">
-            <rect id="Secondary" class="showFourTurf{{four_turf_percentage}} {{animation_status}}  " x="15" y="20"
-                width="216" height="340" />
-        </g>
-        <g class="clip">
-            <rect id="Primary" class=" fill_{{series_color}} showPrimary{{primary_percentage}} {{animation_status}}"
-                x="15" y="20" width="216" height="340" />
-        </g>
-        <g id="seeds_clip" class="clip">
-            <image width="1000" height="600" transform="translate(210.87 -19) rotate(90) scale(0.41 0.3)"
-                xlink:href="./assets/perennial_ryegrass_seed_bg.png" />
-        </g>
-        <g id="bag_clip" class="{{animation_status == 'running' && 'fade_bag_artwork'}} {{animation_status}} clip">
-            <rect class="fill_black" x="186" y="21" width="45" height="114" />
-            <image width="600" height="857" transform="translate(-14 12) scale(0.44 0.43)"
-                xlink:href="./assets/LargeBag_Mock_COMPGRADE_web.png" />
-        </g>
+      .fill_white {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path
+        id="BagFill"
+        class="fill_none"
+        d="M34.17,34.6H44.5c2,9.79-2,15.38-5.46,23.77S34.27,77.25,34.27,87V343.63L34,354.12H209s-.09-3.5-.09-10.49V87c0-9.79-1.37-20.28-4.78-28.67s-7.5-14-5.46-23.77H208V26.12H34.17Z"
+      />
+    </clipPath>
+  </defs>
+  <g id="clip_container">
+    <g class="clip">
+      <rect id="Tertiary" x="15" y="20" width="216" height="340" />
     </g>
-    <path id="Outline" class="fill_white"
-        d="M34.13,24.12h-2V36.6H42.83c.91,6.36-1.09,10.79-3.58,16.29-.67,1.5-1.37,3-2,4.72C34,65.42,32.27,75.87,32.27,87L32,356.12H211s-.1-9.4-.1-12.49V87c0-11.17-1.75-21.62-4.92-29.43-.68-1.68-1.38-3.22-2.06-4.72-2.48-5.5-4.49-9.93-3.58-16.29H210V24.12H34.13ZM208.05,34.6h-9.34c-2,9.79,2,15.38,5.46,23.77S209,77.25,209,87V343.63c0,7,.05,10.49.05,10.49H34l.22-10.49V87c0-9.79,1.37-20.28,4.78-28.67s7.51-14,5.46-23.77H34.13V26.12H208.05Z" />
+    <g class="clip">
+      <rect
+        id="Secondary"
+        #Secondary
+        class=""
+        x="15"
+        y="20"
+        width="216"
+        height="340"
+      />
+    </g>
+    <g class="clip">
+      <rect
+        id="Primary"
+        #Primary
+        class=" fill_{{ seriesColor }}"
+        x="15"
+        y="20"
+        width="216"
+        height="340"
+      />
+    </g>
+    <g id="seeds_clip" class="clip">
+      <image
+        width="1000"
+        height="600"
+        transform="translate(210.87 -19) rotate(90) scale(0.41 0.3)"
+        xlink:href="./assets/perennial_ryegrass_seed_bg.png"
+      />
+    </g>
+    <g id="bag_clip" #bag_clip class="clip">
+      <!-- <rect class="fill_black" x="186" y="21" width="45" height="114" /> -->
+      <image
+        width="600"
+        height="857"
+        transform="translate(-14 12) scale(0.44 0.43)"
+        xlink:href="./assets/LargeBag_Mock_COMPGRADE_web.png"
+      />
+    </g>
+  </g>
+  <path
+    id="Outline"
+    class="fill_white"
+    d="M34.13,24.12h-2V36.6H42.83c.91,6.36-1.09,10.79-3.58,16.29-.67,1.5-1.37,3-2,4.72C34,65.42,32.27,75.87,32.27,87L32,356.12H211s-.1-9.4-.1-12.49V87c0-11.17-1.75-21.62-4.92-29.43-.68-1.68-1.38-3.22-2.06-4.72-2.48-5.5-4.49-9.93-3.58-16.29H210V24.12H34.13ZM208.05,34.6h-9.34c-2,9.79,2,15.38,5.46,23.77S209,77.25,209,87V343.63c0,7,.05,10.49.05,10.49H34l.22-10.49V87c0-9.79,1.37-20.28,4.78-28.67s7.51-14,5.46-23.77H34.13V26.12H208.05Z"
+  />
 </svg>

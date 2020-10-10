@@ -243,7 +243,7 @@
       animation-play-state: running;
   }
 
-  .fade_bag_artwork {
+  .fadeBagArtwork {
     transition: opacity 1.25s ease-in-out;
     animation: bag_artwork_fade 1s 1;
     opacity: 0;

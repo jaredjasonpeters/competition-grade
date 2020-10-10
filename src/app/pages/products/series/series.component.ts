@@ -13,6 +13,6 @@ export class SeriesComponent implements OnInit {
 
   onTagSelect(event): void {
     console.log('EVENT', event);
-    this.seriesFormulationService.startAnimation();
+    this.seriesFormulationService.getFormulation(event.target.id);
   }
 }

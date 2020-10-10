@@ -17,10 +17,10 @@ export class FormulationGraphicComponent implements OnInit {
   @ViewChild('Secondary', { static: true }) secondary: ElementRef;
   @ViewChild('bag_clip', { static: true }) bagClip: ElementRef;
 
-  fourTurfPercentage = 10;
-  primaryPercentage = 70;
-  seriesColor = 'speed';
-  animationStatus = 'paused';
+  fourTurfPercentage: number;
+  primaryPercentage: number;
+  seriesColor: string;
+  animationStatus: string;
 
   constructor(
     private seriesFormulationService: SeriesFormulationService,
@@ -29,15 +29,75 @@ export class FormulationGraphicComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('REF', this.primary, this.secondary, this.bagClip);
-    this.seriesFormulationService.startAnimationSubject.subscribe((bool) => {
-      this.animationStatus = 'running';
-      this.seriesColor = 'power';
-      this.renderer.addClass(this.primary.nativeElement, 'running');
-      this.renderer.addClass(this.secondary.nativeElement, 'running');
-      this.renderer.addClass(this.bagClip.nativeElement, 'running');
-      this.renderer.addClass(this.primary.nativeElement, 'showPrimary80');
-      this.renderer.addClass(this.secondary.nativeElement, 'showFourTurf10');
-      this.renderer.addClass(this.bagClip.nativeElement, 'fadeBagArtwork');
-    });
+    this.seriesFormulationService.formulationSubject.subscribe(
+      ({ seriesName, formula }) => {
+        this.renderer.removeClass(this.bagClip.nativeElement, 'hideBag');
+        this.renderer.removeClass(
+          this.primary.nativeElement,
+          `remainPrimary${this.primaryPercentage}`
+        );
+        this.renderer.removeClass(
+          this.secondary.nativeElement,
+          `remainFourTurf${this.fourTurfPercentage}`
+        );
+
+        this.seriesColor = seriesName;
+        this.renderer.addClass(this.primary.nativeElement, 'running');
+        this.renderer.addClass(this.secondary.nativeElement, 'running');
+        this.renderer.addClass(this.bagClip.nativeElement, 'running');
+        this.animationStatus = 'running';
+
+        this.renderer.addClass(
+          this.primary.nativeElement,
+          `showPrimary${formula.primary.percentage}`
+        );
+        this.primaryPercentage = formula.primary.percentage;
+
+        this.renderer.addClass(
+          this.secondary.nativeElement,
+          `showFourTurf${formula.fourTurf.percentage}`
+        );
+        this.fourTurfPercentage = formula.fourTurf.percentage;
+
+        this.renderer.addClass(this.bagClip.nativeElement, 'fadeBagArtwork');
+
+        //listen for on animation end to remove classes //
+
+        this.renderer.listen(this.bagClip.nativeElement, 'animationend', () => {
+          // alert('ANIMATION ENDED');
+          this.renderer.removeClass(
+            this.bagClip.nativeElement,
+            'fadeBagArtwork'
+          );
+          this.renderer.addClass(this.bagClip.nativeElement, 'hideBag');
+        });
+
+        this.renderer.listen(this.primary.nativeElement, 'animationend', () => {
+          this.renderer.removeClass(
+            this.primary.nativeElement,
+            `showPrimary${formula.primary.percentage}`
+          );
+          this.renderer.addClass(
+            this.primary.nativeElement,
+            `remainPrimary${formula.primary.percentage}`
+          );
+        });
+
+        this.renderer.listen(
+          this.secondary.nativeElement,
+          'animationend',
+          () => {
+            this.renderer.removeClass(
+              this.secondary.nativeElement,
+              `showFourTurf${formula.fourTurf.percentage}`
+            );
+            this.renderer.addClass(
+              this.secondary.nativeElement,
+              `remainFourTurf${formula.fourTurf.percentage}`
+            );
+          }
+        );
+      }
+    );
   }
 }

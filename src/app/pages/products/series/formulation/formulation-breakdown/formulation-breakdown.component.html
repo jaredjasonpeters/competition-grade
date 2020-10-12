@@ -1,12 +1,7 @@
-<div class="internal_gridlist" *ngIf="formulations !== undefined">
+<div class="internal_gridlist">
   <mat-grid-list gutterSize="5%" cols="1" rowHeight="30%">
-    <mat-grid-tile
-      id="primary_formulation"
-      [ngClass]="{
-        primaryFormulation: formulations.primary.percentage !== 0
-      }"
-    >
-      <div class="internal_gridlist">
+    <mat-grid-tile id="primary_formulation">
+      <div class="internal_gridlist hide" #primaryFormulation>
         <mat-grid-list cols="1" rowHeight="50%">
           <mat-grid-tile id="formulation_percentage"
             >{{ formulations.primary.percentage }}%</mat-grid-tile
@@ -17,13 +12,8 @@
         </mat-grid-list>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile
-      id="secondary_formulation"
-      [ngClass]="{
-        secondaryFormulation: formulations.secondary.percentage !== 0
-      }"
-    >
-      <div class="internal_gridlist">
+    <mat-grid-tile id="secondary_formulation">
+      <div class="internal_gridlist hide" #secondaryFormulation>
         <mat-grid-list cols="1" rowHeight="50%">
           <mat-grid-tile id="formulation_percentage"
             >{{ formulations.secondary.percentage }}%</mat-grid-tile
@@ -34,13 +24,8 @@
         </mat-grid-list>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile
-      id="four_turf_formulation"
-      [ngClass]="{
-        fourTurfFormulation: formulations.fourTurf.percentage !== 0
-      }"
-    >
-      <div class="internal_gridlist">
+    <mat-grid-tile id="four_turf_formulation">
+      <div class="internal_gridlist hide" #fourTurfFormulation>
         <mat-grid-list cols="1" rowHeight="50%">
           <mat-grid-tile id="formulation_percentage"
             >{{ formulations.fourTurf.percentage }}%</mat-grid-tile

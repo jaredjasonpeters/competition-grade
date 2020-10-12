@@ -7,7 +7,6 @@ mat-grid-tile[id$="_formulation"] {
 }
 
 #formulation_percentage {
-  /* border: 2px solid blue; */
   color: white;
   font-size: 3.75em;
   font-family: Roboto Condensed;
@@ -20,7 +19,6 @@ mat-grid-tile[id$="_formulation"] {
   font-family: Roboto Condensed;
   font-weight: 700;
   line-height: 1.1em;
-  /* border: 2px solid red; */
 }
 
 #four_turf_logo {
@@ -39,9 +37,23 @@ mat-grid-tile[id$="_formulation"] {
   }
 }
 
-.fadeIn {
+.fadeInPrimary {
   animation: fadeIn;
-  animation-duration: 3s;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+}
+
+.fadeInSecondary {
+  animation: fadeIn;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-delay: 1.5s;
+}
+
+.fadeInFourTurf {
+  animation: fadeIn;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-delay: 2s;
 }
@@ -54,12 +66,12 @@ mat-grid-tile[id$="_formulation"] {
   opacity: 1;
 }
 
-.primaryFormulation {
+.primaryBackground {
   background: var(--cg_speed);
 }
-.secondaryFormulation {
+.secondaryBackground {
   background: var(--cg_silver);
 }
-.fourTurfFormulation {
+.fourTurfBackground {
   background: var(--four_turf);
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Formulation } from '../pages/products/series/formulation/formulation.model';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,7 @@ export class SeriesFormulationService {
   formulationSubject = new Subject<any>();
   formulations = {
     speed: {
+      recommendedUse: ['Football', 'Soccer', 'Rugby'],
       101: {
         primary: {
           percentage: 100,
@@ -25,6 +27,9 @@ export class SeriesFormulationService {
           percentage: 80,
           description: '3-Way Diploid Perennial Ryegrass Blend',
         },
+        secondary: {
+          percentage: 0,
+        },
         fourTurf: {
           percentage: 20,
           description: 'Tetraploid Perennial Ryegrass Blend',
@@ -37,6 +42,12 @@ export class SeriesFormulationService {
           percentage: 100,
           description: '3-way Turf-Type Tall Fescue Blend',
         },
+        secondary: {
+          percentage: 0,
+        },
+        fourTurf: {
+          percentage: 0,
+        },
       },
       202: {
         primary: {
@@ -46,6 +57,9 @@ export class SeriesFormulationService {
         secondary: {
           percentage: 10,
           description: 'Kentucky Bluegrass',
+        },
+        fourTurf: {
+          percentage: 0,
         },
       },
       204: {
@@ -70,11 +84,20 @@ export class SeriesFormulationService {
           description:
             '4-way Kentucky Bluegrass Blend featuring wear-tolerant Sombrero',
         },
+        secondary: {
+          percentage: 0,
+        },
+        fourTurf: {
+          percentage: 0,
+        },
       },
       304: {
         primary: {
           percentage: 80,
           description: '4-way Kentucky Bluegrass Blend',
+        },
+        secondary: {
+          percentage: 0,
         },
         fourTurf: {
           percentage: 20,

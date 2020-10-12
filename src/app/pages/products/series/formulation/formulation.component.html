@@ -1,6 +1,6 @@
 <mat-grid-list rowHeight="fit" cols="6">
-    <mat-grid-tile id="formulation_graphic_container" colspan="5">
-        <!-- <div id="relative_circle">
+  <mat-grid-tile id="formulation_graphic_container" colspan="5">
+    <!-- <div id="relative_circle">
             <div id="primary_circle" class="round"></div>
             <div id="secondary_circle" class="round"></div>
             <div id="tertiary_circle" class="round">
@@ -8,39 +8,55 @@
                     alt="verified seal" />
             </div>
         </div> -->
-        <app-formulation-graphic></app-formulation-graphic>
-    </mat-grid-tile>
-    <mat-grid-tile id="formulation_breakdown_container" colspan="1">
-        <div class="internal_gridlist">
-            <mat-grid-list gutterSize="5%" cols="1" rowHeight="30%">
-                <mat-grid-tile id="primary_formulation">
-                    <div class="internal_gridlist">
-                        <mat-grid-list cols="1" rowHeight="50%">
-                            <mat-grid-tile id="formulation_percentage">70%</mat-grid-tile>
-                            <mat-grid-tile id="formulation_blend">3-Way Perennial Ryegrass Blend</mat-grid-tile>
-                        </mat-grid-list>
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile id="secondary_formulation">
-                    <div class="internal_gridlist">
-                        <mat-grid-list cols="1" rowHeight="50%">
-                            <mat-grid-tile id="formulation_percentage">20%</mat-grid-tile>
-                            <mat-grid-tile id="formulation_blend">Kentucky Bluegrass Blend</mat-grid-tile>
-                        </mat-grid-list>
-                    </div>
-                </mat-grid-tile>
-                <mat-grid-tile id="tertiary_formulation">
-                    <div class="internal_gridlist">
-                        <mat-grid-list cols="1" rowHeight="50%">
-                            <mat-grid-tile id="formulation_percentage">10%</mat-grid-tile>
-                            <mat-grid-tile id="formulation_blend">
-                                <img id="four_turf_logo" src="../../../../../assets/4turf_logo.png"
-                                    alt="4turf perennial ryegrass" />
-                            </mat-grid-tile>
-                        </mat-grid-list>
-                    </div>
-                </mat-grid-tile>
+    <app-formulation-graphic></app-formulation-graphic>
+  </mat-grid-tile>
+  <mat-grid-tile id="formulation_breakdown_container" colspan="1">
+    <div class="internal_gridlist">
+      <mat-grid-list gutterSize="5%" cols="1" rowHeight="30%">
+        <mat-grid-tile id="primary_formulation">
+          <div class="internal_gridlist">
+            <mat-grid-list cols="1" rowHeight="50%">
+              <mat-grid-tile id="formulation_percentage"
+                >{{ formulations.primary.percentage }}%</mat-grid-tile
+              >
+              <mat-grid-tile id="formulation_blend">{{
+                formulations.primary.description
+              }}</mat-grid-tile>
             </mat-grid-list>
-        </div>
-    </mat-grid-tile>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile id="secondary_formulation">
+          <div
+            class="internal_gridlist"
+            *ngIf="formulations.secondary.percentage !== 0"
+          >
+            <mat-grid-list cols="1" rowHeight="50%">
+              <mat-grid-tile id="formulation_percentage"
+                >{{ formulations.secondary.percentage }}%</mat-grid-tile
+              >
+              <mat-grid-tile id="formulation_blend">{{
+                formulations.secondary.description
+              }}</mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile id="tertiary_formulation">
+          <div class="internal_gridlist">
+            <mat-grid-list cols="1" rowHeight="50%">
+              <mat-grid-tile id="formulation_percentage"
+                >{{ formulations.fourTurf.percentage }}%</mat-grid-tile
+              >
+              <mat-grid-tile id="formulation_blend">
+                <img
+                  id="four_turf_logo"
+                  src="../../../../../assets/4turf_logo.png"
+                  alt="4turf perennial ryegrass"
+                />
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-grid-tile>
 </mat-grid-list>

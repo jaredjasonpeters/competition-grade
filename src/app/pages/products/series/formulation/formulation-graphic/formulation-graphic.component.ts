@@ -28,7 +28,6 @@ export class FormulationGraphicComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('REF', this.primary, this.secondary, this.bagClip);
     this.seriesFormulationService.formulationSubject.subscribe(
       ({ seriesName, formula }) => {
         this.renderer.removeClass(this.bagClip.nativeElement, 'hideBag');

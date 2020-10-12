@@ -1,6 +1,5 @@
-
 app-formulation-graphic {
-    height: 100%;
+  height: 100%;
 }
 
 #formulation_breakdown_container {
@@ -10,8 +9,6 @@ app-formulation-graphic {
 #formulation_graphic_container {
   /* border: 2px solid white; */
   min-height: 575px;
-
- 
 }
 
 .round {
@@ -70,8 +67,6 @@ app-formulation-graphic {
   display: none;
 }
 
-
-
 mat-grid-tile[id$="_formulation"] {
   filter: drop-shadow(0 20px 0.45rem rgba(0, 0, 0, 0.4));
 }
@@ -80,13 +75,13 @@ mat-grid-tile[id$="_formulation"] {
   padding: 0;
 }
 
-#primary_formulation {
+.primaryFormulation {
   background: var(--cg_speed);
 }
-#secondary_formulation {
+.secondaryFormulation {
   background: var(--cg_silver);
 }
-#tertiary_formulation {
+.fourTurfFormulation {
   background: var(--four_turf);
 }
 
@@ -112,4 +107,19 @@ mat-grid-tile[id$="_formulation"] {
   height: 90%;
   object-fit: contain;
   object-position: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }

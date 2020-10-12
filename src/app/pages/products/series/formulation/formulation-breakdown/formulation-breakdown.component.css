@@ -1,0 +1,65 @@
+mat-grid-tile[id$="_formulation"] {
+  filter: drop-shadow(0 20px 0.45rem rgba(0, 0, 0, 0.4));
+}
+
+.internal_gridlist {
+  padding: 0;
+}
+
+#formulation_percentage {
+  /* border: 2px solid blue; */
+  color: white;
+  font-size: 3.75em;
+  font-family: Roboto Condensed;
+  font-weight: 700;
+}
+
+#formulation_blend {
+  background: white;
+  text-align: center;
+  font-family: Roboto Condensed;
+  font-weight: 700;
+  line-height: 1.1em;
+  /* border: 2px solid red; */
+}
+
+#four_turf_logo {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.primaryFormulation {
+  background: var(--cg_speed);
+}
+.secondaryFormulation {
+  background: var(--cg_silver);
+}
+.fourTurfFormulation {
+  background: var(--four_turf);
+}

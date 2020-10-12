@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { SeriesFormulationService } from 'src/app/shared/series-formulation.service';
 import { Formulation } from './formulation.model';
 
@@ -8,16 +8,7 @@ import { Formulation } from './formulation.model';
   styleUrls: ['./formulation.component.css'],
 })
 export class FormulationComponent implements OnInit {
-  formulations;
+  constructor(private renderer: Renderer2) {}
 
-  constructor(private seriesFormulationService: SeriesFormulationService) {}
-
-  ngOnInit(): void {
-    this.seriesFormulationService.formulationSubject.subscribe(
-      ({ seriesName, formula }) => {
-        this.formulations = formula;
-        console.log('FORMULATION', formula);
-      }
-    );
-  }
+  ngOnInit(): void {}
 }

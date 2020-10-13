@@ -39,23 +39,23 @@ mat-grid-tile[id$="_formulation"] {
 
 .fadeInPrimary {
   animation: fadeIn;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-iteration-count: 1;
-  animation-delay: 1s;
+  animation-delay: .5s;
 }
 
 .fadeInSecondary {
   animation: fadeIn;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-iteration-count: 1;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 
 .fadeInFourTurf {
   animation: fadeIn;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-iteration-count: 1;
-  animation-delay: 2s;
+  animation-delay: 1.5s;
 }
 
 .hide {

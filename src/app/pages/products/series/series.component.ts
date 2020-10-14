@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SeriesFormulationService } from '../../../shared/series-formulation.service';
 
 @Component({
@@ -7,12 +8,27 @@ import { SeriesFormulationService } from '../../../shared/series-formulation.ser
   styleUrls: ['./series.component.css'],
 })
 export class SeriesComponent implements OnInit {
+  seriesName: string;
+  seriesInfo;
+  seriesTags;
+
   constructor(
     private seriesFormulationService: SeriesFormulationService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.route.params.subscribe(params => {
+      this.seriesName = params.series;
+      this.seriesInfo = this.seriesFormulationService.formulations[params.series]
+      this.seriesTags = this.seriesFormulationService.getTags(params.series);
+    })
+
+    console.log('SERIESINFO', this.seriesInfo)
+    console.log('SERIESTAGS', this.seriesTags)
+  }
 
   onTagSelect(event): void {
     const images = Array.from(document.querySelectorAll('.activeTag'));

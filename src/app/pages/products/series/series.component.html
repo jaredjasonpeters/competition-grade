@@ -7,65 +7,42 @@
       cols="6"
     >
       <mat-grid-tile colspan="2">
-        <div id="series_logo_container">
-          <img src="../../../../assets/speed_series.png" alt="speed series" />
+        <div id="series_logo_container" class="{{ seriesName }}">
+          <img
+            src="../../../../assets/{{ seriesName }}_series.png"
+            alt="{{ seriesName }} series"
+          />
         </div>
       </mat-grid-tile>
       <mat-grid-tile colspan="4">
-        <div id="series_description_container">
+        <div id="series_overview_container">
           <h3>
-            Perennial ryegrass-based blends using varieties with market-leading
-            wear tolerance and disease resistance
+            {{ seriesInfo.overview }}
           </h3>
         </div>
       </mat-grid-tile>
       <mat-grid-tile colspan="6" rowspan="5">
         <div id="series_content_container">
           <mat-grid-list gutterSize="0" rowHeight="100%" cols="8">
-            <mat-grid-tile
-              id="series_content_description_container"
-              colspan="2"
-            >
-              <p id="series_content_description">
-                Built around the rapid establishment of DLF Pickseed industry
-                leading Perennial ryegrass cultivars and including the
-                flexibility of Proprietary 4turf™ technology, Speed Series is
-                provides the highest standard of fill in for repair and where
-                Perennial ryegrass is the permanent turf. With multi-cultivar
-                blends, we engineer turf that includes the characteristics
-                necessary for truly Competition Grade turf; Grey leaf spot
-                resistance, spreading characteristics, quick establishment and
-                late fall – early spring growth.
-                <br />
-                <br />
-                Perennial ryegrass is a great choice for “in the dirt” sports
-                like football as winter overseeding of bermudagrass and repair
-                of permanent Kentucky Bluegrass turf. Speed Series is ideal for
-                season long interseeding or overseeding of wear spots, like
-                goalie boxes, between the hash marks and center field.
+            <mat-grid-tile id="series_description_container" colspan="2">
+              <p id="series_description">
+                {{ seriesInfo.description }}
               </p>
             </mat-grid-tile>
             <mat-grid-tile id="series_tag_container" colspan="1">
               <div class="internal_gridlist">
                 <mat-grid-list gutterSize="6px" rowHeight="175px" cols="1">
                   <mat-grid-tile
+                    *ngFor="let tag of seriesTags"
                     class="tag"
                     rowspan="1"
                     (click)="onTagSelect($event)"
                   >
                     <img
-                      id="speed_101"
-                      src="../../../../assets/speed_series_tag_101.jpg"
-                    />
-                  </mat-grid-tile>
-                  <mat-grid-tile
-                    class="tag"
-                    rowspan="1"
-                    (click)="onTagSelect($event)"
-                  >
-                    <img
-                      id="speed_104"
-                      src="../../../../assets/speed_series_tag_104.jpg"
+                      id="{{ tag.seriesName }}_{{ tag.seriesId }}"
+                      src="../../../../assets/{{ tag.seriesName }}_series_tag_{{
+                        tag.seriesId
+                      }}.jpg"
                     />
                   </mat-grid-tile>
                 </mat-grid-list>

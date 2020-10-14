@@ -5,9 +5,18 @@
 #series_logo_container {
   width: 100%;
   height: 100%;
-  background: var(--cg_speed);
   padding: 10px;
   /* border: 2px solid blue; */
+}
+
+.speed {
+  background: var(--cg_speed);
+}
+.power {
+  background: var(--cg_power);
+}
+.agility {
+  background: var(--cg_agility);
 }
 
 #series_logo_container img {
@@ -19,7 +28,7 @@
   /* border: 2px solid red; */
 }
 
-#series_description_container {
+#series_overview_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +40,7 @@
   /* border: 2px solid red; */
 }
 
-#series_description_container h3 {
+#series_overview_container h3 {
   height: 100%;
   font-family: Roboto;
   font-weight: 600;
@@ -51,12 +60,12 @@
 <mat-grid-tile id="series_tag_container"></mat-grid-tile>
 <mat-grid-tile id="series_formulation_container"></mat-grid-tile> */
 
-#series_content_description_container {
+#series_description_container {
   background: white;
   z-index: 3;
 }
 
-#series_content_description {
+#series_description {
   font-family: Roboto;
   font-weight: 500;
   padding-left: 9%;

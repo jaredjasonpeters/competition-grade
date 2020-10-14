@@ -9,7 +9,7 @@ import { SeriesComponent } from './pages/products/series/series.component';
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
   {
-    path: 'products/:name',
+    path: 'products/:series',
     component: SeriesComponent,
     children: [
       { path: ':id', component: ProductComponent },

@@ -9,6 +9,22 @@ export class SeriesFormulationService {
   formulationSubject = new Subject<any>();
   formulations = {
     speed: {
+      overview: `Perennial ryegrass-based blends using varieties with market-leading wear tolerance and disease resistance`,
+      description: `Built around the rapid establishment of DLF Pickseed industry
+      leading Perennial ryegrass cultivars and including the
+      flexibility of Proprietary 4turf™ technology, Speed Series is
+      provides the highest standard of fill in for repair and where
+      Perennial ryegrass is the permanent turf. With multi-cultivar
+      blends, we engineer turf that includes the characteristics
+      necessary for truly Competition Grade turf; Grey leaf spot
+      resistance, spreading characteristics, quick establishment and
+      late fall – early spring growth.
+     
+      Perennial ryegrass is a great choice for “in the dirt” sports
+      like football as winter overseeding of bermudagrass and repair
+      of permanent Kentucky Bluegrass turf. Speed Series is ideal for
+      season long interseeding or overseeding of wear spots, like
+      goalie boxes, between the hash marks and center field.`,
       recommendedUse: ['Football', 'Soccer', 'Rugby'],
       101: {
         primary: {
@@ -133,5 +149,20 @@ export class SeriesFormulationService {
       formula: this.formulations[series_name][series_number],
     };
     this.formulationSubject.next(formulationObject);
+  }
+
+  getTags(seriesName) {
+    const series = this.formulations[seriesName];
+    const tags = [];
+    for (let key in series) {
+      if(series[key] instanceof Object === true && (series[key]) instanceof Array === false  ) {
+        let res =  {
+          seriesName, 
+          seriesId: key
+        }
+        tags.push(res);
+      }
+    }
+    return tags;
   }
 }

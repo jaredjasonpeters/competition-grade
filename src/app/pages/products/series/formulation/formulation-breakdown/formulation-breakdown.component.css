@@ -8,12 +8,13 @@ mat-grid-tile[id$="_formulation"] {
 
 #formulation_percentage {
   color: white;
-  font-size: 3.75em;
+  font-size: 3em;
   font-family: Roboto Condensed;
   font-weight: 700;
 }
 
 #formulation_blend {
+  font-size: 0.9em;
   background: white;
   text-align: center;
   font-family: Roboto Condensed;

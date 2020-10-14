@@ -133,7 +133,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-50%);
+    transform: translateY(-45%);
   }
 }
 
@@ -255,7 +255,7 @@
   animation: primary_show_50 2s 1;
 }
 .remainPrimary50 {
-  transform: translateY(-50%);
+  transform: translateY(-45%);
 }
 
 .fill_speed {

@@ -1,64 +1,66 @@
-<mat-grid-list gutterSize="6px" rowHeight="690px" cols="6">
-  <mat-grid-tile colspan="4">
-    <mat-grid-list
-      id="series_header_container"
-      gutterSize="0"
-      rowHeight="115px"
-      cols="6"
-    >
-      <mat-grid-tile colspan="2">
-        <div id="series_logo_container" class="{{ seriesName }}">
-          <img
-            src="../../../../assets/{{ seriesName }}_series.png"
-            alt="{{ seriesName }} series"
-          />
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="4">
-        <div id="series_overview_container">
-          <h3>
-            {{ seriesInfo.overview }}
-          </h3>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="6" rowspan="5">
-        <div id="series_content_container">
-          <mat-grid-list gutterSize="0" rowHeight="100%" cols="8">
-            <mat-grid-tile id="series_description_container" colspan="2">
-              <p id="series_description">
-                {{ seriesInfo.description }}
-              </p>
-            </mat-grid-tile>
-            <mat-grid-tile id="series_tag_container" colspan="1">
-              <div class="internal_gridlist">
-                <mat-grid-list gutterSize="6px" rowHeight="175px" cols="1">
-                  <mat-grid-tile
-                    *ngFor="let tag of seriesTags"
-                    class="tag"
-                    rowspan="1"
-                    (click)="onTagSelect($event)"
-                  >
-                    <img
-                      id="{{ tag.seriesName }}_{{ tag.seriesId }}"
-                      src="../../../../assets/{{ tag.seriesName }}_series_tag_{{
-                        tag.seriesId
-                      }}.jpg"
-                    />
-                  </mat-grid-tile>
-                </mat-grid-list>
-              </div>
-            </mat-grid-tile>
-            <mat-grid-tile id="series_formulation_container" colspan="5">
-              <app-formulation></app-formulation>
-            </mat-grid-tile>
-          </mat-grid-list>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="2">
-    <section id="menu_right">
-      <app-menu-right></app-menu-right>
-    </section>
-  </mat-grid-tile>
-</mat-grid-list>
+<div id="series_page_container">
+  <mat-grid-list gutterSize="6px" rowHeight="690px" cols="6">
+    <mat-grid-tile colspan="4">
+      <mat-grid-list
+        id="series_header_container"
+        gutterSize="0"
+        rowHeight="115px"
+        cols="6"
+      >
+        <mat-grid-tile colspan="2">
+          <div id="series_logo_container" class="{{ seriesName }}">
+            <img
+              src="../../../../assets/{{ seriesName }}_series.png"
+              alt="{{ seriesName }} series"
+            />
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+          <div id="series_overview_container">
+            <h3>
+              {{ seriesInfo.overview }}
+            </h3>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="6" rowspan="5">
+          <div id="series_content_container">
+            <mat-grid-list gutterSize="0" rowHeight="fit" cols="10">
+              <mat-grid-tile id="series_description_container" colspan="3">
+                <p id="series_description">
+                  {{ seriesInfo.description }}
+                </p>
+              </mat-grid-tile>
+              <mat-grid-tile id="series_tag_container" colspan="2">
+                <div class="internal_gridlist">
+                  <mat-grid-list gutterSize="6px" rowHeight="182px" cols="1">
+                    <mat-grid-tile
+                      *ngFor="let tag of seriesTags"
+                      class="tag"
+                      rowspan="1"
+                      (click)="onTagSelect($event)"
+                    >
+                      <img
+                        id="{{ tag.seriesName }}_{{ tag.seriesId }}"
+                        src="../../../../assets/{{
+                          tag.seriesName
+                        }}_series_tag_{{ tag.seriesId }}.jpg"
+                      />
+                    </mat-grid-tile>
+                  </mat-grid-list>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile id="series_formulation_container" colspan="5">
+                <app-formulation></app-formulation>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <section id="menu_right">
+        <app-menu-right></app-menu-right>
+      </section>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

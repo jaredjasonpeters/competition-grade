@@ -39,21 +39,21 @@ mat-grid-tile[id$="_formulation"] {
 
 .fadeInPrimary {
   animation: fadeIn;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 .fadeInSecondary {
   animation: fadeIn;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-delay: 1s;
 }
 
 .fadeInFourTurf {
   animation: fadeIn;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-delay: 1.5s;
 }
@@ -66,8 +66,17 @@ mat-grid-tile[id$="_formulation"] {
   opacity: 1;
 }
 
-.primaryBackground {
+/* .primaryBackground {
   background: var(--cg_speed);
+} */
+.speedBackground {
+  background: var(--cg_speed);
+}
+.powerBackground {
+  background: var(--cg_power);
+}
+.agilityBackground {
+  background: var(--cg_agility);
 }
 .secondaryBackground {
   background: var(--cg_silver);

@@ -9,6 +9,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -16,9 +17,12 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title, private route: Router) {
     titleService.setTitle('Competition Grade Seed');
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let params = this.route.url
+    console.log('PARAMS', params)
+  }
 }

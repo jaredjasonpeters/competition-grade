@@ -1,0 +1,20 @@
+<mat-menu
+  class="products_menu"
+  #productsMenu="matMenu"
+  xPosition="after"
+  yPosition="below"
+>
+  <ng-template matMenuContent>
+    <button class="speed" mat-menu-item routerLink="/products/speed">
+      >> Speed
+    </button>
+    <button class="power" mat-menu-item routerLink="/products/power">
+      >> Power
+    </button>
+    <button class="agility" mat-menu-item routerLink="/products/agility">
+      >> Agility
+    </button>
+  </ng-template>
+</mat-menu>
+
+<a (click)="openMenu()" [matMenuTriggerFor]="productsMenu">Products</a>

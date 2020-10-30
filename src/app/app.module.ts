@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -28,6 +29,7 @@ import { FormulationComponent } from './pages/products/series/formulation/formul
 import { FormulationGraphicComponent } from './pages/products/series/formulation/formulation-graphic/formulation-graphic.component';
 import { FormulationBreakdownComponent } from './pages/products/series/formulation/formulation-breakdown/formulation-breakdown.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProductsMenuComponent } from './components/products-menu/products-menu.component';
 
 
 @NgModule({
@@ -55,10 +57,12 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FormulationBreakdownComponent,
     DistributorAdvertComponent,
     NotFoundComponent,
+    ProductsMenuComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    BrowserAnimationsModule,
     MaterialModule,
     MatIconModule,
     HttpClientModule,

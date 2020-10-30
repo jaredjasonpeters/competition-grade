@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ProductsService } from 'src/app/shared/products.service';
 
@@ -15,12 +16,11 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) { }
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   ngOnInit(): void {
 
   }
 
-  openMenu() {
-    alert('opening menu');
-  }
+ 
 }

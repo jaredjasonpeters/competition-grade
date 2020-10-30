@@ -5,6 +5,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   providedIn: 'root',
 })
 export class FeaturedVideoService {
+  private featuredVideo: SafeResourceUrl;
   videoUrls = [
     'https://www.youtube.com/embed/41IoDigg72A',
     'https://www.youtube.com/embed/OmNwBlr0Kkk',
@@ -12,6 +13,12 @@ export class FeaturedVideoService {
     'https://www.youtube.com/embed/kvgCamY3dtY',
     'https://www.youtube.com/embed/X23afHWVj_Q',
   ];
+
+  seriesVideos = {
+    speed: 'https://www.youtube.com/embed/1cNBL3OOMRY',
+    power: 'https://www.youtube.com/embed/L53gjP-TtGE',
+    agility: 'https://www.youtube.com/embed/TKrwnoa-hMI',
+  }
 
   constructor(private sanitize: DomSanitizer) {}
 
@@ -21,12 +28,25 @@ export class FeaturedVideoService {
 
   getFirstFeatured(): SafeResourceUrl {
     const firstFeatured = this.videoUrls[0];
-    return this.sanitizeUrl(firstFeatured);
+    this.featuredVideo = this.sanitizeUrl(firstFeatured);
+    return this.getFeaturedVideo();
   }
 
   getRandomVideo(): SafeResourceUrl {
     const randomIndex = Math.floor(Math.random() * this.videoUrls.length);
     const random = this.videoUrls[randomIndex];
-    return this.sanitizeUrl(random);
+    this.featuredVideo = this.sanitizeUrl(random);
+    return this.getFeaturedVideo();
+  }
+
+  getVideoBySeries(seriesName): SafeResourceUrl {
+    let url = this.seriesVideos[seriesName];
+    this.featuredVideo = this.sanitizeUrl(url)
+    console.log('FEATURED VIDEO', this.featuredVideo)
+    return this.getFeaturedVideo();
+  }
+
+  getFeaturedVideo() {
+    return this.featuredVideo
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { FeaturedVideoService } from '../../shared/featured-video.service';
 
@@ -7,8 +7,9 @@ import { FeaturedVideoService } from '../../shared/featured-video.service';
   templateUrl: './featured-video.component.html',
   styleUrls: ['./featured-video.component.css'],
 })
-export class FeaturedVideoComponent implements OnInit {
+export class FeaturedVideoComponent implements OnInit, OnChanges {
   videoUrl: SafeResourceUrl;
+  @Input('series') seriesName;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -16,6 +17,11 @@ export class FeaturedVideoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.videoUrl = this.featuredVideoService.getRandomVideo();
+    this.videoUrl = this.featuredVideoService.getFeaturedVideo();
+   
+  }
+  ngOnChanges(): void {
+    console.log('VIDEO', this.seriesName)
+    this.videoUrl = this.featuredVideoService.getFeaturedVideo();
   }
 }

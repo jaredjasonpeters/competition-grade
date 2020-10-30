@@ -27,6 +27,7 @@ import { FooterListComponent } from './components/footer-list/footer-list.compon
 import { FormulationComponent } from './pages/products/series/formulation/formulation.component';
 import { FormulationGraphicComponent } from './pages/products/series/formulation/formulation-graphic/formulation-graphic.component';
 import { FormulationBreakdownComponent } from './pages/products/series/formulation/formulation-breakdown/formulation-breakdown.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { FormulationBreakdownComponent } from './pages/products/series/formulati
     FormulationGraphicComponent,
     FormulationBreakdownComponent,
     DistributorAdvertComponent,
+    NotFoundComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -5,6 +5,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/products/product/product.component';
 import { SeriesComponent } from './pages/products/series/series.component';
+import { NotFoundComponent} from './pages/not-found/not-found.component';
 import { DistributorAdvertComponent } from './components/distributors/distributor-advert/distributor-advert.component';
 
 export const routes: Routes = [
@@ -22,7 +23,7 @@ export const routes: Routes = [
       {path: ':distributor', component: DistributorAdvertComponent},
     ]
   },
-  { path: 'not-found', component: HelloComponent },
+  { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];
 

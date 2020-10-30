@@ -1,0 +1,38 @@
+#not_found_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  text-align: center;
+  height: 505px;
+  /* border: 2px solid red; */
+}
+
+#message_container {
+  height: 350px;
+  max-width: 350px;
+  /* border: 3px solid purple; */
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+}
+
+span#fourofour {
+  margin-top: 20%;
+  font-size: 10rem;
+  flex-grow: 1;
+  flex-basis: 30%;
+  color: var(--cg_gold);
+  font-weight: bold;
+  /* border: 2px solid green; */
+  margin-bottom: 10%;
+}
+
+span {
+  font-size: 3rem;
+  line-height: 3rem;
+  flex-grow: 5;
+  flex-basis: 80%;
+  font-weight: bold;
+  /* border: 2px solid blue; */
+}

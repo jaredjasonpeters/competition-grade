@@ -21,7 +21,7 @@ export class InstagramFeedComponent implements OnInit {
   accessToken;
 
   constructor(private http: HttpClient, private renderer: Renderer2) {}
-  @ViewChild('root') root;
+  @ViewChild('root', {static: true}) root: ElementRef;
 
   ngOnInit(): void {
     this.http

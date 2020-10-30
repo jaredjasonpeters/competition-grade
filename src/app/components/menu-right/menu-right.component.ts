@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
@@ -6,12 +6,23 @@ import { ActivatedRouteSnapshot } from '@angular/router';
   templateUrl: './menu-right.component.html',
   styleUrls: ['./menu-right.component.css'],
 })
-export class MenuRightComponent implements OnInit {
-  @Input('page') page;
+export class MenuRightComponent implements OnInit, OnChanges {
+  
   constructor(private renderer: Renderer2) {}
+  @Input('page') page;
+  @ViewChild('menu', {static: true}) menu: ElementRef;
 
   ngOnInit(): void {
+    console.log('MENU', this.menu);
     console.log('SERIESNAME', this.page)
-    // this.renderer.setStyle();
+    if(this.page) {
+      this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
+    }
+  }
+
+  ngOnChanges():void {
+    if(this.page) {
+      this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
+    }
   }
 }

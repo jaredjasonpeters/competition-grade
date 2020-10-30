@@ -22,10 +22,12 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductComponent } from './pages/products/product/product.component';
 import { SeriesComponent } from './pages/products/series/series.component';
 import { DistributorsComponent } from './components/distributors/distributors.component';
+import { DistributorAdvertComponent } from './components/distributors/distributor-advert/distributor-advert.component';
 import { FooterListComponent } from './components/footer-list/footer-list.component';
 import { FormulationComponent } from './pages/products/series/formulation/formulation.component';
 import { FormulationGraphicComponent } from './pages/products/series/formulation/formulation-graphic/formulation-graphic.component';
 import { FormulationBreakdownComponent } from './pages/products/series/formulation/formulation-breakdown/formulation-breakdown.component';
+
 
 @NgModule({
   declarations: [
@@ -45,10 +47,12 @@ import { FormulationBreakdownComponent } from './pages/products/series/formulati
     ProductComponent,
     SeriesComponent,
     DistributorsComponent,
+    DistributorAdvertComponent,
     FooterListComponent,
     FormulationComponent,
     FormulationGraphicComponent,
     FormulationBreakdownComponent,
+    DistributorAdvertComponent,
   ],
   imports: [
     AppRoutingModule,

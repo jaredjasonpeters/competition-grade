@@ -16,7 +16,6 @@
 .mat-menu-panel {
   /* background: var(--cg_silver); */
   background: white;
-  outline: 5px solid black;
 }
 
 a {

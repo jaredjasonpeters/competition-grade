@@ -23,6 +23,10 @@ app-featured-video {
   height: 100%;
 }
 
+#social_tile .internal_gridlist {
+  background: black;
+}
+
 .social_grid_twitter {
   /* border-radius: 5px; */
   background: black;

@@ -97,7 +97,8 @@
   margin-left: 3%;
   /* border: 2px solid yellow; */
 }
-#navigation a {
+#navigation a,
+app-products-menu {
   /* border: 2px solid red; */
   position: relative;
   flex-grow: 1;
@@ -108,10 +109,6 @@
   letter-spacing: 0.15em;
   cursor: pointer;
   text-decoration: none;
-}
-
-app-products-menu {
-  position: relative;
 }
 
 #navigation a:before,
@@ -126,11 +123,6 @@ app-products-menu:before {
   border-top: 4px solid black;
   transition: opacity 0.25s ease-in;
   opacity: 0;
-}
-
-app-products-menu:before {
-  width: 100%;
-  left: 0;
 }
 
 /* a.active:before {

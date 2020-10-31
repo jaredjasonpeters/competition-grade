@@ -7,7 +7,6 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -35,7 +34,6 @@ import { ProductsMenuComponent } from './components/products-menu/products-menu.
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent,
     HeaderComponent,
     FooterComponent,
     HomepageComponent,

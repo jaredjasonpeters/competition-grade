@@ -32,6 +32,8 @@ import { ProductsMenuComponent } from './components/products-menu/products-menu.
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DistributorLevelsComponent } from './pages/distributor/distributor-levels/distributor-levels.component';
 import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';
+import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
+import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { DistributorBenefitsComponent } from './pages/distributor/distributor-be
     ContactUsComponent,
     DistributorLevelsComponent,
     DistributorBenefitsComponent,
+    VerificationProgramComponent,
+    WhyCompGradeComponent,
   ],
   imports: [
     AppRoutingModule,

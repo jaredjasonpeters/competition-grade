@@ -9,6 +9,8 @@ import { DistributorAdvertComponent } from './components/distributors/distributo
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DistributorLevelsComponent } from './pages/distributor/distributor-levels/distributor-levels.component';
 import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';
+import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
+import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -24,6 +26,14 @@ export const routes: Routes = [
   {
     path: 'contact-us',
     component: ContactUsComponent
+  },
+  {
+    path: 'why-competition-grade',
+    component: WhyCompGradeComponent
+  },
+  {
+    path: 'verification',
+    component: VerificationProgramComponent
   },
   {
     path: 'distributor',

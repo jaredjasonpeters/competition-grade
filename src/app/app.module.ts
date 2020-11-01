@@ -30,6 +30,8 @@ import { FormulationBreakdownComponent } from './pages/products/series/formulati
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductsMenuComponent } from './components/products-menu/products-menu.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { DistributorLevelsComponent } from './pages/distributor/distributor-levels/distributor-levels.component';
+import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';
 
 
 @NgModule({
@@ -58,6 +60,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     NotFoundComponent,
     ProductsMenuComponent,
     ContactUsComponent,
+    DistributorLevelsComponent,
+    DistributorBenefitsComponent,
   ],
   imports: [
     AppRoutingModule,

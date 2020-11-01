@@ -6,6 +6,7 @@ import { ProductComponent } from './pages/products/product/product.component';
 import { SeriesComponent } from './pages/products/series/series.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { DistributorAdvertComponent } from './components/distributors/distributor-advert/distributor-advert.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -17,6 +18,10 @@ export const routes: Routes = [
   {
     path: 'adv',
     children: [{ path: ':distributor', component: DistributorAdvertComponent }],
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent
   },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },

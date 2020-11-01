@@ -29,6 +29,7 @@ import { FormulationGraphicComponent } from './pages/products/series/formulation
 import { FormulationBreakdownComponent } from './pages/products/series/formulation/formulation-breakdown/formulation-breakdown.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductsMenuComponent } from './components/products-menu/products-menu.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ProductsMenuComponent } from './components/products-menu/products-menu.
     DistributorAdvertComponent,
     NotFoundComponent,
     ProductsMenuComponent,
+    ContactUsComponent,
   ],
   imports: [
     AppRoutingModule,

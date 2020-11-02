@@ -25,11 +25,11 @@
         <app-footer-list
           type="distributor_portal"
           [links]="[
-            { text: 'Marketing Materials', url: '/portal/marketing/materials' },
-            { text: 'Marketing Assets', url: '/portal/marketing/assets' },
+            { text: 'Marketing Materials', url: '/marketing/materials' },
+            { text: 'Marketing Assets', url: '/marketing/assets' },
             {
               text: 'Marketing Guidelines',
-              url: '/portal/marketing/guidelines'
+              url: '/marketing/guidelines'
             }
           ]"
         ></app-footer-list>
@@ -46,7 +46,10 @@
           [links]="[
             { text: 'Contact Us', url: 'contact-us' },
             { text: 'Distributor Levels', url: '/distributor/levels' },
-            { text: 'Benefits & Rewards', url: '/distributor/benefits-and-rewards' }
+            {
+              text: 'Benefits & Rewards',
+              url: '/distributor/benefits-and-rewards'
+            }
           ]"
         ></app-footer-list>
       </mat-grid-tile>

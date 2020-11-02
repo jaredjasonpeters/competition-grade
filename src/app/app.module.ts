@@ -34,6 +34,9 @@ import { DistributorLevelsComponent } from './pages/distributor/distributor-leve
 import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';
 import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
 import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { DistributorLocateComponent } from './pages/distributor/distributor-locate/distributor-locate.component';
+import { MarketingComponent } from './pages/marketing/marketing.component';
 
 
 @NgModule({
@@ -66,6 +69,9 @@ import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.com
     DistributorBenefitsComponent,
     VerificationProgramComponent,
     WhyCompGradeComponent,
+    ProjectsComponent,
+    DistributorLocateComponent,
+    MarketingComponent,
   ],
   imports: [
     AppRoutingModule,

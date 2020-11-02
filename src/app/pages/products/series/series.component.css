@@ -66,7 +66,7 @@
 }
 
 #series_description {
-  margin-top: 1em;
+  margin-top: 2em;
   margin-bottom: auto;
   font-family: Roboto;
   font-size: 0.9em;
@@ -74,6 +74,12 @@
   font-weight: 500;
   padding-left: 9%;
   color: black;
+}
+
+#series_description_title {
+  display: block;
+  font-weight: 800;
+  /* text-decoration: underline; */
 }
 
 #series_tag_container {

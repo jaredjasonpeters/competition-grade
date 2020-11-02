@@ -34,6 +34,20 @@ export class DistributorsService {
       partnerLevel: 'Premium',
       placement: 2,
     },
+    {
+      companyName: 'Wilbur-Ellis',
+      websiteUrl: 'https://ag.wilburellis.com/',
+      imagePath: '../../assets/wilbur_ellis_logo.jpg',
+      partnerLevel: 'Premium',
+      placement: 4,
+    },
+    {
+      companyName: 'Wilbur-Ellis',
+      websiteUrl: 'https://ag.wilburellis.com/',
+      imagePath: '../../assets/wilbur_ellis_logo.jpg',
+      partnerLevel: 'Premium',
+      placement: 5,
+    },
   ];
 
   constructor() {}

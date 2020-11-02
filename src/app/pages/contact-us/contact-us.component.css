@@ -37,8 +37,9 @@
 h1 {
   font-family: Orbitron;
   text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: var(--lspace);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  /* letter-spacing: var(--lspace); */
   border-bottom: 5px solid var(--cg_gold);
 }
 
@@ -54,7 +55,7 @@ form {
 
 mat-form-field {
   /* border: 2px solid var(--cg_gold); */
-  width: 50%;
+  width: 70%;
 }
 
 textarea {
@@ -64,10 +65,15 @@ textarea {
 }
 
 button {
-  background: var(--cg_gold);
+  background: black;
+  font-family: Orbitron;
+  font-weight: 600;
+  font-size: 0.75em;
+  letter-spacing: var(--lspace);
+  text-transform: uppercase;
   color: white;
   transition: background 250ms ease-out;
 }
 button:hover {
-  background: black;
+  background: var(--cg_gold);
 }

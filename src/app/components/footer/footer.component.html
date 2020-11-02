@@ -21,19 +21,7 @@
       >
         <app-distributors></app-distributors>
       </mat-grid-tile>
-      <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
-        <app-footer-list
-          type="distributor_portal"
-          [links]="[
-            { text: 'Marketing Materials', url: '/marketing/materials' },
-            { text: 'Marketing Assets', url: '/marketing/assets' },
-            {
-              text: 'Marketing Guidelines',
-              url: '/marketing/guidelines'
-            }
-          ]"
-        ></app-footer-list>
-      </mat-grid-tile>
+
       <mat-grid-tile id="verified_seal" rowspan="1" colspan="1">
         <img
           src="../../assets/Competition_Grade_Verified_Seal.png"
@@ -49,6 +37,20 @@
             {
               text: 'Benefits & Rewards',
               url: '/distributor/benefits-and-rewards'
+            }
+          ]"
+        ></app-footer-list>
+      </mat-grid-tile>
+      <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
+        <app-footer-list
+          *ngIf="distributorLoggedIn"
+          type="distributor_portal"
+          [links]="[
+            { text: 'Marketing Materials', url: '/marketing/materials' },
+            { text: 'Marketing Assets', url: '/marketing/assets' },
+            {
+              text: 'Marketing Guidelines',
+              url: '/marketing/guidelines'
             }
           ]"
         ></app-footer-list>

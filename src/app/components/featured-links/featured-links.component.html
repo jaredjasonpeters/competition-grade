@@ -1,10 +1,5 @@
 <div class="internal_gridlist">
-  <mat-grid-list
-    id="featured_gridlist"
-    gutterSize="6px"
-    cols="3"
-    rowHeight="fit"
-  >
+  <mat-grid-list id="featured_gridlist" gutterSize="0" cols="3" rowHeight="fit">
     <mat-grid-tile
       *ngFor="let link of links"
       class="{{ link.title }}_tile"

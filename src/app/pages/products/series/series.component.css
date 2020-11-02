@@ -63,23 +63,31 @@
 #series_description_container {
   background: white;
   z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: 2px solid red; */
+}
+
+.heading {
+  font-family: Roboto;
+  font-size: 1em;
+
+  color: black;
+  display: block;
+  font-weight: 800;
 }
 
 #series_description {
   margin-top: 2em;
   margin-bottom: auto;
-  font-family: Roboto;
   font-size: 0.9em;
+  width: 90%;
+  padding-left: 2.5%;
   line-height: 1.5em;
   font-weight: 500;
-  padding-left: 9%;
-  color: black;
-}
-
-#series_description_title {
-  display: block;
-  font-weight: 800;
-  /* text-decoration: underline; */
+  /* border: 2px solid green; */
 }
 
 #series_tag_container {

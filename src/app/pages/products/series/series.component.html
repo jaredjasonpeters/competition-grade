@@ -25,16 +25,24 @@
         <mat-grid-tile colspan="6" rowspan="5">
           <div id="series_content_container">
             <mat-grid-list gutterSize="0" rowHeight="fit" cols="10">
-              <mat-grid-tile id="series_description_container" colspan="3">
-                <p id="series_description">
-                  <span id="series_description_title">{{
-                    seriesName | uppercase
-                  }}</span>
+              <mat-grid-tile id="series_description_container" colspan="4">
+                <div id="series_description">
+                  <span id="series_description_heading" class="heading"
+                    >Description:</span
+                  >
                   <br />
                   {{ seriesInfo.description }}
-                </p>
+                  <br />
+                  <br />
+                  <span id="series_components_heading" class="heading"
+                    >Components:</span
+                  >
+                  <ul *ngFor="let component of seriesInfo.components">
+                    <li>{{ component }}</li>
+                  </ul>
+                </div>
               </mat-grid-tile>
-              <mat-grid-tile id="series_tag_container" colspan="2">
+              <mat-grid-tile id="series_tag_container" colspan="1">
                 <div class="internal_gridlist">
                   <mat-grid-list gutterSize="6px" rowHeight="182px" cols="1">
                     <mat-grid-tile

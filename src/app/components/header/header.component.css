@@ -46,7 +46,6 @@
   /* border: 2px solid red; */
   height: 100%;
   object-fit: contain;
-  margin-left: 125px;
 }
 #wm_container {
   display: flex;

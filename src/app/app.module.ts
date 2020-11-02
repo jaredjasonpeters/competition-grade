@@ -37,6 +37,7 @@ import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.com
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { DistributorLocateComponent } from './pages/distributor/distributor-locate/distributor-locate.component';
 import { MarketingComponent } from './pages/marketing/marketing.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -77,6 +78,8 @@ import { MarketingComponent } from './pages/marketing/marketing.component';
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MaterialModule,
     MatIconModule,
     HttpClientModule,

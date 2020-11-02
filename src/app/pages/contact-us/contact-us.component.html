@@ -1,1 +1,56 @@
-<p>contact-us works!</p>
+<div id="page_container">
+  <mat-grid-list
+    id="contact_us_gridlist"
+    cols="3"
+    rowHeight="fit"
+    gutterSize="6px"
+  >
+    <mat-grid-tile id="image_left" rowspan="1" colspan="1">
+      <img src="../../../assets/turfgrass_backdrop.png" />
+    </mat-grid-tile>
+    <mat-grid-tile id="form_left" rowspan="1" colspan="1">
+      <div id="form_container">
+        <h1>Contact Us</h1>
+
+        <form (submit)="submitForm($event)">
+          <mat-form-field appearance="outline" color="primary">
+            <mat-label>Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="potential@distributor.com"
+              [formControl]="email"
+              required
+            />
+            <mat-error *ngIf="email.invalid">{{
+              getEmailErrorMessage()
+            }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Message</mat-label>
+            <textarea
+              matInput
+              cols="30"
+              rows="5"
+              required
+              [formControl]="message"
+            ></textarea>
+            <mat-error *ngIf="message.invalid">{{
+              getMessageErrorMessage()
+            }}</mat-error>
+          </mat-form-field>
+          <br />
+          <button type="submit" mat-button>Submit</button>
+        </form>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile id="image_right" rowspan="1" colspan="1">
+      <img src="../../../assets/turfgrass_backdrop.png" />
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

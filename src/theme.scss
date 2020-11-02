@@ -1,0 +1,74 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$mat-myapp-primary: (
+  50: var(--cg_gold),
+  100: var(--cg_gold),
+  200: var(--cg_gold),
+  300: var(--cg_gold),
+  400: var(--cg_gold),
+  500: var(--cg_gold),
+  600: var(--cg_gold),
+  700: var(--cg_gold),
+  800: var(--cg_gold),
+  900: var(--cg_gold),
+  A100: var(--cg_gold),
+  A200: var(--cg_gold),
+  A400: var(--cg_gold),
+  A700: var(--cg_gold),
+  contrast: (
+    50: var(--cg_gold),
+    100: var(--cg_gold),
+    200: var(--cg_gold),
+    300: var(--cg_gold),
+    400: var(--cg_gold),
+    500: var(--cg_gold),
+    600: var(--cg_gold),
+    700: var(--cg_gold),
+    800: var(--cg_gold),
+    900: var(--cg_gold),
+    A100: var(--cg_gold),
+    A200: var(--cg_gold),
+    A400: var(--cg_gold),
+    A700: var(--cg_gold),
+  ),
+);
+
+$mat-myapp-accent: (
+  50: var(--cg_silver),
+  100: var(--cg_silver),
+  200: var(--cg_silver),
+  300: var(--cg_silver),
+  400: var(--cg_silver),
+  500: var(--cg_silver),
+  600: var(--cg_silver),
+  700: var(--cg_silver),
+  800: var(--cg_silver),
+  900: var(--cg_silver),
+  A100: var(--cg_silver),
+  A200: var(--cg_silver),
+  A400: var(--cg_silver),
+  A700: var(--cg_silver),
+  contrast: (
+    50: var(--cg_silver),
+    100: var(--cg_silver),
+    200: var(--cg_silver),
+    300: var(--cg_silver),
+    400: var(--cg_silver),
+    500: var(--cg_silver),
+    600: var(--cg_silver),
+    700: var(--cg_silver),
+    800: var(--cg_silver),
+    900: var(--cg_silver),
+    A100: var(--cg_silver),
+    A200: var(--cg_silver),
+    A400: var(--cg_silver),
+    A700: var(--cg_silver),
+  ),
+);
+
+$my-app-primary: mat-palette($mat-myapp-primary);
+$my-app-accent: mat-palette($mat-myapp-accent);
+$my-app-warn: mat-palette($mat-deep-orange);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);

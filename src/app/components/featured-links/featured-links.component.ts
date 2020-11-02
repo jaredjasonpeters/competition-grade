@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ProductsService } from 'src/app/shared/products.service';
+import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-featured-links',
   templateUrl: './featured-links.component.html',
   styleUrls: ['./featured-links.component.css'],
 })
-export class FeaturedLinksComponent implements OnInit {
+export class FeaturedLinksComponent implements OnInit, OnChanges {
+  @Input('page') currentPage;
+
   links = [
     {
       title: 'speed',
@@ -24,21 +26,23 @@ export class FeaturedLinksComponent implements OnInit {
   ];
 
   constructor(
-    private productsService: ProductsService,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  
+    // this.renderer.setStyle(this.featuredTile.nativeElement, 'background', `var(--cg_${this.seriesName})`);
+  
+  }
+
+  ngOnChanges(): void {
+   
+  }
 
   onProductSelected(title): void {
-    console.log('SELECTED FEATURE');
-    this.productsService.setProductSelected(true);
+   
     this.router.navigate(['/products', title]);
 
-    // [routerLink] = "['/products', link.title]"
-
-    // this.productsService.productSelectedEvent.subscribe(
-    //   (bool) => (this.selected = bool)
-    // );
   }
 }

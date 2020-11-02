@@ -17,13 +17,16 @@
   object-fit: contain;
 }
 
-.speed_tile:hover {
+.speed_tile:hover,
+.speed_tile.active {
   background: var(--cg_speed);
 }
-.power_tile:hover {
+.power_tile:hover,
+.power_tile.active {
   background: var(--cg_power);
 }
-.agility_tile:hover {
+.agility_tile:hover,
+.agility_tile.active {
   background: var(--cg_agility);
 }
 

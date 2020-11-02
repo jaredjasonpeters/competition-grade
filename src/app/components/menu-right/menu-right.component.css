@@ -1,5 +1,6 @@
 .internal_gridlist {
-  background: var(--cg_gold);
+  /* background: var(--cg_gold); */
+  background: black;
 }
 
 #menu_right_gridlist {

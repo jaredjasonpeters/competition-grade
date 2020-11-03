@@ -100,8 +100,9 @@
   font-weight: 800;
   border-top: 3px solid var(--cg_gold);
   cursor: context-menu;
+  margin-left: 2em;
 }
 
-#footer_detail_options ul li:hover:first-child {
+#footer_detail_options ul li:hover:last-child {
   opacity: 1;
 }

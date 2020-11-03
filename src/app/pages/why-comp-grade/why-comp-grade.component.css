@@ -53,6 +53,7 @@ mat-grid-list {
   object-position: 0 0;
   object-fit: cover;
 }
+
 #image_container img#second_image {
   object-position: 0px 0px;
 }

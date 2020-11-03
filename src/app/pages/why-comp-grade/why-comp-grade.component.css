@@ -40,7 +40,7 @@
 }
 #image_container,
 #image_two_container {
-  height: 350px;
+  height: 475px;
 }
 mat-grid-list {
   height: 100%;
@@ -58,5 +58,5 @@ mat-grid-list {
   object-position: 0px 0px;
 }
 #image_container img#third_image {
-  object-position: 0px -10px;
+  object-position: 0px 0px;
 }

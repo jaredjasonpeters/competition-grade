@@ -45,7 +45,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 20px;
 }
 
 #footer_detail_options ul li {
@@ -101,6 +100,7 @@
   border-top: 3px solid var(--cg_gold);
   cursor: context-menu;
   margin-left: 2em;
+  margin-right: 0;
 }
 
 #footer_detail_options ul li:hover:last-child {

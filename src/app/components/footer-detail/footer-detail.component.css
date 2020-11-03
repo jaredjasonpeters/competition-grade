@@ -10,7 +10,6 @@
   letter-spacing: var(--lspace);
   margin: 0;
   /* border: 2px solid red; */
-  cursor: context-menu;
 }
 
 #footer_detail_container span {
@@ -88,6 +87,7 @@
   font-family: Roboto;
   font-weight: 600;
   text-transform: none;
+  cursor: context-menu;
 }
 #footer_detail_options ul li#copyright_statement:hover {
   opacity: 1;
@@ -99,6 +99,7 @@
   font-size: 1.25em;
   font-weight: 800;
   border-top: 3px solid var(--cg_gold);
+  cursor: context-menu;
 }
 
 #footer_detail_options ul li:hover:first-child {

@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  background: var(--cg_gold);
+  background: #ff5722;
+  padding: 10px;
+  padding-left: 1em;
+  color: white;
+}
+span {
+  font-weight: 800;
+  margin-right: 0.5em;
+}
+span#seperator {
+  border-left: 2px solid white;
+  margin-left: 1em;
+}
+
+.container p {
+  margin: 0;
+  margin-left: 1em;
+  /* color: white; */
+  font-family: Roboto;
+  border: 2px solid #ff5722;
+}

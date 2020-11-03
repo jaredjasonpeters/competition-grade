@@ -12,10 +12,10 @@
       <div id="form_container">
         <h1>Contact Us</h1>
 
-        <form (submit)="submitForm($event)">
+        <form #form="ngForm" (submit)="submitForm(form)">
           <mat-form-field appearance="outline" color="primary">
             <mat-label>Name</mat-label>
-            <input matInput />
+            <input matInput type="text" name="name" [(ngModel)]="form.name" />
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -23,10 +23,13 @@
             <input
               matInput
               placeholder="potential@distributor.com"
-              [formControl]="email"
+              name="email"
+              type="email"
+              email
+              [(ngModel)]="form.email"
               required
             />
-            <mat-error *ngIf="email.invalid">{{
+            <mat-error *ngIf="form.invalid">{{
               getEmailErrorMessage()
             }}</mat-error>
           </mat-form-field>
@@ -38,14 +41,17 @@
               cols="30"
               rows="5"
               required
-              [formControl]="message"
+              name="message"
+              [(ngModel)]="form.message"
             ></textarea>
-            <mat-error *ngIf="message.invalid">{{
+            <mat-error *ngIf="form.invalid">{{
               getMessageErrorMessage()
             }}</mat-error>
           </mat-form-field>
           <br />
-          <button type="submit" mat-button>Submit</button>
+          <button [disabled]="form.invalid" type="submit" mat-button>
+            Submit
+          </button>
         </form>
       </div>
     </mat-grid-tile>

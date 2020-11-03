@@ -64,7 +64,7 @@ textarea {
   resize: none !important;
 }
 
-button {
+/* button {
   background: black;
   font-family: Orbitron;
   font-weight: 600;
@@ -76,4 +76,4 @@ button {
 }
 button:hover {
   background: var(--cg_gold);
-}
+} */

@@ -63,6 +63,7 @@ mat-grid-list {
   max-width: 1000px;
   padding: 3em;
   padding-top: 1em;
+  padding-bottom: 1em;
   font-size: 1em;
   font-weight: 600;
   line-height: 1.5em;
@@ -83,11 +84,10 @@ mat-grid-list {
   color: white;
 }
 #explanation_container p#explanation_paragraph {
-  height: 100%;
   font-weight: 600;
   background: white;
   color: black;
-  text-align: left;
+  text-align: center;
   /* border: 2px solid red; */
 }
 
@@ -155,7 +155,7 @@ mat-grid-list {
   font-family: Orbitron;
   text-transform: uppercase;
   letter-spacing: var(--lspace);
-  font-size: 0.8em;
+  font-size: 1.1em;
   font-weight: 600;
   margin-bottom: 0;
   /* border: 2px solid red; */
@@ -176,6 +176,27 @@ mat-grid-list {
   object-fit: contain;
   object-position: center;
   /* border: 2px solid yellow; */
-  margin-left: 0.25em;
-  margin-right: 0.25em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#cultivars_by_species_container {
+  padding: 3em;
+  padding-top: 0;
+  text-align: center;
+  /* border: 2px solid blue; */
+}
+
+#cultivars_by_species_container h1 {
+  /* border: 2px solid red; */
+}
+#cultivars_by_species_container ul {
+  /* border: 2px solid red; */
+  list-style: none;
+  padding: 0;
+}
+
+/* class overrides */
+.black {
+  color: black;
 }

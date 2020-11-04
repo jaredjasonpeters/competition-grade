@@ -1,6 +1,6 @@
 <div class="container">
   <mat-grid-list cols="6" rowHeight="200px" gutterSize="6px">
-    <mat-grid-tile id="left_tile" colspan="2" rowspan="5">
+    <mat-grid-tile id="left_tile" colspan="2" rowspan="7">
       <div class="internal_gridlist">
         <mat-grid-list cols="1" rowHeight="fit" gutterSize="6px">
           <mat-grid-tile id="top_tile" rowspan="1">
@@ -32,15 +32,39 @@
                 superior resistance to diseases such as Gray Leaf Spot, Brown
                 Patch and Summer patch.
               </p>
+              <div id="cultivars_by_species_container">
+                <h1 class="header_text black">Kentucky Bluegrass</h1>
+                <ul>
+                  <li *ngFor="let variety of kbgVarieties">{{ variety }}</li>
+                </ul>
+
+                <h1 class="header_text black">Tall Fescue</h1>
+                <ul>
+                  <li *ngFor="let variety of tfVarieties">{{ variety }}</li>
+                </ul>
+
+                <h1 class="header_text black">Perennial Ryegrass</h1>
+                <ul>
+                  <li *ngFor="let variety of prgVarieties">{{ variety }}</li>
+                </ul>
+              </div>
             </div>
           </mat-grid-tile>
         </mat-grid-list>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile id="right_tile" colspan="4" rowspan="5">
+    <mat-grid-tile id="right_tile" colspan="4" rowspan="7">
       <div class="internal_gridlist">
         <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
-          <mat-grid-tile id="featured_tile" colspan="1">
+          <mat-grid-tile id="image_tile" colspan="1" rowspan="8">
+            <div id="image_container">
+              <img
+                id="hand_image"
+                src="../../../assets/hands_seed_1500x1000.png"
+              />
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile id="featured_tile" colspan="1" rowspan="2">
             <div id="featured_container">
               <div id="featured_header_container">
                 <h1 id="featured_header" class="header_text">
@@ -57,14 +81,6 @@
                   src="../../../assets/sombrero_logo_featured.png"
                 />
               </div>
-            </div>
-          </mat-grid-tile>
-          <mat-grid-tile id="image_tile" colspan="1" rowspan="9">
-            <div id="image_container">
-              <img
-                id="hand_image"
-                src="../../../assets/hands_seed_1500x1000.png"
-              />
             </div>
           </mat-grid-tile>
         </mat-grid-list>

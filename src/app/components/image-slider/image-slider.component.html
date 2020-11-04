@@ -1,12 +1,14 @@
-<img
-  class="slider_main"
-  src="../../../../assets/Competition_Grade_SliderImage_Main.png"
-/>
-<div class="circle" (click)="onPreviousImage()">
+<img class="slider_main" src="{{ activeImage }}" />
+<div class="circle left" (click)="onPreviousImage()">
   <mat-icon
     id="previous_button"
     aria-hidden="false"
     aria-label="Example home icon"
     >keyboard_arrow_left</mat-icon
+  >
+</div>
+<div class="circle right" (click)="onNextImage()">
+  <mat-icon id="next_button" aria-hidden="false" aria-label="Example home icon"
+    >keyboard_arrow_right</mat-icon
   >
 </div>

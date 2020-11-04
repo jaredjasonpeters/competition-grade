@@ -9,13 +9,20 @@
   align-items: center;
   position: absolute;
   top: 50%;
-  left: 50px;
   width: auto;
   height: auto;
   border-radius: 100%;
   /* border: 2px solid red; */
   background: rgba(255, 255, 255, 0.2);
 }
+
+.left {
+  left: 50px;
+}
+.right {
+  right: 50px;
+}
+
 .circle:hover {
   cursor: pointer;
   filter: drop-shadow(0 0 0.75rem black);
@@ -28,5 +35,6 @@ mat-icon {
 
 .slider_main {
   object-fit: contain;
+  object-position: center;
   width: 100%;
 }

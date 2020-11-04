@@ -15,7 +15,7 @@ mat-grid-list {
   /* border: 2px solid blue; */
 }
 #right_tile {
-  background: black;
+  /* background: black; */
   height: 100%;
   width: 100%;
   /* border: 2px solid greenyellow; */
@@ -51,7 +51,7 @@ mat-grid-list {
   /* border: 2px solid green; */
   padding: 1em;
   margin-bottom: 0.5em;
-  background-color: black;
+  /* background-color: black; */
 }
 
 #explanation_container {
@@ -94,6 +94,7 @@ mat-grid-list {
 #image_container {
   width: 100%;
   height: 100%;
+  /* border: 2px solid yellow; */
 }
 
 #image_container img {
@@ -101,4 +102,80 @@ mat-grid-list {
   object-position: center;
   height: 100%;
   width: 100%;
+}
+
+/* #image_container:before {
+  content: url("../../../assets/gold_fade.png");
+  position: absolute;
+  mix-blend-mode: overlay; 
+  opacity: 0.7;
+  top: 1px;
+  left: 0; 
+}
+*/
+#image_container:after {
+  content: url("../../../assets/gold_fade_bottom.png");
+  position: absolute;
+  /* mix-blend-mode: overlay; */
+  opacity: 0.7;
+  bottom: -6px;
+  right: 0;
+}
+
+#featured_tile {
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* border: 2px solid yellow; */
+}
+
+#featured_container {
+  width: 100%;
+  height: 100%;
+}
+
+#featured_header_container {
+  flex-basis: 100%;
+  height: 30%;
+  text-align: center;
+  /* border: 2px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-top: 4px solid var(--cg_gold); */
+  border-bottom: 4px solid var(--cg_gold);
+}
+
+.header_text {
+  color: white;
+  font-family: Orbitron;
+  text-transform: uppercase;
+  letter-spacing: var(--lspace);
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 0;
+  /* border: 2px solid red; */
+}
+
+#featured_varieties_container {
+  width: 100%;
+  height: 70%;
+  margin-bottom: 0;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  padding: 0.5em 0 0.5em 0;
+}
+
+#featured_varieties_container img {
+  cursor: pointer;
+  object-fit: contain;
+  object-position: center;
+  /* border: 2px solid yellow; */
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }

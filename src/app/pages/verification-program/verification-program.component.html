@@ -1,6 +1,6 @@
 <div class="container">
-  <mat-grid-list cols="6" rowHeight="1000px" gutterSize="6px">
-    <mat-grid-tile id="left_tile" colspan="2" rowspan="1">
+  <mat-grid-list cols="6" rowHeight="200px" gutterSize="6px">
+    <mat-grid-tile id="left_tile" colspan="2" rowspan="5">
       <div class="internal_gridlist">
         <mat-grid-list cols="1" rowHeight="fit" gutterSize="6px">
           <mat-grid-tile id="top_tile" rowspan="1">
@@ -37,9 +37,37 @@
         </mat-grid-list>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile id="right_tile" colspan="4" rowspan="1">
-      <div id="image_container">
-        <img src="../../../assets/baseball_1500x1000.png" />
+    <mat-grid-tile id="right_tile" colspan="4" rowspan="5">
+      <div class="internal_gridlist">
+        <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
+          <mat-grid-tile id="featured_tile" colspan="1">
+            <div id="featured_container">
+              <div id="featured_header_container">
+                <h1 id="featured_header" class="header_text">
+                  Featured Cultivars and advancements
+                </h1>
+              </div>
+              <div id="featured_varieties_container">
+                <img
+                  routerLink="hello"
+                  src="../../../assets/4turf_logo_featured.jpg"
+                />
+                <img
+                  routerLink="hello"
+                  src="../../../assets/sombrero_logo_featured.png"
+                />
+              </div>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile id="image_tile" colspan="1" rowspan="9">
+            <div id="image_container">
+              <img
+                id="hand_image"
+                src="../../../assets/hands_seed_1500x1000.png"
+              />
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

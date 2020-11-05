@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
   background: black;
+  background: var(--cg_gold);
   color: white;
   width: 100%;
   height: 35px;
@@ -13,21 +14,21 @@
 }
 
 #footer_detail_container span {
-  flex-basis: 20%;
+  flex-basis: 40%;
   margin-top: auto;
   margin-bottom: auto;
+  margin-left: calc(100vw / 9);
+  margin-right: 5%;
   display: block;
   text-align: center;
   font-size: 0.6em;
   text-transform: uppercase;
   border-top: 2px solid var(--cg_gold);
   padding: 0px 0 2px 0;
-  margin-left: calc(100vw / 9);
-  margin-right: 5%;
 }
 
 #footer_detail_options {
-  flex-basis: 70%;
+  flex-basis: 60%;
   justify-self: flex-end;
   height: 100%;
   background: var(--cg_silver);

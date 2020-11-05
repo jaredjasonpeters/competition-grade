@@ -1,9 +1,9 @@
 <div class="container">
-  <mat-grid-list cols="6" rowHeight="200px" gutterSize="6px">
-    <mat-grid-tile id="left_tile" colspan="2" rowspan="7">
+  <mat-grid-list cols="6" rowHeight="fit" gutterSize="6px">
+    <mat-grid-tile id="left_tile" colspan="2" rowspan="1">
       <div class="internal_gridlist">
-        <mat-grid-list cols="1" rowHeight="fit" gutterSize="6px">
-          <mat-grid-tile id="top_tile" rowspan="1">
+        <mat-grid-list cols="1" rowHeight="200px" gutterSize="6px">
+          <mat-grid-tile id="top_tile" rowspan="2">
             <div id="header_image_container">
               <img
                 id="header_logo"
@@ -12,7 +12,7 @@
               />
             </div>
           </mat-grid-tile>
-          <mat-grid-tile id="bottom_tile" rowspan="3">
+          <mat-grid-tile id="bottom_tile" rowspan="5">
             <div id="explanation_container">
               <h2 id="explanation_title">
                 <span>COMPETITION GRADE CULTIVARS</span> >> CRITERIA
@@ -53,14 +53,14 @@
         </mat-grid-list>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile id="right_tile" colspan="4" rowspan="7">
+    <mat-grid-tile id="right_tile" colspan="4" rowspan="1">
       <div class="internal_gridlist">
         <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
           <mat-grid-tile id="featured_tile" colspan="1" rowspan="1">
             <div id="featured_container">
               <div id="featured_header_container">
                 <h1 id="featured_header" class="header_text black">
-                  Featured Cultivars and advancements
+                  Featured Cultivars and Technological Advancements
                 </h1>
               </div>
               <div id="featured_varieties_container">
@@ -75,11 +75,19 @@
               </div>
             </div>
           </mat-grid-tile>
-          <mat-grid-tile id="image_tile" colspan="1" rowspan="8">
-            <div id="image_container">
+          <mat-grid-tile id="image_tile" colspan="1" rowspan="9">
+            <div id="top_image_container" class="image_container">
               <img
                 id="hand_image"
                 src="../../../assets/hands_seed_1500x1000.png"
+              />
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile id="cert_image_tile" colspan="1" rowspan="4">
+            <div class="image_container">
+              <img
+                id="cert_varieties"
+                src="../../../assets/certified_varieties_collage.png"
               />
             </div>
           </mat-grid-tile>

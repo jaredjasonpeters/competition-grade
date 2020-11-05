@@ -47,6 +47,7 @@ mat-grid-tile {
   margin-top: 0.5em;
   background: black;
   color: white;
+  height: 400px;
 }
 #header_container p,
 #header_two_container p {

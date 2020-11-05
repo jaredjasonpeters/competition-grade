@@ -6,12 +6,24 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./footer-list.component.css'],
 })
 export class FooterListComponent implements OnInit {
+  @Input() limit: number;
   @Input() type: string;
   @Input() links: { text: string; url: string }[];
+  leftLinks :{ text: string; url: string }[] = [];
+  rightLinks :{ text: string; url: string }[]= [];
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log('TYPE', this.type);
+    console.log('LINKS_LIST', this.links)
+    this.links.forEach((link, i) => {
+      console.log('LINK', link, 'INDEX', i)
+      if(i < this.limit) {
+        this.leftLinks.push(link);
+      } else {
+
+        this.rightLinks.push(link);
+      }
+    })
   }
 }

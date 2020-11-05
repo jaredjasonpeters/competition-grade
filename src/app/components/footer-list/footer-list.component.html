@@ -1,6 +1,15 @@
 <mat-nav-list id="{{ type }}_list">
-  <span>Distributor {{ type.split("_")[1] }}</span>
-  <div *ngFor="let link of links">
-    <a [routerLink]="link.url" mat-list-item>>> {{ link.text }}</a>
+  <span>Distributor {{ type }}</span>
+  <div id="links_container">
+    <div id="left_links_container">
+      <a *ngFor="let link of leftLinks" [routerLink]="link.url" mat-list-item
+        >>> {{ link.text }}</a
+      >
+    </div>
+    <div id="right_links_container">
+      <a *ngFor="let link of rightLinks" [routerLink]="link.url" mat-list-item
+        >>> {{ link.text }}</a
+      >
+    </div>
   </div>
 </mat-nav-list>

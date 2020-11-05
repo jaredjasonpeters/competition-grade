@@ -2,7 +2,7 @@
   <div class="internal_gridlist">
     <mat-grid-list
       id="footer_gridlist"
-      gutterSize="6px"
+      gutterSize="12px"
       cols="{{ footerLength }}"
       rowHeight="fit"
     >
@@ -30,7 +30,8 @@
       </mat-grid-tile>
       <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
         <app-footer-list
-          type="distributor_info"
+          type="info"
+          [limit]="5"
           [links]="[
             { text: 'Contact Us', url: 'contact-us' },
             { text: 'Distributor Levels', url: '/distributor/levels' },
@@ -44,7 +45,8 @@
       <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
         <app-footer-list
           *ngIf="distributorLoggedIn"
-          type="distributor_portal"
+          type="portal"
+          [limit]="5"
           [links]="[
             { text: 'Marketing Materials', url: '/marketing/materials' },
             { text: 'Marketing Assets', url: '/marketing/assets' },
@@ -56,7 +58,11 @@
         ></app-footer-list>
       </mat-grid-tile>
       <mat-grid-tile id="chat_block" rowspan="1" colspan="1">
-        <img src="../../assets/CompetitionGrade_ChatIcon.png" alt="Chat Icon" />
+        <img
+          id="chat_img"
+          src="../../assets/CompetitionGrade_ChatIcon.png"
+          alt="Chat Icon"
+        />
       </mat-grid-tile>
     </mat-grid-list>
   </div>

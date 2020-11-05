@@ -16,9 +16,9 @@ export class DistributorsService {
     {
       companyName: 'Tom Irwin',
       websiteUrl: 'http://tomirwin.com',
-      imagePath: '../../assets/tom_irwin_logo.jpg',
+      imagePath: '../../assets/tom_irwin_logo.png',
       partnerLevel: 'Premium',
-      placement: 1,
+      placement: 2,
     },
     {
       companyName: 'BWI',
@@ -30,24 +30,18 @@ export class DistributorsService {
     {
       companyName: 'Wilbur-Ellis',
       websiteUrl: 'https://ag.wilburellis.com/',
-      imagePath: '../../assets/wilbur_ellis_logo.jpg',
-      partnerLevel: 'Premium',
-      placement: 2,
-    },
-    {
-      companyName: 'Wilbur-Ellis',
-      websiteUrl: 'https://ag.wilburellis.com/',
-      imagePath: '../../assets/wilbur_ellis_logo.jpg',
+      imagePath: '../../assets/wilbur_ellis_logo.png',
       partnerLevel: 'Premium',
       placement: 4,
     },
     {
-      companyName: 'Wilbur-Ellis',
-      websiteUrl: 'https://ag.wilburellis.com/',
-      imagePath: '../../assets/wilbur_ellis_logo.jpg',
+      companyName: 'Walker Supply',
+      websiteUrl: 'https://www.walkersupplyinc.com/',
+      imagePath: '../../assets/walker_supply_logo.png',
       partnerLevel: 'Premium',
-      placement: 5,
+      placement: 1,
     },
+
   ];
 
   constructor() {}

@@ -20,7 +20,7 @@
   text-align: center;
   font-size: 0.6em;
   text-transform: uppercase;
-
+  border-top: 2px solid var(--cg_gold);
   padding: 0px 0 2px 0;
   margin-left: calc(100vw / 9);
   margin-right: 5%;

@@ -1,0 +1,56 @@
+<div id="form_container">
+  <h1>Contact Us</h1>
+
+  <form #form="ngForm" (submit)="submitForm(form)">
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" name="name" ngModel />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="potential@distributor.com"
+        name="email"
+        type="email"
+        ngModel
+        email="true"
+        required
+      />
+      <mat-error *ngIf="form.invalid">{{
+        formService.getErrorMessage("email")
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea
+        matInput
+        cols="30"
+        rows="5"
+        required
+        ngModel
+        name="message"
+      ></textarea>
+      <mat-error *ngIf="form.invalid">{{
+        formService.getErrorMessage()
+      }}</mat-error>
+    </mat-form-field>
+    <div id="submission_error_container" *ngIf="formService.submissionError">
+      <mat-icon color="warn">error</mat-icon
+      ><span id="submission_error_message">{{
+        formService.getErrorMessage("submission")
+      }}</span>
+    </div>
+    <br />
+    <button
+      [disabled]="form.invalid"
+      type="submit"
+      mat-raised-button
+      color="primary"
+    >
+      Submit
+    </button>
+  </form>
+</div>

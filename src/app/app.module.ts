@@ -39,6 +39,7 @@ import { DistributorLocateComponent } from './pages/distributor/distributor-loca
 import { MarketingComponent } from './pages/marketing/marketing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewsComponent } from './components/news/news.component';
+import { FormComponent } from './components/form/form.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { NewsComponent } from './components/news/news.component';
     DistributorLocateComponent,
     MarketingComponent,
     NewsComponent,
+    FormComponent,
   ],
   imports: [
     AppRoutingModule,

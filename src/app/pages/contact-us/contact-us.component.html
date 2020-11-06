@@ -1,3 +1,4 @@
+<app-form></app-form>
 <div id="page_container">
   <mat-grid-list
     id="contact_us_gridlist"
@@ -32,29 +33,35 @@
             <mat-error *ngIf="form.invalid">{{
               getEmailErrorMessage()
             }}</mat-error>
-           
           </mat-form-field>
-          
-          
+
           <mat-form-field appearance="outline">
             <mat-label>Message</mat-label>
             <textarea
-            matInput
-            cols="30"
-            rows="5"
-            required
-            ngModel
-            name="message"
+              matInput
+              cols="30"
+              rows="5"
+              required
+              ngModel
+              name="message"
             ></textarea>
             <mat-error *ngIf="form.invalid">{{
               getMessageErrorMessage()
             }}</mat-error>
           </mat-form-field>
           <div id="submission_error_container" *ngIf="submissionError">
-            <mat-icon color="warn">error</mat-icon><span id=submission_error_message>{{ getSubmissionErrorMessage() }}</span>
+            <mat-icon color="warn">error</mat-icon
+            ><span id="submission_error_message">{{
+              getSubmissionErrorMessage()
+            }}</span>
           </div>
           <br />
-          <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary"> 
+          <button
+            [disabled]="form.invalid"
+            type="submit"
+            mat-raised-button
+            color="primary"
+          >
             Submit
           </button>
         </form>

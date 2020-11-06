@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnChanges, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormService } from 'src/app/shared/form.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,17 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
-  form = {
-    name: '',
-    email: '',
-    message: ''
-  }
 
   submissionError: string; 
   // email = new FormControl('', [Validators.required, Validators.email]);
   // message = new FormControl('', [Validators.required])
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private formService: FormService) { }
 
   ngOnInit(): void {
     

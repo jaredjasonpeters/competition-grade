@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/shared/form.service';
 
@@ -9,7 +9,8 @@ import { FormService } from 'src/app/shared/form.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
+@Input() title;
+@Input() fieldApperance;
   constructor(public formService: FormService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {

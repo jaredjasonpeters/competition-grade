@@ -37,7 +37,7 @@
 h1 {
   font-family: Orbitron;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.05em;
   /* letter-spacing: var(--lspace); */
   border-bottom: 5px solid var(--cg_gold);
@@ -63,7 +63,9 @@ textarea {
   /* border: 2px solid red; */
   resize: none !important;
 }
-
+button {
+  color: white !important;
+}
 /* button {
   background: black;
   font-family: Orbitron;
@@ -77,3 +79,18 @@ textarea {
 button:hover {
   background: var(--cg_gold);
 } */
+
+#submission_error_container {
+  display: flex;
+}
+
+#submission_error_message {
+  height: 100%;
+  color: #ff5722;
+  font-size: 1em;
+  font-weight: 600;
+  /* text-decoration: underline; */
+  /* border: 2px solid blue; */
+  margin-left: 2px;
+  border: 2px solid white;
+}

@@ -15,7 +15,7 @@
         <form #form="ngForm" (submit)="submitForm(form)">
           <mat-form-field appearance="outline" color="primary">
             <mat-label>Name</mat-label>
-            <input matInput type="text" name="name" [(ngModel)]="form.name" />
+            <input matInput type="text" name="name" ngModel />
           </mat-form-field>
 
           <mat-form-field appearance="outline">
@@ -25,31 +25,36 @@
               placeholder="potential@distributor.com"
               name="email"
               type="email"
-              email
-              [(ngModel)]="form.email"
+              ngModel
+              email="true"
               required
             />
             <mat-error *ngIf="form.invalid">{{
               getEmailErrorMessage()
             }}</mat-error>
+           
           </mat-form-field>
-
+          
+          
           <mat-form-field appearance="outline">
             <mat-label>Message</mat-label>
             <textarea
-              matInput
-              cols="30"
-              rows="5"
-              required
-              name="message"
-              [(ngModel)]="form.message"
+            matInput
+            cols="30"
+            rows="5"
+            required
+            ngModel
+            name="message"
             ></textarea>
             <mat-error *ngIf="form.invalid">{{
               getMessageErrorMessage()
             }}</mat-error>
           </mat-form-field>
+          <div id="submission_error_container" *ngIf="submissionError">
+            <mat-icon color="warn">error</mat-icon><span id=submission_error_message>{{ getSubmissionErrorMessage() }}</span>
+          </div>
           <br />
-          <button [disabled]="form.invalid" type="submit" mat-button>
+          <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary"> 
             Submit
           </button>
         </form>

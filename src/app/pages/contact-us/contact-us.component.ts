@@ -25,8 +25,6 @@ export class ContactUsComponent implements OnInit {
    
     console.log('SUBMITTED FORM', form.value);
   
-
-
     this.http.post("https://formspree.io/f/xdopzbvz", form.value).subscribe((result: {ok: boolean, next: string}) => {
       console.log('RESULT', result);
       if(result.ok) {
@@ -46,33 +44,15 @@ export class ContactUsComponent implements OnInit {
 
   }
 
-  // getEmailErrorMessage() {
-  //   if (this.email.hasError('required')) {
-  //     return 'You must enter an email'
-  //   }
-  
-  //   if (this.email.hasError('email')) {
-  //     return 'Not a valid email';
-  //   }
-  // }
-  // getMessageErrorMessage() {
-  //   if (this.message.hasError('required')) {
-  //     return 'You must enter a message'
-  //   }
-  // }
-
   getSubmissionErrorMessage() {
-    return 'Form Submission Failed! Check email before resubmitting'
+    return this.formService.getErrorMessage('submission');
   }
 
   getEmailErrorMessage() {
-    
-      return 'You must enter a valid email!'
+    return this.formService.getErrorMessage('email');
   }
   getMessageErrorMessage() {
-     return 'This field cannot be empty!'
-     
-    
+    return this.formService.getErrorMessage();
   }
   
  

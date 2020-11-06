@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class FormService {
   submissionError: string
-  errorMessages: {
+  errorMessages = {
     default: 'field cannot be empty!',
     email: 'valid email must be provided',
     submission: 'Form Submission Failed! Verify email is valid'

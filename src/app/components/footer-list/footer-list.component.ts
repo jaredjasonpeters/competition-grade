@@ -15,9 +15,9 @@ export class FooterListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('LINKS_LIST', this.links)
+    
     this.links.forEach((link, i) => {
-      console.log('LINK', link, 'INDEX', i)
+
       if(i < this.limit) {
         this.leftLinks.push(link);
       } else {

@@ -26,6 +26,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   }
 
   onPreviousImage(): void {
+    this.resetSlider();
     if (this.currentIndex > 0) {
       this.currentIndex--
     } else {
@@ -35,6 +36,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
     this.activeImage = this.images[this.currentIndex];
   }
   onNextImage(): void {
+    this.resetSlider();
     if (this.currentIndex < this.images.length - 1) {
       this.currentIndex++
     } else {
@@ -47,6 +49,11 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
     this.sliderTimer = setInterval(() => {
       this.onNextImage();
     }, this.speed)
+  }
+
+  resetSlider(): void {
+    clearInterval(this.sliderTimer);
+    this.startSlider();
   }
 
   ngOnDestroy(): void {

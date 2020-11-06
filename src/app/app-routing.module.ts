@@ -2,6 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductsComponent } from './pages/products/products.component';
+import {ThanksComponent} from './pages/thanks/thanks.component'
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { MarketingComponent } from './pages/marketing/marketing.component';
 import { ProductComponent } from './pages/products/product/product.component';
@@ -56,6 +57,7 @@ export const routes: Routes = [
       {path: ':id', component: MarketingComponent}
     ]
   },
+  {path: 'thanks', component: ThanksComponent},
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/shared/form.service';
 
@@ -8,7 +8,7 @@ import { FormService } from 'src/app/shared/form.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnDestroy{
 @Input() title;
 @Input() fieldApperance;
   constructor(public formService: FormService, private http: HttpClient, private router: Router) { }
@@ -29,6 +29,7 @@ export class FormComponent implements OnInit {
         let redirectUrl = paramsArray.join('/');
      
         this.router.navigateByUrl(redirectUrl);
+        this.formService.resetSubmissionError();
       }
     }, (error) => {
       console.log('ERROR', error);
@@ -39,4 +40,7 @@ export class FormComponent implements OnInit {
 
   }
 
+  ngOnDestroy(): void {
+    this.formService.resetSubmissionError();
+  }
 }

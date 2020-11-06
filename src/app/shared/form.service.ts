@@ -18,4 +18,8 @@ export class FormService {
     }
     return this.errorMessages.default;
   }
+
+  resetSubmissionError() {
+    this.submissionError = null;
+  }
 }

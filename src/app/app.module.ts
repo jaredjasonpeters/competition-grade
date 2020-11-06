@@ -40,6 +40,7 @@ import { MarketingComponent } from './pages/marketing/marketing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
+import { ThanksComponent } from './pages/thanks/thanks.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { FormComponent } from './components/form/form.component';
     MarketingComponent,
     NewsComponent,
     FormComponent,
+    ThanksComponent,
   ],
   imports: [
     AppRoutingModule,

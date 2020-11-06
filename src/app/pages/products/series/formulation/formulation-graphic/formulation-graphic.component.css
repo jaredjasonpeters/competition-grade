@@ -22,7 +22,7 @@
   mix-blend-mode: multiply;
 }
 #Outline {
-  fill: var(--cg_gold);
+  fill: var(--cg_silver);
   opacity: 1;
   /* mix-blend-mode: overlay; */
 }

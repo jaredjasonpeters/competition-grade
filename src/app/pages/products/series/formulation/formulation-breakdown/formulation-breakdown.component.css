@@ -4,6 +4,7 @@ mat-grid-tile[id$="_formulation"] {
 
 .internal_gridlist {
   padding: 0;
+  position: relative;
 }
 
 #formulation_percentage {
@@ -11,6 +12,7 @@ mat-grid-tile[id$="_formulation"] {
   font-size: 3em;
   font-family: Roboto Condensed;
   font-weight: 700;
+  /* border: 2px solid var(--cg_silver); */
 }
 
 #formulation_blend {

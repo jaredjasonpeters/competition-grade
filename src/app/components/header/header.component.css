@@ -71,6 +71,7 @@
   width: 100%;
   display: flex;
   min-height: 40px;
+  background: black;
 }
 
 #tagline_container {
@@ -177,4 +178,10 @@ app-products-menu.active:before {
 #social_links_container a {
   /* border: 2px solid white; */
   display: flex;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
 }

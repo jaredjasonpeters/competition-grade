@@ -14,6 +14,7 @@
   border-radius: 100%;
   /* border: 2px solid red; */
   background: rgba(255, 255, 255, 0.2);
+  transition: transform 500ms ease-in-out;
 }
 
 .left {
@@ -26,6 +27,7 @@
 .circle:hover {
   cursor: pointer;
   filter: drop-shadow(0 0 0.75rem black);
+  transform: scale(1.2);
 }
 
 mat-icon {
@@ -34,7 +36,7 @@ mat-icon {
 }
 
 .slider_main {
-  object-fit: contain;
+  object-fit: scale-down;
   object-position: center;
   width: 100%;
 }

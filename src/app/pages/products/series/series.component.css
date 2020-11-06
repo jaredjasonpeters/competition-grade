@@ -119,20 +119,24 @@
 }
 
 #series_formulation_container {
+  background: black;
 }
 
 #series_formulation_container::before {
   content: "";
-  background: url("../../../../assets/turfgrass_backdrop.png");
+  background: url("../../../../assets/perennial_ryegrass_seed_bg.png");
+  filter: grayscale();
+  mix-blend-mode: screen;
+
   background-repeat: no-repeat;
-  object-fit: contain;
+  object-fit: scale-down;
   object-position: center;
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.9;
+  opacity: 0.15;
 }
 
 #menu_right {

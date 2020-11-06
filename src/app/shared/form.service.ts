@@ -12,7 +12,7 @@ export class FormService {
   }
   constructor() { }
 
-  getErrorMessage(type) {
+  getErrorMessage(type: any = null) {
     if(type) {
     return this.errorMessages[type];
     }

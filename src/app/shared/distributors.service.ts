@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export interface Distributors {
+export interface Distributor {
   companyName: string;
   websiteUrl: string;
   imagePath: string;
@@ -12,7 +12,14 @@ export interface Distributors {
   providedIn: 'root',
 })
 export class DistributorsService {
-  distributors: Distributors[] = [
+  distributors: Distributor[] = [
+     {
+      companyName: 'Walker Supply',
+      websiteUrl: 'https://www.walkersupplyinc.com/',
+      imagePath: '../../assets/walker_supply_logo.png',
+      partnerLevel: 'Premium',
+      placement: 1,
+    },
     {
       companyName: 'Tom Irwin',
       websiteUrl: 'http://tomirwin.com',
@@ -34,23 +41,16 @@ export class DistributorsService {
       partnerLevel: 'Premium',
       placement: 4,
     },
-    {
-      companyName: 'Walker Supply',
-      websiteUrl: 'https://www.walkersupplyinc.com/',
-      imagePath: '../../assets/walker_supply_logo.png',
-      partnerLevel: 'Premium',
-      placement: 1,
-    },
-
+   
   ];
 
   constructor() {}
 
-  getAll(): Distributors[] {
+  getAll(): Distributor[] {
     return this.distributors;
   }
 
-  getPremium(): Distributors[] {
+  getPremium(): Distributor[] {
     return this.distributors
       .filter((distributor) => distributor.partnerLevel === 'Premium')
       .sort((a, b) => a.placement - b.placement);
@@ -59,4 +59,12 @@ export class DistributorsService {
   getLength(): number {
     return this.distributors.length;
   }
+
+  getByName(name): Distributor {
+    for (const distributor of this.distributors) {
+      if(distributor.companyName.toLowerCase() === name.toLowerCase()) {
+        return distributor;
+      }
+    }
+  } 
 }

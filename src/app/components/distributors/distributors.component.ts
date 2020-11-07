@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   DistributorsService,
-  Distributors,
+  Distributor,
 } from '../../shared/distributors.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {
   styleUrls: ['./distributors.component.css'],
 })
 export class DistributorsComponent implements OnInit {
-  private distributors: Distributors[];
+  private distributors: Distributor[];
   public length: number;
 
   constructor(private distributorsService: DistributorsService) {}
@@ -20,7 +20,7 @@ export class DistributorsComponent implements OnInit {
     this.length = this.distributorsService.getLength();
   }
 
-  getDistributors(): Distributors[] {
+  getDistributors(): Distributor[] {
     return this.distributors;
   }
 }

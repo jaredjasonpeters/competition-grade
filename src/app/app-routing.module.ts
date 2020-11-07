@@ -8,7 +8,7 @@ import { MarketingComponent } from './pages/marketing/marketing.component';
 import { ProductComponent } from './pages/products/product/product.component';
 import { SeriesComponent } from './pages/products/series/series.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { DistributorAdvertComponent } from './components/distributors/distributor-advert/distributor-advert.component';
+import { DistributorAdvertComponent } from './pages/distributor/distributor-advert/distributor-advert.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DistributorLevelsComponent } from './pages/distributor/distributor-levels/distributor-levels.component';
 import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';

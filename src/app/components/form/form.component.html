@@ -1,5 +1,7 @@
 <div id="form_container">
+  <img id="distributor_logo" *ngIf="logo" src={{logo}} alt="distributor"/>
   <h1>{{ title }}</h1>
+  <p id="sub_heading" *ngIf="subHeading">{{subHeading}}</p>
 
   <form #form="ngForm" (submit)="submitForm(form)">
     <mat-form-field appearance="{{ fieldApperance }}" color="primary">

@@ -198,6 +198,10 @@ mat-grid-list {
   /* border: 2px solid yellow; */
   margin-left: 0.5em;
   margin-right: 0.5em;
+  /* transition: transform 0.5s ease-in; */
+}
+#featured_varieties_container img:hover {
+  /* transform: scale(1.01); */
 }
 
 #cultivars_by_species_container {

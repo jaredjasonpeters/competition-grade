@@ -13,7 +13,7 @@
 }
 
 mat-nav-list {
-  padding-top: 0;
+  padding-top: 10px;
 }
 
 mat-nav-list span {

@@ -31,7 +31,7 @@
       <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
         <app-footer-list
           type="info"
-          [limit]="5"
+          [limit]="4"
           [links]="[
             { text: 'Contact Us', url: 'contact-us' },
             { text: 'Distributor Levels', url: '/distributor/levels' },
@@ -46,7 +46,7 @@
         <app-footer-list
           *ngIf="distributorLoggedIn"
           type="portal"
-          [limit]="5"
+          [limit]="4"
           [links]="[
             { text: 'Marketing Materials', url: '/marketing/materials' },
             { text: 'Marketing Assets', url: '/marketing/assets' },

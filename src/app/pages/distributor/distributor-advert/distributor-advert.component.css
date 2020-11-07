@@ -1,7 +1,10 @@
 #gridlist {
   min-height: 725px;
 }
-
+app-menu-right {
+  width: 100%;
+  height: 100%;
+}
 .sideimage {
   width: 100%;
   height: 100%;

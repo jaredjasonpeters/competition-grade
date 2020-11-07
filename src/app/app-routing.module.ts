@@ -15,6 +15,7 @@ import { DistributorBenefitsComponent } from './pages/distributor/distributor-be
 import { DistributorLocateComponent} from './pages/distributor/distributor-locate/distributor-locate.component';
 import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
 import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -44,12 +45,12 @@ export const routes: Routes = [
     children: [
       {path: 'levels', component: DistributorLevelsComponent},
       {path: 'benefits-and-rewards', component: DistributorBenefitsComponent},
-      {path: 'locate', component: DistributorLocateComponent},
+      {path: 'locate', component: UnderConstructionComponent},
     ]
   },
   {
     path: 'projects',
-    component: ProjectsComponent
+    component: UnderConstructionComponent
   },
   {
     path: 'marketing',

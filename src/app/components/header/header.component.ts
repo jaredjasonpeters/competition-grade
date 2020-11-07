@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
     let offset = nav.offsetTop;
 
       this.renderer.listen(window, 'scroll', () => {  
-      if(window.pageYOffset <= offset) {
+      if(window.pageYOffset <= offset + 10) {
         this.renderer.removeClass(nav, 'sticky');
       } else {
         this.renderer.addClass(nav, 'sticky');

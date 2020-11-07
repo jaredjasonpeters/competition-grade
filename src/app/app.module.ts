@@ -41,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 
 
 @NgModule({
@@ -79,6 +80,7 @@ import { ThanksComponent } from './pages/thanks/thanks.component';
     NewsComponent,
     FormComponent,
     ThanksComponent,
+    UnderConstructionComponent,
   ],
   imports: [
     AppRoutingModule,

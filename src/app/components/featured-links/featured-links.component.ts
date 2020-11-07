@@ -8,7 +8,7 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
   styleUrls: ['./featured-links.component.css'],
 })
 export class FeaturedLinksComponent implements OnInit, OnChanges {
-  @Input('page') currentPage;
+  @Input() page;
 
   links = [
     {

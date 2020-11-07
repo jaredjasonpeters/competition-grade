@@ -6,6 +6,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class FeaturedVideoService {
   private featuredVideo: SafeResourceUrl;
+
+  pageVidMap: string[];
   videoUrls = [
     'https://www.youtube.com/embed/41IoDigg72A',
     'https://www.youtube.com/embed/OmNwBlr0Kkk',
@@ -42,8 +44,13 @@ export class FeaturedVideoService {
   getVideoBySeries(seriesName): SafeResourceUrl {
     let url = this.seriesVideos[seriesName];
     this.featuredVideo = this.sanitizeUrl(url)
-    console.log('FEATURED VIDEO', this.featuredVideo)
+   
     return this.getFeaturedVideo();
+  }
+
+  getVideoByPage(page): SafeResourceUrl{
+    // let url = this.pageVidMap[page]
+    return this.getRandomVideo();
   }
 
   getFeaturedVideo() {

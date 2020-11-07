@@ -6,10 +6,10 @@
     rowHeight="fit"
   >
     <mat-grid-tile id="video_tile" rowspan="7">
-      <app-featured-video [series]="seriesName"></app-featured-video>
+      <app-featured-video [page]="page"></app-featured-video>
     </mat-grid-tile>
     <mat-grid-tile id="featured_tile" rowspan="2">
-      <app-featured-links [page]="seriesName"></app-featured-links>
+      <app-featured-links [page]="page"></app-featured-links>
     </mat-grid-tile>
     <mat-grid-tile id="social_tile" rowspan="5">
       <div class="internal_gridlist">

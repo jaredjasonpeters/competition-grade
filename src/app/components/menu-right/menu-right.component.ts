@@ -10,17 +10,17 @@ import { FeaturedVideoService } from 'src/app/shared/featured-video.service';
 export class MenuRightComponent implements OnInit, OnChanges {
   
   constructor(private renderer: Renderer2, private featuredVideoService: FeaturedVideoService) {}
-  @Input('page') seriesName;
+  @Input() page;
   @ViewChild('menu', {static: true}) menu: ElementRef;
 
 
   ngOnInit(): void {
-    console.log('MENU', this.menu);
-    console.log('SERIESNAME', this.seriesName)
+    console.log('PAGE', this.page);
+   
   
-    if(this.seriesName) {
-      this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.seriesName})`);
-      this.featuredVideoService.getVideoBySeries(this.seriesName);
+    if(this.page === 'speed' || this.page === 'power' || this.page === 'agility') {
+      this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
+      this.featuredVideoService.getVideoBySeries(this.page);
     }
     else {
       this.featuredVideoService.getRandomVideo();
@@ -28,9 +28,9 @@ export class MenuRightComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges():void {
-    if(this.seriesName) {
-      this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.seriesName})`);
-      this.featuredVideoService.getVideoBySeries(this.seriesName);
+    if(this.page === 'speed' || this.page === 'power' || this.page === 'agility') {
+      this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
+      this.featuredVideoService.getVideoBySeries(this.page);
     }
     else {
       

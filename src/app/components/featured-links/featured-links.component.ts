@@ -9,21 +9,21 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
 })
 export class FeaturedLinksComponent implements OnInit, OnChanges {
   @Input() page;
-
-  links = [
-    {
-      title: 'speed',
-      imagePath: '../../../assets/speed_series.png',
-    },
-    {
-      title: 'power',
-      imagePath: '../../../assets/power_series.png',
-    },
-    {
-      title: 'agility',
-      imagePath: '../../../assets/agility_series.png',
-    },
-  ];
+  @Input() links: [];
+  //  [
+  //   {
+  //     title: 'speed',
+  //     imagePath: '../../../assets/speed_series.png',
+  //   },
+  //   {
+  //     title: 'power',
+  //     imagePath: '../../../assets/power_series.png',
+  //   },
+  //   {
+  //     title: 'agility',
+  //     imagePath: '../../../assets/agility_series.png',
+  //   },
+  // ];
 
   constructor(
     private router: Router,

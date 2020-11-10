@@ -3,7 +3,7 @@
     <mat-grid-tile
       *ngFor="let link of links"
       class="{{ link.title }}_tile"
-      [ngClass]="{ active: link.title === currentPage }"
+      [ngClass]="{ active: link.title === page }"
       rowspan="1"
       ><a (click)="onProductSelected(link.title)">
         <img src="{{ link.imagePath }}" class="series"

@@ -11,29 +11,30 @@ export class MenuRightComponent implements OnInit, OnChanges {
   
   constructor(private renderer: Renderer2, private featuredVideoService: FeaturedVideoService) {}
   @Input() page;
+  @Input() features: string[] = ['all'];
   @ViewChild('menu', {static: true}) menu: ElementRef;
 
 
   ngOnInit(): void {
     console.log('PAGE', this.page);
-   
-  
-    if(this.page === 'speed' || this.page === 'power' || this.page === 'agility') {
+    console.log('FEATURES', this.features);
+    
+    if(['power', 'speed', 'agility'].includes(this.page)) {
       this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
       this.featuredVideoService.getVideoBySeries(this.page);
     }
     else {
-      this.featuredVideoService.getRandomVideo();
+      this.featuredVideoService.getVideoByPage(this.page);
     }
   }
 
   ngOnChanges():void {
-    if(this.page === 'speed' || this.page === 'power' || this.page === 'agility') {
+    if(['power', 'speed', 'agility'].includes(this.page)){
       this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
       this.featuredVideoService.getVideoBySeries(this.page);
     }
     else {
-      
+      this.featuredVideoService.getVideoByPage(this.page);
     }
   }
 }

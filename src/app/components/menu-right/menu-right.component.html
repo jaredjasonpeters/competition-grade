@@ -9,7 +9,7 @@
       <app-featured-video [page]="page" *ngIf="features.includes('video') || features.includes('all')"></app-featured-video>
     </mat-grid-tile>
     <mat-grid-tile id="featured_tile" rowspan="2">
-      <app-featured-links [links]="[{title: 'speed', imagePath: '../../../assets/speed_series.png'}]" [page]="page" *ngIf="features.includes('links') || features.includes('all')"></app-featured-links>
+      <app-featured-links [page]="page" *ngIf="features.includes('links') || features.includes('all')"></app-featured-links>
     </mat-grid-tile>
     <mat-grid-tile id="social_tile" rowspan="5">
       <div class="internal_gridlist">

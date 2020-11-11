@@ -30,10 +30,6 @@
   background: var(--cg_agility);
 }
 
-.series {
-  mix-blend-mode: screen;
-}
-
 #featured_gridlist {
   height: 100%;
   width: 100%;

@@ -1,6 +1,8 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
+import {Link, LinksProviderService} from '../../shared/links-provider.service';
+
 
 @Component({
   selector: 'app-featured-links',
@@ -9,30 +11,18 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
 })
 export class FeaturedLinksComponent implements OnInit, OnChanges {
   @Input() page;
-  @Input() links: [];
-  //  [
-  //   {
-  //     title: 'speed',
-  //     imagePath: '../../../assets/speed_series.png',
-  //   },
-  //   {
-  //     title: 'power',
-  //     imagePath: '../../../assets/power_series.png',
-  //   },
-  //   {
-  //     title: 'agility',
-  //     imagePath: '../../../assets/agility_series.png',
-  //   },
-  // ];
+  @Input() links: Link[];
+
 
   constructor(
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private linksProvider: LinksProviderService
   ) {}
 
   ngOnInit(): void {
   
-    // this.renderer.setStyle(this.featuredTile.nativeElement, 'background', `var(--cg_${this.seriesName})`);
+    this.links = this.linksProvider.getLinksByPage(this.page);
   
   }
 

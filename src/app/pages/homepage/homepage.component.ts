@@ -3,13 +3,14 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  Input,
   OnDestroy,
   OnInit,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRouteSnapshot, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -17,12 +18,14 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
-  constructor(private titleService: Title, private route: Router) {
+  page;
+  constructor(private titleService: Title, private route: ActivatedRoute) {
     titleService.setTitle('Competition Grade Seed');
   }
 
   ngOnInit(): void {
-    let params = this.route.url
-    console.log('PARAMS', params)
+   this.route.url.subscribe(url => {
+      this.page = url.join('');
+    });
   }
 }

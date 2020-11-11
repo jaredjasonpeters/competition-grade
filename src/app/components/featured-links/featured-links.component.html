@@ -5,9 +5,13 @@
       class="{{ link.title }}_tile"
       [ngClass]="{ active: link.title === page }"
       rowspan="1"
-      ><a (click)="onProductSelected(link.title)">
-        <img src="{{ link.imagePath }}" class="series"
+      ><a *ngIf="!link.docPath; else elseBlock" (click)="onProductSelected(link.title)">
+        <img src="{{ link.imagePath }}" alt="{{link.title}}"
       /></a>
+      <ng-template #elseBlock>
+        <a download href="{{link.docPath}}">
+          <img src="{{ link.imagePath }}" alt="{{link.title}}" /></a>
+      </ng-template>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

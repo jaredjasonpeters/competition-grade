@@ -26,9 +26,9 @@ app-footer-list {
   width: 100%;
 }
 
-#login_button {
-  /* border: 2px solid red; */
-  cursor: pointer;
+app-login {
+  height: 100%;
+  width: 100%;
 }
 
 .internal_gridlist {

@@ -42,6 +42,7 @@ import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -81,6 +82,7 @@ import { UnderConstructionComponent } from './pages/under-construction/under-con
     FormComponent,
     ThanksComponent,
     UnderConstructionComponent,
+    LoginComponent,
   ],
   imports: [
     AppRoutingModule,

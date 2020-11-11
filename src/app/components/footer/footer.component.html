@@ -44,7 +44,7 @@
       </mat-grid-tile>
       <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
         <app-footer-list
-          *ngIf="distributorLoggedIn"
+          *ngIf="distributorLoggedIn; else elseblock"
           type="portal"
           [limit]="4"
           [links]="[
@@ -56,6 +56,9 @@
             }
           ]"
         ></app-footer-list>
+        <ng-template #elseblock>
+        <div id="login_button" (click)="login()">Login</div>
+        </ng-template>
       </mat-grid-tile>
       <mat-grid-tile id="chat_block" rowspan="1" colspan="1">
         <img

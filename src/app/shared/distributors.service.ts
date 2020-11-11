@@ -35,7 +35,7 @@ export class DistributorsService {
       placement: 3,
     },
     {
-      companyName: 'Wilbur-Ellis',
+      companyName: 'Wilbur Ellis',
       websiteUrl: 'https://ag.wilburellis.com/',
       imagePath: '../../assets/wilbur_ellis_logo.png',
       partnerLevel: 'Premium',

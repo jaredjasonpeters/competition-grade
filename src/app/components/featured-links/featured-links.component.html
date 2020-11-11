@@ -9,8 +9,11 @@
         <img src="{{ link.imagePath }}" alt="{{link.title}}"
       /></a>
       <ng-template #elseBlock>
-        <a download href="{{link.docPath}}">
-          <img src="{{ link.imagePath }}" alt="{{link.title}}" /></a>
+        <a class="link_container" download href="{{link.docPath}}">
+          <!-- <img src="{{ link.imagePath }}" alt="{{link.title}}" /> -->
+          <h3 class="linkHeading"> Download {{link.title}}</h3>
+          <mat-icon color="primary" class="linkIcon">{{link.imagePath}}</mat-icon>
+        </a>
       </ng-template>
     </mat-grid-tile>
   </mat-grid-list>

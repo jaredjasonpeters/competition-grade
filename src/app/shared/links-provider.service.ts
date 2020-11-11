@@ -28,7 +28,7 @@ export class LinksProviderService {
 
   links = {
   default: this.defaultLinks,
-  adv : [{title: 'hi', imagePath: '../../../assets/4turf_logo.png', docPath: '../../../assets/documents/sample.txt'}],
+  adv : [{title: 'Brochure', imagePath: 'save_alt', docPath: '../../../assets/documents/sample.txt'}],
   power: [],
   speed: [],
   agility: []

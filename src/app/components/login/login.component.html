@@ -1,0 +1,17 @@
+<div id="form_container">
+    <form id="login_form" #form="ngForm">
+        <div id="form_field_container">
+            <mat-label id="form_header">Distributor Portal</mat-label>
+            <mat-form-field color="primary" appearance="">
+                <mat-label>Distributor Id</mat-label>
+                <input name="distributor_id" text matInput ngModel required/>
+            </mat-form-field>
+            <mat-form-field color="primary" appearance="">
+                <mat-label>Password</mat-label>
+                <input name="distributor_password" password matInput ngModel required/>
+            </mat-form-field>
+        </div>
+            <button type="submit" id="login_button" (click)="login(form)" mat-raised-button [disabled]="form.invalid">Login</button>
+    </form>
+    
+</div>

@@ -28,20 +28,6 @@
           alt="Competition Grade Verified Seal"
         />
       </mat-grid-tile>
-      <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
-        <app-footer-list
-          type="info"
-          [limit]="4"
-          [links]="[
-            { text: 'Contact Us', url: 'contact-us' },
-            { text: 'Distributor Levels', url: '/distributor/levels' },
-            {
-              text: 'Benefits & Rewards',
-              url: '/distributor/benefits-and-rewards'
-            }
-          ]"
-        ></app-footer-list>
-      </mat-grid-tile>
       <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
         <app-footer-list
           *ngIf="distributorLoggedIn; else elseblock"
@@ -59,6 +45,20 @@
         <ng-template #elseblock>
           <app-login></app-login>
         </ng-template>
+      </mat-grid-tile>
+      <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
+        <app-footer-list
+          type="info"
+          [limit]="4"
+          [links]="[
+            { text: 'Contact Us', url: 'contact-us' },
+            { text: 'Distributor Levels', url: '/distributor/levels' },
+            {
+              text: 'Benefits & Rewards',
+              url: '/distributor/benefits-and-rewards'
+            }
+          ]"
+        ></app-footer-list>
       </mat-grid-tile>
       <mat-grid-tile id="chat_block" rowspan="1" colspan="1">
         <img

@@ -5,13 +5,19 @@ app-formulation-graphic {
 app-formulation-breakdown {
   height: 100%;
   width: 100%;
+  /* border: 2px solid red; */
+}
+
+#formulation_list {
+  height: 100%;
+  width: 100%;
 }
 
 #formulation_breakdown_container {
   /* border: 2px solid blue; */
-  min-height: 575px;
+  min-height: 610px;
 }
 #formulation_graphic_container {
   /* border: 2px solid white; */
-  min-height: 575px;
+  min-height: 610px;
 }

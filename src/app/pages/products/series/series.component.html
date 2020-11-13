@@ -1,13 +1,13 @@
 <div id="series_page_container">
-  <mat-grid-list gutterSize="6px" rowHeight="690px" cols="6">
+  <mat-grid-list gutterSize="6px" rowHeight="700px" cols="6">
     <mat-grid-tile colspan="4">
       <mat-grid-list
         id="series_header_container"
         gutterSize="0"
-        rowHeight="115px"
+        rowHeight="fit"
         cols="6"
       >
-        <mat-grid-tile colspan="1">
+        <mat-grid-tile colspan="1" rowspan="1">
           <div id="series_logo_container" class="{{ seriesName }}">
             <img
               src="../../../../assets/{{ seriesName }}_series.png"
@@ -22,7 +22,7 @@
             </h3>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile colspan="6" rowspan="5">
+        <mat-grid-tile colspan="6" rowspan="7">
           <div id="series_content_container">
             <mat-grid-list gutterSize="0" rowHeight="fit" cols="10">
               <mat-grid-tile id="series_description_container" colspan="4">

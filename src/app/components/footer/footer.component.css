@@ -1,7 +1,7 @@
 * {
   font-family: Orbitron;
   font-size: 0.98em;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
   box-sizing: border-box;
 }
@@ -24,6 +24,7 @@ app-distributors {
 app-footer-list {
   height: 100%;
   width: 100%;
+  padding-left: 1em;
 }
 
 app-login {
@@ -35,21 +36,8 @@ app-login {
   padding-top: 0;
 }
 
-#verified_seal img {
-}
-
-#company_block {
-}
-
-#distributor_block {
-  /* border: 2px solid red; */
-}
-
 #footer_gridlist {
   height: 100%;
-}
-mat-grid-tile {
-  /* border: 2px solid red; */
 }
 
 #chat_block {

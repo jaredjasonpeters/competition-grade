@@ -4,11 +4,11 @@
             <mat-label id="form_header">Distributor Portal</mat-label>
             <mat-form-field color="primary" appearance="">
                 <mat-label>Distributor Id</mat-label>
-                <input name="distributor_id" text matInput ngModel required/>
+                <input name="distributor_id" email matInput ngModel required minlength="6"/>
             </mat-form-field>
             <mat-form-field color="primary" appearance="">
                 <mat-label>Password</mat-label>
-                <input name="distributor_password" password matInput ngModel required/>
+                <input name="distributor_password" password matInput ngModel required minlength="6"/>
             </mat-form-field>
         </div>
             <button type="submit" id="login_button" (click)="login(form)" mat-raised-button [disabled]="form.invalid">Login</button>

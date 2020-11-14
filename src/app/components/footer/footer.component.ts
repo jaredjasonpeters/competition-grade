@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DistributorsService } from 'src/app/shared/distributors.service';
-import { AuthService } from 'src/app/shared/auth.service'
+import { AuthService } from 'src/app/shared/auth.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,26 +13,23 @@ export class FooterComponent implements OnInit, OnDestroy {
   footerLength: number;
   distributorLoggedIn: boolean;
   loggedInSubscription: Subscription;
-  
 
-  constructor(private distributorsService: DistributorsService, private authService: AuthService) {}
+  constructor(
+    private distributorsService: DistributorsService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.distributorsLength = this.distributorsService.getLength();
     this.footerLength = this.distributorsLength + 7;
-    this.loggedInSubscription = this.authService.loggedIn.subscribe(isLoggedIn => {
-      this.distributorLoggedIn = isLoggedIn;
-    })
+    this.loggedInSubscription = this.authService.distributor.subscribe(
+      (distributor) => {
+        this.distributorLoggedIn = distributor ? true : false;
+      }
+    );
   }
 
   ngOnDestroy(): void {
     this.loggedInSubscription.unsubscribe();
   }
-
-  login(): void {
-    console.log('LOGGING IN')
-    this.authService.login();
-  }
-
-
 }

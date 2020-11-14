@@ -52,8 +52,11 @@ mat-button-wrapper {
   height: 100%;
 }
 
-button:disabled {
+button#login_button:disabled {
   opacity: 0;
+}
+button#login_button:disabled:hover {
+  cursor: default;
 }
 
 mat-form-field {
@@ -64,4 +67,8 @@ mat-form-field {
 
 mat-label {
   font-size: 0.8em;
+}
+
+mat-error {
+  font-size: 0.5em;
 }

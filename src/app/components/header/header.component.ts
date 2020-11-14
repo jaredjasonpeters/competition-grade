@@ -24,17 +24,17 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let nav = this.navigation.nativeElement
-    let offset = nav.offsetTop;
+    const nav = this.navigation.nativeElement;
+    const offset = nav.offsetTop;
 
-      this.renderer.listen(window, 'scroll', () => {  
-      if(window.pageYOffset <= offset - 20 ) {
-        this.renderer.removeClass(nav, 'sticky');
-      } else {
-        this.renderer.addClass(nav, 'sticky');
-      }
-    });
-  }
+    this.renderer.listen(window, 'scroll', () => {  
+    if(window.pageYOffset <= offset - 20 ) {
+      this.renderer.removeClass(nav, 'sticky');
+    } else {
+      this.renderer.addClass(nav, 'sticky');
+    }
+  });
+}
 
 
 

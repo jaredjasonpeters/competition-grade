@@ -4,14 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { InstagramFeedComponent } from './components/instagram-feed/instagram-feed.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FooterDetailComponent } from './components/footer-detail/footer-detail.component';
 import { MenuRightComponent } from './components/menu-right/menu-right.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
@@ -43,7 +43,7 @@ import { FormComponent } from './components/form/form.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { AuthInterceptorService } from './shared/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -100,7 +100,12 @@ import { LoginComponent } from './components/login/login.component';
       provide: Window,
       useValue: window,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

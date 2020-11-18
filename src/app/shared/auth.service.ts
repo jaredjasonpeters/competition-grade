@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { errorMonitor } from 'events';
-import { Observable, Subject, throwError } from 'rxjs';
+import { Observable, Subject, BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { DistributorAuth } from '../models/distributor.model';
@@ -20,7 +20,7 @@ export interface AuthResponseData {
   providedIn: 'root',
 })
 export class AuthService {
-  distributor: Subject<DistributorAuth> = new Subject();
+  distributor: BehaviorSubject<DistributorAuth> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {}
 

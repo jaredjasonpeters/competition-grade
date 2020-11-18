@@ -1,7 +1,10 @@
 <div id="form_container">
     <form id="login_form" #form="ngForm">
         <div id="form_field_container">
-            <mat-label id="form_header">Distributor Portal</mat-label>
+            <mat-label id="form_header" *ngIf="!errorMessage; else errorBlock">Distributor Portal</mat-label>
+            <ng-template #errorBlock>
+                <mat-error id="error_block" color="warn">{{errorMessage}}</mat-error>
+            </ng-template>
             <mat-form-field color="primary" appearance="">
                 <mat-label>Distributor Id</mat-label>
                 <input name="distributor_id" email matInput ngModel required minlength="6"/>

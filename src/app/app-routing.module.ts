@@ -16,6 +16,7 @@ import { DistributorLocateComponent } from './pages/distributor/distributor-loca
 import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
 import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { AuthGuard } from './shared/auth.guard';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -53,9 +54,16 @@ export const routes: Routes = [
     component: UnderConstructionComponent,
   },
   {
-    path: 'marketing',
-    children: [{ path: ':id', component: MarketingComponent }],
+    path: 'portal',
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'marketing',
+        children: [{ path: ':id', component: MarketingComponent }],
+      },
+    ],
   },
+
   // { path: 'privacy', component: ThanksComponent },
   { path: 'thanks', component: ThanksComponent },
   { path: 'not-found', component: NotFoundComponent },

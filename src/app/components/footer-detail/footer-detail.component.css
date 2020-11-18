@@ -63,6 +63,7 @@
   font-weight: 800;
   border-right: 2px solid rgba(0, 0, 0, 0.1);
   padding-right: 10px;
+  padding-left: 10px;
   cursor: pointer;
 
   /* border: 2px solid red; */
@@ -103,4 +104,12 @@
 
 #footer_detail_options ul li:hover:last-child {
   opacity: 1;
+}
+
+#footer_detail_options ul li:focus {
+  outline: 1px solid black;
+}
+
+.active {
+  opacity: 0.8;
 }

@@ -2,7 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductsComponent } from './pages/products/products.component';
-import {ThanksComponent} from './pages/thanks/thanks.component'
+import { ThanksComponent } from './pages/thanks/thanks.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { MarketingComponent } from './pages/marketing/marketing.component';
 import { ProductComponent } from './pages/products/product/product.component';
@@ -12,7 +12,7 @@ import { DistributorAdvertComponent } from './pages/distributor/distributor-adve
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DistributorLevelsComponent } from './pages/distributor/distributor-levels/distributor-levels.component';
 import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';
-import { DistributorLocateComponent} from './pages/distributor/distributor-locate/distributor-locate.component';
+import { DistributorLocateComponent } from './pages/distributor/distributor-locate/distributor-locate.component';
 import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
 import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
@@ -30,35 +30,34 @@ export const routes: Routes = [
   },
   {
     path: 'contact-us',
-    component: ContactUsComponent
+    component: ContactUsComponent,
   },
   {
     path: 'why-competition-grade',
-    component: WhyCompGradeComponent
+    component: WhyCompGradeComponent,
   },
   {
     path: 'verification',
-    component: VerificationProgramComponent
+    component: VerificationProgramComponent,
   },
   {
     path: 'distributor',
     children: [
-      {path: 'levels', component: DistributorLevelsComponent},
-      {path: 'benefits-and-rewards', component: DistributorBenefitsComponent},
-      {path: 'locate', component: UnderConstructionComponent},
-    ]
+      { path: 'levels', component: DistributorLevelsComponent },
+      { path: 'benefits-and-rewards', component: DistributorBenefitsComponent },
+      { path: 'locate', component: UnderConstructionComponent },
+    ],
   },
   {
     path: 'projects',
-    component: UnderConstructionComponent
+    component: UnderConstructionComponent,
   },
   {
     path: 'marketing',
-    children: [
-      {path: ':id', component: MarketingComponent}
-    ]
+    children: [{ path: ':id', component: MarketingComponent }],
   },
-  {path: 'thanks', component: ThanksComponent},
+  // { path: 'privacy', component: ThanksComponent },
+  { path: 'thanks', component: ThanksComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];

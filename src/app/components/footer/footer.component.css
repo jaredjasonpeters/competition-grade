@@ -44,8 +44,16 @@ app-login {
   /* border: 2px solid white; */
 }
 
+#chat_block:hover {
+  cursor: pointer;
+}
+
 #chat_block img {
   margin-left: auto;
   margin-right: auto;
   /* border: 2px solid red; */
+}
+
+.active {
+  color: red;
 }

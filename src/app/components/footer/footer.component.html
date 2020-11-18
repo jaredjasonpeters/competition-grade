@@ -51,7 +51,6 @@
           type="info"
           [limit]="4"
           [links]="[
-            { text: 'Contact Us', url: 'contact-us' },
             { text: 'Distributor Levels', url: '/distributor/levels' },
             {
               text: 'Benefits & Rewards',
@@ -62,6 +61,7 @@
       </mat-grid-tile>
       <mat-grid-tile id="chat_block" rowspan="1" colspan="1">
         <img
+          routerLink="contact-us"
           id="chat_img"
           src="../../assets/CompetitionGrade_ChatIcon.png"
           alt="Chat Icon"

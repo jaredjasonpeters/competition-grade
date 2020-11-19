@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { DistributorAuth } from '../models/distributor.model';
+import { DistributorAuth } from '../models/distributor-auth.model';
 
 export interface AuthResponseData {
   kind: string;

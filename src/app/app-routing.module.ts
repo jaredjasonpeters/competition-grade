@@ -57,7 +57,8 @@ export const routes: Routes = [
   },
   {
     path: 'projects',
-    component: UnderConstructionComponent,
+    // component: UnderConstructionComponent,
+    component: ProjectsComponent,
   },
   {
     path: 'portal',
@@ -79,7 +80,7 @@ export const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      enableTracing: true,
+      enableTracing: false,
       preloadingStrategy: PreloadAllModules,
     }),
   ],

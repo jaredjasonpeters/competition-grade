@@ -1,47 +1,39 @@
 import { Injectable } from '@angular/core';
-
-export interface Distributor {
-  companyName: string;
-  websiteUrl: string;
-  imagePath: string;
-  partnerLevel?: 'Premium' | 'Standard';
-  placement: number;
-}
+import { Distributor, DistributorsEnum } from '../models/distributor.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DistributorsService {
   distributors: Distributor[] = [
-     {
-      companyName: 'Walker Supply',
+    {
+      companyName: DistributorsEnum['Walker Supply'],
       websiteUrl: 'https://www.walkersupplyinc.com/',
       imagePath: '../../assets/walker_supply_logo.png',
       partnerLevel: 'Premium',
       placement: 1,
     },
     {
-      companyName: 'Tom Irwin',
+      companyName: DistributorsEnum['Tom Irwin'],
       websiteUrl: 'http://tomirwin.com',
       imagePath: '../../assets/tom_irwin_logo.png',
       partnerLevel: 'Premium',
       placement: 2,
     },
     {
-      companyName: 'BWI',
+      companyName: DistributorsEnum.BWI,
       websiteUrl: 'http://bwicompanies.com',
       imagePath: '../../assets/bwi_logo.png',
       partnerLevel: 'Premium',
       placement: 3,
     },
     {
-      companyName: 'Wilbur Ellis',
+      companyName: DistributorsEnum['Wilbur Ellis'],
       websiteUrl: 'https://ag.wilburellis.com/',
       imagePath: '../../assets/wilbur_ellis_logo.png',
       partnerLevel: 'Premium',
       placement: 4,
     },
-   
   ];
 
   constructor() {}
@@ -62,9 +54,9 @@ export class DistributorsService {
 
   getByName(name): Distributor {
     for (const distributor of this.distributors) {
-      if(distributor.companyName.toLowerCase() === name.toLowerCase()) {
+      if (distributor.companyName.toLowerCase() === name.toLowerCase()) {
         return distributor;
       }
     }
-  } 
+  }
 }

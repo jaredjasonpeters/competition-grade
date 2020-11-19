@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  DistributorsService,
-  Distributor,
-} from '../../shared/distributors.service';
+import { DistributorsService } from '../../shared/distributors.service';
+
+import { Distributor } from '../../models/distributor.model';
 
 @Component({
   selector: 'app-distributors',

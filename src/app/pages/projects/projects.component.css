@@ -1,9 +1,33 @@
 #projects_container {
   padding: 1em;
+  width: 100%;
+}
+
+app-project-card {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.project_container {
+  display: flex;
+  width: 100%;
+  /* height: 600px; */
+
+  border-top: 5px solid var(--cg_gold);
+  padding-top: 1em;
+  /* border-bottom: 2px solid red; */
 }
 
 .imageSliderContainer {
   height: 500px;
-  width: 800px;
+  min-width: 800px;
   position: relative;
+  /* border: 2px solid blue; */
+}
+
+.seperator {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  height: 4px;
+  background: black;
 }

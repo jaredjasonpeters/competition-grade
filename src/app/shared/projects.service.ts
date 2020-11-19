@@ -10,10 +10,10 @@ export class ProjectsService {
     {
       id: 1,
       name: 'Longwood Cricket Club',
-      description: '',
+      description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
-      location: 'New England',
+      location: 'Chestnut Hill, MA',
       icon: '',
       images: [
         {

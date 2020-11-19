@@ -1,1 +1,31 @@
-<h1 class="projectName">{{project.name}}</h1>
+<div id="project_card_container">
+    <mat-grid-list rowHeight="80px" cols="3">
+        <mat-grid-tile colspan="3" rowspan="1">
+            <div id="project_name_container" class="itemContainer">
+                <h1 class="projectName">{{project.name}}</h1>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="1">
+            <div id="project_location_container" class="itemContainer">
+                <h1 class="projectSubHeading">{{project.location}}</h1>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="1">
+        <div id="project_manager_container" class="itemContainer">
+            <h1 class="projectSubHeading">{{project.projectManager}}</h1>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="2">
+        <div id="project_description_container" class="itemContainer">
+            <p class="projectDescription">{{project.description}}</p>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="1">
+        <div id="project_products_container" class="itemContainer">
+            <h1 class="">{{project.series}}</h1>
+        </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+

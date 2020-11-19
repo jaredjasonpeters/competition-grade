@@ -1,5 +1,5 @@
 import { NgModule, OnInit } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
@@ -35,11 +35,17 @@ export const routes: Routes = [
   },
   {
     path: 'why-competition-grade',
-    component: WhyCompGradeComponent,
+    loadChildren: () =>
+      import('./pages/why-comp-grade/why-comp-grade.module').then(
+        (m) => m.WhyCompGradeRoutingModule
+      ),
   },
   {
     path: 'verification',
-    component: VerificationProgramComponent,
+    loadChildren: () =>
+      import('./pages/verification-program/verification.module').then(
+        (m) => m.VerificationRoutingModule
+      ),
   },
   {
     path: 'distributor',
@@ -71,7 +77,12 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      enableTracing: true,
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {

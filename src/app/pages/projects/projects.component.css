@@ -1,0 +1,9 @@
+#projects_container {
+  padding: 1em;
+}
+
+.imageSliderContainer {
+  height: 500px;
+  width: 800px;
+  position: relative;
+}

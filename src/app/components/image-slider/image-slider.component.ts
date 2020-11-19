@@ -1,4 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ProjectImage } from 'src/app/models/project-image.model';
 
 @Component({
   selector: 'app-image-slider',
@@ -6,21 +7,31 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./image-slider.component.css'],
 })
 export class ImageSliderComponent implements OnInit, OnDestroy {
-  @Input('speed')speed :number;
-  activeImage: string
+  @Input() speed: number = 5000;
+  activeImage: string;
   currentIndex: number = 0;
-  images: string[]
+  @Input() images: string[];
+  @Input() projectImages: ProjectImage[];
   sliderTimer;
   constructor() {}
 
   ngOnInit(): void {
-  
-    this.images = [
-      '../../../../assets/Competition_Grade_SliderImage_Main.png',
-      '../../../../assets/football_1500x1000.png',
-      '../../../../assets/baseball_1500x1000.png',
-      '../../../../assets/soccer_ball_1500x1000.png',
-    ];
+    if (this.projectImages) {
+      let images = [];
+      images = this.projectImages.map((projectImage) => projectImage.imageUrl);
+
+      console.log('IMAGES', images);
+      this.images = images;
+    }
+    if (!this.images) {
+      this.images = [
+        '../../../../assets/Competition_Grade_SliderImage_Main.png',
+        '../../../../assets/football_1500x1000.png',
+        '../../../../assets/baseball_1500x1000.png',
+        '../../../../assets/soccer_ball_1500x1000.png',
+      ];
+    }
+
     this.activeImage = this.images[0];
     this.startSlider();
   }
@@ -28,9 +39,9 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   onPreviousImage(): void {
     this.resetSlider();
     if (this.currentIndex > 0) {
-      this.currentIndex--
+      this.currentIndex--;
     } else {
-      this.currentIndex = this.images.length -1 
+      this.currentIndex = this.images.length - 1;
     }
 
     this.activeImage = this.images[this.currentIndex];
@@ -38,9 +49,9 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   onNextImage(): void {
     this.resetSlider();
     if (this.currentIndex < this.images.length - 1) {
-      this.currentIndex++
+      this.currentIndex++;
     } else {
-      this.currentIndex = 0
+      this.currentIndex = 0;
     }
     this.activeImage = this.images[this.currentIndex];
   }
@@ -48,7 +59,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   startSlider(): void {
     this.sliderTimer = setInterval(() => {
       this.onNextImage();
-    }, this.speed)
+    }, this.speed);
   }
 
   resetSlider(): void {

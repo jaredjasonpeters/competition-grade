@@ -44,6 +44,7 @@ import { ThanksComponent } from './pages/thanks/thanks.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorService } from './shared/auth-interceptor.service';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { AuthInterceptorService } from './shared/auth-interceptor.service';
     ThanksComponent,
     UnderConstructionComponent,
     LoginComponent,
+    ProjectCardComponent,
   ],
   imports: [
     AppRoutingModule,

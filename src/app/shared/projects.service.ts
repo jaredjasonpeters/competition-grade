@@ -6,19 +6,51 @@ import { Project } from '../models/project.model';
   providedIn: 'root',
 })
 export class ProjectsService {
-  projects: Project[] = [
+  private projects: Project[] = [
     {
       id: 1,
       name: 'Longwood Cricket Club',
       description: '',
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
-      location: '',
+      location: 'New England',
       icon: '',
       images: [
-        { imageUrl: '', caption: '' },
-        { imageUrl: '', caption: '' },
-        { imageUrl: '', caption: '' },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
+          caption: '',
+        },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_action_800x500.png',
+          caption: '',
+        },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeup_800x500.png',
+          caption: '',
+        },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeupmow_800x500.png',
+          caption: '',
+        },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing_800x500.png',
+          caption: '',
+        },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing2_800x500.png',
+          caption: '',
+        },
+        {
+          imageUrl:
+            '../../assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing3_800x500.png',
+          caption: '',
+        },
       ],
       quotes: [],
       projectManager: 'Mike Burns',
@@ -26,4 +58,22 @@ export class ProjectsService {
   ];
 
   constructor() {}
+
+  getAll(): Project[] {
+    return this.projects;
+  }
+
+  getByName(name): Project {
+    const foundProject = this.projects.filter(
+      (project) => project.name === name
+    )[0];
+    if (foundProject) {
+      return foundProject;
+    }
+    return;
+  }
+
+  getBySearchFilters(searchFilters) {
+    return;
+  }
 }

@@ -1,1 +1,14 @@
-<p>projects works!</p>
+<div id="projects_container">
+    <div class="project_container" *ngFor="let project of projects">
+        <app-project-card [project]="project"></app-project-card>
+        <!-- <img *ngFor="let image of project.images" [src]="image.imageUrl" [alt]="image.caption" /> -->
+        <div class="imageSliderContainer">
+            <app-image-slider [projectImages]="project.images"></app-image-slider>
+        </div>
+    </div>
+</div>
+
+
+
+
+<button (click)="fetchProjects()"mat-button >Fetch Projects</button>

@@ -15,8 +15,11 @@ mat-grid-tile {
   font-weight: 800;
   line-height: 1.25em;
 }
-#explanation_paragraph {
-  padding: 2em;
+#explanation_paragraph,
+#explanation_two_paragraph {
+  padding: 3em;
+  /* max-width: 50%; */
+  text-align: center;
 }
 
 #header_logo {
@@ -31,26 +34,17 @@ mat-grid-tile {
   margin-bottom: 6px;
 }
 
-#header_container,
-#header_two_container {
+#header_container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: column;
   height: 200px;
   /* border: 2px solid green; */
   padding: 1em;
-  margin-bottom: 0.5em;
 }
 
-#header_two_container {
-  justify-content: flex-end;
-  margin-top: 0.5em;
-  background: black;
-  color: white;
-  height: 400px;
-}
-#header_container p,
-#header_two_container p {
+#header_container p {
   max-width: 1000px;
   padding: 1em;
   font-size: 1.25em;
@@ -58,25 +52,21 @@ mat-grid-tile {
   line-height: 1.25em;
   /* border: 2px solid red; */
 }
-#header_two_container {
-  text-align: right;
-}
+
 #image_container {
   height: 475px;
 }
-#image_two_container {
-  height: 375px;
-}
+
 mat-grid-list {
   height: 100%;
   width: 100%;
 }
+
 #tile_image_container {
   width: 100%;
   height: 100%;
 }
-#image_container img,
-#image_two_container img {
+#image_container img {
   width: 100%;
   height: 100%;
   object-position: 0 0;

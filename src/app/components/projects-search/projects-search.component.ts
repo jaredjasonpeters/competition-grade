@@ -8,14 +8,17 @@ import { NgForm } from '@angular/forms';
 })
 export class ProjectsSearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter();
+  @Output() clearEvent = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   fetchProjects(form: NgForm) {
-    console.log('FORM', form);
     this.searchEvent.emit(form.value.searchTerm);
-    // form.reset();
+  }
+
+  clearForm(form: NgForm) {
+    this.clearEvent.emit(form);
   }
 }

@@ -4,7 +4,7 @@
             <input id="search_input" name="searchTerm" placeholder="find a project" matInput type="search" search ngModel (keyup)="fetchProjects(searchForm)"/>
             <mat-icon *ngIf="searchForm.pristine; else clearBlock" id="search_icon" matSuffix (click)="fetchProjects(searchForm)">search</mat-icon>
             <ng-template #clearBlock>
-                <mat-icon id="clear_icon" matSuffix (click)="searchForm.reset()">clear</mat-icon>
+                <mat-icon id="clear_icon" matSuffix (click)="clearForm(searchForm)">clear</mat-icon>
             </ng-template>
         </mat-form-field>
     </form>

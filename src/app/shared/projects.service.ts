@@ -118,14 +118,18 @@ export class ProjectsService {
       const nameParts = project.name.toLowerCase().trim();
       const searchName = name.toLowerCase().trim();
 
-      if (nameParts.includes(searchName) && searchName !== '') {
-        return project;
+      if (searchName.length > 1) {
+        if (nameParts.includes(searchName) && searchName !== '') {
+          return project;
+        }
       }
     });
-    if (foundProjects) {
-      return foundProjects;
+    if (name.length > 1) {
+      if (foundProjects.length !== 0) {
+        return foundProjects;
+      }
+      return `No project by the name: ${name} exists`;
     }
-    return `No project by the name: ${name} exists`;
   }
 
   getBySearchFilters(searchFilters) {

@@ -13,10 +13,10 @@ export class ProjectsComponent implements OnInit {
   constructor(private projectsService: ProjectsService) {}
 
   ngOnInit(): void {
-    this.fetchProjects();
+    // this.fetchProjects();
   }
 
-  fetchProjects(): void {
+  fetchProjects(searchTerm): void {
     this.projects = this.projectsService.getAll();
   }
 }

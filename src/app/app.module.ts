@@ -43,6 +43,7 @@ import { UnderConstructionComponent } from './pages/under-construction/under-con
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorService } from './shared/auth-interceptor.service';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
+import { ProjectsSearchComponent } from './components/projects-search/projects-search.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
     UnderConstructionComponent,
     LoginComponent,
     ProjectCardComponent,
+    ProjectsSearchComponent,
   ],
   imports: [
     AppRoutingModule,

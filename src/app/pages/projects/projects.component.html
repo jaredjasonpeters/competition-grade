@@ -1,4 +1,5 @@
 <div id="projects_container">
+    <app-projects-search (searchEvent)="fetchProjects($event)"></app-projects-search>
     <div class="project_container" *ngFor="let project of projects">
         <app-project-card [project]="project"></app-project-card>
         <!-- <img *ngFor="let image of project.images" [src]="image.imageUrl" [alt]="image.caption" /> -->

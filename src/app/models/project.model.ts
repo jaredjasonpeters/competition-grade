@@ -10,6 +10,7 @@ export interface Project {
   images: ProjectImage[];
   description: string;
   series: 'speed' | 'power' | 'agility';
+  tags: number[];
   distributor: DistributorsEnum;
   quotes?: string[];
 }

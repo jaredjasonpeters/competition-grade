@@ -3,6 +3,7 @@
         <mat-grid-tile colspan="3" rowspan="1">
             <div id="project_name_container" class="itemContainer">
                 <h1 class="projectName">{{project.name}}</h1>
+               
             </div>
         </mat-grid-tile>
         <mat-grid-tile colspan="3" rowspan="1">
@@ -23,9 +24,9 @@
         <mat-grid-tile colspan="3" rowspan="1">
         <div id="project_products_container" class="itemContainer">
             <div class="internal_gridlist">
-                <h1 class="">{{project.series}}</h1>
-                <h1 class="">{{project.series}}</h1>
-                <h1 class="">{{project.series}}</h1>
+                <img id="series_logo" src="./assets/{{project.series}}_series.png"/>
+                <h1 class="projectTags">{{getFormattedTags()}}</h1>
+                <img id="dist_logo" src="{{getDistributorImage()}}" />
             </div>
         </div>
         </mat-grid-tile>

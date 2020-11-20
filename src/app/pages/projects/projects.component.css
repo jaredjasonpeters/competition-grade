@@ -23,6 +23,10 @@ app-project-card {
   margin-bottom: 1em;
 }
 
+.project_container:last-child {
+  margin-bottom: 0;
+}
+
 .imageSliderContainer {
   height: 500px;
   min-width: 800px;

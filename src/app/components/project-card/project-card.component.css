@@ -9,7 +9,7 @@
   content: "Project Name";
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: 5px;
   font-family: Roboto;
   font-weight: 800;
   font-size: 1em;
@@ -18,7 +18,7 @@
   content: "Project Location";
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: 5px;
   font-family: Roboto;
   font-weight: 800;
   font-size: 1em;
@@ -27,7 +27,7 @@
   content: "Project Manager";
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: 5px;
   font-family: Roboto;
   font-weight: 800;
   font-size: 1em;
@@ -36,16 +36,16 @@
   content: "Project Description";
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: 5px;
   font-family: Roboto;
   font-weight: 800;
   font-size: 1em;
 }
 #project_products_container::before {
-  content: "Products";
+  content: "Products Used";
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: 5px;
   font-family: Roboto;
   font-weight: 800;
   font-size: 1em;
@@ -59,6 +59,7 @@
   align-items: center;
   border-bottom: 4px solid black;
   /* border-top: 2px solid red; */
+  margin-bottom: 0;
 }
 
 h1,
@@ -76,11 +77,26 @@ h3 {
   /* margin-bottom: 0.5em; */
 }
 
+#dist_logo {
+  height: 100%;
+  padding: 0.5em;
+  object-fit: scale-down;
+  /* border: 2px solid red; */
+  margin-left: 1em;
+}
+
 .projectSubHeading {
   font-family: Orbitron;
   font-family: Roboto;
   font-weight: 700;
   font-size: 2em;
+}
+
+.projectTags {
+  font-family: Orbitron;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 3em;
 }
 
 .projectDescription {
@@ -98,4 +114,17 @@ h3 {
   justify-content: space-between;
   align-items: center;
   /* border: 2px solid red; */
+  padding: 0;
+  padding-right: 20%;
+  /* background: var(--cg_silver); */
+}
+
+#series_logo {
+  height: 100%;
+  width: 33%;
+  object-fit: scale-down;
+  background: var(--cg_gold);
+  margin: 0;
+  /* border: 2px solid red; */
+  background: black;
 }

@@ -58,7 +58,7 @@ export class ProjectsService {
     },
     {
       id: 2,
-      name: 'Longwood Cricket Club',
+      name: 'Eleanor Rigby',
       description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
@@ -113,14 +113,20 @@ export class ProjectsService {
     return this.projects;
   }
 
-  getByName(name): Project {
-    const foundProject = this.projects.filter(
-      (project) => project.name === name
-    )[0];
+  getByName(name: string): Project | string {
+    const foundProject = this.projects.filter((project) => {
+      const nameParts = project.name.toLowerCase().trim();
+      if (nameParts.includes(name.toLowerCase().trim())) {
+        return project;
+      }
+      if (project.name.toLowerCase().trim() === name.toLowerCase().trim()) {
+        return project;
+      }
+    })[0];
     if (foundProject) {
       return foundProject;
     }
-    return;
+    return `No project by the name: ${name} exists`;
   }
 
   getBySearchFilters(searchFilters) {

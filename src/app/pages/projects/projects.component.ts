@@ -9,6 +9,7 @@ import { ProjectsService } from '../../shared/projects.service';
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];
+  statusMessage: string;
 
   constructor(private projectsService: ProjectsService) {}
 
@@ -17,6 +18,12 @@ export class ProjectsComponent implements OnInit {
   }
 
   fetchProjects(searchTerm): void {
-    this.projects = this.projectsService.getAll();
+    const result = this.projectsService.getByName(searchTerm);
+    if (typeof result === 'string') {
+      this.statusMessage = result;
+      this.projects = null;
+    } else {
+      this.projects = [result];
+    }
   }
 }

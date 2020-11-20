@@ -16,6 +16,6 @@ export class ProjectsSearchComponent implements OnInit {
   fetchProjects(form: NgForm) {
     console.log('FORM', form);
     this.searchEvent.emit(form.value.searchTerm);
-    form.reset();
+    // form.reset();
   }
 }

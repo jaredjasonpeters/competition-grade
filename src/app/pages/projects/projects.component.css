@@ -41,3 +41,7 @@ app-project-card {
   height: 4px;
   background: black;
 }
+
+#status_message {
+  color: white;
+}

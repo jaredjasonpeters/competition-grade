@@ -1,10 +1,17 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-projects-search',
   templateUrl: './projects-search.component.html',
   styleUrls: ['./projects-search.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProjectsSearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter();

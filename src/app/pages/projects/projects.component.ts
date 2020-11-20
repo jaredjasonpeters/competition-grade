@@ -34,5 +34,6 @@ export class ProjectsComponent implements OnInit {
   clearForm(form: NgForm) {
     form.reset();
     this.statusMessage = null;
+    this.projects = null;
   }
 }

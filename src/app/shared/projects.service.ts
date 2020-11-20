@@ -58,7 +58,7 @@ export class ProjectsService {
     },
     {
       id: 2,
-      name: 'Eleanor Rigby',
+      name: 'Bang the Gong',
       description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
@@ -113,18 +113,17 @@ export class ProjectsService {
     return this.projects;
   }
 
-  getByName(name: string): Project | string {
-    const foundProject = this.projects.filter((project) => {
+  getByName(name: string): Project[] | string {
+    const foundProjects = this.projects.filter((project) => {
       const nameParts = project.name.toLowerCase().trim();
-      if (nameParts.includes(name.toLowerCase().trim())) {
+      const searchName = name.toLowerCase().trim();
+
+      if (nameParts.includes(searchName) && searchName !== '') {
         return project;
       }
-      if (project.name.toLowerCase().trim() === name.toLowerCase().trim()) {
-        return project;
-      }
-    })[0];
-    if (foundProject) {
-      return foundProject;
+    });
+    if (foundProjects) {
+      return foundProjects;
     }
     return `No project by the name: ${name} exists`;
   }

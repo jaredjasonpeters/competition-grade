@@ -23,7 +23,7 @@ export class ProjectsComponent implements OnInit {
       this.statusMessage = result;
       this.projects = null;
     } else {
-      this.projects = [result];
+      this.projects = result;
     }
   }
 }

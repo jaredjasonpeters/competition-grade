@@ -128,7 +128,7 @@ export class ProjectsService {
       if (foundProjects.length !== 0) {
         return foundProjects;
       }
-      return `No project by the name: ${name} exists`;
+      return name;
     }
   }
 

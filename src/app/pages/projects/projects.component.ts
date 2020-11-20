@@ -10,7 +10,7 @@ import { ProjectsService } from '../../shared/projects.service';
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];
-  statusMessage: string;
+  currentSearchTerm: string;
 
   constructor(private projectsService: ProjectsService) {}
 
@@ -20,20 +20,19 @@ export class ProjectsComponent implements OnInit {
 
   fetchProjects(searchTerm): void {
     const result = this.projectsService.getByName(searchTerm);
-    console.log('STATUS MESSAGE', result);
     if (typeof result === 'string') {
-      this.statusMessage = result;
+      this.currentSearchTerm = result;
 
       this.projects = null;
     } else {
       this.projects = result;
-      this.statusMessage = null;
+      this.currentSearchTerm = null;
     }
   }
 
   clearForm(form: NgForm) {
     form.reset();
-    this.statusMessage = null;
+    this.currentSearchTerm = null;
     this.projects = null;
   }
 }

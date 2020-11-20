@@ -2,7 +2,7 @@
     <form id="search_form" #searchForm="ngForm">
         <mat-form-field id="search_field" appearance="fill" color="accent" >
             <input id="search_input" name="searchTerm" placeholder="find a project" matInput type="search" search ngModel (keyup)="fetchProjects(searchForm)" color="primary"/>
-            <mat-icon *ngIf="searchForm.pristine; else clearBlock" id="search_icon" matSuffix (click)="fetchProjects(searchForm)" color="primary">search</mat-icon>
+            <mat-icon *ngIf="searchForm.pristine || searchForm.value.searchTerm === ''; else clearBlock" id="search_icon" matSuffix (click)="fetchProjects(searchForm)" color="primary">search</mat-icon>
             <ng-template #clearBlock>
                 <mat-icon id="clear_icon" matSuffix (click)="clearForm(searchForm)">clear</mat-icon>
             </ng-template>

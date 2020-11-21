@@ -20,7 +20,7 @@ import { MatRadioButton } from '@angular/material/radio';
   encapsulation: ViewEncapsulation.None,
 })
 export class ProjectsSearchComponent implements OnInit {
-  sortBy: string = 'name';
+  searchBy: string = 'name';
   @Output() searchEvent = new EventEmitter();
   @Output() clearEvent = new EventEmitter();
 
@@ -28,12 +28,12 @@ export class ProjectsSearchComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  fetchProjects(form: NgForm) {
+  fetchProjects(form: NgForm): void {
     console.log('FORM VALUE', form.value);
-    this.searchEvent.emit(form.value.searchTerm);
+    this.searchEvent.emit([form.value.searchTerm, this.searchBy]);
   }
 
-  clearForm(form: NgForm) {
+  clearForm(form: NgForm): void {
     this.clearEvent.emit(form);
   }
 }

@@ -18,7 +18,9 @@ export class ProjectsComponent implements OnInit {
     // this.fetchProjects();
   }
 
-  fetchProjects(searchTerm): void {
+  fetchProjects([searchTerm, searchBy]): void {
+    // const result = this.projectsService.getByName(searchTerm);
+    console.log('SEARCHBY', searchBy);
     const result = this.projectsService.getByName(searchTerm);
     if (typeof result === 'string') {
       this.currentSearchTerm = result;
@@ -30,11 +32,11 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
-  clearForm(form: NgForm) {
-    const currentSortBy = form.value.sortBy;
+  clearForm(form: NgForm): void {
+    const currentSearchBy = form.value.searchBy;
     form.setValue({
       searchTerm: null,
-      sortBy: currentSortBy,
+      searchBy: currentSearchBy,
     });
     this.currentSearchTerm = null;
     this.projects = null;

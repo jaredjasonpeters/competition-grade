@@ -7,5 +7,11 @@
                 <mat-icon id="clear_icon" matSuffix (click)="clearForm(searchForm)">clear</mat-icon>
             </ng-template>
         </mat-form-field>
+            <mat-radio-group id="checkbox_container" name="sortBy" ngModel>
+                <mat-radio-button class="radioButton" value="name" color="primary" name="sortBy" [(ngModel)]="sortBy" ngDefaultControl>name</mat-radio-button>
+                <mat-radio-button class="radioButton" value="series" color="primary" name="sortBy" [(ngModel)]="sortBy" ngDefaultControl>series</mat-radio-button>
+                <mat-radio-button class="radioButton" value="location" color="primary" name="sortBy" [(ngModel)]="sortBy" ngDefaultControl>location</mat-radio-button>
+                <mat-radio-button class="radioButton" value="manager" color="primary" name="sortBy" [(ngModel)]="sortBy" ngDefaultControl>project manager</mat-radio-button>
+            </mat-radio-group>
     </form>
 </div>

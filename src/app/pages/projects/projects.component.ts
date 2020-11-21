@@ -31,7 +31,11 @@ export class ProjectsComponent implements OnInit {
   }
 
   clearForm(form: NgForm) {
-    form.reset();
+    const currentSortBy = form.value.sortBy;
+    form.setValue({
+      searchTerm: null,
+      sortBy: currentSortBy,
+    });
     this.currentSearchTerm = null;
     this.projects = null;
   }

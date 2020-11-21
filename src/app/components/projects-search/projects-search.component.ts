@@ -1,11 +1,17 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
+  Input,
+  OnChanges,
   OnInit,
   Output,
+  Renderer2,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatRadioButton } from '@angular/material/radio';
 
 @Component({
   selector: 'app-projects-search',
@@ -14,10 +20,11 @@ import { NgForm } from '@angular/forms';
   encapsulation: ViewEncapsulation.None,
 })
 export class ProjectsSearchComponent implements OnInit {
+  sortBy: string = 'name';
   @Output() searchEvent = new EventEmitter();
   @Output() clearEvent = new EventEmitter();
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
 

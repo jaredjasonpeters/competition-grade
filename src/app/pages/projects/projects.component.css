@@ -44,6 +44,7 @@ app-project-card {
 
 #status_message {
   color: white;
+  padding-left: 1em;
 }
 #status_message span {
   color: var(--cg_gold);

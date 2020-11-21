@@ -113,10 +113,10 @@ export class ProjectsService {
     return this.projects;
   }
 
-  getByName(name: string): Project[] | string {
+  getByName(searchTerm: string): Project[] | string {
     const foundProjects = this.projects.filter((project) => {
-      const nameParts = project.name.toLowerCase().trim();
-      const searchName = name.toLowerCase().trim();
+      const nameParts = this.formatStringForComparisson(project.name);
+      const searchName = this.formatStringForComparisson(searchTerm);
 
       if (searchName.length > 1) {
         if (nameParts.includes(searchName) && searchName !== '') {
@@ -124,7 +124,7 @@ export class ProjectsService {
         }
       }
     });
-    if (name.length > 1) {
+    if (searchTerm.length > 1) {
       if (foundProjects.length !== 0) {
         return foundProjects;
       }
@@ -132,7 +132,38 @@ export class ProjectsService {
     }
   }
 
-  getBySearchFilters(searchFilters) {
-    return;
+  getBySearchFilters(searchTerm, searchBy): Project[] | string {
+    console.log('SEARCHBY', searchBy, 'SEARCHTERM', searchTerm);
+    const foundProjects = this.projects.filter((project) => {
+      let searchByParts;
+
+      if (searchBy === 'product') {
+        searchByParts = [
+          this.formatStringForComparisson(project.series),
+          ...project.tags,
+        ].join(' ');
+      } else {
+        searchByParts = this.formatStringForComparisson(project[searchBy]);
+      }
+
+      console.log('SEARCHBYPARTS', searchByParts);
+      const search = this.formatStringForComparisson(searchTerm);
+
+      if (search.length > 1) {
+        if (searchByParts.includes(search) && search !== '') {
+          return project;
+        }
+      }
+    });
+    if (searchTerm.length > 1) {
+      if (foundProjects.length !== 0) {
+        return foundProjects;
+      }
+      return searchTerm;
+    }
+  }
+
+  formatStringForComparisson(term: string): string {
+    return term.toLowerCase().trim();
   }
 }

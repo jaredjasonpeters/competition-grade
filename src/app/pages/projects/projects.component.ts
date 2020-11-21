@@ -11,6 +11,7 @@ import { ProjectsService } from '../../shared/projects.service';
 export class ProjectsComponent implements OnInit {
   projects: Project[];
   currentSearchTerm: string;
+  currentSearchBy: string;
 
   constructor(private projectsService: ProjectsService) {}
 
@@ -21,24 +22,29 @@ export class ProjectsComponent implements OnInit {
   fetchProjects([searchTerm, searchBy]): void {
     // const result = this.projectsService.getByName(searchTerm);
     console.log('SEARCHBY', searchBy);
-    const result = this.projectsService.getByName(searchTerm);
+    // const result = this.projectsService.getByName(searchTerm);
+    const result = this.projectsService.getBySearchFilters(
+      searchTerm,
+      searchBy
+    );
     if (typeof result === 'string') {
       this.currentSearchTerm = result;
-
+      this.currentSearchBy = searchBy;
       this.projects = null;
     } else {
       this.projects = result;
-      this.currentSearchTerm = null;
+      this.currentSearchTerm = '';
     }
   }
 
   clearForm(form: NgForm): void {
     const currentSearchBy = form.value.searchBy;
     form.setValue({
-      searchTerm: null,
+      searchTerm: '',
       searchBy: currentSearchBy,
     });
-    this.currentSearchTerm = null;
+    this.currentSearchTerm = '';
+    this.currentSearchBy = '';
     this.projects = null;
   }
 }

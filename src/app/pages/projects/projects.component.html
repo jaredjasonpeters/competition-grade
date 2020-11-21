@@ -1,7 +1,7 @@
 <div id="projects_container">
     <app-projects-search (searchEvent)="fetchProjects($event)" (clearEvent)="clearForm($event)"></app-projects-search>
     <h1 id="status_message" *ngIf="currentSearchTerm">
-        No project exists matching:
+        No project exists with the {{currentSearchBy}}:
         <span>
             {{currentSearchTerm}}
         </span>

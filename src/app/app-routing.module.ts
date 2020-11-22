@@ -16,6 +16,7 @@ import { DistributorLocateComponent } from './pages/distributor/distributor-loca
 
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { AuthGuard } from './shared/auth.guard';
+import { SiteDetailsComponent } from './pages/site-details/site-details.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -59,6 +60,10 @@ export const routes: Routes = [
     component: ProjectsComponent,
   },
   {
+    path: 'site-details',
+    component: SiteDetailsComponent,
+  },
+  {
     path: 'portal',
     canActivate: [AuthGuard],
     children: [
@@ -80,6 +85,9 @@ export const routes: Routes = [
     RouterModule.forRoot(routes, {
       enableTracing: false,
       preloadingStrategy: PreloadAllModules,
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+      scrollOffset: [0, 75],
     }),
   ],
   exports: [RouterModule],

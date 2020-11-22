@@ -45,6 +45,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptorService } from './shared/auth-interceptor.service';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectsSearchComponent } from './components/projects-search/projects-search.component';
+import { SiteDetailsComponent } from './pages/site-details/site-details.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { ProjectsSearchComponent } from './components/projects-search/projects-s
     LoginComponent,
     ProjectCardComponent,
     ProjectsSearchComponent,
+    SiteDetailsComponent,
   ],
   imports: [
     AppRoutingModule,

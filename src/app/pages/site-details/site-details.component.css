@@ -1,13 +1,50 @@
 #site_details_container {
-  padding: 2em;
+  padding: 5em 15% 2em 15%;
+  /* border: 2px solid red; */
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#privacy {
-  height: 500px;
+#shield {
+  height: 150px;
+  /* border: 2px solid red; */
+  margin-bottom: 2em;
 }
-#terms {
-  height: 500px;
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50vw;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 4px solid var(--cg_gold);
 }
-#sitemap {
-  height: 500px;
+
+p {
+  font-family: Roboto;
+  font-size: 1em;
+  font-weight: 500;
+}
+p {
+  text-align: center;
+}
+
+#terms p {
+  text-align: left;
+}
+
+.detailContainer {
+  width: 100%;
+  margin-bottom: 5em;
+  /* border: 2px solid red; */
+}
+br {
+  margin-bottom: 0.25em;
 }

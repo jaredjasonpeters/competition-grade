@@ -6,7 +6,6 @@ import { Formulation } from '../pages/products/series/formulation/formulation.mo
   providedIn: 'root',
 })
 export class SeriesFormulationService {
-
   formulationSubject = new Subject<any>();
   formulations = {
     speed: {
@@ -50,13 +49,17 @@ export class SeriesFormulationService {
         },
         fourTurf: {
           percentage: 20,
-          description: 'Tetraploid Perennial Ryegrass Blend',
+          description: 'Tetraploid Perennial Ryegrass',
         },
       },
     },
     power: {
       overview: `Tall fescue-based blends and mixtures exhibiting rapid tillering and high rhizome production, high resistance to major diseases, high density, and low mowing tolerance`,
-      components: ['Turf-Type Tall Fescue', 'Kentucky Bluegrass', '4Turf™ Perennial Ryegrass'],
+      components: [
+        'Turf-Type Tall Fescue',
+        'Kentucky Bluegrass',
+        '4Turf™ Perennial Ryegrass',
+      ],
       description: `The longer lived, lower maintenance qualities of Turf-type Tall Fescues are often chosen for permanent sports fields
       in the transition zone.  Modern, high end, DLF Pickseed Turf-type Tall Fescue cultivars bring the best of this historic species
       to market in Competition Grade Power Series.  The world’s largest cool season grass seed company, screens cultivars for all traits
@@ -102,13 +105,17 @@ export class SeriesFormulationService {
         },
         fourTurf: {
           percentage: 10,
-          description: 'Tetraploid Perennial Ryegrass Blend',
+          description: 'Tetraploid Perennial Ryegrass',
         },
       },
     },
     agility: {
       overview: `Kentucky bluegrass-based blends and mixtures with quick establishment, high wear tolerance and recovery, early green-up in the Spring, disease resistance and quick drought recovery`,
-      components: ['Kentucky Bluegrass', 'Diploid Perennial Ryegrass', '4Turf™ Perennial Ryegrass'],
+      components: [
+        'Kentucky Bluegrass',
+        'Diploid Perennial Ryegrass',
+        '4Turf™ Perennial Ryegrass',
+      ],
       description: `Kentucky bluegrass, long considered the species of choices for Sports Turf where agronomically correct, you cannot get better than the mixtures from the Agility Series Competition Grade mixtures from DLF Pickseed.
       Hitting the Three Hole and always delivering impressive shear strength and sod knitting is the Proprietary cultivar Sombrero.  
       Truly a unique variety, Sombrero, has been used successfully in our Kentucky bluegrass based sports turf mixtures since it’s release to market. 
@@ -122,8 +129,7 @@ export class SeriesFormulationService {
       301: {
         primary: {
           percentage: 100,
-          description:
-            `4-way Kentucky Bluegrass Blend with wear-tolerant Sombrero`,
+          description: `4-way Kentucky Bluegrass Blend with wear-tolerant Sombrero`,
         },
         secondary: {
           percentage: 0,
@@ -142,21 +148,21 @@ export class SeriesFormulationService {
         },
         fourTurf: {
           percentage: 20,
-          description: 'Tetraploid Perennial Ryegrass Blend',
+          description: 'Tetraploid Perennial Ryegrass',
         },
       },
       314: {
         primary: {
           percentage: 50,
-          description: '4-way Kentucky Bluegrass Blend',
+          description: '3-way Kentucky Bluegrass Blend',
         },
         secondary: {
           percentage: 35,
-          description: '3-way Diploid Perennial Ryegrass Blend',
+          description: '2-way Diploid Perennial Ryegrass Blend',
         },
         fourTurf: {
           percentage: 15,
-          description: 'Tetraploid Perennial Ryegrass Blend',
+          description: 'Tetraploid Perennial Ryegrass',
         },
       },
     },
@@ -180,11 +186,14 @@ export class SeriesFormulationService {
     const series = this.formulations[seriesName];
     const tags = [];
     for (let key in series) {
-      if(series[key] instanceof Object === true && (series[key]) instanceof Array === false  ) {
-        let res =  {
-          seriesName, 
-          seriesId: key
-        }
+      if (
+        series[key] instanceof Object === true &&
+        series[key] instanceof Array === false
+      ) {
+        let res = {
+          seriesName,
+          seriesId: key,
+        };
         tags.push(res);
       }
     }

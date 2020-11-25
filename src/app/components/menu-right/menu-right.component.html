@@ -6,10 +6,10 @@
     rowHeight="fit"
   >
     <mat-grid-tile id="video_tile" rowspan="7">
-      <app-featured-video [page]="page" *ngIf="features.includes('video') || features.includes('all')"></app-featured-video>
+      <app-featured-video [page]="page" [autoplay]="true" *ngIf="features.includes('video') || features.includes('all')"></app-featured-video>
     </mat-grid-tile>
     <mat-grid-tile id="featured_tile" rowspan="2">
-      <app-featured-links [page]="page" *ngIf="features.includes('links') || features.includes('all')"></app-featured-links>
+      <app-featured-links [page]="page"  *ngIf="features.includes('links') || features.includes('all')"></app-featured-links>
     </mat-grid-tile>
     <mat-grid-tile id="social_tile" rowspan="5">
       <div class="internal_gridlist">

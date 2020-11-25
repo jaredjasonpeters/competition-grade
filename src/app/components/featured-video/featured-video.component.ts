@@ -10,6 +10,7 @@ import { FeaturedVideoService } from '../../shared/featured-video.service';
 export class FeaturedVideoComponent implements OnInit, OnChanges {
   videoUrl: SafeResourceUrl;
   @Input() page;
+  @Input() autoplay: boolean = false;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -17,10 +18,10 @@ export class FeaturedVideoComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.videoUrl = this.featuredVideoService.getFeaturedVideo();
-   
+    // this.videoUrl = this.featuredVideoService.getFeaturedVideo();
   }
   ngOnChanges(): void {
+    this.featuredVideoService.autoplay = this.autoplay;
     this.videoUrl = this.featuredVideoService.getFeaturedVideo();
   }
 }

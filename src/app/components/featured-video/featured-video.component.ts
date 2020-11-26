@@ -19,11 +19,13 @@ export class FeaturedVideoComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
+    this.featuredVideoService.getFeaturedVideo().subscribe((videoURL) => {
+      this.videoUrl = videoURL;
+    });
+    console.log('THIS VIDEOURL', this.videoUrl);
     // this.videoUrl = this.featuredVideoService.getFeaturedVideo();
     this.featuredVideoService.autoplay = this.autoplay;
     this.featuredVideoService.autoplayOptions = this.autoplayOptions;
   }
-  ngOnChanges(): void {
-    this.videoUrl = this.featuredVideoService.getFeaturedVideo();
-  }
+  ngOnChanges(): void {}
 }

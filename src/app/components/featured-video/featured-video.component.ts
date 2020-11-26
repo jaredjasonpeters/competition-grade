@@ -1,5 +1,6 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 import { FeaturedVideoService } from '../../shared/featured-video.service';
 
 @Component({
@@ -7,8 +8,10 @@ import { FeaturedVideoService } from '../../shared/featured-video.service';
   templateUrl: './featured-video.component.html',
   styleUrls: ['./featured-video.component.css'],
 })
-export class FeaturedVideoComponent implements OnInit, OnChanges {
+export class FeaturedVideoComponent implements OnInit, OnChanges, OnDestroy {
   videoUrl: SafeResourceUrl;
+  getFeaturedVideoSub: Subscription;
+
   @Input() page;
   @Input() autoplay: boolean = false;
   @Input() autoplayOptions?: { runOnce?: boolean };
@@ -19,13 +22,17 @@ export class FeaturedVideoComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.featuredVideoService.getFeaturedVideo().subscribe((videoURL) => {
-      this.videoUrl = videoURL;
-    });
-    console.log('THIS VIDEOURL', this.videoUrl);
-    // this.videoUrl = this.featuredVideoService.getFeaturedVideo();
+    this.getFeaturedVideoSub = this.featuredVideoService
+      .getFeaturedVideo()
+      .subscribe((videoURL) => {
+        this.videoUrl = videoURL;
+      });
     this.featuredVideoService.autoplay = this.autoplay;
     this.featuredVideoService.autoplayOptions = this.autoplayOptions;
   }
   ngOnChanges(): void {}
+
+  ngOnDestroy(): void {
+    this.getFeaturedVideoSub.unsubscribe();
+  }
 }

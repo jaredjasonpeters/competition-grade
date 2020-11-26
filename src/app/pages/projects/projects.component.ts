@@ -20,9 +20,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   fetchProjects([searchTerm, searchBy]): void {
-    // const result = this.projectsService.getByName(searchTerm);
-    console.log('SEARCHBY', searchBy);
-    // const result = this.projectsService.getByName(searchTerm);
     const result = this.projectsService.getBySearchFilters(
       searchTerm,
       searchBy

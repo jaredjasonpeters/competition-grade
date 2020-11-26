@@ -22,6 +22,7 @@ export class FeaturedVideoService implements OnDestroy {
   hasPlayed = {};
 
   pageVidMap: { [key: string]: string } = {
+    default: 'https://player.vimeo.com/video/483752615',
     home: 'https://player.vimeo.com/video/483752615',
   };
 
@@ -38,7 +39,30 @@ export class FeaturedVideoService implements OnDestroy {
     });
   }
 
-  sanitizeUrl(url, params?: { key: string; value: string }[]): SafeResourceUrl {
+  private constructParams(): void {
+    const params = [];
+    if (this._autoplay) {
+      params.push({ key: 'autoplay', value: '1' });
+    }
+    this.params = params;
+  }
+
+  private setCorrectVideo(url): void {
+    if (this.runOnce) {
+      if (this.hasPlayed[url]) {
+        this.featuredVideo.next(this.sanitizeUrl(url));
+      } else {
+        this.featuredVideo.next(this.sanitizeUrl(url, this.params));
+      }
+    } else {
+      this.featuredVideo.next(this.sanitizeUrl(url, this.params));
+    }
+  }
+
+  private sanitizeUrl(
+    url,
+    params?: { key: string; value: string }[]
+  ): SafeResourceUrl {
     let finalUrl = url;
     if (params) {
       const queryString = params
@@ -52,55 +76,7 @@ export class FeaturedVideoService implements OnDestroy {
       finalUrl = url + queryString;
     }
     this.hasPlayed[url] = true;
-    console.log('HAS PLAYED: ', this.hasPlayed, finalUrl);
     return this.sanitize.bypassSecurityTrustResourceUrl(finalUrl);
-  }
-
-  setRandomVideo(): void {
-    console.log('SETTING RANDOM VIDEO');
-    const randomIndex = Math.floor(Math.random() * this.videoUrls.length);
-    const random = this.videoUrls[randomIndex];
-    this.featuredVideo.next(this.sanitizeUrl(random, this.params));
-  }
-
-  setVideoBySeries(seriesName): void {
-    const url = this.seriesVideos[seriesName];
-    console.log('THIS HAS BY SERIES', this.hasPlayed[url]);
-    if (this.runOnce) {
-      if (this.hasPlayed[url]) {
-        this.featuredVideo.next(this.sanitizeUrl(url));
-      } else {
-        this.featuredVideo.next(this.sanitizeUrl(url, this.params));
-      }
-    } else {
-      this.featuredVideo.next(this.sanitizeUrl(url, this.params));
-    }
-  }
-
-  setVideoByPage(page): void {
-    console.log('PAGE', page);
-    let url;
-    if (page === '') {
-      url = this.pageVidMap.home;
-    } else {
-      url = this.pageVidMap[page];
-    }
-    console.log('THIS HAS', this.hasPlayed[url]);
-    if (this.runOnce) {
-      if (this.hasPlayed[url]) {
-        this.featuredVideo.next(this.sanitizeUrl(url));
-      } else {
-        this.featuredVideo.next(this.sanitizeUrl(url, this.params));
-      }
-    } else {
-      this.featuredVideo.next(this.sanitizeUrl(url, this.params));
-    }
-  }
-
-  getFeaturedVideo(): Subject<SafeResourceUrl> {
-    console.log('GETTING FEATURED VIDEO');
-
-    return this.featuredVideo;
   }
 
   public set autoplay(value: boolean) {
@@ -111,12 +87,23 @@ export class FeaturedVideoService implements OnDestroy {
     this._autoplayOptions.next(options);
   }
 
-  constructParams(): void {
-    const params = [];
-    if (this._autoplay) {
-      params.push({ key: 'autoplay', value: '1' });
+  setVideoBySeries(seriesName): void {
+    const url = this.seriesVideos[seriesName];
+    this.setCorrectVideo(url);
+  }
+
+  setVideoByPage(page): void {
+    let url;
+    if (page === '') {
+      url = this.pageVidMap.home;
+    } else {
+      url = this.pageVidMap[page] || this.pageVidMap.default;
     }
-    this.params = params;
+    this.setCorrectVideo(url);
+  }
+
+  getFeaturedVideo(): Subject<SafeResourceUrl> {
+    return this.featuredVideo;
   }
 
   ngOnDestroy(): void {

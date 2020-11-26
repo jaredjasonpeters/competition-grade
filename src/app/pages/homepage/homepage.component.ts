@@ -10,7 +10,11 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  Router,
+} from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -24,8 +28,7 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   this.route.url.subscribe(url => {
-      this.page = url.join('');
-    });
+    this.page = this.route.snapshot.url.join();
+    console.log('PAGE', this.page);
   }
 }

@@ -24,17 +24,7 @@ export class MenuRightComponent implements OnInit, OnChanges {
   @Input() features: string[] = ['all'];
   @ViewChild('menu', { static: true }) menu: ElementRef;
 
-  ngOnInit(): void {
-    // console.log('PAGE', this.page);
-    // console.log('FEATURES', this.features);
-    // if(['power', 'speed', 'agility'].includes(this.page)) {
-    //   this.renderer.setStyle(this.menu.nativeElement, 'background', `var(--cg_${this.page})`);
-    //   this.featuredVideoService.setVideoBySeries(this.page);
-    // }
-    // else {
-    //   this.featuredVideoService.setVideoByPage(this.page);
-    // }
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(): void {
     if (['power', 'speed', 'agility'].includes(this.page)) {

@@ -1,15 +1,15 @@
-<mat-grid-list id="gridlist" cols="12" rowHeight="fit" gutterSize="6px">
+
+<div id="advert_container">
+    <mat-grid-list id="gridlist" cols="12" rowHeight="fit" gutterSize="6px">
     <mat-grid-tile class="sideimage_container" colspan="1">
         <img class="sideimage" src="../../../../assets/perennial_ryegrass_seed_bg.png" />
     </mat-grid-tile>
-        <mat-grid-tile colspan="7">
-            <app-form (formSubmitted)="setFormSubmitted($event)" title="Thanks for your interest" subHeading={{subHeadingText}}></app-form>
-        </mat-grid-tile>
+    <mat-grid-tile colspan="7">
+        <app-form (formSubmitted)="setFormSubmitted($event)" title="Thanks for your interest" subHeading={{subHeadingText}}></app-form>
+    </mat-grid-tile>
     <mat-grid-tile class="right_container" colspan="4">
         <app-menu-right page="adv" ></app-menu-right>
-        <!-- <img class="sideimage" src="../../../../assets/perennial_ryegrass_seed_bg.png" /> -->
     </mat-grid-tile>
 </mat-grid-list>
-
-<!-- [features]="['video','links', 'twitter']" -->
+</div>
 

@@ -1,5 +1,11 @@
+#advert_container {
+  height: 100vh;
+  background: black;
+}
+
 #gridlist {
   min-height: 725px;
+  height: 100%;
 }
 app-menu-right {
   width: 100%;

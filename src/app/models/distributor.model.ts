@@ -9,6 +9,7 @@ export interface Distributor {
   companyName: DistributorsEnum;
   websiteUrl: string;
   imagePath: string;
+  formUrl?: string;
   partnerLevel?: 'Premium' | 'Standard';
   placement?: number;
 }

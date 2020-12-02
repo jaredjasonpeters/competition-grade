@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { TransitionCheckState } from '@angular/material/checkbox';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from './shared/auth.service';
 import { NewsService } from './shared/news.service';
 
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(
     private newsService: NewsService,
     private authService: AuthService,
-    private route: ActivatedRoute
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.newsAvailable = this.newsService.getCurrentNews();

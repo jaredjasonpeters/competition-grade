@@ -10,6 +10,7 @@ export class DistributorsService {
       companyName: DistributorsEnum['Walker Supply'],
       websiteUrl: 'https://www.walkersupplyinc.com/',
       imagePath: '../../assets/walker_supply_logo.png',
+      formUrl: 'https://formspree.io/f/xrgoajbv',
       partnerLevel: 'Premium',
       placement: 1,
     },

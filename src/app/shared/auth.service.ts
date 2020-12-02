@@ -97,7 +97,7 @@ export class AuthService {
     }
     switch (errorRes.error.error.message) {
       case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email was not valid!';
+        errorMessage = 'The email was not valid!';
         break;
       case 'INVALID_PASSWORD':
         errorMessage = 'The password was not valid!';

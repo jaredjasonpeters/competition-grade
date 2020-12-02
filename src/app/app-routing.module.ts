@@ -16,6 +16,7 @@ import { DistributorLocateComponent } from './pages/distributor/distributor-loca
 
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { AuthGuard } from './shared/auth.guard';
+import { CanDeactivateAdvGuard } from './shared/adv.guard';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
 
 export const routes: Routes = [
@@ -26,7 +27,13 @@ export const routes: Routes = [
   },
   {
     path: 'adv',
-    children: [{ path: ':distributor', component: DistributorAdvertComponent }],
+    children: [
+      {
+        path: ':distributor',
+        component: DistributorAdvertComponent,
+        canDeactivate: [CanDeactivateAdvGuard],
+      },
+    ],
   },
   {
     path: 'contact-us',

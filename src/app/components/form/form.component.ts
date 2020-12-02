@@ -17,6 +17,7 @@ export class FormComponent implements OnInit, OnDestroy {
   @Input() subHeading;
   logo: string;
   paramsSubscription: Subscription;
+  formUrl: string;
 
   constructor(
     public formService: FormService,
@@ -37,17 +38,22 @@ export class FormComponent implements OnInit, OnDestroy {
       distributor
     );
     if (distributorFound) {
+      console.log('DISTRIBUTOR', distributorFound);
+      this.formUrl = distributorFound.formUrl || '';
       const logo = distributorFound.imagePath;
       if (logo) {
         this.logo = logo;
       }
+    } else {
+      this.formUrl = 'https://formspree.io/f/xdopzbvz';
+      console.log('FORMURL', this.formUrl);
     }
   }
 
   submitForm(form): void {
     console.log('SUBMITTED FORM', form.value);
 
-    this.http.post('https://formspree.io/f/xdopzbvz', form.value).subscribe(
+    this.http.post(this.formUrl, form.value).subscribe(
       (result: { ok: boolean; next: string }) => {
         console.log('RESULT', result);
         if (result.ok) {
@@ -55,6 +61,7 @@ export class FormComponent implements OnInit, OnDestroy {
           console.log('URLARRAY', urlArray);
           let paramsArray = urlArray.splice(3);
           let redirectUrl = paramsArray.join('/');
+          console.log('REDIRECT TO:', redirectUrl);
 
           this.router.navigateByUrl(redirectUrl);
           this.formService.resetSubmissionError();

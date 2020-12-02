@@ -27,6 +27,7 @@ export class ThanksComponent implements OnInit, OnDestroy {
         console.log('DISTRIBUTRO', this.distributor);
       }
     );
+    //redirect to walker supply website after displaying thanks message
   }
 
   ngOnDestroy(): void {

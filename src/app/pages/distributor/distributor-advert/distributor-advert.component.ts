@@ -10,6 +10,9 @@ import { Observable } from 'rxjs';
 export class DistributorAdvertComponent
   implements OnInit, CanComponentDeactivate {
   formSubmitted: boolean;
+  subHeadingText =
+    'Your on your way to superior turfgrass performance, we just need some information to better serve your needs';
+
   constructor() {}
 
   ngOnInit(): void {}

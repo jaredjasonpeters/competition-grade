@@ -1,6 +1,7 @@
 .internal_gridlist {
   /* background: var(--cg_gold); */
   background: black;
+  max-height: 725px;
 }
 
 #menu_right_gridlist {

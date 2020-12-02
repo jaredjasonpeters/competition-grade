@@ -1,5 +1,5 @@
 <app-news *ngIf="newsAvailable"></app-news>
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-<app-footer-detail></app-footer-detail>
+<app-header *ngIf="!isAdvertisment"></app-header>
+<router-outlet (activate)="onRouterActivate($event)"></router-outlet>
+<app-footer *ngIf="!isAdvertisment"></app-footer>
+<app-footer-detail *ngIf="!isAdvertisment"></app-footer-detail>

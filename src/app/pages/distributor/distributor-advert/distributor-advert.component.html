@@ -3,7 +3,7 @@
         <img class="sideimage" src="../../../../assets/perennial_ryegrass_seed_bg.png" />
     </mat-grid-tile>
         <mat-grid-tile colspan="7">
-            <app-form title="Thanks for your interest" subHeading="Your on your way to superior performance, we just need some information to better serve your needs"></app-form>
+            <app-form (formSubmitted)="setFormSubmitted($event)" title="Thanks for your interest" subHeading="Your on your way to superior performance, we just need some information to better serve your needs"></app-form>
         </mat-grid-tile>
     <mat-grid-tile class="right_container" colspan="4">
         <app-menu-right page="adv" ></app-menu-right>

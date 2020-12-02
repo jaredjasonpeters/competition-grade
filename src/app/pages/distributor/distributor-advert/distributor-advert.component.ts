@@ -9,11 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class DistributorAdvertComponent
   implements OnInit, CanComponentDeactivate {
+  formSubmitted: boolean;
   constructor() {}
 
   ngOnInit(): void {}
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    return true;
+    return this.formSubmitted;
+  }
+
+  setFormSubmitted(formSubmittedValue) {
+    this.formSubmitted = formSubmittedValue;
   }
 }

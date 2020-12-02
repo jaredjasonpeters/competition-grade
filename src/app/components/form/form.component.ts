@@ -1,5 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnDestroy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DistributorsService } from 'src/app/shared/distributors.service';
@@ -15,6 +22,7 @@ export class FormComponent implements OnInit, OnDestroy {
   @Input() title;
   @Input() fieldApperance;
   @Input() subHeading;
+  @Output() formSubmitted = new EventEmitter();
   logo: string;
   paramsSubscription: Subscription;
   formUrl: string;
@@ -62,7 +70,7 @@ export class FormComponent implements OnInit, OnDestroy {
           let paramsArray = urlArray.splice(3);
           let redirectUrl = paramsArray.join('/');
           console.log('REDIRECT TO:', redirectUrl);
-
+          this.formSubmitted.emit(true);
           this.router.navigateByUrl(redirectUrl);
           this.formService.resetSubmissionError();
         }

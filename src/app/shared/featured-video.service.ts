@@ -23,13 +23,12 @@ export class FeaturedVideoService implements OnDestroy {
 
   pageVidMap: { [key: string]: string } = {
     default: 'https://player.vimeo.com/video/483752615',
-    home: 'https://player.vimeo.com/video/483752615',
   };
 
   seriesVideos = {
-    speed: 'https://player.vimeo.com/video/483749526',
-    power: 'https://player.vimeo.com/video/483653196',
-    agility: 'https://player.vimeo.com/video/483338079',
+    speed: 'https://player.vimeo.com/video/486552902',
+    power: 'https://player.vimeo.com/video/486555331',
+    agility: 'https://player.vimeo.com/video/486558170',
   };
 
   constructor(private sanitize: DomSanitizer, private router: Router) {
@@ -93,12 +92,7 @@ export class FeaturedVideoService implements OnDestroy {
   }
 
   setVideoByPage(page): void {
-    let url;
-    if (page === '') {
-      url = this.pageVidMap.home;
-    } else {
-      url = this.pageVidMap[page] || this.pageVidMap.default;
-    }
+    let url = this.pageVidMap[page] || this.pageVidMap.default;
     this.setCorrectVideo(url);
   }
 

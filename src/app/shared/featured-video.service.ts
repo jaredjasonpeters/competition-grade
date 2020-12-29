@@ -22,7 +22,7 @@ export class FeaturedVideoService implements OnDestroy {
   hasPlayed = {};
 
   pageVidMap: { [key: string]: string } = {
-    default: 'https://player.vimeo.com/video/483752615',
+    default: 'https://player.vimeo.com/video/491310373',
   };
 
   seriesVideos = {

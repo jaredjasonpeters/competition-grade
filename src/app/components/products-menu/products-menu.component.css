@@ -1,16 +1,18 @@
 .products_menu {
   border-bottom: 5px solid var(--cg_gold);
-  border-top: 5px solid white;
+  /* border-top: 5px solid white; */
   /* border-top: 5px solid black; */
   color: red;
-  margin-top: 22px;
+  margin-top: 17px;
+  border-radius: 0 !important;
 }
 
 .mat-menu-item {
   font-family: Orbitron;
-  font-weight: bold;
-  font-size: 0.7em;
-
+  font-weight: 800;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  text-align: center !important;
   text-transform: uppercase;
 }
 

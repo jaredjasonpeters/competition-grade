@@ -44,8 +44,7 @@ import { AuthInterceptorService } from './shared/auth-interceptor.service';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectsSearchComponent } from './components/projects-search/projects-search.component';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
-import { VerificationModule } from './pages/verification-program/verification.module';
-import { WhyCompGradeModule } from './pages/why-comp-grade/why-comp-grade.module';
+
 
 @NgModule({
   declarations: [
@@ -93,9 +92,7 @@ import { WhyCompGradeModule } from './pages/why-comp-grade/why-comp-grade.module
     ReactiveFormsModule,
     MaterialModule,
     MatIconModule,
-    HttpClientModule,
-    VerificationModule,
-    WhyCompGradeModule,
+    HttpClientModule
   ],
   providers: [
     Title,

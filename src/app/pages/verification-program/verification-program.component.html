@@ -15,7 +15,7 @@
           <mat-grid-tile id="bottom_tile" rowspan="5">
             <div id="explanation_container">
               <h2 id="explanation_title">
-                <span>COMPETITION GRADE CULTIVARS</span> >> CRITERIA
+                CURRENT <span>COMPETITION GRADE&trade;</span> LINEUP
               </h2>
               <p id="explanation_paragraph">
                 The cultivars approved for Competition Grade meet stringent
@@ -35,17 +35,21 @@
               <div id="cultivars_by_species_container">
                 <h1 class="header_text black">Kentucky Bluegrass</h1>
                 <ul>
-                  <li *ngFor="let variety of kbgVarieties">{{ variety }}</li>
+                  <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of kbgVarieties">
+                    <li>>> {{ variety[0] }}</li>
+                  </a>
                 </ul>
-
                 <h1 class="header_text black">Tall Fescue</h1>
                 <ul>
-                  <li *ngFor="let variety of tfVarieties">{{ variety }}</li>
+                  <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank"  *ngFor="let variety of tfVarieties">
+                    <li>>> {{ variety[0] }}</li>
+                  </a>
                 </ul>
-
                 <h1 class="header_text black">Perennial Ryegrass</h1>
                 <ul>
-                  <li *ngFor="let variety of prgVarieties">{{ variety }}</li>
+                  <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of prgVarieties">
+                    <li>>> {{ variety[0] }}</li>
+                  </a>
                 </ul>
               </div>
             </div>
@@ -56,14 +60,6 @@
     <mat-grid-tile id="right_tile" colspan="4" rowspan="1">
       <div class="internal_gridlist">
         <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
-          <mat-grid-tile id="image_tile" colspan="1" rowspan="8">
-            <div id="top_image_container" class="image_container">
-              <img
-                id="hand_image"
-                src="../../../assets/hands_seed_1500x1000.jpg"
-              />
-            </div>
-          </mat-grid-tile>
           <mat-grid-tile id="featured_tile" colspan="1" rowspan="2">
             <div id="featured_container">
               <div id="featured_header_container">
@@ -77,16 +73,15 @@
               </div>
             </div>
           </mat-grid-tile>
-          <mat-grid-tile id="cert_image_tile" colspan="1" rowspan="4">
-            <div class="image_container">
+          <mat-grid-tile id="image_tile" colspan="1" rowspan="4">
+            <div id="top_image_container" class="image_container">
               <img
-                id="cert_varieties"
-                src="../../../assets/certified_varieties_collage.png"
+                id="hand_image"
+                src="../../../assets/hands_seed_1500x1000.jpg"
               />
             </div>
           </mat-grid-tile>
-         
-        </mat-grid-list>
+       </mat-grid-list>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

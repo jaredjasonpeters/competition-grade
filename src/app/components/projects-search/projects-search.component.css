@@ -56,7 +56,7 @@
 }
 
 #checkbox_container {
-  padding-left: 2em;
+  padding-left: 8em;
   display: flex;
   justify-content: space-evenly;
   /* border: 2px solid purple; */
@@ -68,7 +68,7 @@
   content: "search by:";
   position: absolute;
   top: -25px;
-  left: 2em;
+  left: 3em;
   color: white;
   font-family: Roboto;
   font-weight: 700;

@@ -31,8 +31,6 @@ import { ProductsMenuComponent } from './components/products-menu/products-menu.
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DistributorLevelsComponent } from './pages/distributor/distributor-levels/distributor-levels.component';
 import { DistributorBenefitsComponent } from './pages/distributor/distributor-benefits/distributor-benefits.component';
-import { VerificationProgramComponent } from './pages/verification-program/verification-program.component';
-import { WhyCompGradeComponent } from './pages/why-comp-grade/why-comp-grade.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { DistributorLocateComponent } from './pages/distributor/distributor-locate/distributor-locate.component';
 import { MarketingComponent } from './pages/marketing/marketing.component';
@@ -46,6 +44,8 @@ import { AuthInterceptorService } from './shared/auth-interceptor.service';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectsSearchComponent } from './components/projects-search/projects-search.component';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
+import { VerificationModule } from './pages/verification-program/verification.module';
+import { WhyCompGradeModule } from './pages/why-comp-grade/why-comp-grade.module';
 
 @NgModule({
   declarations: [
@@ -73,8 +73,6 @@ import { SiteDetailsComponent } from './pages/site-details/site-details.componen
     ContactUsComponent,
     DistributorLevelsComponent,
     DistributorBenefitsComponent,
-    VerificationProgramComponent,
-    WhyCompGradeComponent,
     ProjectsComponent,
     DistributorLocateComponent,
     MarketingComponent,
@@ -96,6 +94,8 @@ import { SiteDetailsComponent } from './pages/site-details/site-details.componen
     MaterialModule,
     MatIconModule,
     HttpClientModule,
+    VerificationModule,
+    WhyCompGradeModule,
   ],
   providers: [
     Title,

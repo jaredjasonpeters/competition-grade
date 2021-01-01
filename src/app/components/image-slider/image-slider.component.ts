@@ -25,7 +25,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
     }
     if (!this.images) {
       this.images = [
-        '../../../../assets/Competition_Grade_SliderImage_Main.png',
+        '../../../../assets/MainMarketingImage.jpg',
         '../../../../assets/football_1500x1000.png',
         '../../../../assets/baseball_1500x1000.png',
         '../../../../assets/soccer_ball_1500x1000.png',

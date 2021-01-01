@@ -118,10 +118,10 @@ mat-grid-list {
 /* #image_container:before {
   content: url("../../../assets/gold_fade.png");
   position: absolute;
-  mix-blend-mode: overlay; 
+  mix-blend-mode: overlay;
   opacity: 0.7;
   top: 1px;
-  left: 0; 
+  left: 0;
 }
 */
 #top_image_container:after {
@@ -139,6 +139,16 @@ mat-grid-list {
   height: 100%;
   /* border: 2px solid red; */
   background: black;
+}
+
+a {
+  color: black;
+  margin: 0;
+  transition: color 250ms ease-out;
+}
+
+a:hover {
+  color: var(--cg_gold);
 }
 
 #featured_tile {

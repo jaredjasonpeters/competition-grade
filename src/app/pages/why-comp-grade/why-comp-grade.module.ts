@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
 
 import { WhyCompGradeComponent } from './why-comp-grade.component';
 
@@ -8,7 +10,8 @@ const whyCompGradeRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(whyCompGradeRoutes)],
+  declarations: [WhyCompGradeComponent],
+  imports: [CommonModule, MaterialModule, RouterModule.forChild(whyCompGradeRoutes)],
   exports: [RouterModule],
 })
-export class WhyCompGradeRoutingModule {}
+export class WhyCompGradeModule {}

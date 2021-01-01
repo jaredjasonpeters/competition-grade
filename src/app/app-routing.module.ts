@@ -43,14 +43,14 @@ export const routes: Routes = [
     path: 'why-competition-grade',
     loadChildren: () =>
       import('./pages/why-comp-grade/why-comp-grade.module').then(
-        (m) => m.WhyCompGradeRoutingModule
+        (m) => m.WhyCompGradeModule
       ),
   },
   {
     path: 'verification',
     loadChildren: () =>
       import('./pages/verification-program/verification.module').then(
-        (m) => m.VerificationRoutingModule
+        (m) => m.VerificationModule
       ),
   },
   {

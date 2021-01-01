@@ -1,3 +1,9 @@
+.internal_gridlist {
+  margin: 0;
+  /* border: 2px solid yellow; */
+  padding: 0;
+}
+
 [class$="_tile"]:hover {
   filter: grayscale(0%);
 }
@@ -36,6 +42,7 @@
   background: black;
   border-top: 4px solid var(--cg_gold);
   border-bottom: 4px solid var(--cg_gold);
+  /* border: 2px solid red; */
 }
 
 .link_container {

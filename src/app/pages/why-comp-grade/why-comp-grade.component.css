@@ -29,7 +29,7 @@ mat-grid-tile {
   width: 100%;
   object-fit: scale-down;
   object-position: center;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   margin-left: auto;
   margin-right: auto;
 }

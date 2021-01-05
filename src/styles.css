@@ -3,14 +3,6 @@
   box-sizing: border-box;
 }
 
-/* html {
-  scroll-behavior: smooth;
-} */
-
-html,
-body {
-}
-
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;

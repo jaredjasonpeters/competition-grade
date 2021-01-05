@@ -1,13 +1,25 @@
+#section_header_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2em;
+  /* border: 2px solid blue; */
+}
 
+#section_header_container img {
+  width: 80px;
+
+}
 
 h2{
   padding: 4px 0 4px 0;
-  margin: 1em auto 1em auto;
-  width: 100%;
+  margin: 5px auto 1em auto;
+  width: auto;
   text-align: center;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 2em;
   font-family: Orbitron;
-  border-top: 4px solid var(--cg_gold);
+  border-bottom: 4px solid var(--cg_gold);
 }

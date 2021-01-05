@@ -10,7 +10,7 @@ mat-grid-tile {
 }
 #explanation_paragraph {
   width: calc(67% + 6px);
-  padding: 0 4em 0 4em;
+  padding: 0 4em 0 0;
   /* padding: 4em 0 4em 0; */
   /* max-width: 50%; */
   text-align: left;
@@ -19,8 +19,8 @@ mat-grid-tile {
   /* border: 2px solid red; */
 }
 
-#header_logo {
-  height: 100%;
+#what_is_logo {
+  height: 75%;
   width: calc(33% + 6px);
   object-fit: scale-down;
   object-position: center;

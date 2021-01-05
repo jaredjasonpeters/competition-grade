@@ -1,8 +1,5 @@
 <div class="page_container">
   <app-image-header image="/assets/Competition_Grade_Verified_Seal_375x375.png" backgroundImage="/assets/hands_seed_1500x1000.jpg" [backgroundImageStyles]="{size: 'cover', positionY: -600 }"></app-image-header>
-
-        <mat-grid-list cols="1" rowHeight="650px" gutterSize="6px">
-          <mat-grid-tile id="bottom_tile" rowspan="1">
             <div id="explanation_container">
               <p id="explanation_paragraph">
                 The cultivars approved for Competition Grade meet stringent
@@ -19,7 +16,23 @@
                 superior resistance to diseases such as Gray Leaf Spot, Brown
                 Patch and Summer patch.
               </p>
-              <h2 id="explanation_title">
+              <mat-grid-list id="featured_list" cols="1" gutterSize="6px" rowHeight="200px">
+                <mat-grid-tile id="featured_tile" colspan="1" rowspan="1">
+                  <div id="featured_container">
+                    <div id="featured_header_container">
+                      <h1 id="featured_header" class="header_text">
+                        Featured Cultivars and Technological Advancements
+                      </h1>
+                    </div>
+                    <div id="featured_varieties_container">
+                      <img routerLink="/featured/sombrero" src="/assets/sombrero_logo.jpg" />
+                      <img routerLink="/featured/4turf" src="/assets/4turf_logo.jpg" />
+                    </div>
+                  </div>
+                </mat-grid-tile>
+             </mat-grid-list>
+
+              <h2 id="cg_lineup_title">
                 CURRENT <span>COMPETITION GRADE</span> LINEUP
               </h2>
               <div id="cultivars_by_species_container">
@@ -27,7 +40,7 @@
                   <h1 class="header_text black">Kentucky Bluegrass</h1>
                   <ul>
                     <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of kbgVarieties">
-                      <li>{{ variety[0] }}</li>
+                      <li (mouseenter)="showLogo($event)" (mouseleave)="hideLogo($event)" [attr.data-logo]="formatForDataLogo(variety)">{{ variety[0] }}</li>
                     </a>
                   </ul>
                 </div>
@@ -35,7 +48,7 @@
                 <h1 class="header_text black">Tall Fescue</h1>
                 <ul>
                   <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank"  *ngFor="let variety of tfVarieties">
-                    <li>{{ variety[0] }}</li>
+                    <li (mouseenter)="showLogo($event)" (mouseleave)="hideLogo($event)" [attr.data-logo]="formatForDataLogo(variety)">{{ variety[0] }}</li>
                   </a>
                 </ul>
                 </div>
@@ -43,29 +56,13 @@
                 <h1 class="header_text black">Perennial Ryegrass</h1>
                 <ul>
                   <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of prgVarieties">
-                    <li>{{ variety[0] }}</li>
+                    <li (mouseenter)="showLogo($event)" (mouseleave)="hideLogo($event)" [attr.data-logo]="formatForDataLogo(variety)">{{ variety[0] }}</li>
                   </a>
                 </ul>
               </div>
-            </div>
-            </div>
-          </mat-grid-tile>
-        </mat-grid-list>
-
-
-        <!-- <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
-          <mat-grid-tile id="featured_tile" colspan="1" rowspan="2">
-            <div id="featured_container">
-              <div id="featured_header_container">
-                <h1 id="featured_header" class="header_text">
-                  Featured Cultivars and Technological Advancements
-                </h1>
-              </div>
-              <div id="featured_varieties_container">
-                <img routerLink="hello" src="../../../assets/sombrero_logo_featured.png" />
-                <img routerLink="hello" src="../../../assets/4turf_logo_featured.jpg" />
+              <div id="logo_viewer" #logoViewer>
+                <div id="star_pin"></div>
               </div>
             </div>
-          </mat-grid-tile>
-       </mat-grid-list> -->
+            </div>
 </div>

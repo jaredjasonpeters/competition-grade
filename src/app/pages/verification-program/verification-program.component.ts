@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-verification-program',
@@ -39,11 +39,33 @@ export class VerificationProgramComponent implements OnInit {
     ['Allstar Fore', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Allstar_Fore_ts.pdf'],
     ['Fiesta Cinco', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Fiesta_Cinco_ts.pdf'],
   ];
-
+  @ViewChild('logoViewer', {static: true}) logoViewer: ElementRef<HTMLDivElement>;
   needsPageHeader: Boolean = true;
   pageHeaderTitle: String = 'MAKING THE TEAM >> THE VARIETY SELECTION PROCESS';
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
+
+  showLogo(event: MouseEvent) {
+    let target = event.target['dataset']['logo'];
+    console.log('TARGET', target);
+    if(target) {
+
+      this.renderer.setStyle(this.logoViewer.nativeElement, 'background-image', `url('assets/${target}_logo.jpg')`);
+    }
+
+  }
+
+  hideLogo(event: MouseEvent) {
+    this.renderer.setStyle(this.logoViewer.nativeElement, 'background-image', '');
+  }
+
+  formatForDataLogo(variety) {
+    if(variety) {
+      let name = variety[0].toLowerCase();
+      let formatted_name = name.replace(' ', '_')
+      return formatted_name
+    }
+  }
 }

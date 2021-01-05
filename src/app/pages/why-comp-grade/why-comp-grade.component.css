@@ -67,7 +67,10 @@ mat-grid-tile {
   object-fit: contain;
   /* border: 2px solid blue; */
   margin: 0;
+  cursor: pointer;
 }
+
+
 
 #usage_list mat-grid-tile p {
   height: 80%;

@@ -45,6 +45,9 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
 import { ProjectsSearchComponent } from './components/projects-search/projects-search.component';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { FeaturedComponent } from './pages/featured/featured.component';
+import { SharedComponentsModule } from './components/shared-components/shared-components.module';
+
 
 
 
@@ -86,6 +89,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     ProjectsSearchComponent,
     SiteDetailsComponent,
     PageHeaderComponent,
+    FeaturedComponent
   ],
   imports: [
     AppRoutingModule,
@@ -95,7 +99,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     ReactiveFormsModule,
     MaterialModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedComponentsModule,
   ],
   providers: [
     Title,

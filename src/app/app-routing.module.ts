@@ -18,6 +18,7 @@ import { UnderConstructionComponent } from './pages/under-construction/under-con
 import { AuthGuard } from './shared/auth.guard';
 import { CanDeactivateAdvGuard } from './shared/adv.guard';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
+import { FeaturedComponent } from './pages/featured/featured.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -81,7 +82,10 @@ export const routes: Routes = [
     ],
   },
 
-  // { path: 'privacy', component: ThanksComponent },
+    {path: 'featured',
+  children: [
+    {path: ':item', component: FeaturedComponent}
+  ]},
   { path: 'thanks', component: ThanksComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },

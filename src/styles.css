@@ -38,6 +38,39 @@ a:visited {
   --lspace: 0.25em;
 }
 
+.speed_c {
+  color: var(--cg_speed);
+}
+.power_c {
+  color: var(--cg_power);
+}
+.agility_c {
+  color: var(--cg_agility);
+}
+
+.speed_bgc {
+  background-color: var(--cg_speed);
+}
+.power_bgc {
+  background-color: var(--cg_power);
+}
+.agility_bgc {
+  background-color: var(--cg_agility);
+}
+
+
+
+.speed_border_c {
+ border-color: var(--cg_speed);
+}
+.power_border_c {
+  border-color: var(--cg_power);
+}
+.agility_border_c {
+  border-color: var(--cg_agility);
+}
+
+
 .internal_gridlist {
   min-width: 100%;
   padding: 6px;

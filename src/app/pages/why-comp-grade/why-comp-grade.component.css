@@ -23,8 +23,17 @@ mat-grid-tile {
   font-weight: 600;
 }
 
+#what_is_logo_container {
+  height: 250px;
+  /* border: 2px solid red; */
+  background-image: url('/assets/football_1500x1000.png');
+  background-size: cover;
+  background-position: 0 -825px;
+  background-repeat: no-repeat;
+}
+
 #what_is_logo {
-  height: 200px;
+height: 100%;
   /* width: calc(33% + 6px); */
   width: 100%;
   object-fit: scale-down;

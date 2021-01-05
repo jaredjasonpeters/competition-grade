@@ -1,0 +1,35 @@
+#page_header_container {
+  width: 100%;
+  height: 150px;
+  background: black;
+  padding-bottom: 1em;
+}
+
+#image_container {
+  width: 100%;
+  height: 75%;
+  background: url("../../../assets/Competition_Grade_Website_TopDesignBackground.png");
+  background-position-y: 10px;
+  background-size: 50%;
+  background-repeat: repeat;
+  background-clip: border-box;
+  /* border: 2px solid red; */
+}
+
+#title_container {
+
+}
+
+#title_container h1{
+  color: white;
+  text-align: center;
+  font-family: Orbitron;
+  font-weight: 600;
+  font-size: 2.25em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#title_container span {
+  color: var(--cg_gold);
+}

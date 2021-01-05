@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   title = 'competition-grade';
   newsAvailable: string;
   isAdvertisment: boolean;
+  displayPageHeader: boolean;
+  pageHeaderTitle: string;
 
   constructor(
     private newsService: NewsService,
@@ -30,6 +32,17 @@ export class AppComponent implements OnInit {
       this.isAdvertisment = true;
     } else {
       this.isAdvertisment = false;
+    }
+
+    if(event.hasOwnProperty('needsPageHeader')) {
+        this.displayPageHeader = event['needsPageHeader'];
+        if(event.hasOwnProperty('pageHeaderTitle')) {
+          this.pageHeaderTitle = event['pageHeaderTitle'];
+        }
+    }
+    else {
+      this.displayPageHeader = false;
+      this.pageHeaderTitle = '';
     }
   }
 }

@@ -44,6 +44,8 @@ import { AuthInterceptorService } from './shared/auth-interceptor.service';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectsSearchComponent } from './components/projects-search/projects-search.component';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
+
 
 
 @NgModule({
@@ -83,6 +85,7 @@ import { SiteDetailsComponent } from './pages/site-details/site-details.componen
     ProjectCardComponent,
     ProjectsSearchComponent,
     SiteDetailsComponent,
+    PageHeaderComponent,
   ],
   imports: [
     AppRoutingModule,

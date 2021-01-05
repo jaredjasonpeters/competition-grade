@@ -31,7 +31,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
-  background: url("../../../assets/Competition_Grade_Website_TopDesignBackground.png");
+  background: url("/assets/Competition_Grade_Website_TopDesignBackground.png");
   background-position-y: 0px;
   background-size: 40%;
 }

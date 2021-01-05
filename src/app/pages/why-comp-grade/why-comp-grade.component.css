@@ -7,24 +7,22 @@ mat-grid-tile {
 }
 #header_tile {
   /* border: 2px solid red; */
-  background: black;
-  background: var(--cg_gold);
 }
-#explanation_tile {
-  font-size: 1.25em;
-  font-weight: 800;
-  line-height: 1.25em;
-}
-#explanation_paragraph,
-#explanation_two_paragraph {
-  padding: 3em;
+#explanation_paragraph {
+  width: calc(67% + 6px);
+  padding: 0 4em 0 4em;
+  /* padding: 4em 0 4em 0; */
   /* max-width: 50%; */
-  text-align: center;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.25em;
+  /* border: 2px solid red; */
 }
 
 #header_logo {
-  margin-right: 1em;
-  object-position: contain;
+  height: 100%;
+  width: calc(33% + 6px);
+  object-fit: scale-down;
   object-position: center;
   /* border: 2px solid blue; */
 }

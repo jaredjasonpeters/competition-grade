@@ -1,14 +1,7 @@
-<div class="container">
-  <div id="what_is_logo_container">
-    <img
-    id="what_is_logo"
-    src="../../../assets/What_is_logo.png"
-  alt="what is competition grade"
-/>
-  </div>
-  <mat-grid-list id="header_list" cols="2" rowHeight="100px" gutterSize="6px">
-    <mat-grid-tile id="header_tile" colspan="2" rowspan="2">
-
+<div class="page_container">
+<app-image-header image="../../../assets/What_is_logo.png" backgroundImage="/assets/football_1500x1000.png" [backgroundImageStyles]="{size: 'cover', positionY: -825}"></app-image-header>
+  <mat-grid-list id="desc_list" cols="2" rowHeight="300px" gutterSize="6px">
+    <mat-grid-tile id="desc_tile" colspan="2" rowspan="1">
       <p class="explanation_paragraph">
         <span>Competition Grade’s performance-tested genetics will:</span><br/> Provide higher shear
         strength and increase player safety Respond better to wear and provide a
@@ -26,8 +19,8 @@
         performance-tested genetics present in Competition Grade blends and
         mixtures should be your only option.</p>
     </mat-grid-tile>
-
   </mat-grid-list>
+
   <app-section-header>
     Usage By Sport
   </app-section-header>
@@ -54,7 +47,7 @@
       /></mat-grid-tile>
     </mat-grid-list>
   </div>
-  <mat-grid-list id="usage_list" cols="3" rowHeight="250px" gutterSize="6px">
+  <mat-grid-list id="usage_list" cols="3" rowHeight="350px" gutterSize="6px">
     <mat-grid-tile rowspan="1">
       <div class="internal_gridlist">
         <img class="series_logo speed_bgc" src="/assets/speed_series.png" />

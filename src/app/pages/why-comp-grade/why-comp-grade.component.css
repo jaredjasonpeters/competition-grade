@@ -1,46 +1,42 @@
-.container {
-  /* cursor: context-menu; */
-}
+
 mat-grid-tile {
   width: 100%;
   height: 100%;
 }
-#header_tile {
+
+#desc_list {
+  width: 70%;
+  margin: 0 auto 0 auto;
+
+}
+
+#desc_tile {
   /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+
 }
 .explanation_paragraph {
-  width: calc(67% + 6px);
-  padding: 0 2em 0 0;
+  height: 100%;
+  width: 100%;
+  padding: 5em 2em 0 0;
+  margin:0;
   /* padding: 4em 0 4em 0; */
   /* max-width: 50%; */
   text-align: left;
   font-weight: 500;
   font-size: 1.25em;
-  /* border: 2px solid red; */
+  /* border: 2px solid green; */
 }
 
 .explanation_paragraph span {
   font-weight: 600;
 }
 
-#what_is_logo_container {
-  height: 250px;
-  /* border: 2px solid red; */
-  background-image: url('/assets/football_1500x1000.png');
-  background-size: cover;
-  background-position: 0 -825px;
-  background-repeat: no-repeat;
-}
 
-#what_is_logo {
-height: 100%;
-  /* width: calc(33% + 6px); */
-  width: 100%;
-  object-fit: scale-down;
-  object-position: center;
-  /* border: 2px solid blue; */
-  margin-left: auto;
-  margin-right: auto;
+#usage_list {
+  width: 70%;
+  margin: 0 auto 0 auto;
 }
 
 
@@ -67,19 +63,19 @@ height: 100%;
 
 .series_logo {
   width: 100%;
-  height: 30%;
+  height: 20%;
   object-fit: contain;
   /* border: 2px solid blue; */
   margin: 0;
 }
 
 #usage_list mat-grid-tile p {
-  height: 60%;
+  height: 80%;
   width: 100%;
   margin: 0;
   padding: 2em;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 500;
   /* color: var(--cg_silver); */
   color: white;
  /* background: black; */
@@ -111,7 +107,9 @@ height: 100%;
 }
 
 #image_container {
-  height: 475px;
+  height: 250px;
+  width: 70%;
+  margin: 0 auto 0 auto;
 }
 
 mat-grid-list {

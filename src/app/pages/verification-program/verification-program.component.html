@@ -1,22 +1,9 @@
-<div class="container">
-  <mat-grid-list cols="6" rowHeight="fit" gutterSize="6px">
-    <mat-grid-tile id="left_tile" colspan="2" rowspan="1">
-      <div class="internal_gridlist">
-        <mat-grid-list cols="1" rowHeight="200px" gutterSize="6px">
-          <mat-grid-tile id="top_tile" rowspan="2">
-            <div id="header_image_container">
-              <img
-                id="header_logo"
-                src="../../../assets/Competition_Grade_Verified_Seal_375x375.png"
-                alt="what is competition grade"
-              />
-            </div>
-          </mat-grid-tile>
-          <mat-grid-tile id="bottom_tile" rowspan="5">
+<div class="page_container">
+  <app-image-header image="/assets/Competition_Grade_Verified_Seal_375x375.png" backgroundImage="/assets/hands_seed_1500x1000.jpg" [backgroundImageStyles]="{size: 'cover', positionY: -600 }"></app-image-header>
+
+        <mat-grid-list cols="1" rowHeight="650px" gutterSize="6px">
+          <mat-grid-tile id="bottom_tile" rowspan="1">
             <div id="explanation_container">
-              <h2 id="explanation_title">
-                CURRENT <span>COMPETITION GRADE&trade;</span> LINEUP
-              </h2>
               <p id="explanation_paragraph">
                 The cultivars approved for Competition Grade meet stringent
                 characteristics for sports turf usage. Many of them originate
@@ -32,34 +19,41 @@
                 superior resistance to diseases such as Gray Leaf Spot, Brown
                 Patch and Summer patch.
               </p>
+              <h2 id="explanation_title">
+                CURRENT <span>COMPETITION GRADE</span> LINEUP
+              </h2>
               <div id="cultivars_by_species_container">
-                <h1 class="header_text black">Kentucky Bluegrass</h1>
-                <ul>
-                  <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of kbgVarieties">
-                    <li>>> {{ variety[0] }}</li>
-                  </a>
-                </ul>
+                <div class="container">
+                  <h1 class="header_text black">Kentucky Bluegrass</h1>
+                  <ul>
+                    <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of kbgVarieties">
+                      <li>{{ variety[0] }}</li>
+                    </a>
+                  </ul>
+                </div>
+                <div class="container">
                 <h1 class="header_text black">Tall Fescue</h1>
                 <ul>
                   <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank"  *ngFor="let variety of tfVarieties">
-                    <li>>> {{ variety[0] }}</li>
+                    <li>{{ variety[0] }}</li>
                   </a>
                 </ul>
+                </div>
+                <div class="container">
                 <h1 class="header_text black">Perennial Ryegrass</h1>
                 <ul>
                   <a [href]="variety[1]" referrerpolicy="no-referrer" target="_blank" *ngFor="let variety of prgVarieties">
-                    <li>>> {{ variety[0] }}</li>
+                    <li>{{ variety[0] }}</li>
                   </a>
                 </ul>
               </div>
             </div>
+            </div>
           </mat-grid-tile>
         </mat-grid-list>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile id="right_tile" colspan="4" rowspan="1">
-      <div class="internal_gridlist">
-        <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
+
+
+        <!-- <mat-grid-list cols="1" gutterSize="6px" rowHeight="100px">
           <mat-grid-tile id="featured_tile" colspan="1" rowspan="2">
             <div id="featured_container">
               <div id="featured_header_container">
@@ -73,16 +67,5 @@
               </div>
             </div>
           </mat-grid-tile>
-          <mat-grid-tile id="image_tile" colspan="1" rowspan="4">
-            <div id="top_image_container" class="image_container">
-              <img
-                id="hand_image"
-                src="../../../assets/hands_seed_1500x1000.jpg"
-              />
-            </div>
-          </mat-grid-tile>
-       </mat-grid-list>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+       </mat-grid-list> -->
 </div>

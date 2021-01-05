@@ -30,6 +30,8 @@ a:visited {
   --lspace: 0.25em;
 }
 
+/* Theme Related Styles */
+
 .speed_c {
   color: var(--cg_speed);
 }
@@ -51,7 +53,6 @@ a:visited {
 }
 
 
-
 .speed_border_c {
  border-color: var(--cg_speed);
 }
@@ -62,10 +63,14 @@ a:visited {
   border-color: var(--cg_agility);
 }
 
+/* Global Classes */
+
+.page_container {
+  margin-bottom: 150px;
+}
 
 .internal_gridlist {
   min-width: 100%;
   padding: 6px;
-  /* border: 2px solid yellow; */
   height: 100%;
 }

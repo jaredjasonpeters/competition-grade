@@ -84,7 +84,7 @@ export const routes: Routes = [
 
     {path: 'featured',
   children: [
-    {path: ':item', component: FeaturedComponent}
+    {path: ':product', component: FeaturedComponent}
   ]},
   { path: 'thanks', component: ThanksComponent },
   { path: 'not-found', component: NotFoundComponent },

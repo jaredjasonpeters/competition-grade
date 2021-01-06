@@ -8,8 +8,8 @@ import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/co
 export class VerificationProgramComponent implements OnInit {
   kbgVarieties = [
     ['Sombrero', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Sombrero_ts.pdf'],
-    ['Fielder (SPTR 2959)', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Fielder_ts.pdf'],
-    ['Heidi (A00-2882)', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Heidi_ts.pdf'],
+    ['Fielder', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Fielder_ts.pdf'],
+    ['Heidi', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Heidi_ts.pdf'],
     ['Jackrabbit', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Jackrabbit_ts.pdf'],
     ['Granite', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Granite_ts.pdf'],
     ['Mercury', 'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Mercury_ts.pdf'],

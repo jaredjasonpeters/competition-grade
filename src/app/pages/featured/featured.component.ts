@@ -2,26 +2,34 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Subscription } from 'rxjs';
 
+import { FeaturedProductService } from './featured-product.service';
+
 @Component({
   selector: 'app-featured',
   templateUrl: './featured.component.html',
-  styleUrls: ['./featured.component.css']
+  styleUrls: ['./featured.component.css'],
 })
 export class FeaturedComponent implements OnInit, OnDestroy {
+  product: { name: string; description: string; images?: string[] };
+  productName: string;
 
-  itemName: String;
-  itemParamSubscription: Subscription;
+  productParamSubscription: Subscription;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private featuredService: FeaturedProductService
+  ) {}
 
   ngOnInit(): void {
-    this.itemParamSubscription = this.route.params.subscribe(params => {
-      this.itemName = params.item
-    })
+    this.productParamSubscription = this.route.params.subscribe((params) => {
+      this.productName = params.product;
+      this.product = this.featuredService.getProduct(params.product);
+    });
+
+    console.log('PRODUCT', this.product);
   }
 
   ngOnDestroy(): void {
-    this.itemParamSubscription.unsubscribe();
+    this.productParamSubscription.unsubscribe();
   }
-
 }

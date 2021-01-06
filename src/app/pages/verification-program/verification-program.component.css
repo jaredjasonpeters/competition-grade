@@ -1,4 +1,3 @@
-
 .internal_gridlist {
   padding: 0;
   height: 100%;
@@ -34,8 +33,8 @@ mat-grid-list {
   font-weight: 600;
   letter-spacing: var(--lspace);
   color: var(--cg_gold);
-  border-top: 4px solid var(--cg_gold);
-  padding: .5em 0 1em 0;
+  /* border-top: 4px solid var(--cg_gold); */
+  padding: 0.5em 0 1em 0;
   margin-bottom: 0;
   text-align: center;
   background: black;
@@ -100,7 +99,7 @@ a:hover {
 }
 
 #featured_varieties_container {
-  background: var(--cg_silver);
+  background: var(--cg_gold);
   width: 100%;
   height: 70%;
   margin-bottom: 0;
@@ -145,13 +144,13 @@ a:hover {
 }
 
 #star_pin {
-  background-image: url('/assets/cg_stars.png');
+  background-image: url("/assets/cg_stars.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 100px;
   height: 100px;
-  position:relative;
+  position: relative;
   bottom: 5%;
   left: 30%;
 }
@@ -167,7 +166,6 @@ a:hover {
   border-bottom: 4px solid var(--cg_gold);
 }
 #cultivars_by_species_container ul {
-
   list-style: none;
   padding: 0;
   font-weight: 500;
@@ -181,12 +179,12 @@ a:hover {
   transition: opacity 250ms ease-out;
 }
 
-#cultivars_by_species_container ul li:hover::before{
+#cultivars_by_species_container ul li:hover::before {
   opacity: 1;
 }
 
 #cultivars_by_species_container ul li::before {
-  content: '>>';
+  content: ">>";
   position: absolute;
   top: 0;
   left: 25%;

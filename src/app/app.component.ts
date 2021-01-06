@@ -34,13 +34,13 @@ export class AppComponent implements OnInit {
       this.isAdvertisment = false;
     }
 
-    if(event.hasOwnProperty('needsPageHeader')) {
-        this.displayPageHeader = event['needsPageHeader'];
-        if(event.hasOwnProperty('pageHeaderTitle')) {
-          this.pageHeaderTitle = event['pageHeaderTitle'];
-        }
-    }
-    else {
+    if (event.hasOwnProperty('needsPageHeader')) {
+      this.displayPageHeader = event['needsPageHeader'];
+      if (event.hasOwnProperty('pageHeaderTitle')) {
+        this.pageHeaderTitle = event['pageHeaderTitle'];
+        console.log('PHT', this.pageHeaderTitle);
+      }
+    } else {
       this.displayPageHeader = false;
       this.pageHeaderTitle = '';
     }

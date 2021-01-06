@@ -34,7 +34,7 @@ mat-grid-list {
   letter-spacing: var(--lspace);
   color: var(--cg_gold);
   /* border-top: 4px solid var(--cg_gold); */
-  padding: 0.5em 0 1em 0;
+  padding: 0.5em 0 0.5em 0;
   margin-bottom: 0;
   text-align: center;
   background: black;
@@ -42,6 +42,16 @@ mat-grid-list {
 #cg_lineup_title span {
   color: white;
 }
+
+#cg_lineup_informative_text {
+  width: 70%;
+  color: white;
+  text-align: center;
+  background: black;
+  margin: 0 auto 0 auto;
+  padding-bottom: 2em;
+}
+
 #explanation_container p#explanation_paragraph {
   font-weight: 600;
   background: white;

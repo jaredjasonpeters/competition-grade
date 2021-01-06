@@ -1,5 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  Router,
+} from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { FeaturedProductService } from './featured-product.service';
@@ -11,23 +15,28 @@ import { FeaturedProductService } from './featured-product.service';
 })
 export class FeaturedComponent implements OnInit, OnDestroy {
   product: { name: string; description: string; images?: string[] };
-  productName: string;
+  needsPageHeader: boolean = true;
+  pageHeaderTitle: string;
 
   productParamSubscription: Subscription;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private featuredService: FeaturedProductService
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.productParamSubscription = this.route.params.subscribe((params) => {
-      this.productName = params.product;
-      this.product = this.featuredService.getProduct(params.product);
+      let product = this.featuredService.getProduct(params.product);
+      if (product) {
+        this.product = product;
+        this.pageHeaderTitle = `ADVANCING THE GAME >> ${this.product.name}`;
+      } else {
+        this.router.navigate(['/not-found']);
+      }
     });
-
-    console.log('PRODUCT', this.product);
   }
+
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.productParamSubscription.unsubscribe();

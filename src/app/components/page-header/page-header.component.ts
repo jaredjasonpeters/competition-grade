@@ -4,15 +4,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-page-header',
   templateUrl: './page-header.component.html',
-  styleUrls: ['./page-header.component.css']
+  styleUrls: ['./page-header.component.css'],
 })
 export class PageHeaderComponent implements OnInit, OnChanges {
   @Input() title: string;
   gold: string;
   white: string;
-  constructor() { }
-
-
+  constructor() {}
 
   ngOnInit(): void {
     // this.getFormattedTitle();
@@ -24,9 +22,9 @@ export class PageHeaderComponent implements OnInit, OnChanges {
 
   getFormattedTitle() {
     let title = this.title;
+    console.log('TITLE', this.title);
     let [gold, white] = title.split('>>');
-    this.gold = `${gold} >>`
-    this.white = ` ${white}`
+    this.gold = `${gold} >>`;
+    this.white = ` ${white}`;
   }
-
 }

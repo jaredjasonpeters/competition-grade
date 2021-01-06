@@ -14,7 +14,13 @@ import { FeaturedProductService } from './featured-product.service';
   styleUrls: ['./featured.component.css'],
 })
 export class FeaturedComponent implements OnInit, OnDestroy {
-  product: { name: string; description: string; images?: string[] };
+  product: {
+    name: string;
+    description: string;
+    images?: string[];
+    techsheet?: string;
+    video?: string;
+  };
   needsPageHeader: boolean = true;
   pageHeaderTitle: string;
 

@@ -1,8 +1,44 @@
-<app-image-header
-  image="/assets/{{ product.name }}_logo.jpg"
-  backgroundImage="/assets/hands_seed_1500x1000.jpg"
-  [backgroundImageStyles]="{ size: 'cover', positionY: -600 }"
-></app-image-header>
-<div id="description_container">
-  <p>{{ product.description }}</p>
+<div class="page_container">
+  <app-image-header
+    image="/assets/{{ product.name }}_logo.jpg"
+    backgroundImage="/assets/hands_seed_1500x1000.jpg"
+    [backgroundImageStyles]="{ size: 'cover', positionY: -600 }"
+  ></app-image-header>
+  <div class="content_container">
+    <div id="description_container">
+      <p>{{ product.description }}</p>
+    </div>
+    <mat-grid-list rowHeight="100px" cols="5" gutterSize="6px">
+      <mat-grid-tile id="options_container" rowspan="5" colspan="2">
+        <div class="container">
+          <iframe
+            src="https://player.vimeo.com/video/491310373"
+            width="100%"
+            height="58%"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+
+          <a
+            href="{{ product.techsheet }}"
+            id="download_button"
+            mat-flat-button
+            download
+          >
+            Download Techsheet <mat-icon>get_app</mat-icon>
+          </a>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile id="main_image" rowspan="5" colspan="3">
+        <img src="{{ product.images[0] }}" />
+      </mat-grid-tile>
+      <mat-grid-tile id="secondary_image" rowspan="5" colspan="3">
+        <img src="{{ product.images[1] }}" />
+      </mat-grid-tile>
+      <mat-grid-tile id="tertiary_image" rowspan="4" colspan="2">
+        <img src="{{ product.images[2] }}" />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

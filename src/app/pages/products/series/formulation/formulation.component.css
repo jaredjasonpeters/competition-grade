@@ -58,8 +58,8 @@ app-formulation-breakdown {
 }
 
 #series_formulation_toggle {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border: 2px solid var(--cg_gold);
   color: var(--cg_gold);
   justify-self: center;

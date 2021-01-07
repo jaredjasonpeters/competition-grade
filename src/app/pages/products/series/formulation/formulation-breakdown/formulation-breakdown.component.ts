@@ -16,7 +16,7 @@ import { SeriesFormulationService } from 'src/app/shared/series-formulation.serv
   templateUrl: './formulation-breakdown.component.html',
   styleUrls: ['./formulation-breakdown.component.css'],
 })
-export class FormulationBreakdownComponent implements OnInit, OnDestroy{
+export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   formulations = {
     primary: {
       percentage: 0,
@@ -32,7 +32,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy{
     },
   };
 
-  formulationSubscription: Subscription
+  formulationSubscription: Subscription;
 
   @ViewChild('primaryFormulation', { static: true })
   primaryFormulation: ElementRef;
@@ -48,41 +48,43 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy{
   ) {}
 
   ngOnInit(): void {
-
-    
-    this.router.events.subscribe(routerEvent => {
-      if(routerEvent instanceof NavigationEnd) {
-        this.renderer.removeClass(this.primaryFormulation.nativeElement, 'show');
-        this.renderer.removeClass(this.secondaryFormulation.nativeElement, 'show');
-        this.renderer.removeClass(this.fourTurfFormulation.nativeElement, 'show');
-
+    this.router.events.subscribe((routerEvent) => {
+      if (routerEvent instanceof NavigationEnd) {
+        this.renderer.removeClass(
+          this.primaryFormulation.nativeElement,
+          'show'
+        );
+        this.renderer.removeClass(
+          this.secondaryFormulation.nativeElement,
+          'show'
+        );
+        this.renderer.removeClass(
+          this.fourTurfFormulation.nativeElement,
+          'show'
+        );
 
         this.renderer.addClass(this.primaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.secondaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.fourTurfFormulation.nativeElement, 'hide');
       }
-    })
-
-
+    });
 
     this.formulationSubscription = this.seriesFormulationService.formulationSubject.subscribe(
       ({ seriesName, formula }) => {
-
-        console.log('SERIESNAME', seriesName);
         this.formulations = formula;
 
-        this.renderer.removeClass(
-          this.primaryFormulation.nativeElement,
-          `speedBackground`
-        )
-        this.renderer.removeClass(
-          this.primaryFormulation.nativeElement,
-          `powerBackground`
-        )
-        this.renderer.removeClass(
-          this.primaryFormulation.nativeElement,
-          `agilityBackground`
-        )
+        // this.renderer.removeClass(
+        //   this.primaryFormulation.nativeElement,
+        //   `speedBackground`
+        // )
+        // this.renderer.removeClass(
+        //   this.primaryFormulation.nativeElement,
+        //   `powerBackground`
+        // )
+        // this.renderer.removeClass(
+        //   this.primaryFormulation.nativeElement,
+        //   `agilityBackground`
+        // )
 
         if (this.formulations.primary.percentage !== 0) {
           this.renderer.addClass(
@@ -120,19 +122,19 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy{
         this.renderer.addClass(this.secondaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.fourTurfFormulation.nativeElement, 'hide');
 
-        this.renderer.addClass(
-          this.primaryFormulation.nativeElement,
-          `${seriesName}Background`
-        );
+        // this.renderer.addClass(
+        //   this.primaryFormulation.nativeElement,
+        //   `${seriesName}Background`
+        // );
 
-        this.renderer.addClass(
-          this.fourTurfFormulation.nativeElement,
-          'secondaryBackground'
-        );
-        this.renderer.addClass(
-          this.fourTurfFormulation.nativeElement,
-          'fourTurfBackground'
-        );
+        // this.renderer.addClass(
+        //   this.fourTurfFormulation.nativeElement,
+        //   'secondaryBackground'
+        // );
+        // this.renderer.addClass(
+        //   this.fourTurfFormulation.nativeElement,
+        //   'fourTurfBackground'
+        // );
 
         this.renderer.listen(
           this.primaryFormulation.nativeElement,
@@ -142,7 +144,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy{
               this.primaryFormulation.nativeElement,
               'fadeInPrimary'
             );
-          
+
             if (this.formulations.primary.percentage !== 0) {
               this.renderer.addClass(
                 this.primaryFormulation.nativeElement,
@@ -200,6 +202,6 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy{
     );
   }
   ngOnDestroy() {
-    this.formulationSubscription.unsubscribe()
+    this.formulationSubscription.unsubscribe();
   }
 }

@@ -1,20 +1,14 @@
 <div class="internal_gridlist">
   <mat-grid-list
     id="formulation_breakdown_gridlist"
-    gutterSize="5%"
+    gutterSize="0"
     cols="1"
-    rowHeight="30%"
+    rowHeight="1:1"
   >
     <mat-grid-tile id="primary_formulation">
       <div class="internal_gridlist hide" #primaryFormulation>
-        <mat-grid-list cols="1" rowHeight="50%">
-          <mat-grid-tile id="formulation_percentage"
-            >{{ formulations.primary.percentage }}%</mat-grid-tile
-          >
-          <mat-grid-tile id="formulation_blend">{{
-            formulations.primary.description
-          }}</mat-grid-tile>
-        </mat-grid-list>
+        {{ formulations.primary.percentage }}
+        {{ formulations.primary.description }}
       </div>
     </mat-grid-tile>
     <mat-grid-tile id="secondary_formulation">

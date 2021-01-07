@@ -73,7 +73,7 @@ mat-grid-tile[id$="_formulation"] {
 /* .primaryBackground {
   background: var(--cg_speed);
 } */
-.speedBackground {
+/* .speedBackground {
   background: var(--cg_speed);
 }
 .powerBackground {
@@ -87,4 +87,4 @@ mat-grid-tile[id$="_formulation"] {
 }
 .fourTurfBackground {
   background: var(--four_turf);
-}
+} */

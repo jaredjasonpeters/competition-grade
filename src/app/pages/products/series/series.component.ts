@@ -19,6 +19,8 @@ export class SeriesComponent implements OnInit {
   seriesInfo;
   seriesTags;
 
+  formulationToggled: boolean = true;
+
   constructor(
     private seriesFormulationService: SeriesFormulationService,
     private renderer: Renderer2,
@@ -52,5 +54,9 @@ export class SeriesComponent implements OnInit {
 
     this.renderer.addClass(event.target, 'activeTag');
     this.seriesFormulationService.getFormulation(event.target.id);
+  }
+
+  setToggled(toggledBool: boolean) {
+    this.formulationToggled = toggledBool;
   }
 }

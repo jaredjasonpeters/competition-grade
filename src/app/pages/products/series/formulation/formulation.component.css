@@ -8,9 +8,78 @@ app-formulation-breakdown {
   /* border: 2px solid red; */
 }
 
+#formulation_list::before {
+  content: "";
+  background: url("/assets/perennial_ryegrass_seed_bg.png");
+  width: 100%;
+  height: 100%;
+  filter: grayscale();
+  mix-blend-mode: screen;
+
+  background-repeat: repeat;
+  /* object-fit: fill;
+  object-position: bottom; */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.15;
+}
+
 #formulation_list {
   height: 100%;
   width: 100%;
+  background: black;
+  z-index: 1;
+}
+
+.toggle_container {
+  max-width: 20ch;
+  text-align: center;
+  top: 40%;
+  left: 1%;
+  position: absolute;
+  /* border: 2px solid red; */
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+
+  cursor: pointer;
+  transition: transform 300ms ease-in-out;
+}
+
+.toggle_container span {
+  display: block;
+  padding: 1em;
+  color: var(--cg_gold);
+  font-weight: 600;
+  font-size: 1em;
+}
+
+#series_formulation_toggle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--cg_gold);
+  color: var(--cg_gold);
+  justify-self: center;
+  align-self: center;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: transform 1s ease-in-out, border 1s ease-in-out,
+    color 1s ease-in-out;
+  z-index: 100;
+}
+
+#series_formulation_toggle {
+}
+#series_formulation_toggle:hover {
+  transform: scale(1.1);
 }
 
 #formulation_breakdown_container {
@@ -20,4 +89,191 @@ app-formulation-breakdown {
 #formulation_graphic_container {
   /* border: 2px solid white; */
   min-height: 610px;
+}
+
+#information_card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  /* border: 2px solid red; */
+  /* z-index: 1000; */
+}
+
+#content_title {
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid blue; */
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+
+#series_description {
+  /* border: 2px solid green; */
+  width: 100%;
+  /* height: 100%; */
+}
+
+.speed {
+  background: var(--cg_speed);
+}
+.power {
+  background: var(--cg_power);
+}
+.agility {
+  background: var(--cg_agility);
+}
+
+#series_overview_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--cg_gold);
+  color: black;
+  padding: 1em 1em 1em 2em;
+  /* border: 2px solid red; */
+}
+
+#series_overview_container img {
+  padding-right: 1em;
+  margin-right: 2em;
+  border-right: 2px solid white;
+}
+
+#series_overview_container h3 {
+  /* height: 100%; */
+  width: 90%;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 1.25em;
+  line-height: normal;
+  /* color: white; */
+  /* border: 2px solid red; */
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#series_content_container {
+  height: 100%;
+  width: 100%;
+  /* background: red; */
+}
+
+#series_description_container {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: Roboto;
+  font-size: 1em;
+
+  color: black;
+  display: block;
+  font-weight: 800;
+}
+
+#series_description {
+  margin-top: 1em;
+  margin-bottom: auto;
+  font-size: 1.1em;
+  width: 90%;
+  padding-left: 2.5%;
+  line-height: 1.3em;
+  font-weight: 500;
+  /* border: 2px solid green; */
+}
+
+#series_description p {
+}
+#series_description ul {
+  /* font-size: 1.25em; */
+  font-weight: 600;
+}
+
+#series_description_heading,
+#series_components_heading {
+  font-size: 1.25em;
+}
+
+@keyframes flipcard-forward {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+}
+
+@keyframes flipcard-backward {
+  0% {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    font-size: 5em;
+    border: 2px solid var(--cg_silver);
+    color: var(--cg_silver);
+  }
+  100% {
+    transform: rotate(360deg);
+    font-size: 6em;
+    border: 2px solid var(--cg_gold);
+    color: var(--cg_gold);
+  }
+}
+
+@keyframes spinback {
+  0% {
+    transform: rotate(0deg);
+    font-size: 6em;
+    border: 2px solid var(--cg_gold);
+    color: var(--cg_gold);
+  }
+  100% {
+    transform: rotate(-360deg);
+    font-size: 5em;
+    border: 2px solid var(--cg_silver);
+    color: var(--cg_silver);
+  }
+}
+
+.flip {
+  animation-name: flipcard-forward;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.6, 0.4, 0.8, 0.76);
+  animation-fill-mode: forwards;
+}
+
+.flipback {
+  animation-name: flipcard-backward;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.6, 0.4, 0.8, 0.76);
+  animation-fill-mode: backwards;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 300ms;
+}
+.spinback {
+  animation-name: spinback;
+  animation-duration: 300ms;
 }

@@ -1,6 +1,10 @@
 <div id="series_page_container">
   <mat-grid-list id="top_list" gutterSize="0px" rowHeight="735px" cols="12">
-    <mat-grid-tile id="series_tag_container" colspan="1" rowspan="1">
+    <mat-grid-tile
+      id="series_tag_container"
+      colspan="{{ formulationToggled ? 1 : 0 }}"
+      rowspan="1"
+    >
       <div class="internal_gridlist">
         <mat-grid-list gutterSize="6px" rowHeight="225px" cols="1">
           <mat-grid-tile
@@ -11,7 +15,7 @@
           >
             <img
               id="{{ tag.seriesName }}_{{ tag.seriesId }}"
-              src="../../../../assets/{{ tag.seriesName }}_series_tag_{{
+              src="/assets/{{ tag.seriesName }}_series_tag_{{
                 tag.seriesId
               }}.jpg"
             />
@@ -19,48 +23,19 @@
         </mat-grid-list>
       </div>
     </mat-grid-tile>
+
     <mat-grid-tile id="series_formulation_container" colspan="7" rowspan="1">
-      <app-formulation></app-formulation>
+      <app-formulation
+        [seriesInfo]="seriesInfo"
+        [seriesName]="seriesName"
+        (toggledEvent)="setToggled($event)"
+      ></app-formulation>
     </mat-grid-tile>
+
     <mat-grid-tile colspan="4" rowspan="1">
       <section id="menu_right" #menuRight>
         <app-menu-right [page]="seriesName"></app-menu-right>
       </section>
     </mat-grid-tile>
   </mat-grid-list>
-  <!-- <mat-grid-list rowHeight="100" cols="12" gutterSize="6px">
-    <mat-grid-tile colspan="3" rowspan="1">
-      <div id="series_logo_container" class="{{ seriesName }}">
-        <img
-          src="../../../../assets/{{ seriesName }}_series.png"
-          alt="{{ seriesName }} series"
-        />
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="9" rowspan="1">
-      <div id="series_overview_container">
-        <h3>
-          {{ seriesInfo.overview }}
-        </h3>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3"></mat-grid-tile>
-    <mat-grid-tile id="series_description_container" colspan="9" rowspan="6">
-      <div id="series_description">
-        <span id="series_description_heading" class="heading"
-          >Series Overview:</span
-        >
-        <br />
-        <p>{{ seriesInfo.description }}</p>
-        <br />
-        <br />
-        <span id="series_components_heading" class="heading"
-          >Series Components:</span
-        >
-        <ul *ngFor="let component of seriesInfo.components">
-          <li>{{ component }}</li>
-        </ul>
-      </div>
-    </mat-grid-tile>
-  </mat-grid-list> -->
 </div>

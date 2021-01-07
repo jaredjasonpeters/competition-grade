@@ -1,8 +1,57 @@
-<mat-grid-list id="formulation_list" rowHeight="fit" cols="9">
+<div class="toggle_container">
+  <mat-icon
+    #toggleButton
+    id="series_formulation_toggle"
+    (click)="toggleDisplay()"
+    >cached</mat-icon
+  >
+  <span *ngIf="toggled">Click to view series formulations</span>
+  <span *ngIf="!toggled">Click to view series description</span>
+</div>
+<mat-grid-list
+  id="formulation_list"
+  rowHeight="fit"
+  cols="9"
+  #formulationContainer
+>
   <mat-grid-tile id="formulation_graphic_container" colspan="8">
     <app-formulation-graphic></app-formulation-graphic>
   </mat-grid-tile>
   <mat-grid-tile id="formulation_breakdown_container" colspan="1">
     <app-formulation-breakdown></app-formulation-breakdown>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list
+  id="information_card"
+  rowHeight="fit"
+  cols="8"
+  gutterSize="6px"
+  #informationCard
+>
+  <mat-grid-tile id="spacer" colspan="1"></mat-grid-tile>
+  <mat-grid-tile id="content_tile" colspan="7" rowspan="1">
+    <div class="container">
+      <div id="series_overview_container">
+        <img src="/assets/{{ seriesName }}_series.png" />
+        <h3>
+          {{ seriesInfo.overview }}
+        </h3>
+      </div>
+      <div id="series_description">
+        <span id="series_description_heading" class="heading"
+          >Series Overview:</span
+        >
+        <br />
+        <p>{{ seriesInfo.description }}</p>
+        <br />
+        <span id="series_components_heading" class="heading"
+          >Series Components:</span
+        >
+        <ul *ngFor="let component of seriesInfo.components">
+          <li>{{ component }}</li>
+        </ul>
+      </div>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>

@@ -13,24 +13,21 @@ export class FeaturedVideoComponent implements OnInit, OnChanges, OnDestroy {
   getFeaturedVideoSub: Subscription;
 
   @Input() page;
-  @Input() autoplay: boolean = false;
-  @Input() autoplayOptions?: { runOnce?: boolean };
+  @Input() autoplayOptions?: { autoplay?: boolean; runOnce?: boolean };
 
   constructor(
     private sanitizer: DomSanitizer,
     private featuredVideoService: FeaturedVideoService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  ngOnChanges(): void {
     this.getFeaturedVideoSub = this.featuredVideoService
-      .getFeaturedVideo()
+      .getFeaturedVideo(this.autoplayOptions)
       .subscribe((videoURL) => {
         this.videoUrl = videoURL;
       });
-    this.featuredVideoService.autoplay = this.autoplay;
-    this.featuredVideoService.autoplayOptions = this.autoplayOptions;
   }
-  ngOnChanges(): void {}
 
   ngOnDestroy(): void {
     this.getFeaturedVideoSub.unsubscribe();

@@ -24,7 +24,11 @@
       </div>
     </mat-grid-tile>
 
-    <mat-grid-tile id="series_formulation_container" colspan="7" rowspan="1">
+    <mat-grid-tile
+      id="series_formulation_container"
+      colspan="{{ formulationToggled ? 7 : 8 }}"
+      rowspan="1"
+    >
       <app-formulation
         [seriesInfo]="seriesInfo"
         [seriesName]="seriesName"

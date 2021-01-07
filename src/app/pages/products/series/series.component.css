@@ -2,6 +2,10 @@
   /* border: 2px solid grey; */
 }
 
+#top_list {
+  /* margin-bottom: 4em; */
+}
+
 #series_page_container {
   background: black;
 }
@@ -109,6 +113,7 @@
   z-index: 2;
   background: white;
   filter: drop-shadow(20px 0 0.45rem rgba(0, 0, 0, 0.4));
+  border-right: 8px solid var(--cg_gold);
 
   /* border: 2px solid yellow; */
 }

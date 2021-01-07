@@ -49,18 +49,24 @@ export class FeaturedVideoService implements OnDestroy {
     autoplay?: boolean;
     runOnce?: boolean;
   }): Subject<SafeResourceUrl> {
+    let finalUrl: SafeResourceUrl;
     let url = this.requestedVideo;
-    let params: string;
+    let params: { key: string; value: any }[] = [];
     if (options && options.autoplay) {
-      params = this.getParams(['autoplay']);
+      params = this.getParams([{ key: 'autoplay', value: 1 }]);
     }
-    let finalUrl: SafeResourceUrl = this.sanitizeUrl(url + params);
+    console.log('OPTIONS', options.runOnce);
+
+    if (options && options.runOnce) {
+      if (this.hasPlayed[url]) {
+        finalUrl = this.sanitizeUrl(url);
+      } else {
+        this.hasPlayed[url] = true;
+        finalUrl = this.sanitizeUrl(url + params);
+      }
+    }
     this.featuredVideo.next(finalUrl);
     return this.featuredVideo;
-  }
-
-  checkIfPlayed(url) {
-    this.hasPlayed[url] ? true : false;
   }
 
   getParams(params) {

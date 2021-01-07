@@ -1,5 +1,6 @@
 mat-grid-tile[id$="_formulation"] {
   filter: drop-shadow(0 20px 0.45rem rgba(0, 0, 0, 0.4));
+  /* border-radius: 100%; */
 }
 
 .internal_gridlist {
@@ -9,14 +10,14 @@ mat-grid-tile[id$="_formulation"] {
 
 #formulation_percentage {
   color: white;
-  font-size: 3em;
+  font-size: 4em;
   font-family: Roboto Condensed;
   font-weight: 700;
   /* border: 2px solid var(--cg_silver); */
 }
 
 #formulation_blend {
-  font-size: 0.9em;
+  font-size: 1.25em;
   background: white;
   text-align: center;
   font-family: Roboto Condensed;

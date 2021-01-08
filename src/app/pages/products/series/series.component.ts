@@ -19,7 +19,7 @@ export class SeriesComponent implements OnInit {
   seriesInfo;
   seriesTags;
 
-  formulationToggled: boolean = true;
+  formulationToggled: boolean = false;
 
   constructor(
     private seriesFormulationService: SeriesFormulationService,
@@ -57,6 +57,8 @@ export class SeriesComponent implements OnInit {
   }
 
   setToggled(toggledBool: boolean) {
-    this.formulationToggled = toggledBool;
+    setTimeout(() => {
+      this.formulationToggled = toggledBool;
+    }, 1100);
   }
 }

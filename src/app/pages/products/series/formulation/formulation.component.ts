@@ -26,7 +26,7 @@ export class FormulationComponent implements OnInit, OnChanges {
   @Input() seriesName: any;
   @Output() toggledEvent: EventEmitter<boolean> = new EventEmitter();
 
-  toggled: boolean = false;
+  toggled: boolean = true;
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}

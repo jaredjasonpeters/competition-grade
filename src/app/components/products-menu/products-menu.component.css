@@ -1,8 +1,7 @@
 .products_menu {
-  border-bottom: 5px solid var(--cg_gold);
+  /* border-bottom: 5px solid var(--cg_gold); */
   /* border-top: 5px solid white; */
   /* border-top: 5px solid black; */
-  color: red;
   margin-top: 17px;
   border-radius: 0 !important;
 }
@@ -18,15 +17,15 @@
 
 .mat-focus-indicator.speed:focus,
 .mat-focus-indicator.speed:hover {
-  background: var(--cg_speed) !important;
+  border-bottom: 4px solid var(--cg_speed) !important;
 }
 .mat-focus-indicator.power:focus,
 .mat-focus-indicator.power:hover {
-  background: var(--cg_power) !important;
+  border-bottom: 4px solid var(--cg_power) !important;
 }
 .mat-focus-indicator.agility:focus,
 .mat-focus-indicator.agility:hover {
-  background: var(--cg_agility) !important;
+  border-bottom: 4px solid var(--cg_agility) !important;
 }
 
 .mat-menu-panel {

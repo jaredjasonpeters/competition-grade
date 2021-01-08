@@ -52,15 +52,14 @@ a:visited {
   background-color: var(--cg_agility);
 }
 
-
-.speed_border_c {
- border-color: var(--cg_speed);
+.speed_border {
+  border-bottom: 8px solid var(--cg_speed);
 }
-.power_border_c {
-  border-color: var(--cg_power);
+.power_border {
+  border-bottom: 8px solid var(--cg_power);
 }
-.agility_border_c {
-  border-color: var(--cg_agility);
+.agility_border {
+  border-bottom: 8px solid var(--cg_agility);
 }
 
 /* Global Classes */

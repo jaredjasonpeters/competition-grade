@@ -1,29 +1,36 @@
 <div class="page_container">
-<app-image-header image="../../../assets/What_is_logo.png" backgroundImage="/assets/football_1500x1000.png" [backgroundImageStyles]="{size: 'cover', positionY: -825}"></app-image-header>
+  <app-image-header
+    image="../../../assets/What_is_logo.png"
+    backgroundImage="/assets/football_1500x1000.png"
+    [backgroundImageStyles]="{ size: 'cover', positionY: -825 }"
+  ></app-image-header>
   <mat-grid-list id="desc_list" cols="2" rowHeight="300px" gutterSize="6px">
     <mat-grid-tile id="desc_tile" colspan="2" rowspan="1">
       <p class="explanation_paragraph">
-        <span>Competition Grade’s performance-tested genetics will:</span><br/> Provide higher shear
-        strength and increase player safety Respond better to wear and provide a
-        more robust playing surface Resist major diseases and lower maintenance
-        budgets Increase aesthetics through improved genetic color Express
-        spreading growth habit for damage recovery Include options for actively
-        growing under lower light for stadiums, as well as earlier and later
-        season play.
+        <span>Competition Grade’s performance-tested genetics will:</span><br />
+        Provide higher shear strength and increase player safety Respond better
+        to wear and provide a more robust playing surface Resist major diseases
+        and lower maintenance budgets Increase aesthetics through improved
+        genetic color Express spreading growth habit for damage recovery Include
+        options for actively growing under lower light for stadiums, as well as
+        earlier and later season play.
       </p>
-      <p class="explanation_paragraph"> <span>Blends and mixtures are specifically crafted to meet the demands of:</span><br/> The
-        highest-level athletic surfaces in the world. Each contains varieties
-        chosen for attributes that will aid in quick self-repair, fast
+      <p class="explanation_paragraph">
+        <span
+          >Blends and mixtures are specifically crafted to meet the demands
+          of:</span
+        ><br />
+        The highest-level athletic surfaces in the world. Each contains
+        varieties chosen for attributes that will aid in quick self-repair, fast
         establishment, early spring green-up, high wear tolerance and active
         cool weather growth. To avoid planting tomorrow’s problems today, the
         performance-tested genetics present in Competition Grade blends and
-        mixtures should be your only option.</p>
+        mixtures should be your only option.
+      </p>
     </mat-grid-tile>
   </mat-grid-list>
 
-  <app-section-header>
-    Usage By Sport
-  </app-section-header>
+  <app-section-header> Usage By Sport </app-section-header>
 
   <div id="image_container">
     <mat-grid-list rowHeight="fit" cols="3" gutterSize="6px">
@@ -50,20 +57,50 @@
   <mat-grid-list id="usage_list" cols="3" rowHeight="350px" gutterSize="6px">
     <mat-grid-tile rowspan="1">
       <div class="internal_gridlist">
-        <img routerLink="/products/speed" class="series_logo speed_bgc" src="/assets/speed_series.png" />
-        <p class="">Speed Series is ideal for season long interseeding or overseeding of wear spots, like goalie boxes, between the hash marks and center field.</p>
+        <img
+          routerLink="/products/speed"
+          class="speed_border"
+          src="/assets/speed_series.png"
+        />
+        <p class="">
+          Speed Series is ideal for season long interseeding or overseeding of
+          wear spots, like goalie boxes, between the hash marks and center
+          field.
+        </p>
       </div>
     </mat-grid-tile>
-      <mat-grid-tile rowspan="1">
-        <div class="internal_gridlist">
-          <img routerLink="/products/power" class="series_logo power_bgc" src="/assets/power_series.png" />
-        <p class="">Where a high quality sports turf for cleated sports like football, soccer and baseball, that requires less watering and lower inputs is needed; reach for Competition Power Series. Power Series works well to be overseeded over Power Series if turf is damaged.</p>
-        </div>
-      </mat-grid-tile>
-        <mat-grid-tile rowspan="1">
-          <div class="internal_gridlist">
-            <img routerLink="/products/agility" class="series_logo agility_bgc" src="/assets/agility_series.png" />
-            <p class="">We call this series Agility because you can use it so many places. For permanent bluegrass stand or by adding 4turf, quick repairs plus the desired permanent bluegrass turf. For a classic Kentucky bluegrass sports turf where proper maintenance is available, the Agility Series cannot be beat. Agility Series can be overseeded with Agility series, for a long term desired Kentucky bluegrass repair or with the Speed series for right now playability.</p></div></mat-grid-tile>
-    </mat-grid-list>
-
+    <mat-grid-tile rowspan="1">
+      <div class="internal_gridlist">
+        <img
+          routerLink="/products/power"
+          class="power_border"
+          src="/assets/power_series.png"
+        />
+        <p class="">
+          Where a high quality sports turf for cleated sports like football,
+          soccer and baseball, that requires less watering and lower inputs is
+          needed; reach for Competition Power Series. Power Series works well to
+          be overseeded over Power Series if turf is damaged.
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="1">
+      <div class="internal_gridlist">
+        <img
+          routerLink="/products/agility"
+          class="agility_border"
+          src="/assets/agility_series.png"
+        />
+        <p class="">
+          We call this series Agility because you can use it so many places. For
+          permanent bluegrass stand or by adding 4turf, quick repairs plus the
+          desired permanent bluegrass turf. For a classic Kentucky bluegrass
+          sports turf where proper maintenance is available, the Agility Series
+          cannot be beat. Agility Series can be overseeded with Agility series,
+          for a long term desired Kentucky bluegrass repair or with the Speed
+          series for right now playability.
+        </p>
+      </div></mat-grid-tile
+    >
+  </mat-grid-list>
 </div>

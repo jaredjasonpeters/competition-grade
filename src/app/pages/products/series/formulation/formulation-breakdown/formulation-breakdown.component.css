@@ -1,11 +1,94 @@
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 mat-grid-tile[id$="_formulation"] {
   filter: drop-shadow(0 20px 0.45rem rgba(0, 0, 0, 0.4));
   /* border-radius: 100%; */
+
+  /* border: 2px solid red; */
+  margin: 0;
+  padding: 0;
 }
 
 .internal_gridlist {
-  padding: 0;
+  padding-right: 3em;
   position: relative;
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  /* background: rgba(255, 255, 255, 0.4); */
+}
+
+.formulation_container {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  /* border: 2px solid green; */
+}
+
+.formulation_container h2 {
+  display: block;
+  color: white;
+  /* color: var(--cg_gold); */
+  text-align: center;
+  /* border: 2px solid green; */
+  margin-top: auto;
+  margin-bottom: 10px;
+  font-size: 4em;
+  font-weight: 600;
+  font-family: Orbitron;
+}
+
+.formulation_container span {
+  font-size: 0.5em;
+  /* border: 2px solid blue; */
+  /* opacity: 0.2; */
+  color: var(--cg_silver);
+  /* color: white; */
+}
+
+.progress_container {
+  height: 10%;
+  width: 100%;
+  display: flex;
+}
+
+#percentage_in,
+#percentage_out {
+  height: 100%;
+  /* background: var(--cg_gold); */
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+}
+
+#percentage_in {
+  opacity: 0.8;
+}
+
+.formulation_description {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  color: var(--cg_silver);
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1.2em;
+  padding-top: 15px;
+  font-family: orbitron;
+  text-transform: uppercase;
+  /* border: 2px solid orange; */
 }
 
 #formulation_percentage {
@@ -23,13 +106,6 @@ mat-grid-tile[id$="_formulation"] {
   font-family: Roboto Condensed;
   font-weight: 700;
   line-height: 1.1em;
-}
-
-#four_turf_logo {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
-  object-position: center;
 }
 
 @keyframes fadeIn {

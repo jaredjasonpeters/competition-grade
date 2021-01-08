@@ -17,6 +17,7 @@ import { SeriesFormulationService } from 'src/app/shared/series-formulation.serv
   styleUrls: ['./formulation-breakdown.component.css'],
 })
 export class FormulationBreakdownComponent implements OnInit, OnDestroy {
+  seriesName: string;
   formulations = {
     primary: {
       percentage: 0,
@@ -71,20 +72,21 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
 
     this.formulationSubscription = this.seriesFormulationService.formulationSubject.subscribe(
       ({ seriesName, formula }) => {
+        this.seriesName = seriesName;
         this.formulations = formula;
 
-        // this.renderer.removeClass(
-        //   this.primaryFormulation.nativeElement,
-        //   `speedBackground`
-        // )
-        // this.renderer.removeClass(
-        //   this.primaryFormulation.nativeElement,
-        //   `powerBackground`
-        // )
-        // this.renderer.removeClass(
-        //   this.primaryFormulation.nativeElement,
-        //   `agilityBackground`
-        // )
+        this.renderer.removeClass(
+          this.primaryFormulation.nativeElement,
+          `speedBackground`
+        );
+        this.renderer.removeClass(
+          this.primaryFormulation.nativeElement,
+          `powerBackground`
+        );
+        this.renderer.removeClass(
+          this.primaryFormulation.nativeElement,
+          `agilityBackground`
+        );
 
         if (this.formulations.primary.percentage !== 0) {
           this.renderer.addClass(
@@ -122,19 +124,19 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
         this.renderer.addClass(this.secondaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.fourTurfFormulation.nativeElement, 'hide');
 
-        // this.renderer.addClass(
-        //   this.primaryFormulation.nativeElement,
-        //   `${seriesName}Background`
-        // );
+        this.renderer.addClass(
+          this.primaryFormulation.nativeElement,
+          `${seriesName}Background`
+        );
 
-        // this.renderer.addClass(
-        //   this.fourTurfFormulation.nativeElement,
-        //   'secondaryBackground'
-        // );
-        // this.renderer.addClass(
-        //   this.fourTurfFormulation.nativeElement,
-        //   'fourTurfBackground'
-        // );
+        this.renderer.addClass(
+          this.fourTurfFormulation.nativeElement,
+          'secondaryBackground'
+        );
+        this.renderer.addClass(
+          this.fourTurfFormulation.nativeElement,
+          'fourTurfBackground'
+        );
 
         this.renderer.listen(
           this.primaryFormulation.nativeElement,

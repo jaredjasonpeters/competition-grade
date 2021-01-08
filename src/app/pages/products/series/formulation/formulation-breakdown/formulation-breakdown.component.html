@@ -1,45 +1,86 @@
-<div class="internal_gridlist">
+<div class="container">
   <mat-grid-list
     id="formulation_breakdown_gridlist"
-    gutterSize="0"
+    gutterSize="4px"
     cols="1"
     rowHeight="1:1"
   >
     <mat-grid-tile id="primary_formulation">
       <div class="internal_gridlist hide" #primaryFormulation>
-        {{ formulations.primary.percentage }}
-        {{ formulations.primary.description }}
+        <div class="formulation_container">
+          <h2>{{ formulations.primary.percentage }}.0<span>%</span></h2>
+        </div>
+        <div class="progress_container">
+          <div
+            id="percentage_in"
+            [ngStyle]="{
+              width: formulations.primary.percentage + '%',
+              background: 'var(--cg_' + seriesName + ')'
+            }"
+          ></div>
+          <div
+            id="percentage_out"
+            [ngStyle]="{
+              width: 100 - formulations.primary.percentage + '%',
+              background: 'var(--cg_silver)'
+            }"
+          ></div>
+        </div>
+        <p class="formulation_description">
+          {{ formulations.primary.description }}
+        </p>
       </div>
     </mat-grid-tile>
     <mat-grid-tile id="secondary_formulation">
-      <div
-        class="internal_gridlist hide secondaryBackground"
-        #secondaryFormulation
-      >
-        <mat-grid-list cols="1" rowHeight="50%">
-          <mat-grid-tile id="formulation_percentage"
-            >{{ formulations.secondary.percentage }}%</mat-grid-tile
-          >
-          <mat-grid-tile id="formulation_blend">{{
-            formulations.secondary.description
-          }}</mat-grid-tile>
-        </mat-grid-list>
+      <div class="internal_gridlist hide" #secondaryFormulation>
+        <div class="formulation_container">
+          <h2>{{ formulations.secondary.percentage }}.0<span>%</span></h2>
+        </div>
+        <div class="progress_container">
+          <div
+            id="percentage_in"
+            [ngStyle]="{
+              width: formulations.secondary.percentage + '%',
+              background: 'var(--cg_' + 'silver' + ')'
+            }"
+          ></div>
+          <div
+            id="percentage_out"
+            [ngStyle]="{
+              width: 100 - formulations.secondary.percentage + '%',
+              background: 'var(--cg_silver)'
+            }"
+          ></div>
+        </div>
+        <p class="formulation_description">
+          {{ formulations.secondary.description }}
+        </p>
       </div>
     </mat-grid-tile>
     <mat-grid-tile id="four_turf_formulation">
       <div class="internal_gridlist hide" #fourTurfFormulation>
-        <mat-grid-list cols="1" rowHeight="50%">
-          <mat-grid-tile id="formulation_percentage"
-            >{{ formulations.fourTurf.percentage }}%</mat-grid-tile
-          >
-          <mat-grid-tile id="formulation_blend">
-            <img
-              id="four_turf_logo"
-              src="../../../../../assets/4turf_logo.png"
-              alt="4turf perennial ryegrass"
-            />
-          </mat-grid-tile>
-        </mat-grid-list>
+        <div id="fourturf_formulation_container" class="formulation_container">
+          <h2>{{ formulations.fourTurf.percentage }}.0<span>%</span></h2>
+        </div>
+        <div class="progress_container">
+          <div
+            id="percentage_in"
+            [ngStyle]="{
+              width: formulations.fourTurf.percentage + '%',
+              background: 'var(--four_turf)'
+            }"
+          ></div>
+          <div
+            id="percentage_out"
+            [ngStyle]="{
+              width: 100 - formulations.fourTurf.percentage + '%',
+              background: 'var(--cg_silver)'
+            }"
+          ></div>
+        </div>
+        <p class="formulation_description">
+          {{ formulations.fourTurf.description }}
+        </p>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

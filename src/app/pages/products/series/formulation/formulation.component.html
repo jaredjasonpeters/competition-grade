@@ -2,10 +2,16 @@
   <mat-icon
     #toggleButton
     id="series_formulation_toggle"
+    [ngStyle]="{
+      color: toggled ? 'white' : 'var(--cg_gold)',
+      borderColor: toggled ? 'white' : 'var(--cg_gold)'
+    }"
     (click)="toggleDisplay()"
     >cached</mat-icon
   >
-  <span *ngIf="toggled">Click to view series formulations</span>
+  <span *ngIf="toggled" style="color: white"
+    >Click to view series formulations</span
+  >
   <span *ngIf="!toggled">Click to view series description</span>
 </div>
 <mat-grid-list

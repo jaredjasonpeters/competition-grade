@@ -3,6 +3,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnChanges,
   OnInit,
   Output,
   Renderer2,
@@ -17,7 +18,7 @@ import { Formulation } from './formulation.model';
   templateUrl: './formulation.component.html',
   styleUrls: ['./formulation.component.css'],
 })
-export class FormulationComponent implements OnInit {
+export class FormulationComponent implements OnInit, OnChanges {
   @ViewChild('formulationContainer', { static: true }) formulationContainer;
   @ViewChild('informationCard', { static: true }) informationCard;
   @ViewChild('toggleButton', { static: true }) toggleButton;
@@ -29,6 +30,14 @@ export class FormulationComponent implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {}
+
+  ngOnChanges(): void {
+    this.renderer.setStyle(
+      this.informationCard._element.nativeElement,
+      'background-image',
+      `url(/assets/${this.seriesName}_color_bg.jpg)`
+    );
+  }
 
   toggleDisplay() {
     let elem = this.formulationContainer._element.nativeElement;

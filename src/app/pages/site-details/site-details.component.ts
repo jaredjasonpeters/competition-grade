@@ -23,12 +23,14 @@ import { Subscription } from 'rxjs';
 })
 export class SiteDetailsComponent implements OnInit, AfterViewInit, OnDestroy {
   fragmentSub: Subscription;
-  @ViewChild('container', { static: true }) container: ElementRef<
-    HTMLDivElement
-  >;
+  @ViewChild('container', { static: true })
+  container: ElementRef<HTMLDivElement>;
   @ViewChild('privacy', { static: true }) privacy: ElementRef<HTMLDivElement>;
   @ViewChild('terms', { static: true }) terms: ElementRef<HTMLDivElement>;
   @ViewChild('sitemap', { static: true }) sitemap: ElementRef<HTMLDivElement>;
+
+  sitemapData: string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,

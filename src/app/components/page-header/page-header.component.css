@@ -36,11 +36,8 @@
 #title_container h1 {
   color: white;
   text-align: center;
-  /* font-family: Orbitron;
-  font-weight: 600;
-  font-size: 2.25em; */
   text-transform: uppercase;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 
 #title_container span {

@@ -5,7 +5,7 @@
     [backgroundImageStyles]="{ size: 'cover', positionY: -600 }"
   ></app-image-header>
   <div id="explanation_container">
-    <p id="explanation_paragraph">
+    <p id="explanation_paragraph" class="mat-body-strong">
       The cultivars approved for Competition Grade meet stringent
       characteristics for sports turf usage. Many of them originate from
       parental lines that were selected based on wear tolerance and recovery in
@@ -28,9 +28,9 @@
       <mat-grid-tile id="featured_tile" colspan="1" rowspan="1">
         <div id="featured_container">
           <div id="featured_header_container">
-            <h1 id="featured_header" class="header_text">
+            <h2 id="featured_header" class="header_text">
               Featured Cultivars and Technological Advancements
-            </h1>
+            </h2>
           </div>
           <div id="featured_varieties_container">
             <img
@@ -43,13 +43,15 @@
       </mat-grid-tile>
     </mat-grid-list>
 
-    <h2 id="cg_lineup_title">CURRENT <span>COMPETITION GRADE</span> LINEUP</h2>
-    <h3 id="cg_lineup_informative_text">
+    <h2 id="cg_lineup_title" class="mat-title">
+      CURRENT <span>COMPETITION GRADE</span> LINEUP
+    </h2>
+    <p id="cg_lineup_informative_text">
       Click a variety below to download it's technical data sheet
-    </h3>
+    </p>
     <div id="cultivars_by_species_container">
       <div class="container">
-        <h1 class="header_text black">Kentucky Bluegrass</h1>
+        <h3 class="header_text black">Kentucky Bluegrass</h3>
         <ul>
           <a
             [href]="variety[1]"
@@ -68,7 +70,7 @@
         </ul>
       </div>
       <div class="container">
-        <h1 class="header_text black">Tall Fescue</h1>
+        <h3 class="header_text black">Tall Fescue</h3>
         <ul>
           <a
             [href]="variety[1]"
@@ -87,7 +89,7 @@
         </ul>
       </div>
       <div class="container">
-        <h1 class="header_text black">Perennial Ryegrass</h1>
+        <h3 class="header_text black">Perennial Ryegrass</h3>
         <ul>
           <a
             [href]="variety[1]"

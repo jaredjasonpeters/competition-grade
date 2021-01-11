@@ -18,16 +18,13 @@ mat-grid-tile {
   width: 100%;
   padding: 5em 2em 0 0;
   margin: 0;
-  /* padding: 4em 0 4em 0; */
-  /* max-width: 50%; */
-  text-align: left;
-  font-weight: 500;
   font-size: 1.25em;
-  /* border: 2px solid green; */
 }
 
 .explanation_paragraph span {
+  display: block;
   font-weight: 600;
+  margin-bottom: 6px;
 }
 
 #usage_list {
@@ -62,16 +59,13 @@ mat-grid-tile {
   cursor: pointer;
 }
 
-#usage_list mat-grid-tile p {
+#usage_list p {
   height: 80%;
   width: 100%;
   margin: 0;
   padding: 2em;
-  font-size: 1em;
-  font-weight: 500;
-  /* color: var(--cg_silver); */
+  font-size: 1.25em;
   color: white;
-  /* background: black; */
 }
 
 #header_list {

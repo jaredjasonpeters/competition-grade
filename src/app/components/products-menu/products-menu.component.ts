@@ -5,20 +5,15 @@ import { MatMenuTrigger } from '@angular/material/menu';
   selector: 'app-products-menu',
   templateUrl: './products-menu.component.html',
   styleUrls: ['./products-menu.component.css'],
-  encapsulation: ViewEncapsulation.None
- 
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductsMenuComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openMenu() {
     this.trigger.openMenu();
-    // alert('opening menu');
   }
-
 }

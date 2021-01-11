@@ -3,15 +3,31 @@
   #productsMenu="matMenu"
   xPosition="after"
   yPosition="below"
+  #matMenu
 >
   <ng-template matMenuContent>
-    <button class="speed" mat-menu-item routerLink="/products/speed">
-    Speed
+    <button
+      class="s"
+      mat-menu-item
+      routerLink="/products/speed"
+      routerLinkActive="speed"
+    >
+      Speed
     </button>
-    <button class="power" mat-menu-item routerLink="/products/power">
+    <button
+      class="p"
+      mat-menu-item
+      routerLink="/products/power"
+      routerLinkActive="power"
+    >
       Power
     </button>
-    <button class="agility" mat-menu-item routerLink="/products/agility">
+    <button
+      class="a"
+      mat-menu-item
+      routerLink="/products/agility"
+      routerLinkActive="agility"
+    >
       Agility
     </button>
   </ng-template>

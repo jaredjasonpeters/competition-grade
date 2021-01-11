@@ -12,28 +12,23 @@ mat-grid-list {
 #explanation_container {
   height: 100%;
   width: 100%;
+  padding-top: 4em;
 }
 
-#explanation_container p {
+#explanation_paragraph {
   width: 70%;
-  padding-top: 4em;
   padding-bottom: 4em;
-  font-size: 1.25em;
-  font-weight: 500;
   text-align: center;
   margin: 0 auto 0 auto;
+  color: black;
 }
 
 #cg_lineup_title {
   width: 70%;
   margin: 0 auto 0 auto;
-  font-family: Orbitron;
-  font-size: 2em;
-  font-weight: 600;
   letter-spacing: var(--lspace);
   color: var(--cg_gold);
-  /* border-top: 4px solid var(--cg_gold); */
-  padding: 0.5em 0 0.5em 0;
+  padding: 0.5em 0 0 0;
   margin-bottom: 0;
   text-align: center;
   background: black;
@@ -44,18 +39,13 @@ mat-grid-list {
 
 #cg_lineup_informative_text {
   width: 70%;
+  font-size: 0.9em;
   color: white;
   text-align: center;
   background: black;
   margin: 0 auto 0 auto;
   padding-bottom: 2em;
-}
-
-#explanation_container p#explanation_paragraph {
-  font-weight: 600;
-  background: white;
-  color: black;
-  text-align: center;
+  padding-top: 0;
 }
 
 a {
@@ -99,12 +89,9 @@ a:hover {
 
 .header_text {
   color: white;
-  font-family: Orbitron;
   text-transform: uppercase;
-  letter-spacing: var(--lspace);
-  font-size: 1.25em;
-  font-weight: 800;
   margin-bottom: 0;
+  border-bottom: 4px solid var(--cg_gold);
 }
 
 #featured_varieties_container {

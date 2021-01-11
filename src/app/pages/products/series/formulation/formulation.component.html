@@ -41,18 +41,16 @@
     <div class="container">
       <div id="series_overview_container">
         <img src="/assets/{{ seriesName }}_series.png" />
-        <h3>
+        <h3 class="mat-display-4">
           {{ seriesInfo.overview }}
         </h3>
       </div>
       <div id="series_description">
-        <span id="series_description_heading" class="heading"
+        <span id="series_description_heading" class="mat-body-strong"
           >Series Overview:</span
         >
-        <br />
-        <p>{{ seriesInfo.description }}</p>
-        <br />
-        <span id="series_components_heading" class="heading"
+        <p class="mat-body">{{ seriesInfo.description }}</p>
+        <span id="series_components_heading" class="mat-body-strong"
           >Series Components:</span
         >
         <ul *ngFor="let component of seriesInfo.components">

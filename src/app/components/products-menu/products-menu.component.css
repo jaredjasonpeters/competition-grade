@@ -13,6 +13,17 @@
   letter-spacing: 1px;
   text-align: center !important;
   text-transform: uppercase;
+  color: white;
+}
+
+.mat-menu-item.s:hover {
+  border-bottom: 4px solid var(--cg_speed);
+}
+.mat-menu-item.p:hover {
+  border-bottom: 4px solid var(--cg_power);
+}
+.mat-menu-item.a:hover {
+  border-bottom: 4px solid var(--cg_agility);
 }
 
 .mat-focus-indicator.speed:focus,
@@ -45,25 +56,24 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
-
-.active {
-  color: var(--cg_gold);
-}
 /* .active:before {
     display: none;
   } */
 
 .speed {
   color: var(--cg_speed);
-  color: white;
+  border-bottom: 4px solid var(--cg_speed) !important;
+  /* color: white; */
 }
 .power {
   color: var(--cg_power);
-  color: white;
+  border-bottom: 4px solid var(--cg_power) !important;
+  /* color: white; */
 }
 .agility {
   color: var(--cg_agility);
-  color: white;
+  border-bottom: 4px solid var(--cg_agility) !important;
+  /* color: white; */
 }
 
 a:hover:before {

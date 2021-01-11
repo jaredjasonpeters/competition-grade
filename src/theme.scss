@@ -74,20 +74,20 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 @include angular-material-theme($my-app-theme);
 
 $custom-typography: mat-typography-config(
-  $font-family: "Orbitron, Roboto",
-  $headline: mat-typography-level(2.5em, 2.75em, 700),
-  $title:
-    mat-typography-config(
-      $font-family: "Roboto",
+  $font-family: "Orbitron",
+  $headline: mat-typography-level(2.5em, 2.75em, 700, $letter-spacing: 1px),
+  $title: mat-typography-level(2em, 2.25em, 600),
+  $subheading-2: mat-typography-level(1.5em, 1.75em, 700, $letter-spacing: 1px),
+  $display-4:
+    mat-typography-level(
+      1.5em,
+      normal,
+      600,
+      $letter-spacing: 1px,
+      $font-family: "Roboto"
     ),
-  $subheading-2:
-    mat-typography-config(
-      $font-family: "Roboto",
-    ),
-  $body-1:
-    mat-typography-config(
-      $font-family: "Roboto",
-    ),
+  $body-1: mat-typography-level(0.9em, normal, 500, $font-family: "Roboto"),
+  $body-2: mat-typography-level(1.2em, normal, 700, $font-family: "Roboto"),
 );
 
 @include angular-material-typography($custom-typography);

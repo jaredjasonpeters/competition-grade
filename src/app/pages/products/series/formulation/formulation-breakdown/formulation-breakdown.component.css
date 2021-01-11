@@ -56,7 +56,8 @@ mat-grid-tile[id$="_formulation"] {
 }
 
 .progress_container {
-  height: 10%;
+  height: 5%;
+  margin-top: 10px;
   width: 100%;
   display: flex;
 }

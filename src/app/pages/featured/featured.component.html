@@ -6,7 +6,7 @@
   ></app-image-header>
   <div class="content_container">
     <div id="description_container">
-      <p>{{ product.description }}</p>
+      <p class="mat-body-strong">{{ product.description }}</p>
     </div>
     <mat-grid-list rowHeight="100px" cols="5" gutterSize="6px">
       <mat-grid-tile id="options_container" rowspan="5" colspan="2">
@@ -25,7 +25,8 @@
             mat-flat-button
             download
           >
-            <mat-icon>get_app</mat-icon> Technical Data Sheet
+            <mat-icon>get_app</mat-icon>
+            <p class="mat-body">Technical Data Sheet</p>
           </a>
         </div>
       </mat-grid-tile>

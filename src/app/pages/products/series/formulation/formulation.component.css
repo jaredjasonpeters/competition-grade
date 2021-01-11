@@ -148,15 +148,8 @@ app-formulation-breakdown {
 }
 
 #series_overview_container h3 {
-  /* height: 100%; */
   width: 90%;
-  font-family: Roboto;
-  font-weight: 600;
-  font-size: 1.25em;
-  letter-spacing: 1px;
-  line-height: normal;
-  /* color: white; */
-  /* border: 2px solid red; */
+  /* line-height: normal; */
   margin-top: auto;
   margin-bottom: auto;
   margin-left: auto;
@@ -177,17 +170,6 @@ app-formulation-breakdown {
   flex-direction: column;
 }
 
-.heading {
-  font-family: Roboto;
-  font-size: 1em;
-  letter-spacing: 0.5px;
-
-  color: black;
-  color: white;
-  display: block;
-  font-weight: 800;
-}
-
 #series_description {
   margin-top: 1em;
   margin-bottom: auto;
@@ -202,6 +184,7 @@ app-formulation-breakdown {
 }
 
 #series_description p {
+  margin: 10px 0 20px 0;
 }
 #series_description ul {
   /* font-size: 1.25em; */

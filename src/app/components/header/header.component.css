@@ -117,53 +117,15 @@ app-products-menu {
 app-products-menu:before {
   content: "";
   width: calc(100% - 40px);
-  /* width: 100%; */
   position: absolute;
-  top: -15px;
+  top: -25px;
   left: 20px;
-  /* border-top: 4px solid var(--cg_silver); */
-  border-top: 4px solid black;
-  transition: opacity 0.25s ease-in;
+  border-top: 15px solid black;
+  /* transition: opacity 0.25s ease-in; */
   opacity: 0;
 }
-
-/* a.active:before {
-  content: "";
-  width: calc(100% - (100vw - 40px));
-  position: absolute;
-  top: 0;
-  left: 20px;
-  border-top: 4px solid var(--cg_gold);
-  transition: opacity 0.5s ease-in;
-  opacity: 0;
-} */
 
 .active {
-  color: var(--cg_gold);
-}
-/* .active:before {
-  display: none;
-} */
-
-#navigation a.speed:before {
-  border-top: 5px solid var(--cg_speed);
-}
-#navigation a.power:before {
-  border-top: 5px solid var(--cg_power);
-}
-#navigation a.agility:before {
-  border-top: 5px solid var(--cg_agility);
-}
-
-#navigation a:hover:before,
-app-products-menu:hover:before {
-  opacity: 1;
-}
-#navigation a.active:before,
-app-products-menu.active:before {
-  opacity: 0;
-}
-#navigation a:hover {
   color: var(--cg_gold);
 }
 

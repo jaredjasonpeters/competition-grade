@@ -61,19 +61,16 @@ a {
   } */
 
 .speed {
-  color: var(--cg_speed);
+  /* color: var(--cg_speed); */
   border-bottom: 4px solid var(--cg_speed) !important;
-  /* color: white; */
 }
 .power {
-  color: var(--cg_power);
+  /* color: var(--cg_power); */
   border-bottom: 4px solid var(--cg_power) !important;
-  /* color: white; */
 }
 .agility {
-  color: var(--cg_agility);
+  /* color: var(--cg_agility); */
   border-bottom: 4px solid var(--cg_agility) !important;
-  /* color: white; */
 }
 
 a:hover:before {

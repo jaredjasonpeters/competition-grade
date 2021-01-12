@@ -20,8 +20,8 @@ export class FeaturedVideoService implements OnDestroy {
   };
 
   seriesVideos = {
-    speed: 'https://player.vimeo.com/video/486552902',
-    power: 'https://player.vimeo.com/video/486555331',
+    speed: 'https://player.vimeo.com/video/499497904',
+    power: 'https://player.vimeo.com/video/499513295',
     agility: 'https://player.vimeo.com/video/486558170',
   };
 
@@ -55,7 +55,6 @@ export class FeaturedVideoService implements OnDestroy {
     if (options && options.autoplay) {
       params = this.getParams([{ key: 'autoplay', value: 1 }]);
     }
-    console.log('OPTIONS', options.runOnce);
 
     if (options && options.runOnce) {
       if (this.hasPlayed[url]) {

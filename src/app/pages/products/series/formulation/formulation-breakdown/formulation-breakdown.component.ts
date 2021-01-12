@@ -35,6 +35,8 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
 
   formulationSubscription: Subscription;
 
+  @ViewChild('breakdownContainer', { static: true })
+  breakdownContainer: ElementRef;
   @ViewChild('primaryFormulation', { static: true })
   primaryFormulation: ElementRef;
   @ViewChild('secondaryFormulation', { static: true })
@@ -51,6 +53,9 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.router.events.subscribe((routerEvent) => {
       if (routerEvent instanceof NavigationEnd) {
+
+        this.renderer.removeClass(this.breakdownContainer.nativeElement, 'show');
+
         this.renderer.removeClass(
           this.primaryFormulation.nativeElement,
           'show'
@@ -63,7 +68,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           this.fourTurfFormulation.nativeElement,
           'show'
         );
-
+        this.renderer.addClass(this.breakdownContainer.nativeElement, 'hide');
         this.renderer.addClass(this.primaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.secondaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.fourTurfFormulation.nativeElement, 'hide');
@@ -107,6 +112,8 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           );
         }
 
+        this.renderer.removeClass(this.breakdownContainer.nativeElement, 'show');
+
         this.renderer.removeClass(
           this.primaryFormulation.nativeElement,
           'show'
@@ -120,6 +127,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           'show'
         );
 
+        this.renderer.addClass(this.breakdownContainer.nativeElement, 'hide')
         this.renderer.addClass(this.primaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.secondaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.fourTurfFormulation.nativeElement, 'hide');
@@ -137,6 +145,11 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           this.fourTurfFormulation.nativeElement,
           'fourTurfBackground'
         );
+
+        this.renderer.listen(this.breakdownContainer.nativeElement, 'animationstart', (): void => {
+          this.renderer.addClass(this.breakdownContainer.nativeElement, 'show');
+          this.renderer.removeClass(this.breakdownContainer.nativeElement, 'hide');
+        })
 
         this.renderer.listen(
           this.primaryFormulation.nativeElement,

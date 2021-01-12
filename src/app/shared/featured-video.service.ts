@@ -20,9 +20,9 @@ export class FeaturedVideoService implements OnDestroy {
   };
 
   seriesVideos = {
-    speed: 'https://player.vimeo.com/video/499497904',
-    power: 'https://player.vimeo.com/video/499513295',
-    agility: 'https://player.vimeo.com/video/486558170',
+    speed: 'https://player.vimeo.com/video/499727006',
+    power: 'https://player.vimeo.com/video/499731563',
+    agility: 'https://player.vimeo.com/video/499718190',
   };
 
   constructor(private sanitize: DomSanitizer, private router: Router) {}

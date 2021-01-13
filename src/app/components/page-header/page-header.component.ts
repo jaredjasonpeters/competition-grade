@@ -8,13 +8,11 @@ import { Router } from '@angular/router';
 })
 export class PageHeaderComponent implements OnInit, OnChanges {
   @Input() title: string;
-  gold: string;
-  white: string;
+  gold: string = '';
+  white: string = '';
   constructor() {}
 
-  ngOnInit(): void {
-    // this.getFormattedTitle();
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(): void {
     this.getFormattedTitle();
@@ -22,9 +20,28 @@ export class PageHeaderComponent implements OnInit, OnChanges {
 
   getFormattedTitle() {
     let title = this.title;
-    console.log('TITLE', this.title);
-    let [gold, white] = title.split('>>');
-    this.gold = `${gold} >>`;
-    this.white = ` ${white}`;
+    let gold: string;
+    let white: string;
+
+    if (title.includes('>>')) {
+      [gold, white] = title.split('>>');
+      this.gold = `${gold} >>`;
+      this.white = ` ${white}`;
+    } else {
+      let words = title.split(' ');
+      if (words.length > 1) {
+        console.log('WORDS', words);
+        words.forEach((word, i) => {
+          if (i / words.length < 0.5) {
+            this.gold += word + ' ';
+          } else {
+            this.white += word + ' ';
+          }
+        });
+      } else {
+        console.log('TITLE', title);
+        this.gold = title;
+      }
+    }
   }
 }

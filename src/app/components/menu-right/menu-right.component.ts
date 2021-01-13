@@ -7,7 +7,11 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  Router,
+} from '@angular/router';
 import { FeaturedVideoService } from 'src/app/shared/featured-video.service';
 
 @Component({
@@ -18,15 +22,21 @@ import { FeaturedVideoService } from 'src/app/shared/featured-video.service';
 export class MenuRightComponent implements OnInit, OnChanges {
   constructor(
     private renderer: Renderer2,
+    private route: ActivatedRoute,
     private featuredVideoService: FeaturedVideoService
   ) {}
   @Input() page;
   @Input() features: string[] = ['all'];
   @ViewChild('menu', { static: true }) menu: ElementRef;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let root = this.route.url.subscribe((root) => console.log('ROOT', root));
+    this.route.parent.url.subscribe((url) => console.log('URL', url));
+  }
 
   ngOnChanges(): void {
+    console.log('THIS PAGE', this.page);
+
     if (['power', 'speed', 'agility'].includes(this.page)) {
       this.renderer.setStyle(
         this.menu.nativeElement,

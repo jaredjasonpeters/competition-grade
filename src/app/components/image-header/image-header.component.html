@@ -1,7 +1,6 @@
-<div id="image_container" #imageContainer>
-  <img *ngIf="image"
-  id="image"
-  src={{image}}
-alt="header splash image"
-/>
+<div id="image_header_container" #imageContainer>
+  <img *ngIf="image" id="image" src="{{ image }}" alt="header splash image" />
+  <video autoplay muted loop id="video_header" *ngIf="video">
+    <source src="/assets/video/{{ video }}.mp4" type="video/mp4" />
+  </video>
 </div>

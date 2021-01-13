@@ -7,7 +7,7 @@ import {
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SeriesFormulationService } from 'src/app/shared/series-formulation.service';
 
@@ -15,6 +15,7 @@ import { SeriesFormulationService } from 'src/app/shared/series-formulation.serv
   selector: 'app-formulation-breakdown',
   templateUrl: './formulation-breakdown.component.html',
   styleUrls: ['./formulation-breakdown.component.css'],
+  animations: [],
 })
 export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   seriesName: string;
@@ -53,8 +54,10 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.router.events.subscribe((routerEvent) => {
       if (routerEvent instanceof NavigationEnd) {
-
-        this.renderer.removeClass(this.breakdownContainer.nativeElement, 'show');
+        this.renderer.removeClass(
+          this.breakdownContainer.nativeElement,
+          'show'
+        );
 
         this.renderer.removeClass(
           this.primaryFormulation.nativeElement,
@@ -112,7 +115,10 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           );
         }
 
-        this.renderer.removeClass(this.breakdownContainer.nativeElement, 'show');
+        this.renderer.removeClass(
+          this.breakdownContainer.nativeElement,
+          'show'
+        );
 
         this.renderer.removeClass(
           this.primaryFormulation.nativeElement,
@@ -127,7 +133,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           'show'
         );
 
-        this.renderer.addClass(this.breakdownContainer.nativeElement, 'hide')
+        this.renderer.addClass(this.breakdownContainer.nativeElement, 'hide');
         this.renderer.addClass(this.primaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.secondaryFormulation.nativeElement, 'hide');
         this.renderer.addClass(this.fourTurfFormulation.nativeElement, 'hide');
@@ -146,10 +152,20 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
           'fourTurfBackground'
         );
 
-        this.renderer.listen(this.breakdownContainer.nativeElement, 'animationstart', (): void => {
-          this.renderer.addClass(this.breakdownContainer.nativeElement, 'show');
-          this.renderer.removeClass(this.breakdownContainer.nativeElement, 'hide');
-        })
+        this.renderer.listen(
+          this.breakdownContainer.nativeElement,
+          'animationstart',
+          (): void => {
+            this.renderer.addClass(
+              this.breakdownContainer.nativeElement,
+              'show'
+            );
+            this.renderer.removeClass(
+              this.breakdownContainer.nativeElement,
+              'hide'
+            );
+          }
+        );
 
         this.renderer.listen(
           this.primaryFormulation.nativeElement,

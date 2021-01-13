@@ -12,21 +12,8 @@
 #image_left img {
   object-fit: cover;
   object-position: center;
-  /* object-fit: contain;
-  object-position: center; */
-  /* padding: 2em; */
-  /* border: 2px solid green; */
   width: 100%;
   height: 100%;
   background: var(--cg_gold);
   background: black;
-}
-
-h1 {
-  font-family: Orbitron;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  /* letter-spacing: var(--lspace); */
-  border-bottom: 5px solid var(--cg_gold);
 }

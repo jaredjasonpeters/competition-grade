@@ -21,7 +21,8 @@ export class InstagramFeedComponent implements OnInit {
   accessToken;
 
   constructor(private http: HttpClient, private renderer: Renderer2) {}
-  @ViewChild('root', {static: true}) root: ElementRef;
+  @ViewChild('root', { static: true }) root: ElementRef;
+  imageUrl: string;
 
   ngOnInit(): void {
     this.http
@@ -39,8 +40,15 @@ export class InstagramFeedComponent implements OnInit {
           .subscribe((post: any) => {
             console.log('POST', post);
             console.log('ROOT', this.root);
-            let text = this.renderer.createText('HELLO FROM ROOT');
-            this.renderer.appendChild(this.root.nativeElement, text);
+            this.imageUrl = post.thumbnail_url;
+            // let text = this.renderer.createText('HELLO FROM ROOT');
+            // this.renderer.appendChild(this.root.nativeElement, text);
+
+            // this.renderer.setStyle(
+            //   this.root.nativeElement,
+            //   'background-image',
+            //   `url("${this.imageUrl}")`
+            // );
           });
       });
   }

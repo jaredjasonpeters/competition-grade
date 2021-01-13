@@ -58,7 +58,7 @@ export const routes: Routes = [
     path: 'distributor',
     children: [
       { path: 'levels', component: DistributorLevelsComponent },
-      { path: 'benefits-and-rewards', component: DistributorBenefitsComponent },
+      { path: 'benefits', component: DistributorBenefitsComponent },
       { path: 'locate', component: UnderConstructionComponent },
     ],
   },
@@ -82,10 +82,10 @@ export const routes: Routes = [
     ],
   },
 
-    {path: 'featured',
-  children: [
-    {path: ':product', component: FeaturedComponent}
-  ]},
+  {
+    path: 'featured',
+    children: [{ path: ':product', component: FeaturedComponent }],
+  },
   { path: 'thanks', component: ThanksComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },

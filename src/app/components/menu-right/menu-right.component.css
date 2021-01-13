@@ -23,6 +23,12 @@ app-featured-video {
   height: 100%;
 }
 
+app-instagram-feed,
+app-twitter-feed {
+  width: 100%;
+  height: 100%;
+}
+
 #social_gridlist {
   /* border: 2px solid purple; */
   height: 100%;
@@ -38,17 +44,14 @@ app-featured-video {
   background: black;
 }
 
-.social_grid_instagram {
-  /* background: green; */
-}
-
 .social_grid_instagram::before {
   content: url("../../../assets/instagram_logo_gold.png");
   width: 30px;
   height: 30px;
   position: absolute;
-  bottom: 5px;
+  top: 5px;
   right: 5px;
+  z-index: 100;
 }
 
 #video_tile {

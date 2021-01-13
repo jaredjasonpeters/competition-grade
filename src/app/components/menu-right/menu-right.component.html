@@ -8,7 +8,7 @@
     <mat-grid-tile id="video_tile" rowspan="7">
       <app-featured-video
         [page]="page"
-        [autoplayOptions]="{ autoplay: false, runOnce: true }"
+        [autoplayOptions]="{ autoplay: true, runOnce: true }"
         *ngIf="features.includes('video') || features.includes('all')"
       ></app-featured-video>
     </mat-grid-tile>

@@ -1,4 +1,4 @@
-import { Component, ComponentRef, OnInit } from '@angular/core';
+import { Component, ComponentRef, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DistributorAdvertComponent } from './pages/distributor/distributor-advert/distributor-advert.component';
 import { AuthService } from './shared/auth.service';
@@ -9,9 +9,9 @@ import { NewsService } from './shared/news.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnChanges {
   title = 'competition-grade';
-  newsAvailable: string;
+  newsAvailable: boolean;
   isAdvertisment: boolean;
   displayPageHeader: boolean;
   pageHeaderTitle: string;
@@ -22,9 +22,13 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
-    this.newsAvailable = this.newsService.getCurrentNews();
     this.authService.autoLogin();
+    this.newsService.showNews.subscribe((bool) => {
+      this.newsAvailable = bool;
+    });
   }
+
+  ngOnChanges(): void {}
 
   onRouterActivate(event: ComponentRef<any>) {
     console.log('ROUTER ACTIVATE', event);

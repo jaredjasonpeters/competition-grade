@@ -1,5 +1,9 @@
 <div class="container">
-  <mat-icon color="">notification_important</mat-icon>
-  <span id="seperator"></span>
-  <p><span>Important Notice:</span> {{ currentNews }}</p>
+  <div class="content_container">
+    <mat-icon color="">error_outline</mat-icon>
+    <span id="notice_header">Important Notice:</span>
+    <span id="seperator"></span>
+    <p *ngIf="currentNews">{{ currentNews }}</p>
+    <mat-icon id="close_button" (click)="closeNotice()">highlight_off</mat-icon>
+  </div>
 </div>

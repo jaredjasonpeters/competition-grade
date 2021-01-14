@@ -1,13 +1,25 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { newsConfig } from '../configurations/news.config';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NewsService {
-currentNews: string;
-  constructor() { }
+  currentNews: string = newsConfig.message;
+  showNews: BehaviorSubject<boolean> = new BehaviorSubject(newsConfig.show);
+  constructor() {}
 
   getCurrentNews() {
-    return this.currentNews
+    if (this.showNews.getValue()) {
+      return this.currentNews;
+    } else {
+      return false;
+    }
+  }
+
+  disregardNews() {
+    this.showNews.next(false);
+    console.log('SHOW NEWS', this.showNews.getValue());
   }
 }

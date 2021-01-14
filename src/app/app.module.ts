@@ -5,6 +5,7 @@ import { MaterialModule } from './material.module';
 import { MatIconModule } from '@angular/material/icon';
 
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -48,9 +49,6 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { SharedComponentsModule } from './components/shared-components/shared-components.module';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,7 +87,7 @@ import { SharedComponentsModule } from './components/shared-components/shared-co
     ProjectsSearchComponent,
     SiteDetailsComponent,
     PageHeaderComponent,
-    FeaturedComponent
+    FeaturedComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -97,6 +95,7 @@ import { SharedComponentsModule } from './components/shared-components/shared-co
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    LayoutModule,
     MaterialModule,
     MatIconModule,
     HttpClientModule,

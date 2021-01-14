@@ -21,7 +21,8 @@
   margin-right: 5%;
   display: block;
   text-align: center;
-  font-size: 0.6em;
+  font-size: 0.8em;
+  letter-spacing: 0.5em;
   text-transform: uppercase;
   border-top: 2px solid var(--cg_gold);
   padding: 0px 0 2px 0;
@@ -60,7 +61,7 @@
   text-align: center;
   margin-right: 10px;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 700;
   border-right: 2px solid rgba(0, 0, 0, 0.1);
   padding-right: 10px;
   padding-left: 10px;
@@ -100,6 +101,7 @@
   cursor: context-menu;
   margin-left: 2em;
   margin-right: 0;
+  letter-spacing: normal;
 }
 
 #footer_detail_options ul li:hover:last-child {

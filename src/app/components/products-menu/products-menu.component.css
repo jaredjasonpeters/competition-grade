@@ -1,9 +1,5 @@
 .products_menu {
-  /* border-bottom: 5px solid var(--cg_gold); */
-  /* border-top: 5px solid white; */
-  /* border-top: 5px solid black; */
-  margin-top: 17px;
-  border-radius: 0 !important;
+  margin-top: 1em;
 }
 
 .mat-menu-item {

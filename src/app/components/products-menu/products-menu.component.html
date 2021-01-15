@@ -5,32 +5,30 @@
   yPosition="below"
   #matMenu
 >
-  <ng-template matMenuContent>
-    <button
-      class="s"
-      mat-menu-item
-      routerLink="/products/speed"
-      routerLinkActive="speed"
-    >
-      Speed
-    </button>
-    <button
-      class="p"
-      mat-menu-item
-      routerLink="/products/power"
-      routerLinkActive="power"
-    >
-      Power
-    </button>
-    <button
-      class="a"
-      mat-menu-item
-      routerLink="/products/agility"
-      routerLinkActive="agility"
-    >
-      Agility
-    </button>
-  </ng-template>
+  <button
+    class="s"
+    mat-menu-item
+    routerLink="/products/speed"
+    routerLinkActive="speed"
+  >
+    Speed
+  </button>
+  <button
+    class="p"
+    mat-menu-item
+    routerLink="/products/power"
+    routerLinkActive="power"
+  >
+    Power
+  </button>
+  <button
+    class="a"
+    mat-menu-item
+    routerLink="/products/agility"
+    routerLinkActive="agility"
+  >
+    Agility
+  </button>
 </mat-menu>
 
 <a (click)="openMenu()" [matMenuTriggerFor]="productsMenu">Products</a>

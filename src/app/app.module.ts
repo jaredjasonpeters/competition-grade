@@ -48,6 +48,7 @@ import { SiteDetailsComponent } from './pages/site-details/site-details.componen
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { SharedComponentsModule } from './components/shared-components/shared-components.module';
+import { MobileNavComponent } from './components/mobile/mobile-nav/mobile-nav.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { SharedComponentsModule } from './components/shared-components/shared-co
     SiteDetailsComponent,
     PageHeaderComponent,
     FeaturedComponent,
+    MobileNavComponent,
   ],
   imports: [
     AppRoutingModule,

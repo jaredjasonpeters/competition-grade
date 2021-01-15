@@ -1,0 +1,73 @@
+#navigation {
+  height: 10vh;
+  background: black;
+  border-bottom: 2px solid var(--cg_gold);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1em 0 1em;
+}
+
+#mobile_logo {
+  height: 70%;
+  cursor: pointer;
+}
+
+#menu_button {
+  font-size: 3em;
+}
+
+.mobileNavMenu {
+  background: black;
+  /* border: 2px solid red; */
+  color: white;
+  width: 100%;
+}
+
+.mat-menu-item {
+  color: white;
+  font-family: Orbitron;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 300ms ease-in;
+  padding: 1em;
+}
+
+.mat-menu-item[disabled],
+.mat-menu-item[disabled]::after {
+  color: var(--cg_silver);
+}
+
+.mat-menu-item:hover {
+  color: var(--cg_gold);
+}
+
+#products_label {
+  /* border: 2px solid red; */
+  margin-bottom: 0px;
+  padding: 0 2em 0 2em;
+}
+
+.mobileNavMenu li {
+  text-decoration: none;
+  list-style-type: none;
+  /* border: 3px solid green; */
+}
+
+.mobileNavMenu ul {
+  margin: 0;
+}
+
+.mat-menu-panel {
+  /* background: var(--cg_silver); */
+  background: white;
+  background: black;
+  padding: 2em 0 2em 0;
+  border-bottom: 2px solid var(--cg_gold);
+}
+
+button.mat-menu-item {
+  color: white;
+  padding: 0 2em 0 2em;
+}

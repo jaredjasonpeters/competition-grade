@@ -20,8 +20,6 @@ mat-nav-list span {
   font-size: 0.7em;
   letter-spacing: var(--lspace);
   margin-bottom: 10px;
-  /* border: 2px solid red; */
-  /* text-align: center; */
   color: var(--cg_gold);
   border-bottom: 2px solid var(--cg_silver);
 }
@@ -30,14 +28,11 @@ mat-nav-list a {
   max-height: 15px;
   width: 100%;
   font-size: 0.6em;
-  /* color: var(--cg_gold); */
-  /* letter-spacing: var(--lspace); */
   margin-top: 1px;
   margin-bottom: 1px;
   line-height: 1.25em;
   padding-right: 5px;
-  /* border: 2px solid white; */
-  /* text-align: center; */
+  letter-spacing: 1px;
 }
 mat-nav-list :first-child {
   margin-top: 2px;

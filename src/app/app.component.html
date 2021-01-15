@@ -1,6 +1,10 @@
 <app-news *ngIf="newsAvailable"></app-news>
-<app-header *ngIf="!isAdvertisment"></app-header>
-<app-page-header *ngIf="displayPageHeader" [title]="pageHeaderTitle"></app-page-header>
+<app-header *ngIf="!isAdvertisment && !showMobileNav"></app-header>
+<app-mobile-nav *ngIf="!isAdvertisment && showMobileNav"></app-mobile-nav>
+<app-page-header
+  *ngIf="displayPageHeader"
+  [title]="pageHeaderTitle"
+></app-page-header>
 <router-outlet (activate)="onRouterActivate($event)"></router-outlet>
 <app-footer *ngIf="!isAdvertisment"></app-footer>
 <app-footer-detail *ngIf="!isAdvertisment"></app-footer-detail>

@@ -1,0 +1,92 @@
+<nav id="navigation">
+  <img
+    id="mobile_logo"
+    routerLink="/"
+    src="/assets/Competition_Grade_Logo_Final_ShieldOnly.png"
+  />
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="mobileNavMenu"
+    (click)="openMenu()"
+    aria-label="Mobile Nav icon-button with a menu"
+  >
+    <mat-icon id="menu_button" color="primary">menu</mat-icon>
+  </button>
+  <mat-menu
+    class="mobileNavMenu"
+    #mobileNavMenu="matMenu"
+    xPosition="after"
+    yPosition="below"
+  >
+    <button
+      mat-menu-item
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </button>
+    <mat-label id="products_label" mat-menu-item disabled>Products:</mat-label>
+    <ul>
+      <li>
+        <button
+          mat-menu-item
+          routerLink="/products/speed"
+          routerLinkActive="speed"
+        >
+          Speed
+        </button>
+      </li>
+      <li>
+        <button
+          mat-menu-item
+          routerLink="/products/power"
+          routerLinkActive="power"
+        >
+          Power
+        </button>
+      </li>
+      <li>
+        <button
+          mat-menu-item
+          routerLink="/products/agility"
+          routerLinkActive="agility"
+        >
+          Agility
+        </button>
+      </li>
+    </ul>
+    <button
+      mat-menu-item
+      routerLink="/why-competition-grade"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      What is CG?
+    </button>
+    <button
+      mat-menu-item
+      routerLink="/verification"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Making the Lineup
+    </button>
+    <button
+      mat-menu-item
+      routerLink="/projects"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Projects
+    </button>
+    <button
+      mat-menu-item
+      routerLink="/distributor/locate"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Where to Buy?
+    </button>
+  </mat-menu>
+</nav>

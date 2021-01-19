@@ -27,9 +27,11 @@ export class AppComponent implements OnInit, OnChanges {
     this.newsService.showNews.subscribe((bool) => {
       this.newsAvailable = bool;
     });
-    this.breakpointObserver.observe([Breakpoints.Large]).subscribe((res) => {
+    this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe((res) => {
       if (res.matches) {
         this.showMobileNav = true;
+      } else {
+        this.showMobileNav = false;
       }
     });
   }

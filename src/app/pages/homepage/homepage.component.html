@@ -1,9 +1,17 @@
 <section id="content_section">
-  <mat-grid-list gutterSize="0" cols="6" rowHeight="725">
-    <mat-grid-tile id="image_slider" rowspan="1" colspan="4">
+  <mat-grid-list
+    gutterSize="0"
+    cols="{{ breakpoint.colSize }}"
+    rowHeight="{{ breakpoint.rowHeight }}"
+  >
+    <mat-grid-tile id="image_slider" colspan="{{ breakpoint.colSpan_L }}">
       <app-image-slider [speed]="6000"></app-image-slider>
     </mat-grid-tile>
-    <mat-grid-tile id="menu_right" rowspan="1" colspan="2">
+    <mat-grid-tile
+      id="menu_right"
+      rowspan="{{ breakpoint.rowSpan_R }}"
+      colspan="{{ breakpoint.colSpan_R }}"
+    >
       <app-menu-right [page]="page"></app-menu-right>
     </mat-grid-tile>
   </mat-grid-list>

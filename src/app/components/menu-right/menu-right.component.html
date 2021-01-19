@@ -1,41 +1,27 @@
 <div class="internal_gridlist" #menu>
-  <mat-grid-list
-    id="menu_right_gridlist"
-    gutterSize="2px"
-    cols="1"
-    rowHeight="fit"
-  >
-    <mat-grid-tile id="video_tile" rowspan="7">
-      <app-featured-video
-        [page]="page"
-        [autoplayOptions]="{ autoplay: true, runOnce: true }"
-        *ngIf="features.includes('video') || features.includes('all')"
-      ></app-featured-video>
-    </mat-grid-tile>
-    <mat-grid-tile id="featured_tile" rowspan="2">
-      <app-featured-links
-        [page]="page"
-        *ngIf="features.includes('links') || features.includes('all')"
-      ></app-featured-links>
-    </mat-grid-tile>
-    <mat-grid-tile id="social_tile" rowspan="5">
-      <div class="internal_gridlist">
-        <mat-grid-list
-          id="social_gridlist"
-          gutterSize="2px"
-          cols="2"
-          rowHeight="fit"
-        >
-          <mat-grid-tile class="social_grid_twitter" rowspan="1">
-            <app-twitter-feed
-              *ngIf="features.includes('twitter') || features.includes('all')"
-            ></app-twitter-feed>
-          </mat-grid-tile>
-          <mat-grid-tile class="social_grid_instagram" rowspan="1">
-            <app-instagram-feed></app-instagram-feed>
-          </mat-grid-tile>
-        </mat-grid-list>
+  <div id="video_tile">
+    <app-featured-video
+      [page]="page"
+      [autoplayOptions]="{ autoplay: false, runOnce: true }"
+      *ngIf="features.includes('video') || features.includes('all')"
+    ></app-featured-video>
+  </div>
+  <div id="featured_tile">
+    <app-featured-links
+      [page]="page"
+      *ngIf="features.includes('links') || features.includes('all')"
+    ></app-featured-links>
+  </div>
+  <div id="social_tile">
+    <div class="internal_gridlist_row">
+      <div class="social_grid_twitter">
+        <app-twitter-feed
+          *ngIf="features.includes('twitter') || features.includes('all')"
+        ></app-twitter-feed>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+      <div class="social_grid_instagram">
+        <app-instagram-feed></app-instagram-feed>
+      </div>
+    </div>
+  </div>
 </div>

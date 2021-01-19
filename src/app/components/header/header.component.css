@@ -89,7 +89,7 @@
   margin: auto;
 }
 
-#navigation {
+#navigation_large {
   width: 60%;
   margin-right: 100px;
   color: white;
@@ -99,7 +99,7 @@
   margin-left: 3%;
   /* border: 2px solid yellow; */
 }
-#navigation a,
+#navigation_large a,
 app-products-menu {
   /* border: 2px solid red; */
   position: relative;
@@ -113,7 +113,7 @@ app-products-menu {
   text-decoration: none;
 }
 
-#navigation a:before,
+#navigation_large a:before,
 app-products-menu:before {
   content: "";
   width: calc(100% - 40px);
@@ -122,7 +122,12 @@ app-products-menu:before {
   left: 20px;
   border-top: 15px solid black;
   /* transition: opacity 0.25s ease-in; */
-  opacity: 0;
+  opacity: 1;
+}
+
+#navigation_large a:hover #navigation_large a:before,
+app-products-menu:hover app-products-menu:before {
+  opacity: 1;
 }
 
 .active {

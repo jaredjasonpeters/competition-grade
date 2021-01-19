@@ -1,6 +1,6 @@
 #navigation {
   height: 10vh;
-  background: black;
+  background-color: black;
   border-bottom: 2px solid var(--cg_gold);
   color: white;
   display: flex;
@@ -39,7 +39,7 @@
   color: var(--cg_silver);
 }
 
-.mat-menu-item:hover {
+.navOption:hover {
   color: var(--cg_gold);
 }
 
@@ -57,6 +57,7 @@
 
 .mobileNavMenu ul {
   margin: 0;
+  padding: 0 1em 0 1em;
 }
 
 .mat-menu-panel {
@@ -70,4 +71,43 @@
 button.mat-menu-item {
   color: white;
   padding: 0 2em 0 2em;
+}
+
+.mat-menu-item.speed {
+  color: var(--cg_speed);
+  border-bottom: 4px solid var(--cg_speed);
+}
+.mat-menu-item.power {
+  color: var(--cg_power);
+  border-bottom: 4px solid var(--cg_power);
+}
+.mat-menu-item.agility {
+  color: var(--cg_agility);
+  border-bottom: 4px solid var(--cg_agility);
+}
+.mat-menu-item.active {
+  color: var(--cg_gold);
+}
+
+.mat-menu-item.s:hover {
+  border-bottom: 4px solid var(--cg_speed);
+}
+.mat-menu-item.p:hover {
+  border-bottom: 4px solid var(--cg_power);
+}
+.mat-menu-item.a:hover {
+  border-bottom: 4px solid var(--cg_agility);
+}
+
+.mat-focus-indicator.speed:focus,
+.mat-focus-indicator.speed:hover {
+  border-bottom: 4px solid var(--cg_speed) !important;
+}
+.mat-focus-indicator.power:focus,
+.mat-focus-indicator.power:hover {
+  border-bottom: 4px solid var(--cg_power) !important;
+}
+.mat-focus-indicator.agility:focus,
+.mat-focus-indicator.agility:hover {
+  border-bottom: 4px solid var(--cg_agility) !important;
 }

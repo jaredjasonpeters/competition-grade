@@ -1,4 +1,15 @@
 #content_section {
+  width: 100%;
+}
+
+#mobile_content {
+  width: 100%;
+}
+
+.video_container {
+  border-top: 2px solid var(--cg_gold);
+  width: 100%;
+  height: calc(100vw * 0.5625);
 }
 
 mat-grid-list {

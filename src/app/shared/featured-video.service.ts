@@ -9,12 +9,6 @@ import { take } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class FeaturedVideoService implements OnDestroy {
-  private featuredVideo: BehaviorSubject<SafeResourceUrl> = new BehaviorSubject(
-    ''
-  );
-  requestedVideo: string;
-  hasPlayed = {};
-
   pageVidMap: { [key: string]: string } = {
     default: 'https://player.vimeo.com/video/491310373',
   };
@@ -24,6 +18,12 @@ export class FeaturedVideoService implements OnDestroy {
     power: 'https://player.vimeo.com/video/500115189',
     agility: 'https://player.vimeo.com/video/500192921',
   };
+
+  private featuredVideo: BehaviorSubject<SafeResourceUrl> = new BehaviorSubject(
+    ''
+  );
+  requestedVideo: string = this.pageVidMap.default;
+  hasPlayed = {};
 
   constructor(private sanitize: DomSanitizer, private router: Router) {}
 

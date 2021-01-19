@@ -1,38 +1,32 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import {
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  Router,
-} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent implements OnInit, OnChanges {
   page;
-  size;
+  isMobileLayout;
   largeBreakpoints = {
     isLarge: true,
     colSize: 6,
     colSpan_L: 4,
     colSpan_R: 2,
     rowSpan_R: 1,
-    rowHeight: '725px',
+    rowHeight: '780px',
+  };
+
+  mediumBreakpoints = {
+    isLarge: true,
+    colSize: 6,
+    colSpan_L: 4,
+    colSpan_R: 2,
+    rowSpan_R: 1,
+    rowHeight: '418px',
   };
 
   smallBreakpoints = {
@@ -44,6 +38,8 @@ export class HomepageComponent implements OnInit {
     rowHeight: '50vh',
   };
   breakpoint;
+
+  size;
 
   constructor(
     private titleService: Title,
@@ -57,32 +53,28 @@ export class HomepageComponent implements OnInit {
     this.page = this.route.snapshot.url.join();
     this.breakpointObserver.observe([Breakpoints.Large]).subscribe((res) => {
       if (res.matches) {
-        console.log('MATCHES LARGE');
-        console.log('RES LARGE', res);
         this.breakpoint = this.largeBreakpoints;
-        this.size = 'large';
+        this.isMobileLayout = false;
       }
     });
     this.breakpointObserver.observe([Breakpoints.Medium]).subscribe((res) => {
       if (res.matches) {
-        console.log('MATCHES MEDIUM');
-        this.breakpoint = this.smallBreakpoints;
+        this.breakpoint = this.mediumBreakpoints;
       }
     });
     this.breakpointObserver.observe([Breakpoints.Small]).subscribe((res) => {
       if (res.matches) {
-        console.log('MATCHES SMALL');
         this.breakpoint = this.smallBreakpoints;
-        this.size = 'small';
+        this.isMobileLayout = true;
       }
     });
     this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe((res) => {
-      console.log('RES XSMALL', res);
       if (res.matches) {
-        console.log('MATCHES SMALL');
         this.breakpoint = this.smallBreakpoints;
-        this.size = 'small';
+        this.isMobileLayout = true;
       }
     });
   }
+
+  ngOnChanges(): void {}
 }

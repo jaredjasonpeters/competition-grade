@@ -27,13 +27,15 @@ export class AppComponent implements OnInit, OnChanges {
     this.newsService.showNews.subscribe((bool) => {
       this.newsAvailable = bool;
     });
-    this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe((res) => {
-      if (res.matches) {
-        this.showMobileNav = true;
-      } else {
-        this.showMobileNav = false;
-      }
-    });
+    this.breakpointObserver
+      .observe([Breakpoints.XSmall, Breakpoints.Small])
+      .subscribe((res) => {
+        if (res.matches) {
+          this.showMobileNav = true;
+        } else {
+          this.showMobileNav = false;
+        }
+      });
   }
 
   ngOnChanges(): void {}

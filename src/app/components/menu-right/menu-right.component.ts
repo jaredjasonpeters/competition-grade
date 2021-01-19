@@ -48,9 +48,11 @@ export class MenuRightComponent implements OnInit, OnChanges {
   @Input() page;
   @Input() features: string[] = ['all'];
   @ViewChild('menu', { static: true }) menu: ElementRef;
+  @ViewChild('videoTile', { static: true }) videoTile: ElementRef;
 
   ngOnInit(): void {
-    let root = this.route.url.subscribe((root) => console.log('ROOT', root));
+    this.featuredVideoService.setVideoByPage(this.page);
+
     this.route.parent.url.subscribe((url) => console.log('URL', url));
 
     this.breakpointObserver.observe([Breakpoints.Large]).subscribe((res) => {
@@ -80,8 +82,6 @@ export class MenuRightComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log('THIS PAGE', this.page);
-
     if (['power', 'speed', 'agility'].includes(this.page)) {
       this.renderer.setStyle(
         this.menu.nativeElement,

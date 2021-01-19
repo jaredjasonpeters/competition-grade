@@ -1,27 +1,29 @@
-<section id="content_section">
-  <div id="mobile_content" *ngIf="isMobileLayout">
-    <div class="video_container">
-      <app-featured-video
-        [page]="page"
-        [autoplayOptions]="{ autoplay: false, runOnce: true }"
-      ></app-featured-video>
+<app-layout (layoutInfo)="getLayoutInfo($event)">
+  <section id="content_section">
+    <div id="mobile_content" *ngIf="isMobileLayout">
+      <div class="video_container">
+        <app-featured-video
+          [page]="page"
+          [autoplayOptions]="{ autoplay: false, runOnce: true }"
+        ></app-featured-video>
+      </div>
     </div>
-  </div>
-  <mat-grid-list
-    gutterSize="0"
-    cols="{{ breakpoint.colSize }}"
-    rowHeight="{{ breakpoint.rowHeight }}"
-  >
-    <mat-grid-tile id="image_slider" colspan="{{ breakpoint.colSpan_L }}">
-      <app-image-slider [speed]="6000"></app-image-slider>
-    </mat-grid-tile>
-    <mat-grid-tile
-      *ngIf="!isMobileLayout"
-      id="menu_right"
-      rowspan="{{ breakpoint.rowSpan_R }}"
-      colspan="{{ breakpoint.colSpan_R }}"
+    <mat-grid-list
+      gutterSize="0"
+      cols="{{ breakpoint.colSize }}"
+      rowHeight="{{ breakpoint.rowHeight }}"
     >
-      <app-menu-right [page]="page"></app-menu-right>
-    </mat-grid-tile>
-  </mat-grid-list>
-</section>
+      <mat-grid-tile id="image_slider" colspan="{{ breakpoint.colSpan_L }}">
+        <app-image-slider [speed]="6000"></app-image-slider>
+      </mat-grid-tile>
+      <mat-grid-tile
+        *ngIf="!isMobileLayout"
+        id="menu_right"
+        rowspan="{{ breakpoint.rowSpan_R }}"
+        colspan="{{ breakpoint.colSpan_R }}"
+      >
+        <app-menu-right [page]="page"></app-menu-right>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </section>
+</app-layout>

@@ -49,6 +49,7 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { SharedComponentsModule } from './components/shared-components/shared-components.module';
 import { MobileNavComponent } from './components/mobile/mobile-nav/mobile-nav.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { MobileNavComponent } from './components/mobile/mobile-nav/mobile-nav.co
     PageHeaderComponent,
     FeaturedComponent,
     MobileNavComponent,
+    LayoutComponent,
   ],
   imports: [
     AppRoutingModule,

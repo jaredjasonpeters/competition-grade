@@ -37,9 +37,15 @@ export class HomepageComponent implements OnInit, OnChanges {
     rowSpan_R: 2,
     rowHeight: '50vh',
   };
-  breakpoint;
+  breakpoint = {
+    colSize: null,
+    colSpan_L: null,
+    colSpan_R: null,
+    rowSpan_R: null,
+    rowHeight: null,
+  };
 
-  size;
+  size: string;
 
   constructor(
     private titleService: Title,
@@ -51,29 +57,28 @@ export class HomepageComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.page = this.route.snapshot.url.join();
-    this.breakpointObserver.observe([Breakpoints.Large]).subscribe((res) => {
-      if (res.matches) {
+  }
+
+  getLayoutInfo(size: string) {
+    console.log('THIS IS THE SIZE', size);
+    this.size = size;
+    switch (size) {
+      case 'small':
+        {
+          this.breakpoint = this.smallBreakpoints;
+          this.isMobileLayout = true;
+        }
+        break;
+      case 'medium':
+        {
+          this.breakpoint = this.mediumBreakpoints;
+          this.isMobileLayout = false;
+        }
+        break;
+      case 'large':
         this.breakpoint = this.largeBreakpoints;
         this.isMobileLayout = false;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.Medium]).subscribe((res) => {
-      if (res.matches) {
-        this.breakpoint = this.mediumBreakpoints;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.Small]).subscribe((res) => {
-      if (res.matches) {
-        this.breakpoint = this.smallBreakpoints;
-        this.isMobileLayout = true;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe((res) => {
-      if (res.matches) {
-        this.breakpoint = this.smallBreakpoints;
-        this.isMobileLayout = true;
-      }
-    });
+    }
   }
 
   ngOnChanges(): void {}

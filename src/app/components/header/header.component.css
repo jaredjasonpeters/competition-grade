@@ -122,11 +122,11 @@ app-products-menu:before {
   left: 20px;
   border-top: 15px solid black;
   /* transition: opacity 0.25s ease-in; */
-  opacity: 1;
+  opacity: 0;
 }
 
-#navigation_large a:hover #navigation_large a:before,
-app-products-menu:hover app-products-menu:before {
+#navigation_large a:hover:before,
+app-products-menu:hover:before {
   opacity: 1;
 }
 

@@ -1,20 +1,25 @@
 <div class="internal_gridlist">
-  <mat-grid-list id="featured_gridlist" gutterSize="0" cols="3" rowHeight="fit">
-    <mat-grid-tile
+  <div id="featured_gridlist">
+    <div
       *ngFor="let link of links"
-      class="{{ link.title }}_tile"
+      class="{{ link.title }}_tile imageTile"
       [ngClass]="{ active: link.title === page }"
-      rowspan="1"
-      ><a *ngIf="!link.docPath; else elseBlock" (click)="onProductSelected(link.title)">
-        <img src="{{ link.imagePath }}" alt="{{link.title}}"
+    >
+      <a
+        *ngIf="!link.docPath; else elseBlock"
+        (click)="onProductSelected(link.title)"
+      >
+        <img src="{{ link.imagePath }}" alt="{{ link.title }}"
       /></a>
       <ng-template #elseBlock>
-        <a class="link_container" download href="{{link.docPath}}">
+        <a class="link_container" download href="{{ link.docPath }}">
           <!-- <img src="{{ link.imagePath }}" alt="{{link.title}}" /> -->
-          <h3 class="linkHeading"> Download {{link.title}}</h3>
-          <mat-icon color="primary" class="linkIcon">{{link.imagePath}}</mat-icon>
+          <h3 class="linkHeading">Download {{ link.title }}</h3>
+          <mat-icon color="primary" class="linkIcon">{{
+            link.imagePath
+          }}</mat-icon>
         </a>
       </ng-template>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 </div>

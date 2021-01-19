@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.imageTile {
+  width: 100%;
+  height: 100%;
+}
+
 [class$="_tile"]:hover {
   filter: grayscale(0%);
 }
@@ -16,11 +21,11 @@
   object-fit: contain;
 }
 
-[class$="_tile"] img {
+.imageTile img {
+  margin: auto 0 auto 0;
   width: 100%;
-  height: 100%;
-  object-position: center;
-  object-fit: contain;
+  object-position: top;
+  object-fit: scale-down;
 }
 
 .speed_tile:hover,
@@ -43,6 +48,7 @@
   border-top: 4px solid var(--cg_gold);
   border-bottom: 4px solid var(--cg_gold);
   /* border: 2px solid red; */
+  display: flex;
 }
 
 .link_container {

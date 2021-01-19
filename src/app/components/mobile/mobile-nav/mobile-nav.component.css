@@ -5,7 +5,8 @@
   color: white;
   display: flex;
   align-items: center;
-  padding: 0 1em 0 1em;
+  padding: 0 2em 0 2em;
+  /* border: 2px solid yellow; */
 }
 
 #mobile_logo {
@@ -71,6 +72,18 @@
 button.mat-menu-item {
   color: white;
   padding: 0 2em 0 2em;
+}
+
+.secondary_menu_container {
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+#distributor_login_button {
+  margin-left: 2em;
+}
+#distributor_login_button:hover {
+  opacity: 0.5;
 }
 
 .mat-menu-item.speed {

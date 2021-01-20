@@ -1,13 +1,5 @@
 <app-layout (layoutInfo)="getLayoutInfo($event)">
   <section id="content_section">
-    <div id="mobile_content" *ngIf="isMobileLayout">
-      <div class="video_container">
-        <app-featured-video
-          [page]="page"
-          [autoplayOptions]="{ autoplay: false, runOnce: true }"
-        ></app-featured-video>
-      </div>
-    </div>
     <mat-grid-list
       gutterSize="0"
       cols="{{ breakpoint.colSize }}"
@@ -25,5 +17,15 @@
         <app-menu-right [page]="page"></app-menu-right>
       </mat-grid-tile>
     </mat-grid-list>
+    <div id="mobile_content" *ngIf="isMobileLayout">
+      <div class="video_container">
+        <app-featured-video
+          [page]="page"
+          [autoplayOptions]="{ autoplay: false, runOnce: true }"
+        ></app-featured-video>
+      </div>
+      <div class="selectBelow">SELECT A SERIES</div>
+      <app-featured-links></app-featured-links>
+    </div>
   </section>
 </app-layout>

@@ -88,8 +88,6 @@ export class MenuRightComponent implements OnInit, OnChanges {
         'background',
         `var(--cg_${this.page})`
       );
-      this.featuredVideoService.setVideoBySeries(this.page);
-    } else {
       this.featuredVideoService.setVideoByPage(this.page);
     }
   }

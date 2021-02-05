@@ -11,9 +11,6 @@ import { take } from 'rxjs/operators';
 export class FeaturedVideoService implements OnDestroy {
   pageVidMap: { [key: string]: string } = {
     default: 'https://player.vimeo.com/video/491310373',
-  };
-
-  seriesVideos = {
     speed: 'https://player.vimeo.com/video/500115420',
     power: 'https://player.vimeo.com/video/500115189',
     agility: 'https://player.vimeo.com/video/500192921',
@@ -33,11 +30,6 @@ export class FeaturedVideoService implements OnDestroy {
 
   private sanitizeUrl(url): SafeResourceUrl {
     return this.sanitize.bypassSecurityTrustResourceUrl(url);
-  }
-
-  setVideoBySeries(seriesName): void {
-    const url = this.seriesVideos[seriesName];
-    this.setRequestedVideo(url);
   }
 
   setVideoByPage(page): void {

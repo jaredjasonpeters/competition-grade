@@ -1,11 +1,33 @@
-<a
-  class="twitter-timeline"
-  data-lang="en"
-  data-width="100%"
-  data-height="100%"
-  data-theme="light"
-  data-chrome="noheader nofooter noborders noscrollbar transparent"
-  href="https://twitter.com/CompGradeSeed?ref_src=twsrc%5Etfw"
->
-  <img src="../../../../assets/twitter_logo_black.png" />
-</a>
+<div id="twitter_timeline_container">
+  <a
+    class="twitter-timeline"
+    data-lang="en"
+    data-width="100%"
+    data-height="100%"
+    data-theme="light"
+    data-chrome="noheader nofooter noborders noscrollbar transparent"
+    href="{{ timelineUrl }}"
+  >
+    <img src="../../../../assets/twitter_logo_black.png" />
+  </a>
+</div>
+
+<script>
+  window.twttr = (function (d, s, id) {
+    var js,
+      fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function (f) {
+      t._e.push(f);
+    };
+
+    return t;
+  })(document, "script", "twitter-wjs");
+</script>

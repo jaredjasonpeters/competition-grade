@@ -13,7 +13,7 @@
       rowspan="{{ breakpoint.rowSpan_R }}"
       colspan="{{ breakpoint.colSpan_R }}"
     >
-      <app-menu-right [page]="page"></app-menu-right>
+      <app-menu-right [page]="page" features="all"></app-menu-right>
     </mat-grid-tile>
   </mat-grid-list>
   <div id="mobile_content" *ngIf="this.layoutService.isMobile$ | async">

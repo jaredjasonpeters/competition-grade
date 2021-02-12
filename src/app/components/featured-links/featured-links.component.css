@@ -1,6 +1,5 @@
 .internal_gridlist {
   margin: 0;
-  /* border: 2px solid yellow; */
   padding: 0;
 }
 
@@ -47,29 +46,25 @@
   background: black;
   border-top: 4px solid var(--cg_gold);
   border-bottom: 4px solid var(--cg_gold);
-  /* border: 2px solid red; */
   display: flex;
 }
 
 .link_container {
-  border: 2px solid var(--cg_gold);
   cursor: pointer;
   margin: 0;
   margin-left: 0.25em;
   margin-right: 0.25em;
-  /* background: white; */
+  transition: color 300ms ease-in;
 }
 .link_container:hover {
-  background: var(--cg_gold);
   cursor: pointer;
 }
 .link_container:hover .linkHeading,
 .link_container:hover .linkIcon {
-  color: black;
+  color: var(--cg_silver);
 }
 
 .linkHeading {
-  /* border: 2px solid blue; */
   color: var(--cg_gold);
   font-weight: 600;
   font-family: Roboto;
@@ -82,6 +77,4 @@
   font-size: 2em;
   width: 100%;
   height: 100%;
-
-  /* border: 2px solid red; */
 }

@@ -1,23 +1,27 @@
 <div class="internal_gridlist" #menu>
-  <div id="video_tile" #videoTile>
+  <div
+    id="video_tile"
+    *ngIf="features.includes('video') || features.includes('all')"
+    #videoTile
+  >
     <app-featured-video
       [page]="page"
       [autoplayOptions]="{ autoplay: false, runOnce: true }"
-      *ngIf="features.includes('video') || features.includes('all')"
     ></app-featured-video>
   </div>
-  <div id="featured_tile">
-    <app-featured-links
-      [page]="page"
-      *ngIf="features.includes('links') || features.includes('all')"
-    ></app-featured-links>
+  <div
+    id="featured_tile"
+    *ngIf="features.includes('links') || features.includes('all')"
+  >
+    <app-featured-links [page]="page"></app-featured-links>
   </div>
-  <div id="social_tile">
+  <div
+    id="social_tile"
+    *ngIf="features.includes('social') || features.includes('all')"
+  >
     <div class="internal_gridlist_row">
       <div class="social_grid_twitter">
-        <app-twitter-feed
-          *ngIf="features.includes('twitter') || features.includes('all')"
-        ></app-twitter-feed>
+        <app-twitter-feed></app-twitter-feed>
       </div>
       <div class="social_grid_instagram">
         <app-instagram-feed></app-instagram-feed>

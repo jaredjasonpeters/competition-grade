@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { tap } from 'rxjs/operators';
 import { SeriesFormulationService } from '../../../shared/series-formulation.service';
 
 @Component({
@@ -30,9 +31,14 @@ export class SeriesComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.seriesName = params.series;
-      this.seriesInfo = this.seriesFormulationService.formulations[
-        params.series
-      ];
+      this.seriesFormulationService.formulations$
+        .pipe(
+          tap((formulations) => {
+            console.log('FORMULATIONS', formulations);
+            this.seriesInfo = formulations[params.series];
+          })
+        )
+        .subscribe();
       this.seriesTags = this.seriesFormulationService.getTags(params.series);
 
       this.renderer.setStyle(
@@ -41,9 +47,6 @@ export class SeriesComponent implements OnInit {
         `var(--cg_${params.series})`
       );
     });
-
-    console.log('SERIESINFO', this.seriesInfo);
-    console.log('SERIESTAGS', this.seriesTags);
   }
 
   onTagSelect(event): void {

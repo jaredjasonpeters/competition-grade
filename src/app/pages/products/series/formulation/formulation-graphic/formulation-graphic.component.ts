@@ -29,7 +29,7 @@ export class FormulationGraphicComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.seriesFormulationService.formulationSubject.subscribe(
+    this.seriesFormulationService.formulation$.subscribe(
       ({ seriesName, formula }) => {
         this.router.events.subscribe((routerEvent) => {
           if (routerEvent instanceof NavigationEnd) {

@@ -64,7 +64,6 @@ export class TwitterFeedComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   loadTwitterStream(): void {
-    console.log('LOADING TWITTER', this.twitterWidgetRef);
     const head = this.doc.getElementsByTagName('head')[0];
     const twitterScript = this.renderer.createElement('script');
     this.renderer.setAttribute(twitterScript, 'async', 'true');
@@ -76,13 +75,10 @@ export class TwitterFeedComponent implements OnInit, OnChanges, OnDestroy {
     this.renderer.setAttribute(twitterScript, 'charset', 'utf-8');
     this.twitterWidgetRef = twitterScript;
     this.renderer.appendChild(head, twitterScript);
-    console.log('NEW SCRIPT', this.twitterWidgetRef);
   }
 
   removeTwitterStream() {
-    console.log('SCRIPT TAG', this.twitterWidgetRef);
     if (this.twitterWidgetRef) {
-      console.log('REMOVING SCRIPT');
       this.renderer.removeChild(
         this.doc.getElementsByTagName('head')[0],
         this.twitterWidgetRef

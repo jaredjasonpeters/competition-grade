@@ -78,7 +78,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.formulationSubscription = this.seriesFormulationService.formulationSubject.subscribe(
+    this.formulationSubscription = this.seriesFormulationService.formulation$.subscribe(
       ({ seriesName, formula }) => {
         this.seriesName = seriesName;
         this.formulations = formula;

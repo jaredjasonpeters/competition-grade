@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, from, Observable, of, Subject } from 'rxjs';
 import { Formulation } from '../pages/products/series/formulation/formulation.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SeriesFormulationService {
-  formulationSubject = new Subject<any>();
-  formulations = {
+  private formulationSubject$ = new Subject<any>();
+
+  formulation$: Observable<any> = this.formulationSubject$.asObservable();
+
+  private formulations = {
     speed: {
       overview: `Perennial ryegrass-based blends using varieties with market-leading wear tolerance and disease resistance`,
       components: ['Diploid Perennial Ryegrass', '4turf™ Perennial Ryegrass'],
@@ -20,7 +23,7 @@ export class SeriesFormulationService {
       necessary for truly Competition Grade turf; Grey leaf spot
       resistance, spreading characteristics, quick establishment and
       late fall – early spring growth.
-     
+
       Perennial ryegrass is a great choice for “in the dirt” sports
       like football as winter overseeding of bermudagrass and repair
       of permanent Kentucky Bluegrass turf. Speed Series is ideal for
@@ -66,7 +69,7 @@ export class SeriesFormulationService {
       necessary for a Competition Grade tall fescue sports turf; early and rapid tiller expression, rhizomatous growth, finer leaf blade,
       attractive color, genetic disease resistance and deeper roots.  We scientifically design and test mixtures with Turf-type Tall Fescue
       and either Kentucky Bluegrass and/or 4Turf™ ryegrass. The addition of 4turf and/or Kentucky bluegrass allows for better fill, repair from
-      wear and longer playability.  Where a high quality sports turf for cleated sports like football, soccer and baseball,  that requires less 
+      wear and longer playability.  Where a high quality sports turf for cleated sports like football, soccer and baseball,  that requires less
       watering and lower inputs is needed; reach for Competition Power Series.  Power Series works well to be overseeded over Power Series if turf is damaged. `,
       recommendedUse: ['Football', 'Soccer', 'Rugby'],
       201: {
@@ -117,12 +120,12 @@ export class SeriesFormulationService {
         '4Turf™ Perennial Ryegrass',
       ],
       description: `Kentucky bluegrass, long considered the species of choices for Sports Turf where agronomically correct, you cannot get better than the mixtures from the Agility Series Competition Grade mixtures from DLF Pickseed.
-      Hitting the Three Hole and always delivering impressive shear strength and sod knitting is the Proprietary cultivar Sombrero.  
-      Truly a unique variety, Sombrero, has been used successfully in our Kentucky bluegrass based sports turf mixtures since it’s release to market. 
-      And you can’t pitch around Sombrero because the lineup includes outstanding Kentucky bluegrass varieties that are chosen only after the highest level of testing, 
-      including wear trials at public trials as well as our own research farm.  A Murders Row of bluegrasses can only be improved by adding our Proprietary 4turf™ technology. 
+      Hitting the Three Hole and always delivering impressive shear strength and sod knitting is the Proprietary cultivar Sombrero.
+      Truly a unique variety, Sombrero, has been used successfully in our Kentucky bluegrass based sports turf mixtures since it’s release to market.
+      And you can’t pitch around Sombrero because the lineup includes outstanding Kentucky bluegrass varieties that are chosen only after the highest level of testing,
+      including wear trials at public trials as well as our own research farm.  A Murders Row of bluegrasses can only be improved by adding our Proprietary 4turf™ technology.
       Having increased germination rate under cooler soil temps, a recessed crown and color to mix with bluegrass 4turf adds serious pop to the lineup.  We call this series
-      Agility because you can use it so many places.  For permanent bluegrass stand or by adding 4turf™, quick repairs plus the desired permanent bluegrass turf.  
+      Agility because you can use it so many places.  For permanent bluegrass stand or by adding 4turf™, quick repairs plus the desired permanent bluegrass turf.
       For a classic Kentucky bluegrass sports turf where proper maintenance is available, the Agility Series cannot be beat.  Agility Series can be overseeded with Agility series,
       for a long term desired Kentucky bluegrass repair or with the Speed series for right now playability.   `,
       recommendedUse: ['Football', 'Soccer', 'Rugby'],
@@ -167,19 +170,20 @@ export class SeriesFormulationService {
       },
     },
   };
-
+  private formulationsSubject$ = new BehaviorSubject<any>(this.formulations);
+  formulations$: Observable<any> = this.formulationsSubject$.asObservable();
   constructor() {}
 
   getFormulation(id): void {
     const series_split = id.split('_');
     const series_name = series_split[0];
     const series_number = series_split[1];
-    console.log('SN', series_name, 'SNUM', series_number);
+
     const formulationObject = {
       seriesName: series_name,
       formula: this.formulations[series_name][series_number],
     };
-    this.formulationSubject.next(formulationObject);
+    this.formulationSubject$.next(formulationObject);
   }
 
   getTags(seriesName) {

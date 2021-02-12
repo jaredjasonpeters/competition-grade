@@ -1,12 +1,13 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { LayoutService } from '../../shared/layout.service';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
+  providers: [LayoutService],
 })
 export class HomepageComponent implements OnInit, OnChanges {
   page;
@@ -50,17 +51,19 @@ export class HomepageComponent implements OnInit, OnChanges {
   constructor(
     private titleService: Title,
     private route: ActivatedRoute,
-    private breakpointObserver: BreakpointObserver
+    private LayoutService: LayoutService
   ) {
-    titleService.setTitle('Competition Grade Seed');
+    this.titleService.setTitle('Competition Grade Seed');
   }
 
   ngOnInit(): void {
     this.page = this.route.snapshot.url.join();
+    this.LayoutService.getScreenSize().subscribe((res) => {
+      console.log('RESULT OF LAYOUT SERVICE', res);
+    });
   }
 
   getLayoutInfo(size: string) {
-    console.log('THIS IS THE SIZE', size);
     this.size = size;
     switch (size) {
       case 'small':

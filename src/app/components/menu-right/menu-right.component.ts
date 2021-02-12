@@ -14,11 +14,13 @@ import {
   Router,
 } from '@angular/router';
 import { FeaturedVideoService } from 'src/app/shared/featured-video.service';
+import { LayoutService } from 'src/app/shared/layout.service';
 
 @Component({
   selector: 'app-menu-right',
   templateUrl: './menu-right.component.html',
   styleUrls: ['./menu-right.component.css'],
+  providers: [LayoutService],
 })
 export class MenuRightComponent implements OnInit, OnChanges {
   largeBreakpoints = {
@@ -43,7 +45,7 @@ export class MenuRightComponent implements OnInit, OnChanges {
     private renderer: Renderer2,
     private route: ActivatedRoute,
     private featuredVideoService: FeaturedVideoService,
-    private breakpointObserver: BreakpointObserver
+    public layoutService: LayoutService
   ) {}
   @Input() page;
   @Input() features: string[] = ['all'];
@@ -52,33 +54,7 @@ export class MenuRightComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.featuredVideoService.setVideoByPage(this.page);
-
     this.route.parent.url.subscribe((url) => console.log('URL', url));
-
-    this.breakpointObserver.observe([Breakpoints.Large]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES LARGE');
-        this.breakpoint = this.largeBreakpoints;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.Medium]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES MEDIUM');
-        this.breakpoint = this.smallBreakpoints;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.Small]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES SMALL');
-        this.breakpoint = this.smallBreakpoints;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES SMALL');
-        this.breakpoint = this.smallBreakpoints;
-      }
-    });
   }
 
   ngOnChanges(): void {

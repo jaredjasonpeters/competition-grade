@@ -12,7 +12,6 @@ import { LayoutService } from '../../shared/layout.service';
 })
 export class HomepageComponent implements OnInit, OnChanges {
   page;
-  isMobileLayout;
   largeBreakpoints = {
     isLarge: true,
     colSize: 6,
@@ -52,36 +51,38 @@ export class HomepageComponent implements OnInit, OnChanges {
   constructor(
     private titleService: Title,
     private route: ActivatedRoute,
-    private LayoutService: LayoutService
+    public layoutService: LayoutService
   ) {
     this.titleService.setTitle('Competition Grade Seed');
   }
 
   ngOnInit(): void {
     this.page = this.route.snapshot.url.join();
-    this.LayoutService.getScreenSize()
-      .pipe(tap((value) => console.log('VALUE OF THE TAP', value)))
+    this.layoutService
+      .getScreenSize()
+      .pipe(
+        tap((size) => {
+          this.getBreakpoints(size);
+        })
+      )
       .subscribe();
   }
 
-  getLayoutInfo(size: string) {
-    this.size = size;
+  getBreakpoints(size) {
     switch (size) {
-      case 'small':
+      case 'mobile':
         {
           this.breakpoint = this.smallBreakpoints;
-          this.isMobileLayout = true;
         }
         break;
-      case 'medium':
+      case 'tablet':
         {
           this.breakpoint = this.mediumBreakpoints;
-          this.isMobileLayout = false;
         }
         break;
-      case 'large':
+      case 'desktop':
+      case 'largeDesktop':
         this.breakpoint = this.largeBreakpoints;
-        this.isMobileLayout = false;
     }
   }
 

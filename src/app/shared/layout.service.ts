@@ -4,14 +4,18 @@ import {
   Breakpoints,
   BreakpointState,
 } from '@angular/cdk/layout';
-import { Observable, merge } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { Observable, merge, Subject, BehaviorSubject } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class LayoutService {
   constructor(private breakpointObserver: BreakpointObserver) {}
+  private isMobileSubject$: BehaviorSubject<boolean> = new BehaviorSubject(
+    false
+  );
+  isMobile$: Observable<boolean> = this.isMobileSubject$.asObservable();
 
-  getScreenSize(): Observable<any> {
+  getScreenSize(): Observable<string> {
     return merge(
       this.breakpointObserver.observe(Breakpoints.XSmall),
       this.breakpointObserver.observe(Breakpoints.Small),
@@ -22,7 +26,16 @@ export class LayoutService {
       filter((bp) => {
         return bp.matches === true;
       }),
-      map((v) => this.mapBreakpointsToString(Object.keys(v.breakpoints).join()))
+      map((v) =>
+        this.mapBreakpointsToString(Object.keys(v.breakpoints).join())
+      ),
+      tap((size) => {
+        if (size === 'mobile') {
+          this.isMobileSubject$.next(true);
+        } else {
+          this.isMobileSubject$.next(false);
+        }
+      })
     );
   }
 

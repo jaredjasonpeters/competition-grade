@@ -2,12 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DistributorsService } from 'src/app/shared/distributors.service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Subscription } from 'rxjs';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { LayoutService } from 'src/app/shared/layout.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
+  providers: [LayoutService],
 })
 export class FooterComponent implements OnInit, OnDestroy {
   distributorsLength: number;
@@ -18,6 +20,15 @@ export class FooterComponent implements OnInit, OnDestroy {
   isMobileLayout: boolean;
 
   largeBreakpoints = {
+    isLarge: true,
+    colSize: 6,
+    colSpan_L: 4,
+    colSpan_R: 2,
+    rowSpan_R: 1,
+    rowHeight: '780px',
+  };
+
+  mediumBreakpoints = {
     isLarge: true,
     colSize: 6,
     colSpan_L: 4,
@@ -39,7 +50,7 @@ export class FooterComponent implements OnInit, OnDestroy {
   constructor(
     private distributorsService: DistributorsService,
     private authService: AuthService,
-    private breakpointObserver: BreakpointObserver
+    public layoutService: LayoutService
   ) {}
 
   ngOnInit(): void {
@@ -50,35 +61,32 @@ export class FooterComponent implements OnInit, OnDestroy {
         this.distributorLoggedIn = distributor ? true : false;
       }
     );
-    this.breakpointObserver.observe([Breakpoints.Large]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES LARGE');
-        console.log('RES LARGE', res);
+    this.layoutService
+      .getScreenSize()
+      .pipe(
+        tap((size) => {
+          this.getBreakpoints(size);
+        })
+      )
+      .subscribe();
+  }
+
+  getBreakpoints(size) {
+    switch (size) {
+      case 'mobile':
+        {
+          this.breakpoint = this.smallBreakpoints;
+        }
+        break;
+      case 'tablet':
+        {
+          this.breakpoint = this.mediumBreakpoints;
+        }
+        break;
+      case 'desktop':
+      case 'largeDesktop':
         this.breakpoint = this.largeBreakpoints;
-        this.isMobileLayout = false;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.Medium]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES MEDIUM');
-        this.breakpoint = this.smallBreakpoints;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.Small]).subscribe((res) => {
-      if (res.matches) {
-        console.log('MATCHES SMALL');
-        this.breakpoint = this.smallBreakpoints;
-        this.isMobileLayout = true;
-      }
-    });
-    this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe((res) => {
-      console.log('RES XSMALL', res);
-      if (res.matches) {
-        console.log('MATCHES SMALL');
-        this.breakpoint = this.smallBreakpoints;
-        this.isMobileLayout = true;
-      }
-    });
+    }
   }
 
   ngOnDestroy(): void {

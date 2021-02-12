@@ -1,4 +1,7 @@
-<div id="footer_detail_container" *ngIf="!isMobileLayout">
+<div
+  id="footer_detail_container"
+  *ngIf="!(this.layoutService.isMobile$ | async)"
+>
   <span>Premium Distribution Partners</span>
   <div id="footer_detail_options">
     <ul>
@@ -34,7 +37,10 @@
   </div>
 </div>
 
-<div id="mobile_footer_detail_container" *ngIf="isMobileLayout">
+<div
+  id="mobile_footer_detail_container"
+  *ngIf="this.layoutService.isMobile$ | async"
+>
   <div id="mobile_footer_detail_options">
     <ul>
       <li

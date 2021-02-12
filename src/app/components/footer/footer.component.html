@@ -1,5 +1,5 @@
 <div id="footer_spacer"></div>
-<footer id="footer" *ngIf="!isMobileLayout">
+<footer id="footer" *ngIf="!(this.layoutService.isMobile$ | async)">
   <div class="internal_gridlist">
     <mat-grid-list
       id="footer_gridlist"

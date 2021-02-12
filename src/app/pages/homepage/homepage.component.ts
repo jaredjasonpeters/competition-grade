@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { tap } from 'rxjs/operators';
 import { LayoutService } from '../../shared/layout.service';
 
 @Component({
@@ -58,9 +59,9 @@ export class HomepageComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.page = this.route.snapshot.url.join();
-    this.LayoutService.getScreenSize().subscribe((res) => {
-      console.log('RESULT OF LAYOUT SERVICE', res);
-    });
+    this.LayoutService.getScreenSize()
+      .pipe(tap((value) => console.log('VALUE OF THE TAP', value)))
+      .subscribe();
   }
 
   getLayoutInfo(size: string) {

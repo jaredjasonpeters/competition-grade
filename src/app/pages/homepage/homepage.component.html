@@ -1,5 +1,8 @@
-<section id="content_section">
-  <mat-grid-list
+<div id="content_section">
+  <div style="height:600px;">
+    <app-image-slider [speed]="6000"></app-image-slider>
+  </div>
+  <!-- <mat-grid-list
     gutterSize="0"
     cols="{{ breakpoint.colSize }}"
     rowHeight="{{ breakpoint.rowHeight }}"
@@ -15,8 +18,17 @@
     >
       <app-menu-right [page]="page" features="all"></app-menu-right>
     </mat-grid-tile>
-  </mat-grid-list>
-  <div id="mobile_content" *ngIf="this.layoutService.isMobile$ | async">
+  </mat-grid-list> -->
+  <div style="height: 100px;">
+    <app-featured-links></app-featured-links>
+  </div>
+  <div style="height: 200px; width: 200px;">
+    <app-twitter-feed></app-twitter-feed>
+  </div>
+  <div style="height: 200px; width: 200px;">
+    <app-instagram-feed></app-instagram-feed>
+  </div>
+  <div id="mobile_content" *ngIf="(this.layoutService.isMobile$ | async)">
     <div class="video_container">
       <app-featured-video
         [page]="page"
@@ -26,4 +38,4 @@
     <div class="selectBelow">SELECT A SERIES</div>
     <app-featured-links></app-featured-links>
   </div>
-</section>
+</div>

@@ -1,0 +1,7 @@
+:host {
+  height: auto;
+}
+app-content-container {
+  width: 100%;
+  height: 100%;
+}

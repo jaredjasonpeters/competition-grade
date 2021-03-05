@@ -8,7 +8,7 @@ import { LayoutService } from '../../shared/layout.service';
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  providers: [LayoutService],
+  providers: [LayoutService]
 })
 export class HomepageComponent implements OnInit, OnChanges {
   page;
@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit, OnChanges {
     colSpan_L: 4,
     colSpan_R: 2,
     rowSpan_R: 1,
-    rowHeight: '780px',
+    rowHeight: '500px'
   };
 
   mediumBreakpoints = {
@@ -27,7 +27,7 @@ export class HomepageComponent implements OnInit, OnChanges {
     colSpan_L: 4,
     colSpan_R: 2,
     rowSpan_R: 1,
-    rowHeight: '418px',
+    rowHeight: '418px'
   };
 
   smallBreakpoints = {
@@ -36,14 +36,14 @@ export class HomepageComponent implements OnInit, OnChanges {
     colSpan_L: 1,
     colSpan_R: 1,
     rowSpan_R: 2,
-    rowHeight: '50vh',
+    rowHeight: '50vh'
   };
   breakpoint = {
     colSize: null,
     colSpan_L: null,
     colSpan_R: null,
     rowSpan_R: null,
-    rowHeight: null,
+    rowHeight: null
   };
 
   size: string;
@@ -61,7 +61,7 @@ export class HomepageComponent implements OnInit, OnChanges {
     this.layoutService
       .getScreenSize()
       .pipe(
-        tap((size) => {
+        tap(size => {
           this.getBreakpoints(size);
         })
       )

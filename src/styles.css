@@ -12,6 +12,8 @@
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("/assets/grass_backdrop.jpg");
+  background-repeat: none;
 }
 
 a {
@@ -69,10 +71,6 @@ a:visited {
 }
 
 /* Global Classes */
-
-.page_container {
-  margin-bottom: 150px;
-}
 
 .internal_gridlist {
   min-width: 100%;

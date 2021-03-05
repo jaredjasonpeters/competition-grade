@@ -7,11 +7,11 @@
 }
 
 #footer_spacer {
- border-top: 2px solid white;
-  height: 100px;
+  border-top: 2px solid white;
+  height: 150px;
   background: var(--cg_silver);
   background: black;
-  background-image: url('/assets/Competition_Grade_Footer_Spacer.png');
+  background-image: url("/assets/Competition_Grade_Footer_Spacer.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -19,11 +19,11 @@
 
 #footer {
   background: black;
-  height: 150px;
+  /* height: 150px; */
   /* border-top: 2px solid white; */
-  min-height: 130px;
+  /* min-height: 130px; */
   background: black;
-  padding: 6px;
+
   color: white;
   cursor: context-menu;
 }

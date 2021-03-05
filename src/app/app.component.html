@@ -1,12 +1,17 @@
-<app-layout (layoutInfo)="getLayoutInfo($event)">
-  <app-news *ngIf="newsAvailable"></app-news>
-  <app-header *ngIf="!isAdvertisment && !showMobileNav"></app-header>
-  <app-mobile-nav *ngIf="!isAdvertisment && showMobileNav"></app-mobile-nav>
+<app-news *ngIf="newsAvailable"></app-news>
+<app-header
+  *ngIf="!isAdvertisment && !(this.layoutService.isMobile$ | async)"
+></app-header>
+<app-mobile-nav
+  *ngIf="!isAdvertisment && (this.layoutService.isMobile$ | async)"
+></app-mobile-nav>
+
+<app-content-container [size]="this.layoutService.getScreenSize() | async">
   <app-page-header
     *ngIf="displayPageHeader"
     [title]="pageHeaderTitle"
   ></app-page-header>
   <router-outlet (activate)="onRouterActivate($event)"></router-outlet>
-  <app-footer *ngIf="!isAdvertisment"></app-footer>
-  <app-footer-detail *ngIf="!isAdvertisment"></app-footer-detail>
-</app-layout>
+</app-content-container>
+<app-footer *ngIf="!isAdvertisment"></app-footer>
+<app-footer-detail *ngIf="!isAdvertisment"></app-footer-detail>

@@ -5,43 +5,36 @@
     [backgroundImageStyles]="{ size: 'cover', positionY: -600 }"
   ></app-image-header>
   <div id="explanation_container">
-    <p id="explanation_paragraph" class="mat-body-strong">
-      The cultivars approved for Competition Grade meet stringent
-      characteristics for sports turf usage. Many of them originate from
-      parental lines that were selected based on wear tolerance and recovery in
-      trials at Oregon, Kentucky or New Jersey. All the cultivars must have
-      superior performance in at least two NTEP wear trials. In these trials
-      they must demonstrate retention of ground cover, recovery from wear and
-      high turf quality, over multiple years and seasons. Each cultivar must
-      have at least one other superior characteristic to contribute to the
-      blend, these characteristics include high seedling vigor, rapid
-      establishment, early spring green up or fall growth and superior
-      resistance to diseases such as Gray Leaf Spot, Brown Patch and Summer
-      patch.
-    </p>
-    <mat-grid-list
-      id="featured_list"
-      cols="1"
-      gutterSize="6px"
-      rowHeight="200px"
-    >
-      <mat-grid-tile id="featured_tile" colspan="1" rowspan="1">
-        <div id="featured_container">
-          <div id="featured_header_container">
-            <h2 id="featured_header" class="header_text">
-              Featured Cultivars and Technological Advancements
-            </h2>
-          </div>
-          <div id="featured_varieties_container">
-            <img
-              routerLink="/featured/sombrero"
-              src="/assets/sombrero_logo.jpg"
-            />
-            <img routerLink="/featured/4turf" src="/assets/4turf_logo.jpg" />
-          </div>
+    <section id="description_section">
+      <p id="explanation_paragraph" class="mat-body-strong">
+        The cultivars approved for Competition Grade meet stringent
+        characteristics for sports turf usage. Many of them originate from
+        parental lines that were selected based on wear tolerance and recovery
+        in trials at Oregon, Kentucky or New Jersey. All the cultivars must have
+        superior performance in at least two NTEP wear trials. In these trials
+        they must demonstrate retention of ground cover, recovery from wear and
+        high turf quality, over multiple years and seasons. Each cultivar must
+        have at least one other superior characteristic to contribute to the
+        blend, these characteristics include high seedling vigor, rapid
+        establishment, early spring green up or fall growth and superior
+        resistance to diseases such as Gray Leaf Spot, Brown Patch and Summer
+        patch.
+      </p>
+      <div id="featured_container">
+        <div id="featured_header_container">
+          <h2 id="featured_header" class="header_text">
+            Featured Cultivars and Technological Advancements
+          </h2>
         </div>
-      </mat-grid-tile>
-    </mat-grid-list>
+        <div id="featured_varieties_container">
+          <img
+            routerLink="/featured/sombrero"
+            src="/assets/sombrero_logo.jpg"
+          />
+          <img routerLink="/featured/4turf" src="/assets/4turf_logo.jpg" />
+        </div>
+      </div>
+    </section>
 
     <h2 id="cg_lineup_title" class="mat-title">
       CURRENT <span>COMPETITION GRADE</span> LINEUP

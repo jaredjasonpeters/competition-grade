@@ -49,7 +49,8 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
 import { FeaturedComponent } from './pages/featured/featured.component';
 import { SharedComponentsModule } from './components/shared-components/shared-components.module';
 import { MobileNavComponent } from './components/mobile/mobile-nav/mobile-nav.component';
-import { LayoutComponent } from './components/layout/layout.component';
+import { LayoutService } from './shared/layout.service';
+import { ContentContainerComponent } from './components/content-container/content-container.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     PageHeaderComponent,
     FeaturedComponent,
     MobileNavComponent,
-    LayoutComponent,
+    ContentContainerComponent
   ],
   imports: [
     AppRoutingModule,
@@ -103,20 +104,21 @@ import { LayoutComponent } from './components/layout/layout.component';
     MaterialModule,
     MatIconModule,
     HttpClientModule,
-    SharedComponentsModule,
+    SharedComponentsModule
   ],
   providers: [
+    LayoutService,
     Title,
     {
       provide: Window,
-      useValue: window,
+      useValue: window
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
-      multi: true,
-    },
+      multi: true
+    }
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -2,9 +2,10 @@
   id="footer_detail_container"
   *ngIf="!(this.layoutService.isMobile$ | async)"
 >
-  <span>Premium Distribution Partners</span>
+  <!-- <span>Premium Distribution Partners</span> -->
   <div id="footer_detail_options">
     <ul>
+      <li><span id="website">COMPETITIONGRADESEED.COM</span></li>
       <li
         [routerLink]="['/site-details']"
         fragment="privacy"
@@ -32,17 +33,17 @@
       <li id="copyright_statement">
         Copyright: &copy; {{ year }} DLF Pickseed USA, Inc. All Rights Reserved.
       </li>
-      <li><span id="website">COMPETITIONGRADESEED.COM</span></li>
     </ul>
   </div>
 </div>
 
 <div
   id="mobile_footer_detail_container"
-  *ngIf="this.layoutService.isMobile$ | async"
+  *ngIf="(this.layoutService.isMobile$ | async)"
 >
   <div id="mobile_footer_detail_options">
     <ul>
+      <li><span id="website">COMPETITIONGRADESEED.COM</span></li>
       <li
         [routerLink]="['/site-details']"
         fragment="privacy"
@@ -70,7 +71,6 @@
       <li id="copyright_statement">
         Copyright: &copy; {{ year }} DLF Pickseed USA, Inc. All Rights Reserved.
       </li>
-      <li><span id="website">COMPETITIONGRADESEED.COM</span></li>
     </ul>
   </div>
 </div>

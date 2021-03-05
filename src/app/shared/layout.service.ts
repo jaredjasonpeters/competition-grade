@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   BreakpointObserver,
   Breakpoints,
-  BreakpointState,
+  BreakpointState
 } from '@angular/cdk/layout';
 import { Observable, merge, Subject, BehaviorSubject } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
@@ -20,16 +20,16 @@ export class LayoutService {
       this.breakpointObserver.observe(Breakpoints.XSmall),
       this.breakpointObserver.observe(Breakpoints.Small),
       this.breakpointObserver.observe(Breakpoints.Medium),
-      this.breakpointObserver.observe(Breakpoints.Large),
-      this.breakpointObserver.observe(Breakpoints.XLarge)
+      this.breakpointObserver.observe('(min-width: 1280px)')
     ).pipe(
-      filter((bp) => {
+      filter(bp => {
+        console.log('BREAKPOINT IS', bp);
         return bp.matches === true;
       }),
-      map((v) =>
-        this.mapBreakpointsToString(Object.keys(v.breakpoints).join())
-      ),
-      tap((size) => {
+      map(v => {
+        return this.mapBreakpointsToString(Object.keys(v.breakpoints).join());
+      }),
+      tap(size => {
         if (size === 'mobile') {
           this.isMobileSubject$.next(true);
         } else {
@@ -43,8 +43,7 @@ export class LayoutService {
     const bpMap = {
       '(max-width: 599.99px)': 'mobile',
       '(min-width: 600px) and (max-width: 959.99px)': 'tablet',
-      '(min-width: 960px) and (max-width: 1279.99px)': 'desktop',
-      '(min-width: 1280px) and (max-width: 1919.99px)': 'largeDesktop',
+      '(min-width: 1280px)': 'desktop'
     };
     return bpMap[bpKey];
   }

@@ -1,5 +1,5 @@
 <div id="content_section">
-  <div style="height:600px;">
+  <div style="height:350px;">
     <app-image-slider [speed]="6000"></app-image-slider>
   </div>
   <!-- <mat-grid-list
@@ -22,12 +22,24 @@
   <div style="height: 100px;">
     <app-featured-links></app-featured-links>
   </div>
-  <div style="height: 200px; width: 200px;">
-    <app-twitter-feed></app-twitter-feed>
-  </div>
-  <div style="height: 200px; width: 200px;">
-    <app-instagram-feed></app-instagram-feed>
-  </div>
+
+  <section id="media_section">
+    <div id="social_container">
+      <div id="twitter_container">
+        <app-twitter-feed></app-twitter-feed>
+      </div>
+      <div id="instagram_container">
+        <app-instagram-feed></app-instagram-feed>
+      </div>
+    </div>
+    <div id="video_container">
+      <app-featured-video
+        [page]="page"
+        [autoplayOptions]="{ autoplay: true, runOnce: true }"
+      ></app-featured-video>
+    </div>
+  </section>
+
   <div id="mobile_content" *ngIf="(this.layoutService.isMobile$ | async)">
     <div class="video_container">
       <app-featured-video

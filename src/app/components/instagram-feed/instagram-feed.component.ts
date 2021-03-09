@@ -6,7 +6,7 @@ import {
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { first, take } from 'rxjs/operators';
@@ -16,17 +16,17 @@ import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-instagram-feed',
   templateUrl: './instagram-feed.component.html',
-  styleUrls: ['./instagram-feed.component.css'],
+  styleUrls: ['./instagram-feed.component.css']
 })
 export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
   appId = environment.appId;
   appSecret = environment.appSecret;
   imagesToShow: string[] = [];
   postsToFetch: string[] = [
+    'CKAWF3usXj4',
     'CKAWNXgI6sq',
     'CFx2BBdg3QS',
-    'CKAWJAZrKP_',
-    'CKAWF3usXj4',
+    'CKAWJAZrKP_'
   ];
   imageCycleInterval;
   cycleTiming: number = 10000;
@@ -39,7 +39,9 @@ export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.http
       .get(
-        `https://graph.facebook.com/oauth/access_token?client_id=${this.appId}&client_secret=${this.appSecret}&grant_type=client_credentials`
+        `https://graph.facebook.com/oauth/access_token?client_id=${
+          this.appId
+        }&client_secret=${this.appSecret}&grant_type=client_credentials`
       )
       .subscribe((data: any) => {
         let accessToken = data.access_token;

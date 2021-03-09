@@ -6,18 +6,18 @@ import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class FeaturedVideoService implements OnDestroy {
   pageVidMap: { [key: string]: string } = {
     default: 'https://player.vimeo.com/video/491310373',
     speed: 'https://player.vimeo.com/video/500115420',
     power: 'https://player.vimeo.com/video/500115189',
-    agility: 'https://player.vimeo.com/video/500192921',
+    agility: 'https://player.vimeo.com/video/500192921'
   };
 
   private featuredVideo: BehaviorSubject<SafeResourceUrl> = new BehaviorSubject(
-    ''
+    this.pageVidMap.default
   );
   requestedVideo: string = this.pageVidMap.default;
   hasPlayed = {};
@@ -44,6 +44,7 @@ export class FeaturedVideoService implements OnDestroy {
     let finalUrl: SafeResourceUrl;
     let url = this.requestedVideo;
     let params: { key: string; value: any }[] = [];
+
     if (options && options.autoplay) {
       params = this.getParams([{ key: 'autoplay', value: 1 }]);
     }
@@ -55,12 +56,18 @@ export class FeaturedVideoService implements OnDestroy {
         this.hasPlayed[url] = true;
         finalUrl = this.sanitizeUrl(url + params);
       }
+    } else {
+      finalUrl = this.sanitizeUrl(url + params);
     }
+
     this.featuredVideo.next(finalUrl);
     return this.featuredVideo;
   }
 
   getParams(params) {
+    if (params.length === 0) {
+      return;
+    }
     const queryString = params
       .map((param, i) => {
         if (i === 0) {

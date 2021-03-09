@@ -63,6 +63,7 @@ import { ContentContainerComponent } from './components/content-container/conten
     MenuRightComponent,
     ImageSliderComponent,
     FeaturedLinksComponent,
+    FeaturedVideoComponent,
     TwitterFeedComponent,
     FeaturedVideoComponent,
     SeriesComponent,

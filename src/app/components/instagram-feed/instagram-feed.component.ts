@@ -22,12 +22,7 @@ export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
   appId = environment.appId;
   appSecret = environment.appSecret;
   imagesToShow: string[] = [];
-  postsToFetch: string[] = [
-    'CKAWF3usXj4',
-    'CKAWNXgI6sq',
-    'CFx2BBdg3QS',
-    'CKAWJAZrKP_'
-  ];
+  postsToFetch: string[] = ['CKAWF3usXj4', 'CKAWNXgI6sq', 'CKAWJAZrKP_'];
   imageCycleInterval;
   cycleTiming: number = 10000;
   imageUrl: string;

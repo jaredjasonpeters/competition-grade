@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+.page_container {
+  /* padding: 0 2em 0 2em; */
+}
+
 mat-grid-list {
   height: 100%;
   width: 100%;
@@ -44,9 +48,9 @@ mat-grid-list {
 #cg_lineup_informative_text {
   width: 70%;
   font-size: 0.9em;
-  color: white;
+  color: black;
   text-align: center;
-  background: black;
+
   margin: 0 auto 0 auto;
   padding-bottom: 2em;
   padding-top: 0;
@@ -92,7 +96,8 @@ a:hover {
 }
 
 .header_text {
-  color: white;
+  color: black;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 0;
   border-bottom: 4px solid var(--cg_gold);
@@ -119,7 +124,7 @@ a:hover {
 #cultivars_by_species_container {
   width: 70%;
   margin: 0 auto 0 auto;
-  background: black;
+  /* background: black; */
   padding: 3em;
   padding-top: 0;
   text-align: center;
@@ -162,7 +167,7 @@ a:hover {
 
 #cultivars_by_species_container h1 {
   font-weight: 500;
-  color: white;
+  color: black;
   border-bottom: 4px solid var(--cg_gold);
 }
 #cultivars_by_species_container ul {
@@ -177,6 +182,7 @@ a:hover {
   padding-left: 33%;
   position: relative;
   transition: opacity 250ms ease-out;
+  color: black;
 }
 
 #cultivars_by_species_container ul li:hover::before {

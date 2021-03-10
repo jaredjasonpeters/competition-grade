@@ -4,36 +4,38 @@
   width: 100%;
 }
 
-.circle {
+.sliderControl {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%;
-  width: auto;
-  height: auto;
-  border-radius: 100%;
+  top: 0%;
+  width: 3%;
+  height: 100%;
+  /* border-radius: 100%; */
   /* border: 2px solid red; */
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   transition: transform 500ms ease-in-out;
 }
 
 .left {
-  left: 2%;
+  left: 0%;
 }
 .right {
-  right: 2%;
+  right: 0%;
 }
 
 .circle:hover {
   cursor: pointer;
   filter: drop-shadow(0 0 0.75rem black);
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
 }
 
 mat-icon {
   /* border: 2px solid red; */
   color: var(--cg_gold);
+  font-size: 2em;
 }
 
 .slider_main {

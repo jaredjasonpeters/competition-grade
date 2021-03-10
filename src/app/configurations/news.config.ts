@@ -1,6 +1,6 @@
 const newsConfig = {
   show: false,
-  message: '',
+  message: ''
 };
 
 export { newsConfig };

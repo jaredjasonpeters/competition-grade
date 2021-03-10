@@ -24,20 +24,31 @@
   </div>
 
   <section id="media_section">
-    <div id="social_container">
-      <div id="twitter_container">
-        <app-twitter-feed></app-twitter-feed>
+    <app-section-header>SOCIAL MEDIA</app-section-header>
+    <div id="media_container">
+      <div id="social_container">
+        <div id="twitter_container">
+          <app-twitter-feed></app-twitter-feed>
+        </div>
+        <div id="instagram_container">
+          <app-instagram-feed></app-instagram-feed>
+          <div id="hashtag_container">
+            <img src="/assets/makethegrade.jpg" />
+          </div>
+        </div>
       </div>
-      <div id="instagram_container">
-        <app-instagram-feed></app-instagram-feed>
+      <div id="video_container">
+        <app-featured-video
+          [page]="page"
+          [autoplayOptions]="{ autoplay: true, runOnce: true }"
+        ></app-featured-video>
       </div>
     </div>
-    <div id="video_container">
-      <app-featured-video
-        [page]="page"
-        [autoplayOptions]="{ autoplay: true, runOnce: true }"
-      ></app-featured-video>
-    </div>
+  </section>
+
+  <section id="featured_projects">
+    <app-section-header>Featured Projects</app-section-header>
+    <app-featured-projects></app-featured-projects>
   </section>
 
   <div id="mobile_content" *ngIf="(this.layoutService.isMobile$ | async)">

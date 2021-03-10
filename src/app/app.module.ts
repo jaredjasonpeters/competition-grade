@@ -51,6 +51,7 @@ import { SharedComponentsModule } from './components/shared-components/shared-co
 import { MobileNavComponent } from './components/mobile/mobile-nav/mobile-nav.component';
 import { LayoutService } from './shared/layout.service';
 import { ContentContainerComponent } from './components/content-container/content-container.component';
+import { FeaturedProjectsComponent } from './components/featured-projects/featured-projects.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { ContentContainerComponent } from './components/content-container/conten
     PageHeaderComponent,
     FeaturedComponent,
     MobileNavComponent,
-    ContentContainerComponent
+    ContentContainerComponent,
+    FeaturedProjectsComponent
   ],
   imports: [
     AppRoutingModule,

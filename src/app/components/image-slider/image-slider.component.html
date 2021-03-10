@@ -1,6 +1,6 @@
 <div id="image_slider_container">
   <img class="slider_main" src="{{ activeImage }}" />
-  <div class="circle left" (click)="onPreviousImage()">
+  <div class="sliderControl left" (click)="onPreviousImage()">
     <mat-icon
       id="previous_button"
       aria-hidden="false"
@@ -8,7 +8,7 @@
       >keyboard_arrow_left</mat-icon
     >
   </div>
-  <div class="circle right" (click)="onNextImage()">
+  <div class="sliderControl right" (click)="onNextImage()">
     <mat-icon
       id="next_button"
       aria-hidden="false"

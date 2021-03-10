@@ -7,6 +7,8 @@
 #twitter_timeline_container {
   width: 100%;
   height: 100%;
+  background: white;
+  /* border: 4px solid var(--cg_gold); */
 }
 
 .twitter-timeline {
@@ -17,5 +19,5 @@
 .twitter-timeline img {
   display: block;
   margin: auto;
-  margin-top: 30%;
+  margin-top: 50%;
 }

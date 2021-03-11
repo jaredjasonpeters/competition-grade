@@ -12,6 +12,11 @@
   background: var(--cg_silver);
 }
 
+#featured_links_container {
+  height: 90px;
+  background: var(--cg_gold);
+}
+
 #media_container {
   display: flex;
 

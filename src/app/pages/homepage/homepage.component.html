@@ -19,12 +19,12 @@
       <app-menu-right [page]="page" features="all"></app-menu-right>
     </mat-grid-tile>
   </mat-grid-list> -->
-  <div style="height: 100px;">
+  <div id="featured_links_container">
     <app-featured-links></app-featured-links>
   </div>
 
   <section id="media_section">
-    <app-section-header>SOCIAL MEDIA</app-section-header>
+    <app-section-header>DIGITAL MEDIA</app-section-header>
     <div id="media_container">
       <div id="social_container">
         <div id="twitter_container">
@@ -40,7 +40,7 @@
       <div id="video_container">
         <app-featured-video
           [page]="page"
-          [autoplayOptions]="{ autoplay: true, runOnce: true }"
+          [autoplayOptions]="{ autoplay: false, runOnce: true }"
         ></app-featured-video>
       </div>
     </div>

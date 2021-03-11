@@ -9,9 +9,13 @@
   letter-spacing: var(--lspace);
   border-bottom: 4px solid var(--cg_gold);
   text-align: center;
-  margin: 1em auto 1em auto;
+  /* margin: 1em auto 1em auto; */
   background: black;
   color: var(--cg_gold);
+}
+
+h1 {
+  margin-bottom: 0;
 }
 
 #compgrade_sh {

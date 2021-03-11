@@ -1,8 +1,9 @@
 #container {
   margin: auto;
   height: fit-content;
-  background: white;
+  background: var(--cg_gold);
+  background: black;
   box-shadow: 2px 2px 50px black;
-  padding-bottom: 150px;
+
   display: block;
 }

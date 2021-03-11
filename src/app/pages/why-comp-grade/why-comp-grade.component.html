@@ -4,101 +4,98 @@
     backgroundImage="/assets/football_1500x1000.png"
     [backgroundImageStyles]="{ size: 'cover', positionY: -825 }"
   ></app-image-header>
-  <mat-grid-list id="desc_list" cols="2" rowHeight="300px" gutterSize="6px">
-    <mat-grid-tile id="desc_tile" colspan="2" rowspan="1">
-      <p class="explanation_paragraph">
-        <span class="mat-body-strong"
-          >Competition Grade’s performance-tested genetics will:</span
-        >
-        Provide higher shear strength and increase player safety Respond better
-        to wear and provide a more robust playing surface Resist major diseases
-        and lower maintenance budgets Increase aesthetics through improved
-        genetic color Express spreading growth habit for damage recovery Include
-        options for actively growing under lower light for stadiums, as well as
-        earlier and later season play.
-      </p>
-      <p class="explanation_paragraph">
-        <span class="mat-body-strong"
-          >Blends/mixtures specifically crafted to meet the demands of:</span
-        >
-        The highest-level athletic surfaces in the world. Each contains
-        varieties chosen for attributes that will aid in quick self-repair, fast
-        establishment, early spring green-up, high wear tolerance and active
-        cool weather growth. To avoid planting tomorrow’s problems today, the
-        performance-tested genetics present in Competition Grade blends and
-        mixtures should be your only option.
-      </p>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div id="desc_list">
+    <p class="explanation_paragraph">
+      <span class="mat-body-strong"
+        >Competition Grade’s performance-tested genetics will:</span
+      >
+      Provide higher shear strength and increase player safety Respond better to
+      wear and provide a more robust playing surface Resist major diseases and
+      lower maintenance budgets Increase aesthetics through improved genetic
+      color Express spreading growth habit for damage recovery Include options
+      for actively growing under lower light for stadiums, as well as earlier
+      and later season play.
+    </p>
+    <p class="explanation_paragraph">
+      <span class="mat-body-strong"
+        >Blends/mixtures specifically crafted to meet the demands of:</span
+      >
+      The highest-level athletic surfaces in the world. Each contains varieties
+      chosen for attributes that will aid in quick self-repair, fast
+      establishment, early spring green-up, high wear tolerance and active cool
+      weather growth. To avoid planting tomorrow’s problems today, the
+      performance-tested genetics present in Competition Grade blends and
+      mixtures should be your only option.
+    </p>
+  </div>
 
   <app-section-header> Usage By Sport </app-section-header>
 
-  <div id="image_container">
-    <mat-grid-list rowHeight="fit" cols="3" gutterSize="6px">
-      <mat-grid-tile rowspan="1" colspan="1">
-        <img
-          id="first_image"
-          src="../../../assets/soccer_ball_1000x1000.png"
-          alt="splash"
-      /></mat-grid-tile>
-      <mat-grid-tile rowspan="1" colspan="1">
-        <img
-          id="second_image"
-          src="../../../assets/football_1500x1000.png"
-          alt="splash"
-      /></mat-grid-tile>
-      <mat-grid-tile rowspan="1" colspan="1">
-        <img
-          id="third_image"
-          src="../../../assets/baseball_1500x1000.png"
-          alt="splash"
-      /></mat-grid-tile>
-    </mat-grid-list>
+  <div id="usage_by_sport_container">
+    <div id="image_container" class="flex">
+      <img
+        id="first_image"
+        src="../../../assets/soccer_ball_1000x1000.png"
+        alt="splash"
+      />
+
+      <img
+        id="second_image"
+        src="../../../assets/football_1500x1000.png"
+        alt="splash"
+      />
+
+      <img
+        id="third_image"
+        src="../../../assets/baseball_1500x1000.png"
+        alt="splash"
+      />
+    </div>
+    <div id="usage_list">
+      <div>
+        <div class="internal_gridlist">
+          <img
+            routerLink="/products/speed"
+            class="speed_border"
+            src="/assets/speed_series.png"
+          />
+          <p class="">
+            Speed Series is an ideal choice in any region of the country either
+            as an excellent winter over seed option on warm season turf, or as a
+            permanent turf option in cool season turf applications.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="internal_gridlist">
+          <img
+            routerLink="/products/power"
+            class="power_border"
+            src="/assets/power_series.png"
+          />
+          <p class="">
+            Power Series should be used where a high quality sports turf for
+            cleated sports like football, soccer and baseball, that requires
+            less watering and lower inputs is needed!
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="internal_gridlist">
+          <img
+            routerLink="/products/agility"
+            class="agility_border"
+            src="/assets/agility_series.png"
+          />
+          <p class="">
+            Agility Series gets its name because it has so many applications.
+            This series is ideal for those maintaining 100% Kentucky Bluegrass
+            fields requiring elite varieties with proven performance, as well as
+            situations where you need Kentucky Bluegrass teamed up with
+            Perennial Ryegrass for rapid repair in season.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <mat-grid-list id="usage_list" cols="3" rowHeight="350px" gutterSize="6px">
-    <mat-grid-tile rowspan="1">
-      <div class="internal_gridlist">
-        <img
-          routerLink="/products/speed"
-          class="speed_border"
-          src="/assets/speed_series.png"
-        />
-        <p class="">
-          Speed Series is an ideal choice in any region of the country either as
-          an excellent winter over seed option on warm season turf, or as a
-          permanent turf option in cool season turf applications.
-        </p>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile rowspan="1">
-      <div class="internal_gridlist">
-        <img
-          routerLink="/products/power"
-          class="power_border"
-          src="/assets/power_series.png"
-        />
-        <p class="">
-          Power Series should be used where a high quality sports turf for
-          cleated sports like football, soccer and baseball, that requires less
-          watering and lower inputs is needed!
-        </p>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile rowspan="1">
-      <div class="internal_gridlist">
-        <img
-          routerLink="/products/agility"
-          class="agility_border"
-          src="/assets/agility_series.png"
-        />
-        <p class="">
-          Agility Series gets its name because it has so many applications. This
-          series is ideal for those maintaining 100% Kentucky Bluegrass fields
-          requiring elite varieties with proven performance, as well as
-          situations where you need Kentucky Bluegrass teamed up with Perennial
-          Ryegrass for rapid repair in season.
-        </p>
-      </div></mat-grid-tile
-    >
-  </mat-grid-list>
 </div>

@@ -6,6 +6,7 @@
 
 .page_container {
   /* padding: 0 2em 0 2em; */
+  background: white;
 }
 
 mat-grid-list {

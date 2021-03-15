@@ -31,66 +31,48 @@
 
   <app-section-header> SERIES APPLICATION </app-section-header>
 
-  <div id="usage_by_sport_container">
-    <div id="image_container" class="flex">
+  <div id="series_application_section_container" class="flex-c">
+    <div class="imageContainer flex">
       <img
         id="first_image"
         src="../../../assets/soccer_ball_1000x1000.png"
         alt="splash"
+        class="seriesImage"
       />
-
       <img
         id="second_image"
         src="../../../assets/football_1500x1000.png"
         alt="splash"
+        class="seriesImage"
       />
-
       <img
         id="third_image"
         src="../../../assets/baseball_1500x1000.png"
         alt="splash"
+        class="seriesImage"
       />
     </div>
-    <div id="usage_list" class="flex">
-      <div class="col-3">
-        <img
-          routerLink="/products/speed"
-          class="speed_border"
-          src="/assets/speed_series.png"
-        />
-        <p class="textBox">
-          Speed Series is an ideal choice in any region of the country either as
-          an excellent winter over seed option on warm season turf, or as a
-          permanent turf option in cool season turf applications.
-        </p>
-      </div>
-
-      <div class="col-3">
-        <img
-          routerLink="/products/power"
-          class="power_border"
-          src="/assets/power_series.png"
-        />
-        <p class="textBox">
-          Power Series should be used where a high quality sports turf for
-          cleated sports like football, soccer and baseball, that requires less
-          watering and lower inputs is needed!
-        </p>
-      </div>
-      <div class="col-3">
-        <img
-          routerLink="/products/agility"
-          class="agility_border"
-          src="/assets/agility_series.png"
-        />
-        <p class="textBox">
-          Agility Series gets its name because it has so many applications. This
-          series is ideal for those maintaining 100% Kentucky Bluegrass fields
-          requiring elite varieties with proven performance, as well as
-          situations where you need Kentucky Bluegrass teamed up with Perennial
-          Ryegrass for rapid repair in season.
-        </p>
-      </div>
+    <div style="width:100%; height:100px;">
+      <app-featured-links></app-featured-links>
+    </div>
+    <div id="textbox_container" class="flex">
+      <p class="textBox ">
+        Speed Series is an ideal choice in any region of the country either as
+        an excellent winter over seed option on warm season turf, or as a
+        permanent turf option in cool season turf applications.
+      </p>
+      <p class="textBox">
+        Power Series should be used where a high quality sports turf for cleated
+        sports like football, soccer and baseball, that requires less watering
+        and lower inputs is needed!
+      </p>
+      <p class="textBox">
+        Agility Series gets its name because it has so many applications. This
+        series is ideal for those maintaining 100% Kentucky Bluegrass fields
+        requiring elite varieties with proven performance, as well as situations
+        where you need Kentucky Bluegrass teamed up with Perennial Ryegrass for
+        rapid repair in season.
+      </p>
     </div>
   </div>
 </div>

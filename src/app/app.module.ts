@@ -63,7 +63,6 @@ import { FeaturedProjectsComponent } from './components/featured-projects/featur
     FooterDetailComponent,
     MenuRightComponent,
     ImageSliderComponent,
-    FeaturedLinksComponent,
     FeaturedVideoComponent,
     TwitterFeedComponent,
     FeaturedVideoComponent,

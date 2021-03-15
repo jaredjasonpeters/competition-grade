@@ -10,8 +10,8 @@
   height: 55%;
   background: url("../../../assets/Competition_Grade_Website_TopDesignBackground.png");
   background-position-y: 10px;
-  background-size: 50%;
-  background-repeat: repeat;
+  background-size: contain;
+  background-repeat: repeat-x;
   background-clip: border-box;
   position: relative;
   /* border: 2px solid red; */

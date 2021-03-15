@@ -29,69 +29,52 @@
   font-size: 1.25em;
 }
 
-#usage_by_sport_container {
-  margin: 1em 0 1em 0;
-  height: auto;
-}
-
-#usage_list {
-  margin: 0;
-  width: 70%;
-  margin: 0 auto 0 auto;
-  background: black;
-  border: 1px solid red;
-}
-
-#usage_list img {
+#series_application_section_container {
   width: 100%;
-  height: 20%;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-#usage_list p {
-  width: 100%;
-  margin: 0;
-
-  padding: 2em;
-  font-size: 1.25em;
-}
-
-#image_container {
-  height: 250px;
-  width: 70%;
-  margin: 0 auto 0 auto;
-}
-
-#image_container img {
-  width: 100%;
-  height: 100%;
-  object-position: 0 0;
-  object-fit: cover;
-}
-
-#image_container img#first_image {
-  object-position: 0px 0px;
-}
-
-#image_container img#second_image {
-  object-position: 0px 0px;
-}
-#image_container img#third_image {
-  object-position: 0px 0px;
+  /* border: 2px solid blue; */
 }
 
 .flex {
   display: flex;
 }
 
-.col-3 {
-  padding: 0;
-  flex-grow: 1;
-  flex-basis: calc(100% / 3);
+.flex-c {
+  flex-direction: column;
+}
+
+.imageContainer {
+  /* border: 2px solid red; */
+  height: 300px;
+  width: 100%;
+  background: black;
+}
+
+.seriesImage {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+}
+
+img[class$="_border"] {
+  width: 100%;
+  height: 10%;
+  object-fit: contain;
+  cursor: pointer;
+  /* border: 2px solid yellow; */
+  margin: 0;
+}
+
+#textbox_container {
+  background: var(--cg_silver);
 }
 
 .textBox {
-  background: var(--cg_silver);
   color: black;
+  height: 40%;
+  width: calc(100% / 3);
+  padding: 2em;
+  font-size: 1.25em;
+  margin: 0;
 }

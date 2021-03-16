@@ -3,7 +3,7 @@ import {
   ElementRef,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
@@ -12,10 +12,14 @@ import { SeriesFormulationService } from '../../../shared/series-formulation.ser
 @Component({
   selector: 'app-series',
   templateUrl: './series.component.html',
-  styleUrls: ['./series.component.css'],
+  styleUrls: ['./series.component.css']
 })
 export class SeriesComponent implements OnInit {
   @ViewChild('menuRight', { static: true }) menuRight: ElementRef<HTMLElement>;
+  @ViewChild('overview', { static: true }) overview: ElementRef<HTMLDivElement>;
+  @ViewChild('tagsContainer', { static: true }) tagsContainer: ElementRef<
+    HTMLDivElement
+  >;
   seriesName: string;
   seriesInfo;
   seriesTags;
@@ -29,12 +33,11 @@ export class SeriesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
+    this.route.params.subscribe(params => {
       this.seriesName = params.series;
       this.seriesFormulationService.formulations$
         .pipe(
-          tap((formulations) => {
-            console.log('FORMULATIONS', formulations);
+          tap(formulations => {
             this.seriesInfo = formulations[params.series];
           })
         )
@@ -42,16 +45,28 @@ export class SeriesComponent implements OnInit {
       this.seriesTags = this.seriesFormulationService.getTags(params.series);
 
       this.renderer.setStyle(
-        this.menuRight.nativeElement,
+        this.overview.nativeElement,
         'background',
         `var(--cg_${params.series})`
+      );
+
+      this.renderer.setStyle(
+        this.tagsContainer.nativeElement,
+        'background',
+        `url('/assets/${this.seriesName}_color_bg.jpg')`
+      );
+
+      this.renderer.setStyle(
+        this.tagsContainer.nativeElement,
+        'background-size',
+        'cover'
       );
     });
   }
 
   onTagSelect(event): void {
     const images = Array.from(document.querySelectorAll('.activeTag'));
-    images.forEach((image) => {
+    images.forEach(image => {
       this.renderer.removeClass(image, 'activeTag');
     });
 

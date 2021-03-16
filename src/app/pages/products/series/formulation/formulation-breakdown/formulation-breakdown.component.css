@@ -1,51 +1,85 @@
-.container {
-  height: 100%;
+#message_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
   width: 100%;
-  margin: 0;
-  padding: 0;
-  /* border: 2px solid green; */
-  background: rgba(255, 255, 255, 0.1);
+  height: 100%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  padding: 2%;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
 }
 
-mat-grid-tile[id$="_formulation"] {
-  filter: drop-shadow(0 20px 0.45rem rgba(0, 0, 0, 0.4));
-  /* border-radius: 100%; */
+#message_container h3 {
+  width: 100%;
+  font-size: 1em;
+  text-align: center;
+  line-height: normal;
+  text-transform: uppercase;
+}
+#message_container h3::before {
+  content: "< ";
+  color: var(--cg_gold);
+}
+#message_container h3::after {
+  content: " >";
+  color: var(--cg_gold);
+}
 
-  /* border: 2px solid red; */
-  margin: 0;
-  padding: 0;
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-right: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* border: 2px solid green; */
+  background: url("/assets/perennial_ryegrass_seed_bg.png");
+  /* border: 2px solid green; */
+}
+
+[id$="_formulation"] {
+  filter: drop-shadow(0 10px 0.2rem rgba(0, 0, 0, 0.4));
+
+  flex-grow: 1;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  /* background: rgba(0, 0, 0, 0.8); */
 }
 
 .internal_gridlist {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  position: relative;
- 
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 5%;
   width: 100%;
-  height: 100%;
- 
-}
-
-.formulation_container {
-  width: 100%;
-  height: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  margin: auto;
- 
+  /* border: 2px solid orange; */
+}
+
+.formulation_container {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2%;
+  margin-left: 2%;
+  /* border: 2px solid red; */
+  /* background: rgba(0, 0, 0, 0.8); */
 }
 
 .formulation_container h2 {
-  display: block;
   color: white;
-  /* color: var(--cg_gold); */
   text-align: center;
-  /* border: 2px solid green; */
-  margin-top: auto;
-  margin-bottom: 10px;
-  font-size: 4em;
+  font-size: 3em;
+  align-self: center;
+  justify-self: center;
+
   font-weight: 600;
   font-family: Orbitron;
 }
@@ -59,40 +93,42 @@ mat-grid-tile[id$="_formulation"] {
 }
 
 .progress_container {
-  height: 5%;
-  margin-top: 10px;
+  height: 50px;
   width: 100%;
   display: flex;
+  justify-self: center;
+  border: 2px solid var(--cg_gold);
 }
 
 #percentage_in,
 #percentage_out {
   height: 100%;
   /* background: var(--cg_gold); */
-  mix-blend-mode: multiply;
-  opacity: 0.2;
+  /* mix-blend-mode: multiply; */
+  opacity: 1;
 }
 
 #percentage_in {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .formulation_description {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: center;
+  margin-left: auto;
+  padding: 1%;
+  align-self: flex-end;
+  /* text-align: center; */
   width: 100%;
-  height: 50%;
-  text-align: center;
-  color: var(--cg_silver);
+  text-decoration: underline;
+  text-decoration-color: var(--cg_gold);
+  text-decoration-thickness: 4px;
+  /* text-align: center; */
+  color: white;
   font-size: 1em;
   font-weight: 800;
   line-height: 1.2em;
-  padding-top: 15px;
+  margin-bottom: 0;
   font-family: orbitron;
   text-transform: uppercase;
-  /* border: 2px solid orange; */
 }
 
 #formulation_percentage {

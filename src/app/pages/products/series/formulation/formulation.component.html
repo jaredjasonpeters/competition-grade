@@ -1,4 +1,4 @@
-<div class="toggle_container">
+<!-- <div class="toggle_container">
   <mat-icon
     #toggleButton
     id="series_formulation_toggle"
@@ -13,50 +13,12 @@
     >Click to view series formulations</span
   >
   <span *ngIf="!toggled">Click to view series description</span>
-</div>
-<mat-grid-list
-  id="formulation_list"
-  rowHeight="fit"
-  cols="9"
-  gutterSize="6px"
-  #formulationContainer
->
-  <mat-grid-tile id="formulation_graphic_container" colspan="7">
+</div> -->
+<div id="formulation_container">
+  <div id="formulation_graphic_container">
     <app-formulation-graphic></app-formulation-graphic>
-  </mat-grid-tile>
-  <mat-grid-tile id="formulation_breakdown_container" colspan="2">
+  </div>
+  <div id="formulation_breakdown_container">
     <app-formulation-breakdown></app-formulation-breakdown>
-  </mat-grid-tile>
-</mat-grid-list>
-
-<mat-grid-list
-  id="information_card"
-  rowHeight="fit"
-  cols="8"
-  gutterSize="6px"
-  #informationCard
->
-  <mat-grid-tile id="spacer" colspan="1"></mat-grid-tile>
-  <mat-grid-tile id="content_tile" colspan="7" rowspan="1">
-    <div class="container">
-      <div id="series_overview_container">
-        <img src="/assets/{{ seriesName }}_series.png" />
-        <h3 class="mat-display-4">
-          {{ seriesInfo.overview }}
-        </h3>
-      </div>
-      <div id="series_description">
-        <span id="series_description_heading" class="mat-body-strong"
-          >Series Overview:</span
-        >
-        <p class="mat-body">{{ seriesInfo.description }}</p>
-        <span id="series_components_heading" class="mat-body-strong"
-          >Series Components:</span
-        >
-        <ul *ngFor="let component of seriesInfo.components">
-          <li>{{ component }}</li>
-        </ul>
-      </div>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>

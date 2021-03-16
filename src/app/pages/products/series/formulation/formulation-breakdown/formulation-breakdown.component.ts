@@ -5,7 +5,7 @@ import {
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -15,23 +15,23 @@ import { SeriesFormulationService } from 'src/app/shared/series-formulation.serv
   selector: 'app-formulation-breakdown',
   templateUrl: './formulation-breakdown.component.html',
   styleUrls: ['./formulation-breakdown.component.css'],
-  animations: [],
+  animations: []
 })
 export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   seriesName: string;
   formulations = {
     primary: {
       percentage: 0,
-      description: '',
+      description: ''
     },
     secondary: {
       percentage: 0,
-      description: '',
+      description: ''
     },
     fourTurf: {
       percentage: 0,
-      description: '',
-    },
+      description: ''
+    }
   };
 
   formulationSubscription: Subscription;
@@ -52,7 +52,7 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.router.events.subscribe((routerEvent) => {
+    this.router.events.subscribe(routerEvent => {
       if (routerEvent instanceof NavigationEnd) {
         this.renderer.removeClass(
           this.breakdownContainer.nativeElement,

@@ -3,7 +3,7 @@
 }
 
 #Bag {
-  height: 100%;
+  width: 100%;
 }
 
 #bag_clip {
@@ -22,9 +22,9 @@
   mix-blend-mode: multiply;
 }
 #Outline {
-  fill: var(--cg_silver);
+  fill: var(--cg_gold);
   opacity: 1;
-  /* mix-blend-mode: overlay; */
+  /* mix-blend-mode: multiply; */
 }
 
 #Primary {

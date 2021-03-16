@@ -1,45 +1,53 @@
 <div id="series_page_container">
-  <mat-grid-list id="top_list" gutterSize="0px" rowHeight="735px" cols="12">
-    <mat-grid-tile
-      id="series_tag_container"
-      colspan="{{ formulationToggled ? 1 : 0 }}"
-      rowspan="1"
-    >
-      <div class="internal_gridlist">
-        <mat-grid-list gutterSize="6px" rowHeight="225px" cols="1">
-          <mat-grid-tile
-            *ngFor="let tag of seriesTags"
-            class="tag"
-            rowspan="1"
-            (click)="onTagSelect($event)"
-          >
-            <img
-              id="{{ tag.seriesName }}_{{ tag.seriesId }}"
-              src="/assets/{{ tag.seriesName }}_series_tag_{{
-                tag.seriesId
-              }}.jpg"
-            />
-          </mat-grid-tile>
-        </mat-grid-list>
-      </div>
-    </mat-grid-tile>
+  <div id="video_container">
+    <app-featured-video
+      [page]="seriesName"
+      [autoplayOptions]="{ autoplay: false, runOnce: true }"
+    ></app-featured-video>
+  </div>
+  <div class="container">
+    <div id="series_overview_container" #overview>
+      <img class="seriesLogo" src="/assets/{{ seriesName }}_series.png" />
+      <h3 class="mat-display-4">
+        {{ seriesInfo.overview }}
+      </h3>
+    </div>
+    <div id="series_description">
+      <span id="series_description_heading" class="mat-body-strong"
+        >Series Overview:</span
+      >
+      <p class="mat-body">{{ seriesInfo.description }}</p>
+      <span id="series_components_heading" class="mat-body-strong"
+        >Series Components:</span
+      >
+      <ul *ngFor="let component of seriesInfo.components">
+        <li>{{ component }}</li>
+      </ul>
+    </div>
+  </div>
 
-    <mat-grid-tile
-      id="series_formulation_container"
-      colspan="{{ formulationToggled ? 7 : 8 }}"
-      rowspan="1"
+  <app-section-header
+    ><span
+      style="color: white; margin-right: .5em; font-weight: 700; letter-spacing: 1px; font-size: 1.1em;"
+      >{{ seriesName }}</span
     >
-      <app-formulation
-        [seriesInfo]="seriesInfo"
-        [seriesName]="seriesName"
-        (toggledEvent)="setToggled($event)"
-      ></app-formulation>
-    </mat-grid-tile>
+    Mixtures & Blends</app-section-header
+  >
+  <div id="series_tags_container" #tagsContainer>
+    <div
+      class="tagContainer"
+      *ngFor="let tag of seriesTags"
+      (click)="onTagSelect($event)"
+    >
+      <img
+        id="{{ tag.seriesName }}_{{ tag.seriesId }}"
+        class="seriesTag"
+        src="/assets/{{ tag.seriesName }}_series_tag_{{ tag.seriesId }}.jpg"
+      />
+    </div>
+  </div>
 
-    <mat-grid-tile colspan="4" rowspan="1">
-      <section id="menu_right" #menuRight>
-        <app-menu-right [page]="seriesName" features="all"></app-menu-right>
-      </section>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div id="app_formulation_container">
+    <app-formulation></app-formulation>
+  </div>
 </div>

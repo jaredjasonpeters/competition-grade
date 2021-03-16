@@ -6,7 +6,7 @@ import { FeaturedVideoService } from '../../shared/featured-video.service';
 @Component({
   selector: 'app-featured-video',
   templateUrl: './featured-video.component.html',
-  styleUrls: ['./featured-video.component.css'],
+  styleUrls: ['./featured-video.component.css']
 })
 export class FeaturedVideoComponent implements OnInit, OnChanges, OnDestroy {
   videoUrl: SafeResourceUrl;
@@ -15,16 +15,16 @@ export class FeaturedVideoComponent implements OnInit, OnChanges, OnDestroy {
   @Input() page;
   @Input() autoplayOptions?: { autoplay?: boolean; runOnce?: boolean };
 
-  constructor(
-    private sanitizer: DomSanitizer,
-    private featuredVideoService: FeaturedVideoService
-  ) {}
+  constructor(private featuredVideoService: FeaturedVideoService) {}
 
   ngOnInit(): void {}
   ngOnChanges(): void {
+    if (this.page) {
+      this.featuredVideoService.setVideoByPage(this.page);
+    }
     this.getFeaturedVideoSub = this.featuredVideoService
       .getFeaturedVideo(this.autoplayOptions)
-      .subscribe((videoURL) => {
+      .subscribe(videoURL => {
         this.videoUrl = videoURL;
       });
   }

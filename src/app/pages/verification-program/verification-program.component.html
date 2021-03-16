@@ -7,40 +7,46 @@
   <div id="explanation_container">
     <section id="description_section">
       <p id="explanation_paragraph" class="mat-body-strong">
-        The cultivars approved for Competition Grade meet stringent
-        characteristics for sports turf usage. Many of them originate from
-        parental lines that were selected based on wear tolerance and recovery
-        in trials at Oregon, Kentucky or New Jersey. All the cultivars must have
-        superior performance in at least two NTEP wear trials. In these trials
-        they must demonstrate retention of ground cover, recovery from wear and
-        high turf quality, over multiple years and seasons. Each cultivar must
-        have at least one other superior characteristic to contribute to the
-        blend, these characteristics include high seedling vigor, rapid
-        establishment, early spring green up or fall growth and superior
-        resistance to diseases such as Gray Leaf Spot, Brown Patch and Summer
-        patch.
+        <span class="mat-body-strong"
+          >The cultivars approved for Competition Grade meet stringent
+          characteristics for sports turf usage
+        </span>
+        Many of them originate from parental lines that were selected based on
+        wear tolerance and recovery in trials at Oregon, Kentucky or New Jersey.
+        All the cultivars must have superior performance in at least two NTEP
+        wear trials. In these trials they must demonstrate retention of ground
+        cover, recovery from wear and high turf quality, over multiple years and
+        seasons. Each cultivar must have at least one other superior
+        characteristic to contribute to the blend, these characteristics include
+        high seedling vigor, rapid establishment, early spring green up or fall
+        growth and superior resistance to diseases such as Gray Leaf Spot, Brown
+        Patch and Summer patch.
       </p>
-      <div id="featured_container">
-        <div id="featured_header_container">
-          <h2 id="featured_header" class="header_text">
-            Featured Cultivars and Technological Advancements
-          </h2>
-        </div>
-        <div id="featured_varieties_container">
-          <img
-            routerLink="/featured/sombrero"
-            src="/assets/sombrero_logo.jpg"
-          />
-          <img routerLink="/featured/4turf" src="/assets/4turf_logo.jpg" />
+    </section>
+  </div>
+  <div id="featured_container">
+    <app-section-header>Featured Products</app-section-header>
+    <div id="featured_varieties_container">
+      <div class="featureContainer" *ngFor="let product of products">
+        <div
+          class="featureLogoContainer"
+          [routerLink]="getLink(product.name)"
+          [style.background-image]="setBackgroundImage(product.images[0])"
+        >
+          <img class="featuredProductImage" [src]="getLogo(product.name)" />
         </div>
       </div>
-    </section>
+      <!-- <img routerLink="/featured/sombrero" src="/assets/sombrero_logo.jpg" />
+        <img routerLink="/featured/4turf" src="/assets/4turf_logo.jpg" /> -->
+    </div>
+  </div>
 
-    <app-section-header>CURRENT LINEUP</app-section-header>
-    <p id="cg_lineup_informative_text">
-      Click a variety below to download it's technical data sheet
-    </p>
-    <div id="cultivars_by_species_container">
+  <app-section-header>CURRENT LINEUP</app-section-header>
+  <p id="cg_lineup_informative_text">
+    Click a variety below to download it's technical data sheet
+  </p>
+  <div id="cultivars_by_species_container">
+    <div id="variety_container">
       <div class="container">
         <h3 class="header_text black">Kentucky Bluegrass</h3>
         <ul>
@@ -61,7 +67,7 @@
         </ul>
       </div>
       <div class="container">
-        <h3 class="header_text black">Tall Fescue</h3>
+        <h3 class="header_text black">Turf-Type Tall Fescue</h3>
         <ul>
           <a
             [href]="variety[1]"
@@ -98,9 +104,9 @@
           </a>
         </ul>
       </div>
-      <div id="logo_viewer" #logoViewer>
-        <div id="star_pin"></div>
-      </div>
+    </div>
+    <div id="logo_viewer" #logoViewer>
+      <div id="star_pin"></div>
     </div>
   </div>
 </div>

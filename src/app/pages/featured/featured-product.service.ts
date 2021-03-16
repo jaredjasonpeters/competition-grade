@@ -1,7 +1,15 @@
 import { Injectable } from '@angular/core';
 
+export interface Product {
+  name: string;
+  description: string;
+  techsheet: string;
+  images: string[];
+  video?: string;
+}
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class FeaturedProductService {
   private products = [
@@ -13,9 +21,9 @@ export class FeaturedProductService {
       images: [
         '/assets/sombrero_featured_main.jpg',
         '/assets/sombrero_featured_secondary.jpg',
-        '/assets/sombrero_featured_tertiary.jpg',
+        '/assets/sombrero_featured_tertiary.jpg'
       ],
-      video: '',
+      video: ''
     },
     {
       name: '4turf',
@@ -25,17 +33,21 @@ export class FeaturedProductService {
       images: [
         '/assets/4turf_featured_main.jpg',
         '/assets/4turf_featured_secondary.jpg',
-        '/assets/4turf_featured_tertiary.jpg',
+        '/assets/4turf_featured_tertiary.jpg'
       ],
-      video: '',
-    },
+      video: ''
+    }
   ];
 
   constructor() {}
 
-  getProduct(productName) {
-    let product_found;
-    this.products.forEach((product) => {
+  getAll(): Product[] {
+    return this.products;
+  }
+
+  getByProductName(productName): Product {
+    let product_found: Product;
+    this.products.forEach(product => {
       if (product.name === productName) {
         product_found = product;
       }

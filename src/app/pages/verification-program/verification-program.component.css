@@ -9,6 +9,13 @@
   background: white;
 }
 
+span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 1.25em;
+}
+
 mat-grid-list {
   height: 100%;
   width: 100%;
@@ -30,6 +37,8 @@ mat-grid-list {
   text-align: center;
   margin: 0 auto 0 auto;
   color: black;
+  font-size: 1.25em;
+  font-weight: 500;
 }
 
 #cg_lineup_title {
@@ -47,14 +56,14 @@ mat-grid-list {
 }
 
 #cg_lineup_informative_text {
-  width: 70%;
-  font-size: 0.9em;
+  width: 100%;
+  background: var(--cg_silver);
+  font-size: 1em;
   color: black;
   text-align: center;
 
-  margin: 0 auto 0 auto;
-  padding-bottom: 2em;
-  padding-top: 0;
+  margin: 0 auto 2em auto;
+  padding: 0.5em;
 }
 
 a {
@@ -83,7 +92,6 @@ a:hover {
 
 #featured_container {
   width: 100%;
-  height: 100%;
 }
 
 #featured_header_container {
@@ -99,52 +107,45 @@ a:hover {
 .header_text {
   color: black;
   font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.3em;
   text-transform: uppercase;
   margin-bottom: 0;
   border-bottom: 4px solid var(--cg_gold);
 }
 
 #featured_varieties_container {
-  background: var(--cg_gold);
   width: 100%;
-  height: 50%;
+  height: 100%;
   margin-bottom: 0;
   display: flex;
   justify-content: center;
-  padding: 0.5em 0 0.5em 0;
-}
-
-#featured_varieties_container img {
-  cursor: pointer;
-  object-fit: contain;
-  object-position: center;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  padding: 0.5%;
 }
 
 #cultivars_by_species_container {
-  width: 70%;
+  width: 100%;
   margin: 0 auto 0 auto;
-  /* background: black; */
+
   padding: 3em;
   padding-top: 0;
   text-align: center;
-  display: flex;
+
   position: relative;
   margin-bottom: 200px;
 }
 
 #logo_viewer {
-  position: absolute;
   width: 250px;
   height: 250px;
+  margin: auto;
   border-radius: 100%;
   border: 4px solid var(--cg_gold);
   background: black;
   bottom: -60%;
   left: 40%;
   background-repeat: no-repeat;
-  background-size: scale-down;
+  background-size: 75%;
   background-position-y: center;
   background-position-x: center;
 }
@@ -164,6 +165,12 @@ a:hover {
 .container {
   width: 33%;
   margin: 0 8px 0 8px;
+}
+
+#variety_container {
+  width: 100%;
+  display: flex;
+  margin-bottom: ;
 }
 
 #cultivars_by_species_container h1 {
@@ -197,4 +204,26 @@ a:hover {
   left: 25%;
   color: var(--cg_gold);
   opacity: 0;
+}
+
+.featuredProductImage {
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.featureContainer {
+  width: 100%;
+  height: 100%;
+
+  /* border: 2px solid blue; */
+}
+
+.featureLogoContainer {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

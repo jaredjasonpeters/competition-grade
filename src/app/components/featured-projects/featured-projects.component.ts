@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from 'src/app/models/project.model';
+import { ProjectsService } from 'src/app/shared/projects.service';
 
 @Component({
   selector: 'app-featured-projects',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./featured-projects.component.css']
 })
 export class FeaturedProjectsComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private projectsService: ProjectsService) {}
+  projects: Project[];
   ngOnInit(): void {
+    this.projects = this.projectsService.getFeatured();
   }
-
 }

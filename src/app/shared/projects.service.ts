@@ -3,7 +3,7 @@ import { DistributorsEnum } from '../models/distributor.model';
 import { Project } from '../models/project.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ProjectsService {
   private projects: Project[] = [
@@ -11,51 +11,106 @@ export class ProjectsService {
       id: 1,
       name: 'Longwood Cricket Club',
       description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
+      featured: true,
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
       location: 'Chestnut Hill, MA',
       icon: '',
+      thumbnail:
+        '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
       images: [
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
-          caption: '',
+          caption: ''
         },
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_action_800x500.png',
-          caption: '',
+          caption: ''
         },
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeup_800x500.png',
-          caption: '',
+          caption: ''
         },
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeupmow_800x500.png',
-          caption: '',
+          caption: ''
         },
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing_800x500.png',
-          caption: '',
+          caption: ''
         },
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing2_800x500.png',
-          caption: '',
+          caption: ''
         },
         {
           imageUrl:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing3_800x500.png',
-          caption: '',
-        },
+          caption: ''
+        }
       ],
       tags: [314, 301],
       quotes: [],
-      projectManager: 'Mike Burns',
+      projectManager: 'Mike Burns'
     },
+    {
+      id: 1,
+      name: 'Longwood Cricket Club',
+      description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
+      featured: true,
+      series: 'agility',
+      distributor: DistributorsEnum['Walker Supply'],
+      location: 'Chestnut Hill, MA',
+      icon: '',
+      thumbnail:
+        '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
+      images: [
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
+          caption: ''
+        },
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_action_800x500.png',
+          caption: ''
+        },
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeup_800x500.png',
+          caption: ''
+        },
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeupmow_800x500.png',
+          caption: ''
+        },
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing_800x500.png',
+          caption: ''
+        },
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing2_800x500.png',
+          caption: ''
+        },
+        {
+          imageUrl:
+            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing3_800x500.png',
+          caption: ''
+        }
+      ],
+      tags: [314, 301],
+      quotes: [],
+      projectManager: 'Mike Burns'
+    }
   ];
 
   constructor() {}
@@ -65,7 +120,7 @@ export class ProjectsService {
   }
 
   getByName(searchTerm: string): Project[] | string {
-    const foundProjects = this.projects.filter((project) => {
+    const foundProjects = this.projects.filter(project => {
       const nameParts = this.formatStringForComparisson(project.name);
       const searchName = this.formatStringForComparisson(searchTerm);
 
@@ -84,20 +139,17 @@ export class ProjectsService {
   }
 
   getBySearchFilters(searchTerm, searchBy): Project[] | string {
-    console.log('SEARCHBY', searchBy, 'SEARCHTERM', searchTerm);
-    const foundProjects = this.projects.filter((project) => {
+    const foundProjects = this.projects.filter(project => {
       let searchByParts;
 
       if (searchBy === 'product') {
         searchByParts = [
           this.formatStringForComparisson(project.series),
-          ...project.tags,
+          ...project.tags
         ].join(' ');
       } else {
         searchByParts = this.formatStringForComparisson(project[searchBy]);
       }
-
-      console.log('SEARCHBYPARTS', searchByParts);
       const search = this.formatStringForComparisson(searchTerm);
 
       if (search.length > 1) {
@@ -112,6 +164,10 @@ export class ProjectsService {
       }
       return searchTerm;
     }
+  }
+
+  getFeatured() {
+    return this.getAll().filter(project => project.featured);
   }
 
   formatStringForComparisson(term: string): string {

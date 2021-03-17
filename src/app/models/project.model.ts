@@ -3,10 +3,12 @@ import { ProjectImage } from './project-image.model';
 
 export interface Project {
   id: number;
+  featured: boolean;
   name: string;
   location: string;
   projectManager: string;
   icon: string;
+  thumbnail: string;
   images: ProjectImage[];
   description: string;
   series: 'speed' | 'power' | 'agility';

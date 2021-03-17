@@ -52,6 +52,7 @@ import { MobileNavComponent } from './components/mobile/mobile-nav/mobile-nav.co
 import { LayoutService } from './shared/layout.service';
 import { ContentContainerComponent } from './components/content-container/content-container.component';
 import { FeaturedProjectsComponent } from './components/featured-projects/featured-projects.component';
+import { ProjectDetailComponent } from './pages/projects/project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { FeaturedProjectsComponent } from './components/featured-projects/featur
     FeaturedComponent,
     MobileNavComponent,
     ContentContainerComponent,
-    FeaturedProjectsComponent
+    FeaturedProjectsComponent,
+    ProjectDetailComponent
   ],
   imports: [
     AppRoutingModule,

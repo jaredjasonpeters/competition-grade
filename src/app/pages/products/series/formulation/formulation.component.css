@@ -8,8 +8,11 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-
   background: url("/assets/perennial_ryegrass_seed_bg.png");
+}
+
+app-formulation-graphic {
+  width: 50%;
 }
 
 #formulation_breakdown_container {

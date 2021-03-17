@@ -1,27 +1,47 @@
 #projects_container {
-  padding: 2em;
   width: 100%;
-  min-height: 550px;
-  background: black;
+  height: auto;
+  background: white;
 }
 
 app-project-card {
   width: 100%;
-  /* height: 100%; */
+}
+
+#search_container {
+  height: 285px;
+  width: 100%;
+  background: black;
+}
+
+app-projects-search {
+  width: 100%;
+}
+
+#search_message_container {
+  background: var(--cg_silver);
+  margin-top: -2.5%;
+  padding: 0;
+}
+
+#found_projects_container {
+  width: 100%;
+  padding: 2%;
+}
+
+#found_projects_container :first-child {
+  margin-top: 0;
 }
 
 .project_container {
   display: flex;
   width: 100%;
   /* height: 600px; */
-  background: white;
+  margin-top: 2em;
+  margin-bottom: 2em;
 
-  border-top: 5px solid var(--cg_gold);
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-right: 1em;
-  /* border-bottom: 2px solid red; */
-  margin-bottom: 1em;
+  padding: 2%;
+  border: 4px solid var(--cg_silver);
 }
 
 .project_container:last-child {
@@ -43,9 +63,12 @@ app-project-card {
 }
 
 #status_message {
-  color: white;
+  color: black;
   padding-left: 1em;
+  font-family: Roboto;
+  font-size: 1.5em;
 }
+
 #status_message span {
-  color: var(--cg_gold);
+  text-decoration: underline;
 }

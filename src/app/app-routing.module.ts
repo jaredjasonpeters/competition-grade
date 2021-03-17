@@ -19,12 +19,13 @@ import { AuthGuard } from './shared/auth.guard';
 import { CanDeactivateAdvGuard } from './shared/adv.guard';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
+import { ProjectDetailComponent } from './pages/projects/project-detail/project-detail.component';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
   {
     path: 'products/:series',
-    component: SeriesComponent,
+    component: SeriesComponent
   },
   {
     path: 'adv',
@@ -32,44 +33,47 @@ export const routes: Routes = [
       {
         path: ':distributor',
         component: DistributorAdvertComponent,
-        canDeactivate: [CanDeactivateAdvGuard],
-      },
-    ],
+        canDeactivate: [CanDeactivateAdvGuard]
+      }
+    ]
   },
   {
     path: 'contact-us',
-    component: ContactUsComponent,
+    component: ContactUsComponent
   },
   {
     path: 'why-competition-grade',
     loadChildren: () =>
       import('./pages/why-comp-grade/why-comp-grade.module').then(
-        (m) => m.WhyCompGradeModule
-      ),
+        m => m.WhyCompGradeModule
+      )
   },
   {
     path: 'verification',
     loadChildren: () =>
       import('./pages/verification-program/verification.module').then(
-        (m) => m.VerificationModule
-      ),
+        m => m.VerificationModule
+      )
   },
   {
     path: 'distributor',
     children: [
       { path: 'levels', component: DistributorLevelsComponent },
       { path: 'benefits', component: DistributorBenefitsComponent },
-      { path: 'locate', component: UnderConstructionComponent },
-    ],
+      { path: 'locate', component: UnderConstructionComponent }
+    ]
   },
   {
     path: 'projects',
+    children: [
+      { path: '', component: ProjectsComponent },
+      { path: ':id', component: ProjectDetailComponent }
+    ]
     // component: UnderConstructionComponent,
-    component: ProjectsComponent,
   },
   {
     path: 'site-details',
-    component: SiteDetailsComponent,
+    component: SiteDetailsComponent
   },
   {
     path: 'portal',
@@ -77,18 +81,18 @@ export const routes: Routes = [
     children: [
       {
         path: 'marketing',
-        children: [{ path: ':id', component: MarketingComponent }],
-      },
-    ],
+        children: [{ path: ':id', component: MarketingComponent }]
+      }
+    ]
   },
 
   {
     path: 'featured',
-    children: [{ path: ':product', component: FeaturedComponent }],
+    children: [{ path: ':product', component: FeaturedComponent }]
   },
   { path: 'thanks', component: ThanksComponent },
   { path: 'not-found', component: NotFoundComponent },
-  { path: '**', redirectTo: 'not-found' },
+  { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
@@ -98,10 +102,10 @@ export const routes: Routes = [
       preloadingStrategy: PreloadAllModules,
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled',
-      scrollOffset: [0, 75],
-    }),
+      scrollOffset: [0, 75]
+    })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {
   constructor() {}

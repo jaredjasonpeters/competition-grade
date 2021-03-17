@@ -1,8 +1,8 @@
 <div id="site_details_container" #container>
-  <img id="top_image" src="/assets/football_1000x1000.png" alt="" />
+  <img id="top_image" src="/assets/seed_backdrop.jpg" alt="" />
   <div id="privacy" class="detailContainer" #privacy>
     <app-section-header>PRIVACY POLICY</app-section-header>
-    <p class="text">
+    <p class="bodyText text">
       We use Google Analytics on our website to find out where our traffic comes
       from, which pages are most interesting, how many visitors we have and so
       on. We need this information in order to increase the quality of our
@@ -18,13 +18,17 @@
   </div>
   <div id="terms" class="detailContainer" #terms>
     <app-section-header>TERMS & CONDITIONS</app-section-header>
-    <p class="text" *ngFor="let term; let i = index; of: termsConditionsData">
-      {{ i + 1 }}. {{ term }}
+    <p
+      class="bodyText text"
+      *ngFor="let term; let i = index; of: termsConditionsData"
+    >
+      <b>{{ i + 1 }}</b
+      >) &nbsp;{{ term }}
     </p>
   </div>
   <div *ngIf="sitemapData" id="sitemap" class="detailContainer" #sitemap>
     <h1>Sitemap</h1>
-    <p class="text">
+    <p class=" bodyText text">
       We use Google Analytics on our website to find out where our traffic comes
       from, which pages are most interesting, how many visitors we have and so
       on. We need this information in order to increase the quality of our

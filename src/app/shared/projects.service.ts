@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { DistributorsEnum } from '../models/distributor.model';
 import { Project } from '../models/project.model';
 
@@ -60,8 +61,8 @@ export class ProjectsService {
       projectManager: 'Mike Burns'
     },
     {
-      id: 1,
-      name: 'Longwood Cricket Club',
+      id: 2,
+      name: 'Longerwood Cricket Club',
       description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
       featured: true,
       series: 'agility',
@@ -113,10 +114,24 @@ export class ProjectsService {
     }
   ];
 
+  private selectedProjectSubject$: BehaviorSubject<
+    Project | {}
+  > = new BehaviorSubject({});
+  public selectedProject$: Observable<
+    Project | {}
+  > = this.selectedProjectSubject$.asObservable();
+
   constructor() {}
 
   getAll(): Project[] {
     return this.projects;
+  }
+
+  getById(id): void {
+    const selectedProject = this.projects.filter(project => {
+      return project.id == id;
+    });
+    this.selectedProjectSubject$.next(selectedProject);
   }
 
   getByName(searchTerm: string): Project[] | string {

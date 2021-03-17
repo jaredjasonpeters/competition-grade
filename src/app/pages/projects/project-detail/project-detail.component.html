@@ -1,4 +1,23 @@
 <div id="container">
-  <app-section-header>Project Detail</app-section-header>
-  <p>project-detail works!</p>
+  <div
+    id="project_container"
+    *ngFor="let project of (this.projectsService.selectedProject$ | async)"
+  >
+    <app-section-header
+      ><span style="color: white; margin-right: 1em; font-weight: 800;">>></span
+      >{{ project.name }}</app-section-header
+    >
+    <div id="images_details_container">
+      <div id="details_container">
+        <p class="bodyText boxedText">{{ project.description }}</p>
+        <p>{{ project.location }}</p>
+        <p>{{ project.projectManager }}</p>
+        <p>{{ project.distributor }}</p>
+        <p>{{ project.icon }}</p>
+      </div>
+      <div id="images_container">
+        <img *ngFor="let image of project.images" [src]="image.imageUrl" />
+      </div>
+    </div>
+  </div>
 </div>

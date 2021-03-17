@@ -17,15 +17,18 @@
     </h1>
   </div>
   <div id="found_projects_container" *ngIf="projects">
-    <div class="project_container" *ngFor="let project of projects">
+    <div
+      class="project_container"
+      [routerLink]="['/projects', project.id]"
+      *ngFor="let project of projects"
+    >
       <app-project-card [project]="project"></app-project-card>
-      <!-- <img *ngFor="let image of project.images" [src]="image.imageUrl" [alt]="image.caption" /> -->
       <div class="imageSliderContainer">
-        <app-image-slider [projectImages]="project.images"></app-image-slider>
+        <app-image-slider
+          [projectImages]="project.images"
+          [showControls]="false"
+        ></app-image-slider>
       </div>
     </div>
   </div>
-  <!-- <hr class="seperator"> -->
 </div>
-
-<!-- <button (click)="fetchProjects()"mat-button >Fetch Projects</button> -->

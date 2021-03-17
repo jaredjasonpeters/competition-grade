@@ -23,7 +23,6 @@ export class LayoutService {
       this.breakpointObserver.observe('(min-width: 1280px)')
     ).pipe(
       filter(bp => {
-        console.log('BREAKPOINT IS', bp);
         return bp.matches === true;
       }),
       map(v => {

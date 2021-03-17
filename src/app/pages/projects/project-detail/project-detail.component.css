@@ -2,3 +2,39 @@
   background: white;
   min-height: 550px;
 }
+
+#images_details_container {
+  display: flex;
+}
+
+#details_container {
+  flex-basis: 50%;
+  padding: 2em;
+}
+
+#images_container {
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#main_image {
+  flex-basis: 50%;
+  border-right: 2px solid white;
+}
+
+#images_container :first-child {
+  width: 100%;
+}
+
+#images_container img {
+  flex-grow: 1;
+  flex-basis: 50%;
+  width: 50%;
+  margin-bottom: 4px;
+
+  object-position: center;
+  object-fit: cover;
+  border-left: 4px solid white;
+}

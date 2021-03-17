@@ -1,36 +1,36 @@
 <div id="project_card_container">
-    <mat-grid-list rowHeight="80px" cols="3">
-        <mat-grid-tile colspan="3" rowspan="1">
-            <div id="project_name_container" class="itemContainer">
-                <h1 class="projectName">{{project.name}}</h1>
-               
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="3" rowspan="1">
-            <div id="project_location_container" class="itemContainer">
-                <h1 class="projectSubHeading">{{project.location}}</h1>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="3" rowspan="1">
-        <div id="project_manager_container" class="itemContainer">
-            <h1 class="projectSubHeading">{{project.projectManager}}</h1>
+  <mat-grid-list rowHeight="80px" cols="3">
+    <mat-grid-tile colspan="3" rowspan="1">
+      <div id="project_name_container" class="itemContainer">
+        <h1 class="projectName">{{ project.name }}</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <div id="project_location_container" class="itemContainer">
+        <h1 class="projectSubHeading">{{ project.location }}</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <div id="project_manager_container" class="itemContainer">
+        <h1 class="projectSubHeading">{{ project.projectManager }}</h1>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="2">
+      <div id="project_description_container" class="itemContainer">
+        <p class="projectDescription">{{ project.description }}</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+      <div id="project_products_container" class="itemContainer">
+        <div class="internal_gridlist">
+          <img
+            id="series_logo"
+            src="./assets/{{ project.series }}_series.png"
+          />
+          <h1 class="projectTags">{{ getFormattedTags() }}</h1>
+          <img id="dist_logo" src="{{ getDistributorImage() }}" />
         </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="3" rowspan="2">
-        <div id="project_description_container" class="itemContainer">
-            <p class="projectDescription">{{project.description}}</p>
-        </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="3" rowspan="1">
-        <div id="project_products_container" class="itemContainer">
-            <div class="internal_gridlist">
-                <img id="series_logo" src="./assets/{{project.series}}_series.png"/>
-                <h1 class="projectTags">{{getFormattedTags()}}</h1>
-                <img id="dist_logo" src="{{getDistributorImage()}}" />
-            </div>
-        </div>
-        </mat-grid-tile>
-    </mat-grid-list>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
-
-

@@ -1,19 +1,21 @@
 <div id="image_slider_container">
   <img class="slider_main" src="{{ activeImage }}" />
-  <div class="sliderControl left" (click)="onPreviousImage()">
-    <mat-icon
-      id="previous_button"
-      aria-hidden="false"
-      aria-label="Example home icon"
-      >keyboard_arrow_left</mat-icon
-    >
-  </div>
-  <div class="sliderControl right" (click)="onNextImage()">
-    <mat-icon
-      id="next_button"
-      aria-hidden="false"
-      aria-label="Example home icon"
-      >keyboard_arrow_right</mat-icon
-    >
+  <div id="slider_controls_container" *ngIf="showControls">
+    <div class="sliderControl left" (click)="onPreviousImage()">
+      <mat-icon
+        id="previous_button"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        >keyboard_arrow_left</mat-icon
+      >
+    </div>
+    <div class="sliderControl right" (click)="onNextImage()">
+      <mat-icon
+        id="next_button"
+        aria-hidden="false"
+        aria-label="Example home icon"
+        >keyboard_arrow_right</mat-icon
+      >
+    </div>
   </div>
 </div>

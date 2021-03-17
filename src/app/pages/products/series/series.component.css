@@ -18,8 +18,11 @@
   align-items: center;
   justify-content: center;
   border-top: 8px solid black;
-  background: var(--cg_silver);
-  background: black;
+  background: url("/assets/seed_backdrop.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: black; */
   padding: 1em;
 }
 

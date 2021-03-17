@@ -77,3 +77,13 @@ a:visited {
   padding: 6px;
   height: 100%;
 }
+
+.bodyText {
+  font-size: 1.25em;
+}
+
+.boxedText {
+  background: var(--cg_gold);
+  padding: 2%;
+  color: white;
+}

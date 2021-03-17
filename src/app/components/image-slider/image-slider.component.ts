@@ -4,7 +4,7 @@ import { ProjectImage } from 'src/app/models/project-image.model';
 @Component({
   selector: 'app-image-slider',
   templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.css'],
+  styleUrls: ['./image-slider.component.css']
 })
 export class ImageSliderComponent implements OnInit, OnDestroy {
   @Input() speed: number = 5000;
@@ -12,13 +12,15 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   currentIndex: number = 0;
   @Input() images: string[];
   @Input() projectImages: ProjectImage[];
+  @Input() showControls: boolean = true;
+
   sliderTimer;
   constructor() {}
 
   ngOnInit(): void {
     if (this.projectImages) {
       let images = [];
-      images = this.projectImages.map((projectImage) => projectImage.imageUrl);
+      images = this.projectImages.map(projectImage => projectImage.imageUrl);
 
       console.log('IMAGES', images);
       this.images = images;
@@ -28,7 +30,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
         '../../../../assets/MainMarketingImage.jpg',
         '../../../../assets/football_1500x1000.png',
         '../../../../assets/baseball_1500x1000.png',
-        '../../../../assets/soccer_ball_1500x1000.png',
+        '../../../../assets/soccer_ball_1500x1000.png'
       ];
     }
 

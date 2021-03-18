@@ -4,6 +4,7 @@
   height: 200px;
   justify-content: flex-start;
   align-items: flex-start;
+  background: var(--cg_silver);
   /* border: 3px solid pink; */
 }
 #container .projectContainer:first-child {

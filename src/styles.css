@@ -84,6 +84,19 @@ a:visited {
 
 .boxedText {
   background: var(--cg_gold);
+  /* background: var(--cg_silver); */
   padding: 2%;
   color: white;
+  /* color: black; */
+}
+
+.caption {
+  font-size: 0.8em;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+.lspace {
+  letter-spacing: var(--lspace);
 }

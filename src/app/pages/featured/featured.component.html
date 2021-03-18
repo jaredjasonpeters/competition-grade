@@ -19,7 +19,7 @@
     </div>
     <div id="video_container" #vidContainer>
       <app-featured-video
-        page=""
+        [page]="product.name"
         [autoplayOptions]="{ autoplay: false, runOnce: true }"
       ></app-featured-video>
     </div>

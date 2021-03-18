@@ -9,7 +9,10 @@
 }
 
 #media_section {
-  background: var(--cg_silver);
+  background: url("/assets/seed_backdrop.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #featured_links_container {

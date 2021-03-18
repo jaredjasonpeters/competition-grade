@@ -87,12 +87,16 @@ a:hover {
 
 .header_text {
   color: black;
+  text-decoration: underline;
+  text-decoration-color: var(--cg_gold);
+  text-decoration-thickness: 4px;
   font-weight: 800;
   font-size: 1.25rem;
   line-height: 1.3em;
   text-transform: uppercase;
+
   margin-bottom: 0;
-  border-bottom: 4px solid var(--cg_gold);
+  /* border-bottom: 4px solid var(--cg_gold); */
 }
 
 #featured_varieties_container {

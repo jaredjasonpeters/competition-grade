@@ -5,11 +5,13 @@
 
 #images_details_container {
   display: flex;
+  background: var(--cg_silver);
 }
 
 #details_container {
   flex-basis: 50%;
-  padding: 2em;
+  padding: 1em 2em 2em 2em;
+  background: white;
 }
 
 #images_container {
@@ -17,6 +19,7 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  background: white;
 }
 
 #main_image {
@@ -37,4 +40,44 @@
   object-position: center;
   object-fit: cover;
   border-left: 4px solid white;
+}
+
+#products_container {
+  display: flex;
+}
+
+#series_logo {
+  width: 25%;
+  object-fit: scale-down;
+}
+
+#tags_container {
+  width: 75%;
+  height: 300px;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+}
+#tags_container img {
+  cursor: pointer;
+  object-fit: contain;
+  flex-grow: inherit;
+  margin-right: 2%;
+  background: white;
+  border: 2px solid var(--cg_gold);
+}
+
+.projectLabel {
+  display: inline-block;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  /* width: 100%; */
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  padding: 0.5%;
+  font-family: Orbitron;
+  font-weight: 700;
+  letter-spacing: var(--lspace);
 }

@@ -57,6 +57,7 @@
             *ngFor="let variety of kbgVarieties"
           >
             <li
+              class="bodyText"
               (mouseenter)="showLogo($event)"
               (mouseleave)="hideLogo($event)"
               [attr.data-logo]="formatForDataLogo(variety)"
@@ -76,6 +77,7 @@
             *ngFor="let variety of tfVarieties"
           >
             <li
+              class="bodyText"
               (mouseenter)="showLogo($event)"
               (mouseleave)="hideLogo($event)"
               [attr.data-logo]="formatForDataLogo(variety)"
@@ -95,6 +97,7 @@
             *ngFor="let variety of prgVarieties"
           >
             <li
+              class="bodyText"
               (mouseenter)="showLogo($event)"
               (mouseleave)="hideLogo($event)"
               [attr.data-logo]="formatForDataLogo(variety)"

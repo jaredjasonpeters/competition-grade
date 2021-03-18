@@ -1,4 +1,4 @@
 export interface ProjectImage {
-  imageUrl: string;
+  imagePath: string;
   caption?: string;
 }

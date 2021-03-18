@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Project } from 'src/app/models/project.model';
+import { DistributorsService } from 'src/app/shared/distributors.service';
 import { ProjectsService } from 'src/app/shared/projects.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { ProjectsService } from 'src/app/shared/projects.service';
 export class ProjectDetailComponent implements OnInit {
   constructor(
     public projectsService: ProjectsService,
+    public distributorService: DistributorsService,
     private route: ActivatedRoute
   ) {}
 
@@ -19,5 +21,9 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.subscribe(({ id }) => {
       this.projectsService.getById(id);
     });
+  }
+
+  getSeriesBg(series): string {
+    return `url('/assets/${series}_color_bg.jpg')`;
   }
 }

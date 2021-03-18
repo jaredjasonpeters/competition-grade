@@ -20,17 +20,17 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (this.projectImages) {
       let images = [];
-      images = this.projectImages.map(projectImage => projectImage.imageUrl);
+      images = this.projectImages.map(projectImage => projectImage.imagePath);
 
       console.log('IMAGES', images);
       this.images = images;
     }
     if (!this.images) {
       this.images = [
-        '../../../../assets/MainMarketingImage.jpg',
-        '../../../../assets/football_1500x1000.png',
-        '../../../../assets/baseball_1500x1000.png',
-        '../../../../assets/soccer_ball_1500x1000.png'
+        '../../../../assets/football_home.jpg',
+        '../../../../assets/baseball_home.jpg',
+        '../../../../assets/soccer_home.jpg',
+        '../../../../assets/4turf_home.jpg'
       ];
     }
 

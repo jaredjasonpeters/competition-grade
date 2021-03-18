@@ -1,26 +1,6 @@
 <div id="content_section">
-  <div style="height:350px;">
+  <div style="height:400px;">
     <app-image-slider [speed]="6000"></app-image-slider>
-  </div>
-  <!-- <mat-grid-list
-    gutterSize="0"
-    cols="{{ breakpoint.colSize }}"
-    rowHeight="{{ breakpoint.rowHeight }}"
-  >
-    <mat-grid-tile id="image_slider" colspan="{{ breakpoint.colSpan_L }}">
-      <app-image-slider [speed]="6000"></app-image-slider>
-    </mat-grid-tile>
-    <mat-grid-tile
-      *ngIf="!(this.layoutService.isMobile$ | async)"
-      id="menu_right"
-      rowspan="{{ breakpoint.rowSpan_R }}"
-      colspan="{{ breakpoint.colSpan_R }}"
-    >
-      <app-menu-right [page]="page" features="all"></app-menu-right>
-    </mat-grid-tile>
-  </mat-grid-list> -->
-  <div id="featured_links_container">
-    <app-featured-links></app-featured-links>
   </div>
 
   <section id="media_section">
@@ -50,6 +30,11 @@
     <app-section-header>Featured Projects</app-section-header>
     <app-featured-projects></app-featured-projects>
   </section>
+
+  <!-- <app-section-header>Product Series</app-section-header> -->
+  <div id="featured_links_container">
+    <app-featured-links></app-featured-links>
+  </div>
 
   <div id="mobile_content" *ngIf="(this.layoutService.isMobile$ | async)">
     <div class="video_container">

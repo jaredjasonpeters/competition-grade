@@ -21,37 +21,37 @@ export class ProjectsService {
         '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
       images: [
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_action_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeup_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeupmow_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing2_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing3_800x500.png',
           caption: ''
         }
@@ -73,37 +73,37 @@ export class ProjectsService {
         '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
       images: [
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_action_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeup_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeupmow_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing2_800x500.png',
           caption: ''
         },
         {
-          imageUrl:
+          imagePath:
             '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing3_800x500.png',
           caption: ''
         }

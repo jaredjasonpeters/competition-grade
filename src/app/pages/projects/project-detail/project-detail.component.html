@@ -9,14 +9,64 @@
     >
     <div id="images_details_container">
       <div id="details_container">
+        <p class="bodyText">{{ project.icon }}</p>
         <p class="bodyText boxedText">{{ project.description }}</p>
-        <p>{{ project.location }}</p>
-        <p>{{ project.projectManager }}</p>
-        <p>{{ project.distributor }}</p>
-        <p>{{ project.icon }}</p>
+        <span class="projectLabel">Location:</span>
+        <h3 class="bodyText upper">{{ project.location }}</h3>
+        <hr />
+        <span class="projectLabel">Project Manager:</span>
+        <h3 class="bodyText upper lspace">{{ project.projectManager }}</h3>
+        <hr />
+        <section>
+          <span class="projectLabel">Products Used:</span>
+          <div id="products_container">
+            <img
+              id="series_logo"
+              style="background: black;"
+              src="/assets/{{ project.series }}_series.png"
+            />
+            <div
+              [routerLink]="['/products', project.series]"
+              fragment="series_tags_container"
+              id="tags_container"
+              [style.background]="this.getSeriesBg(project.series)"
+            >
+              <img
+                *ngFor="let tag of project.tags"
+                src="/assets/{{ project.series }}_series_tag_{{ tag }}.jpg"
+              />
+            </div>
+          </div>
+          <hr />
+        </section>
+
+        <section *ngIf="project.quotes.length > 0">
+          <span class="projectLabel">Quotes:</span>
+          <p>{{ project.quotes }}</p>
+          <hr />
+        </section>
+        <section>
+          <span class="projectLabel">Distributor:</span>
+          <a
+            style="width: 100%; height: 100%;"
+            [href]="
+              distributorService.getByName(project.distributor).websiteUrl
+            "
+            target="_blank"
+            referrerpolicy="no-referrer"
+          >
+            <img
+              style="width: 100%; object-fit: scale-down;"
+              [src]="
+                distributorService.getByName(project.distributor).imagePath
+              "
+            />
+          </a>
+        </section>
       </div>
+
       <div id="images_container">
-        <img *ngFor="let image of project.images" [src]="image.imageUrl" />
+        <img *ngFor="let image of project.images" [src]="image.imagePath" />
       </div>
     </div>
   </div>

@@ -1,2 +1,17 @@
-<p>thanks works!</p>
-<img src={{distributor.imagePath}} alt={{distributor.companyName}} />
+<div class="container">
+  <img id="cg_logo" src="/assets/Competition_Grade_Logo_Final.png" />
+  <h1>Thanks you for your interest</h1>
+  <section *ngIf="!this.distributor">
+    <p class="bodyText">We will be in contact with you shortly!</p>
+  </section>
+  <section *ngIf="this.distributor">
+    <p class="bodyText">
+      You will be redirected shortly to a distributor in your area:
+    </p>
+    <img
+      id="dist_logo"
+      src="{{ distributor.imagePath }}"
+      alt="{{ distributor.companyName }}"
+    />
+  </section>
+</div>

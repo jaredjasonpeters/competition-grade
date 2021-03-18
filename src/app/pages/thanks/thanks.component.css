@@ -1,0 +1,50 @@
+.container {
+  height: 545px;
+  padding: 2%;
+  background: url("/assets/seed_backdrop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* border: 2px solid blue; */
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0;
+  text-decoration: overline;
+  text-decoration-thickness: 4px;
+  text-decoration-color: var(--cg_gold);
+}
+
+img {
+  margin-top: 0;
+  object-fit: scale-down;
+}
+
+#cg_logo {
+  max-height: 150px;
+}
+
+#dist_logo {
+  /* border: 2px solid red; */
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin-top: 1%;
+  color: white;
+  text-align: center;
+}

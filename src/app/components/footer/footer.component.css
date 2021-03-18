@@ -7,7 +7,7 @@
 }
 
 #footer_spacer {
-  border-top: 2px solid white;
+  /* border-top: 2px solid white; */
   height: 150px;
   background: var(--cg_silver);
   background: black;

@@ -1,13 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Distributor } from 'src/app/models/distributor.model';
 import { DistributorsService } from 'src/app/shared/distributors.service';
 
+const createDistRedirect = distributor =>
+  setTimeout(() => {
+    window.location.href = distributor.websiteUrl;
+  }, 3000);
+
 @Component({
   selector: 'app-thanks',
   templateUrl: './thanks.component.html',
-  styleUrls: ['./thanks.component.css'],
+  styleUrls: ['./thanks.component.css']
 })
 export class ThanksComponent implements OnInit, OnDestroy {
   pageToDisplay;
@@ -16,18 +21,24 @@ export class ThanksComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private distributorsService: DistributorsService
   ) {}
 
   ngOnInit(): void {
     this.queryParamsSubscription = this.route.queryParams.subscribe(
       ({ distributor }) => {
-        console.log('ROUTE QUERY PARAMS', distributor);
         this.distributor = this.distributorsService.getByName(distributor);
-        console.log('DISTRIBUTRO', this.distributor);
       }
     );
-    //redirect to walker supply website after displaying thanks message
+
+    if (this.distributor) {
+      createDistRedirect(this.distributor);
+    } else {
+      setTimeout(() => {
+        this.router.navigateByUrl('/');
+      }, 3000);
+    }
   }
 
   ngOnDestroy(): void {

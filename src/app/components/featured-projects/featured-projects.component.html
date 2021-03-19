@@ -1,4 +1,8 @@
-<div id="container">
+<div
+  id="container"
+  [style.flex-direction]="(layoutService.isMobile$ | async) ? 'column' : 'row'"
+  [style.height]="(layoutService.isMobile$ | async) && 'inherit'"
+>
   <mat-spinner *ngIf="!projects" diameter="50" strokeWidth="5"></mat-spinner>
   <div
     [routerLink]="['/projects', project.id]"

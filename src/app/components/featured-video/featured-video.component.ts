@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
+import { LayoutService } from 'src/app/shared/layout.service';
 import { FeaturedVideoService } from '../../shared/featured-video.service';
 
 @Component({
@@ -15,7 +16,10 @@ export class FeaturedVideoComponent implements OnInit, OnChanges, OnDestroy {
   @Input() page;
   @Input() autoplayOptions?: { autoplay?: boolean; runOnce?: boolean };
 
-  constructor(private featuredVideoService: FeaturedVideoService) {}
+  constructor(
+    private featuredVideoService: FeaturedVideoService,
+    public layoutService: LayoutService
+  ) {}
 
   ngOnInit(): void {}
   ngOnChanges(): void {

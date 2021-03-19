@@ -13,6 +13,7 @@ export class ProjectsService {
       name: 'Longwood Cricket Club',
       description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
       featured: true,
+      inProgress: false,
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
       location: 'Chestnut Hill, MA',
@@ -62,55 +63,72 @@ export class ProjectsService {
     },
     {
       id: 2,
-      name: 'Longerwood Cricket Club',
+      name: 'PNC Park',
       description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
       featured: true,
+      inProgress: true,
       series: 'agility',
       distributor: DistributorsEnum['Walker Supply'],
-      location: 'Chestnut Hill, MA',
+      location: 'Pittsburgh, PA',
       icon: '',
       thumbnail:
-        '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
+        'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffullhdpictures.com%2Fwp-content%2Fuploads%2F2015%2F10%2FPittsburgh-Pirates-Stadium-Wallpaper.jpg&f=1&nofb=1',
       images: [
         {
           imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_800x500.png',
-          caption: ''
-        },
-        {
-          imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_action_800x500.png',
-          caption: ''
-        },
-        {
-          imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeup_800x500.png',
-          caption: ''
-        },
-        {
-          imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_closeupmow_800x500.png',
-          caption: ''
-        },
-        {
-          imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing_800x500.png',
-          caption: ''
-        },
-        {
-          imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing2_800x500.png',
-          caption: ''
-        },
-        {
-          imagePath:
-            '/assets/projectImages/LongwoodCC/LWCC_tenniscourt_mowing3_800x500.png',
+            'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ffullhdpictures.com%2Fwp-content%2Fuploads%2F2015%2F10%2FPittsburgh-Pirates-Stadium-Wallpaper.jpg&f=1&nofb=1',
           caption: ''
         }
       ],
       tags: [314, 301],
       quotes: [],
-      projectManager: 'Mike Burns'
+      projectManager: 'That Guy'
+    },
+    {
+      id: 3,
+      name: 'Heinz Field',
+      description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
+      featured: true,
+      inProgress: true,
+      series: 'agility',
+      distributor: DistributorsEnum['Walker Supply'],
+      location: 'Pittsburgh, PA',
+      icon: '',
+      thumbnail:
+        'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fnicepickcowher.com%2Ffiles%2F2014%2F04%2Fnfl-tennessee-titans-pittsburgh-steelers1.jpg&f=1&nofb=1',
+      images: [
+        {
+          imagePath:
+            'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fnicepickcowher.com%2Ffiles%2F2014%2F04%2Fnfl-tennessee-titans-pittsburgh-steelers1.jpg&f=1&nofb=1',
+          caption: ''
+        }
+      ],
+      tags: [314, 301],
+      quotes: [],
+      projectManager: 'That Guy'
+    },
+    {
+      id: 4,
+      name: 'Paul Brown Stadium',
+      description: `This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.This lovely club has been refitted with all new Kentucky bluegrass carpet.`,
+      featured: true,
+      inProgress: true,
+      series: 'agility',
+      distributor: DistributorsEnum['Walker Supply'],
+      location: 'Cleveland, OH',
+      icon: '',
+      thumbnail:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fineartamerica.com%2Fimages-medium-large-5%2F3-cleveland-browns-stadium-robert-harmon.jpg&f=1&nofb=1',
+      images: [
+        {
+          imagePath:
+            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fineartamerica.com%2Fimages-medium-large-5%2F3-cleveland-browns-stadium-robert-harmon.jpg&f=1&nofb=1',
+          caption: ''
+        }
+      ],
+      tags: [314, 301],
+      quotes: [],
+      projectManager: 'That Guy'
     }
   ];
 

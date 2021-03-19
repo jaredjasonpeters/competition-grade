@@ -1,5 +1,12 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, ComponentRef, OnChanges, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  ChangeDetectorRef,
+  Component,
+  ComponentRef,
+  OnChanges,
+  OnInit
+} from '@angular/core';
 import { DistributorAdvertComponent } from './pages/distributor/distributor-advert/distributor-advert.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AuthService } from './shared/auth.service';
@@ -11,27 +18,28 @@ import { NewsService } from './shared/news.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnChanges {
+export class AppComponent implements OnInit, OnChanges, AfterContentChecked {
   title = 'competition-grade';
-  newsAvailable: boolean;
   isAdvertisment: boolean;
-  showMobileNav: boolean = false;
   displayPageHeader: boolean;
   pageHeaderTitle: string;
 
   constructor(
-    private newsService: NewsService,
+    private cdref: ChangeDetectorRef,
+    public newsService: NewsService,
     private authService: AuthService,
     public layoutService: LayoutService
   ) {}
+
   ngOnInit(): void {
     this.authService.autoLogin();
-    this.newsService.showNews.subscribe(bool => {
-      this.newsAvailable = bool;
-    });
   }
 
   ngOnChanges(): void {}
+
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
+  }
 
   onRouterActivate(event: ComponentRef<any>) {
     if (event instanceof DistributorAdvertComponent) {

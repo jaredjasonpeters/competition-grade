@@ -4,6 +4,7 @@ import { ProjectImage } from './project-image.model';
 export interface Project {
   id: number;
   featured: boolean;
+  inProgress: boolean;
   name: string;
   location: string;
   projectManager: string;

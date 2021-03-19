@@ -1,4 +1,5 @@
-<app-news *ngIf="newsAvailable"></app-news>
+<app-news *ngIf="(this.newsService.showNews | async)"></app-news>
+
 <app-header
   *ngIf="!isAdvertisment && !(this.layoutService.isMobile$ | async)"
 ></app-header>
@@ -7,10 +8,10 @@
 ></app-mobile-nav>
 
 <app-content-container [size]="this.layoutService.getScreenSize() | async">
-  <app-page-header
+  <!-- <app-page-header
     *ngIf="displayPageHeader"
     [title]="pageHeaderTitle"
-  ></app-page-header>
+  ></app-page-header> -->
   <router-outlet (activate)="onRouterActivate($event)"></router-outlet>
 </app-content-container>
 <app-footer *ngIf="!isAdvertisment"></app-footer>

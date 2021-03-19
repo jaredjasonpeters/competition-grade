@@ -1,4 +1,7 @@
 <div id="container" #root (click)="handleClick()">
-  <mat-spinner *ngIf="!imageUrl" diameter="50" strokeWidth="5"></mat-spinner>
+  <div id="loading_container">
+    <span *ngIf="!imageUrl">Loading Instagram Images</span>
+    <mat-spinner *ngIf="!imageUrl" diameter="50" strokeWidth="5"></mat-spinner>
+  </div>
   <img id="instagram_image" [src]="imageUrl" *ngIf="imageUrl" />
 </div>

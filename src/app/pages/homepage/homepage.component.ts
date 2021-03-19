@@ -9,44 +9,10 @@ import { LayoutService } from '../../shared/layout.service';
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  providers: [LayoutService]
+  providers: []
 })
 export class HomepageComponent implements OnInit, OnChanges {
   page;
-  largeBreakpoints = {
-    isLarge: true,
-    colSize: 6,
-    colSpan_L: 4,
-    colSpan_R: 2,
-    rowSpan_R: 1,
-    rowHeight: '500px'
-  };
-
-  mediumBreakpoints = {
-    isLarge: true,
-    colSize: 6,
-    colSpan_L: 4,
-    colSpan_R: 2,
-    rowSpan_R: 1,
-    rowHeight: '418px'
-  };
-
-  smallBreakpoints = {
-    isSmall: true,
-    colSize: 1,
-    colSpan_L: 1,
-    colSpan_R: 1,
-    rowSpan_R: 2,
-    rowHeight: '50vh'
-  };
-  breakpoint = {
-    colSize: null,
-    colSpan_L: null,
-    colSpan_R: null,
-    rowSpan_R: null,
-    rowHeight: null
-  };
-
   size: string;
 
   constructor(
@@ -59,33 +25,7 @@ export class HomepageComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.layoutService
-      .getScreenSize()
-      .pipe(
-        tap(size => {
-          this.getBreakpoints(size);
-        })
-      )
-      .subscribe();
     this.videoService.setVideoByPage('default');
-  }
-
-  getBreakpoints(size) {
-    switch (size) {
-      case 'mobile':
-        {
-          this.breakpoint = this.smallBreakpoints;
-        }
-        break;
-      case 'tablet':
-        {
-          this.breakpoint = this.mediumBreakpoints;
-        }
-        break;
-      case 'desktop':
-      case 'largeDesktop':
-        this.breakpoint = this.largeBreakpoints;
-    }
   }
 
   ngOnChanges(): void {}

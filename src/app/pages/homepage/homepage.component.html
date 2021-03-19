@@ -1,48 +1,63 @@
 <div id="content_section">
   <div style="height:400px;">
-    <app-image-slider [speed]="6000"></app-image-slider>
+    <app-image-slider
+      [speed]="6000"
+      [showControls]="(layoutService.isMobile$ | async) ? false : true"
+    ></app-image-slider>
   </div>
 
-  <section id="media_section">
-    <app-section-header>DIGITAL MEDIA</app-section-header>
-    <div id="media_container">
-      <div id="social_container">
-        <div id="twitter_container">
-          <app-twitter-feed></app-twitter-feed>
-        </div>
-        <div id="instagram_container">
-          <app-instagram-feed></app-instagram-feed>
-          <div id="hashtag_container">
-            <img src="/assets/makethegrade.jpg" />
+  <div id="desktop_content" *ngIf="!(layoutService.isMobile$ | async)">
+    <section id="media_section">
+      <app-section-header>DIGITAL MEDIA</app-section-header>
+      <div id="media_container">
+        <div id="social_container">
+          <div id="twitter_container">
+            <app-twitter-feed></app-twitter-feed>
+          </div>
+          <div id="instagram_container">
+            <div id="instagram_image_container">
+              <app-instagram-feed></app-instagram-feed>
+            </div>
+            <div id="hashtag_container">
+              <img src="/assets/makethegrade.jpg" />
+            </div>
           </div>
         </div>
+        <div id="video_container">
+          <app-featured-video
+            [page]="page"
+            [autoplayOptions]="{ autoplay: false, runOnce: true }"
+          ></app-featured-video>
+        </div>
       </div>
-      <div id="video_container">
-        <app-featured-video
-          [page]="page"
-          [autoplayOptions]="{ autoplay: false, runOnce: true }"
-        ></app-featured-video>
-      </div>
+    </section>
+
+    <section id="featured_projects">
+      <app-section-header>Featured Projects</app-section-header>
+      <app-featured-projects></app-featured-projects>
+    </section>
+
+    <!-- <app-section-header>Product Series</app-section-header> -->
+    <div id="featured_links_container">
+      <app-featured-links></app-featured-links>
     </div>
-  </section>
-
-  <section id="featured_projects">
-    <app-section-header>Featured Projects</app-section-header>
-    <app-featured-projects></app-featured-projects>
-  </section>
-
-  <!-- <app-section-header>Product Series</app-section-header> -->
-  <div id="featured_links_container">
-    <app-featured-links></app-featured-links>
   </div>
 
-  <div id="mobile_content" *ngIf="(this.layoutService.isMobile$ | async)">
-    <div class="video_container">
+  <div id="mobile_content" *ngIf="(layoutService.isMobile$ | async)">
+    <div
+      class="video_container"
+      style="border-bottom: 2px solid var(--cg_gold);
+  "
+    >
       <app-featured-video
         [page]="page"
         [autoplayOptions]="{ autoplay: false, runOnce: true }"
       ></app-featured-video>
     </div>
+    <section id="featured_projects">
+      <app-section-header>Featured Projects</app-section-header>
+      <app-featured-projects></app-featured-projects>
+    </section>
     <div class="selectBelow">SELECT A SERIES</div>
     <app-featured-links></app-featured-links>
   </div>

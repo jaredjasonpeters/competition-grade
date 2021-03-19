@@ -1,9 +1,4 @@
 <nav id="navigation">
-  <img
-    id="mobile_logo"
-    routerLink="/"
-    src="/assets/Competition_Grade_Logo_Final_ShieldOnly.png"
-  />
   <button
     mat-icon-button
     [matMenuTriggerFor]="mobileNavMenu"
@@ -12,6 +7,7 @@
   >
     <mat-icon id="menu_button" color="primary">menu</mat-icon>
   </button>
+  <img id="mobile_logo" routerLink="/" src="/assets/compgradeoneline.png" />
   <mat-menu
     class="mobileNavMenu"
     #mobileNavMenu="matMenu"
@@ -106,7 +102,7 @@
       Contact Us
     </button>
   </mat-menu>
-  <div class="secondary_menu_container">
+  <!-- <div class="secondary_menu_container">
     <button
       id="distributor_info_button"
       [matMenuTriggerFor]="mobileDistributorInfoMenu"
@@ -156,5 +152,5 @@
         <mat-icon color="white">account_circle</mat-icon>Login
       </button>
     </mat-menu>
-  </div>
+  </div> -->
 </nav>

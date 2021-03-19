@@ -30,6 +30,10 @@ app-projects-search {
   padding: 2%;
 }
 
+#found_projects_container .project_container:nth-child(odd) {
+  background: var(--cg_silver);
+}
+
 #found_projects_container :first-child {
   margin-top: 0;
 }
@@ -42,7 +46,7 @@ app-projects-search {
   margin-bottom: 2em;
 
   padding: 2%;
-  border: 4px solid var(--cg_silver);
+  /* border: 4px solid var(--cg_silver); */
 }
 
 .project_container:last-child {

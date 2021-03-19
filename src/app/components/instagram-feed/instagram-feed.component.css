@@ -12,6 +12,21 @@
   /* border: 4px solid var(--cg_gold); */
 }
 
+mat-spinner {
+  /* border: 2px solid green; */
+  margin: auto;
+}
+
+span {
+  display: block;
+  margin-bottom: 2%;
+  font-size: 0.8em;
+  font-family: Orbitron;
+  text-transform: uppercase;
+  letter-spacing: var(--lspace);
+  /* border: 2px solid red; */
+}
+
 #instagram_image {
   width: 100%;
   object-position: center;

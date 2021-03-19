@@ -12,14 +12,22 @@
   /* margin: 1em auto 1em auto; */
   background: black;
   color: var(--cg_gold);
+  padding: 1em;
 }
 
 h1 {
   margin-bottom: 0;
+  line-height: normal;
 }
 
 #compgrade_sh {
-  max-width: 40%;
+  max-width: 100%;
   max-height: 40%;
   margin-right: 0.5em;
 }
+
+/* @media (max-width: 800px) {
+  #header {
+    flex-direction: column;
+  }
+} */

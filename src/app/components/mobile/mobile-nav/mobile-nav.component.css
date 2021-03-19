@@ -5,13 +5,16 @@
   color: white;
   display: flex;
   align-items: center;
-  padding: 0 2em 0 2em;
+  padding: 0 1em 0 1em;
   /* border: 2px solid yellow; */
 }
 
 #mobile_logo {
-  height: 70%;
+  width: 50%;
+  align-self: center;
+  justify-self: flex-end;
   cursor: pointer;
+  margin-left: auto;
 }
 
 #menu_button {
@@ -19,7 +22,6 @@
 }
 
 .mobileNavMenu {
-  /* border: 2px solid red; */
   color: white;
   width: 100%;
 }

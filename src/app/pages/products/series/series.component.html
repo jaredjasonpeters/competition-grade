@@ -6,8 +6,23 @@
     ></app-featured-video>
   </div>
   <div class="container">
-    <div id="series_overview_container" #overview>
-      <img class="seriesLogo" src="/assets/{{ seriesName }}_series.png" />
+    <div
+      id="series_overview_container"
+      #overview
+      [ngStyle]="{
+        'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row',
+        'padding-bottom': (layoutService.isMobile$ | async) ? '1em' : '0'
+      }"
+    >
+      <img
+        class="seriesLogo"
+        src="/assets/{{ seriesName }}_series.png"
+        [ngStyle]="{
+          'border-right':
+            (layoutService.isMobile$ | async) ? 'none' : '4px solid white',
+          margin: (layoutService.isMobile$ | async) ? '0 0 1em 0' : '0 2em 0 0'
+        }"
+      />
       <h3 class="mat-display-4">
         {{ seriesInfo.overview }}
       </h3>
@@ -36,7 +51,7 @@
   <div id="series_tags_container" #tagsContainer>
     <div
       class="tagContainer"
-      [style.height]="(layoutService.isMobile$ | async) ? '150px' : '300px'"
+      [style.height]="(layoutService.isMobile$ | async) ? '200px' : '300px'"
       *ngFor="let tag of seriesTags"
       (click)="onTagSelect($event)"
     >

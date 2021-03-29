@@ -69,6 +69,7 @@ img[class$="_border"] {
 
 .textBox {
   color: black;
+  text-align: center;
   height: 40%;
   width: calc(100% / 3);
   padding: 2em;

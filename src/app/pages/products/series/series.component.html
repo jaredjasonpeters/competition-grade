@@ -36,6 +36,7 @@
   <div id="series_tags_container" #tagsContainer>
     <div
       class="tagContainer"
+      [style.height]="(layoutService.isMobile$ | async) ? '150px' : '300px'"
       *ngFor="let tag of seriesTags"
       (click)="onTagSelect($event)"
     >

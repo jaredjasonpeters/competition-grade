@@ -12,7 +12,7 @@
 span {
   display: block;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 1em;
   font-size: 1.25em;
 }
 
@@ -27,7 +27,8 @@ span {
 }
 
 #explanation_paragraph {
-  width: 70%;
+  width: 100%;
+  padding: 0 2em 4em 2em;
   padding-bottom: 4em;
   text-align: center;
   margin: 0 auto 0 auto;
@@ -53,7 +54,7 @@ span {
 #cg_lineup_informative_text {
   width: 100%;
   background: var(--cg_silver);
-  font-size: 1em;
+
   color: black;
   text-align: center;
 
@@ -149,13 +150,12 @@ a:hover {
 
 .container {
   width: 33%;
-  margin: 0 8px 0 8px;
+  margin: 0 8px 8px 8px;
 }
 
 #variety_container {
   width: 100%;
   display: flex;
-  margin-bottom: ;
 }
 
 #cultivars_by_species_container h1 {

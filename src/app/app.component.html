@@ -8,10 +8,6 @@
 ></app-mobile-nav>
 
 <app-content-container [size]="this.layoutService.getScreenSize() | async">
-  <!-- <app-page-header
-    *ngIf="displayPageHeader"
-    [title]="pageHeaderTitle"
-  ></app-page-header> -->
   <router-outlet (activate)="onRouterActivate($event)"></router-outlet>
 </app-content-container>
 <app-footer *ngIf="!isAdvertisment"></app-footer>

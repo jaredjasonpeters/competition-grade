@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
+import { LayoutService } from 'src/app/shared/layout.service';
 import { SeriesFormulationService } from '../../../shared/series-formulation.service';
 
 @Component({
@@ -27,6 +28,7 @@ export class SeriesComponent implements OnInit {
   formulationToggled: boolean = false;
 
   constructor(
+    public layoutService: LayoutService,
     private seriesFormulationService: SeriesFormulationService,
     private renderer: Renderer2,
     private route: ActivatedRoute

@@ -2,15 +2,16 @@ import {
   Component,
   ElementRef,
   Input,
+  OnChanges,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 
 @Component({
   selector: 'app-image-header',
   templateUrl: './image-header.component.html',
-  styleUrls: ['./image-header.component.css'],
+  styleUrls: ['./image-header.component.css']
 })
 export class ImageHeaderComponent implements OnInit {
   @Input() image: string;
@@ -33,20 +34,5 @@ export class ImageHeaderComponent implements OnInit {
       'background-image',
       `url(${this.backgroundImage})`
     );
-    if (this.backgroundImageStyles && this.backgroundImageStyles.size !== '') {
-      console.log('BS', this.backgroundImageStyles.size);
-      this.renderer.setStyle(
-        el,
-        'background-size',
-        this.backgroundImageStyles.size
-      );
-    }
-    if (this.backgroundImageStyles && this.backgroundImageStyles.positionY) {
-      this.renderer.setStyle(
-        el,
-        'background-position-y',
-        `${this.backgroundImageStyles.positionY}px`
-      );
-    }
   }
 }

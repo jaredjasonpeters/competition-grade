@@ -5,6 +5,7 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
+import { LayoutService } from 'src/app/shared/layout.service';
 import {
   FeaturedProductService,
   Product
@@ -130,7 +131,7 @@ export class VerificationProgramComponent implements OnInit {
       'https://www.dlfpickseed.com/Files/Files/DLF_Pickseed_USA/DLF_Pickseed_Tech_Sheets/Turf_Seed/Variety/Fiesta_Cinco_ts.pdf'
     ]
   ];
-  @ViewChild('logoViewer', { static: true })
+  @ViewChild('logoViewer', { static: false })
   logoViewer: ElementRef<HTMLDivElement>;
   needsPageHeader: boolean = true;
   pageHeaderTitle: string = 'MAKING THE TEAM >> THE VARIETY SELECTION PROCESS';
@@ -138,7 +139,8 @@ export class VerificationProgramComponent implements OnInit {
 
   constructor(
     private renderer: Renderer2,
-    private featuredProductService: FeaturedProductService
+    private featuredProductService: FeaturedProductService,
+    public layoutService: LayoutService
   ) {}
 
   ngOnInit(): void {

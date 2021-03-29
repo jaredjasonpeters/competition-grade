@@ -44,22 +44,31 @@ app-featured-video {
 }
 
 .tagContainer {
-  width: 10%;
-
-  padding: 1%;
-  /* background: white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2%;
+  /* border: 2px solid blue; */
   cursor: pointer;
+}
+.tagContainer:first-child {
+  justify-content: flex-end;
+}
+.tagContainer:last-child {
+  justify-content: flex-start;
 }
 
 .seriesTag {
-  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
   background: white;
   border: 2px solid var(--cg_gold);
-  transition: opacity 500ms ease-out, filter 500ms ease-out;
+  transition: opacity 500ms ease-out, filter 250ms ease-out;
 }
 .seriesTag:hover {
-  opacity: 0.4;
-  filter: grayscale();
+  border: 2px solid white;
 }
 
 #series_tags_container {
@@ -68,8 +77,9 @@ app-featured-video {
   border-bottom: 4px solid var(--cg_gold);
 }
 
-#series_tag_container img.activeTag {
-  filter: grayscale(0);
+img.activeTag {
+  border: 2px solid white;
+  filter: drop-shadow(5px 5px 5px black);
 }
 
 #series_tag_container img {

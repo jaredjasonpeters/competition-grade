@@ -2,20 +2,17 @@
   background: white;
 }
 
-#desc_list {
+#desc_container {
   display: flex;
   width: 100%;
+  justify-content: center;
+  padding: 0 5%;
   margin: 1em auto 1em auto;
   /* border: 2px solid red; */
 }
 
-#desc_tile {
-  /* border: 2px solid red; */
-  display: flex;
-  flex-direction: column;
-}
 .explanation_paragraph {
-  padding: 3em;
+  padding: 1em;
   margin: 0;
   font-size: 1.25em;
   /* border: 2px solid blue; */
@@ -25,7 +22,7 @@
 .explanation_paragraph span {
   display: block;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 1em;
   font-size: 1.25em;
 }
 

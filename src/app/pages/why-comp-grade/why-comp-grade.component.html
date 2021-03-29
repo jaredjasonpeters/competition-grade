@@ -2,9 +2,13 @@
   <app-image-header
     image="../../../assets/What_is_logo.png"
     backgroundImage="/assets/football_1500x1000.png"
-    [backgroundImageStyles]="{ size: 'cover', positionY: -825 }"
   ></app-image-header>
-  <div id="desc_list">
+  <div
+    id="desc_container"
+    [style.flex-direction]="
+      (layoutService.isMobile$ | async) ? 'column' : 'row'
+    "
+  >
     <p class="explanation_paragraph">
       <span class="mat-body-strong"
         >Competition Grade’s performance-tested genetics</span

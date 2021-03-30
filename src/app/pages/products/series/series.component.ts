@@ -81,4 +81,8 @@ export class SeriesComponent implements OnInit {
       this.formulationToggled = toggledBool;
     }, 1100);
   }
+
+  getSeriesBgColor() {
+    return `var(--cg_${this.seriesName})`;
+  }
 }

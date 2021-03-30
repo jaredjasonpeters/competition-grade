@@ -14,6 +14,7 @@
   background-image: url("/assets/Competition_Grade_Footer_Spacer.png");
   background-position: center;
   background-size: contain;
+  background-size: 95%;
   background-repeat: no-repeat;
 }
 
@@ -36,6 +37,10 @@ app-footer-list {
   height: 100%;
   width: 100%;
   padding-left: 1em;
+}
+
+app-footer {
+  background: black;
 }
 
 app-login {

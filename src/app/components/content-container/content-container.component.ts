@@ -7,6 +7,7 @@ import {
   Renderer2,
   ViewChild
 } from '@angular/core';
+import { LayoutService } from 'src/app/shared/layout.service';
 
 const widthMap = {
   mobile: '100%',
@@ -21,14 +22,16 @@ const widthMap = {
 })
 export class ContentContainerComponent implements OnInit, OnChanges {
   @Input() size: string;
+  @Input() topMargin: string;
   @ViewChild('container', { static: true }) container: ElementRef<
     HTMLDivElement
   >;
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    public layoutService: LayoutService
+  ) {}
 
   ngOnInit(): void {
-    console.log('SIZE: ', this.size);
-    console.log('MAPPED SIZE', this.mapSizeToWidth(widthMap, this.size));
     this.renderer.setStyle(
       this.container.nativeElement,
       'width',
@@ -37,8 +40,6 @@ export class ContentContainerComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log('SIZE: ', this.size);
-    console.log('MAPPED SIZE', this.mapSizeToWidth(widthMap, this.size));
     this.renderer.setStyle(
       this.container.nativeElement,
       'width',

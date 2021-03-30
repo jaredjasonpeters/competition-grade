@@ -1,24 +1,25 @@
-<!-- <div class="toggle_container">
-  <mat-icon
-    #toggleButton
-    id="series_formulation_toggle"
+<div
+  id="formulation_container"
+  [ngStyle]="{
+    'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row',
+    'min-height': (layoutService.isMobile$ | async) ? '0px' : '650px'
+  }"
+>
+  <div
+    id="formulation_graphic_container"
     [ngStyle]="{
-      color: toggled ? 'white' : 'var(--cg_gold)',
-      borderColor: toggled ? 'white' : 'var(--cg_gold)'
+      width: (layoutService.isMobile$ | async) ? '100%' : '50%'
     }"
-    (click)="toggleDisplay()"
-    >cached</mat-icon
   >
-  <span *ngIf="toggled" style="color: white"
-    >Click to view series formulations</span
-  >
-  <span *ngIf="!toggled">Click to view series description</span>
-</div> -->
-<div id="formulation_container">
-  <div id="formulation_graphic_container">
     <app-formulation-graphic></app-formulation-graphic>
   </div>
-  <div id="formulation_breakdown_container">
+  <div
+    id="formulation_breakdown_container"
+    [ngStyle]="{
+      width: (layoutService.isMobile$ | async) ? '100%' : '50%',
+      padding: (layoutService.isMobile$ | async) ? '2.5%' : '0'
+    }"
+  >
     <app-formulation-breakdown></app-formulation-breakdown>
   </div>
 </div>

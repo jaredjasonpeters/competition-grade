@@ -1,10 +1,17 @@
 <app-news *ngIf="(this.newsService.showNews | async)"></app-news>
 
 <app-header
-  *ngIf="!isAdvertisment && !(this.layoutService.isMobile$ | async)"
+  *ngIf="
+    !isAdvertisment &&
+    !(this.layoutService.isMobile$ | async) &&
+    (!isAdvertisment && !(this.layoutService.isTablet$ | async))
+  "
 ></app-header>
 <app-mobile-nav
-  *ngIf="!isAdvertisment && (this.layoutService.isMobile$ | async)"
+  *ngIf="
+    (!isAdvertisment && (this.layoutService.isMobile$ | async)) ||
+    (!isAdvertisment && (this.layoutService.isTablet$ | async))
+  "
 ></app-mobile-nav>
 
 <app-content-container [size]="this.layoutService.getScreenSize() | async">

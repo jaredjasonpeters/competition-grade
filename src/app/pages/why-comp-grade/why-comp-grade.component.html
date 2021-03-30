@@ -59,18 +59,33 @@
     <div style="width:100%; height:100px;">
       <app-featured-links></app-featured-links>
     </div>
-    <div id="textbox_container" class="flex">
-      <p class="bodyText textBox ">
+    <div
+      id="textbox_container"
+      class="flex"
+      [ngStyle]="{
+        'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row'
+      }"
+    >
+      <p
+        class="bodyText textBox "
+        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '33.3%'"
+      >
         Speed Series is an ideal choice in any region of the country either as
         an excellent winter over seed option on warm season turf, or as a
         permanent turf option in cool season turf applications.
       </p>
-      <p class="bodyText textBox">
+      <p
+        class="bodyText textBox"
+        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '33.3%'"
+      >
         Power Series should be used where a high quality sports turf for cleated
         sports like football, soccer and baseball, that requires less watering
         and lower inputs is needed!
       </p>
-      <p class="bodyText textBox">
+      <p
+        class="bodyText textBox"
+        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '33.3%'"
+      >
         Agility Series gets its name because it has so many applications. This
         series is ideal for those maintaining 100% Kentucky Bluegrass fields
         requiring elite varieties with proven performance, as well as situations

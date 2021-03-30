@@ -70,9 +70,14 @@ img[class$="_border"] {
 .textBox {
   color: black;
   text-align: center;
-  height: 40%;
+
   width: calc(100% / 3);
-  padding: 2em;
+  padding: 5%;
   font-size: 1.25em;
   margin: 0;
+  border-bottom: 4px solid var(--cg_gold);
+}
+
+.textBox:nth-child(odd) {
+  background: white;
 }

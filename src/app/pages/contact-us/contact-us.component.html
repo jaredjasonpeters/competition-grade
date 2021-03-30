@@ -5,10 +5,19 @@
     rowHeight="fit"
     gutterSize="0"
   >
-    <mat-grid-tile id="image_left" rowspan="1" colspan="1">
+    <mat-grid-tile
+      id="image_left"
+      rowspan="1"
+      colspan="1"
+      *ngIf="!(layoutService.isMobile$ | async)"
+    >
       <img src="../../../assets/seed_backdrop.jpg" />
     </mat-grid-tile>
-    <mat-grid-tile id="form_left" rowspan="1" colspan="2">
+    <mat-grid-tile
+      id="form_left"
+      rowspan="1"
+      [colspan]="(layoutService.isMobile$ | async) ? '3' : '2'"
+    >
       <app-form title="Contact Us" fieldApperance="standard"></app-form>
     </mat-grid-tile>
     <!-- <mat-grid-tile id="image_right" rowspan="1" colspan="1">

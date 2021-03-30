@@ -11,7 +11,10 @@
       #overview
       [ngStyle]="{
         'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row',
-        'padding-bottom': (layoutService.isMobile$ | async) ? '1em' : '0'
+        'padding-bottom': (layoutService.isMobile$ | async) ? '1em' : '0',
+        'padding-right': (layoutService.isMobile$ | async) ? '0' : '2em',
+        background:
+          (layoutService.isMobile$ | async) ? 'white' : this.getSeriesBgColor()
       }"
     >
       <img
@@ -20,10 +23,16 @@
         [ngStyle]="{
           'border-right':
             (layoutService.isMobile$ | async) ? 'none' : '4px solid white',
-          margin: (layoutService.isMobile$ | async) ? '0 0 1em 0' : '0 2em 0 0'
+          margin: (layoutService.isMobile$ | async) ? '0 0 2em 0' : '0 2em 0 0'
         }"
       />
-      <h3 class="mat-display-4">
+      <h3
+        class="mat-display-4"
+        [style.color]="(layoutService.isMobile$ | async) ? 'black' : 'white'"
+        [style.text-align]="
+          (layoutService.isMobile$ | async) ? 'center' : 'left'
+        "
+      >
         {{ seriesInfo.overview }}
       </h3>
     </div>

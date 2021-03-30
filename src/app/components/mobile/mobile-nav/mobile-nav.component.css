@@ -1,7 +1,12 @@
 #navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   height: 10vh;
+  width: 100%;
   background-color: black;
-  border-bottom: 2px solid var(--cg_gold);
+  border-bottom: 4px solid var(--cg_gold);
   color: white;
   display: flex;
   align-items: center;
@@ -11,6 +16,8 @@
 
 #mobile_logo {
   width: 50%;
+  object-fit: scale-down;
+  object-position: right;
   align-self: center;
   justify-self: flex-end;
   cursor: pointer;

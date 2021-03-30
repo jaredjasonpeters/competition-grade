@@ -13,6 +13,10 @@
   /* border: 2px solid red; */
 }
 
+#mobile_footer_detail_container {
+  flex-direction: column;
+}
+
 #footer_detail_container span {
   flex-basis: 40%;
   margin-top: auto;
@@ -42,6 +46,10 @@
   width: 100%;
   display: flex;
   background: black;
+}
+
+#mobile_footer_detail_options ul {
+  padding: 0;
 }
 
 #footer_detail_options ul {

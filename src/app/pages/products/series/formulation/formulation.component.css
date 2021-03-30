@@ -1,6 +1,6 @@
 #formulation_container {
   display: flex;
-  min-height: 700px;
+  min-height: 600px;
   background: url("/assets/seed_backdrop.jpg");
   background-position: bottom;
   background-size: cover;

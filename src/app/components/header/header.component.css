@@ -5,20 +5,6 @@
   text-transform: uppercase;
 }
 
-.speed {
-  color: var(--cg_speed);
-}
-.power {
-  color: var(--cg_power);
-}
-.agility {
-  color: var(--cg_agility);
-}
-
-.active {
-  color: white;
-}
-
 #header {
   /* border: 2px solid red; */
   background: black;
@@ -48,32 +34,16 @@
   /* border: 2px solid red; */
   height: 100%;
 }
-#wm_container {
-  display: flex;
-  justify-content: flex-end;
-  height: 100%;
-  /* border: 2px solid white; */
-  flex-grow: 1;
-  flex-basis: 50%;
-  max-width: 300px;
-}
-
-#wm_container img {
-  align-self: flex-end;
-  /* border: 2px solid yellow; */
-  object-fit: contain;
-  max-width: 85%;
-  margin: auto auto 0 auto;
-}
 
 #nav_container {
   border-top: 4px solid var(--cg_gold);
   /* border-bottom: 2px solid white; */
-  width: 100%;
+  width: 100vw;
   display: flex;
+  justify-content: center;
   min-height: 40px;
   background: black;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 #tagline_container {
@@ -81,7 +51,7 @@
   justify-content: center;
   align-items: center;
   height: 40px;
-  margin-left: 110px;
+  margin-left: 2.5%;
   /* border: 2px solid red; */
 }
 #tagline_container img {
@@ -90,13 +60,13 @@
 }
 
 #navigation_large {
-  width: 60%;
-  margin-right: 100px;
+  /* width: 60%; */
+  margin-right: 2.5%;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 3%;
+  margin-left: 2.5%;
   /* border: 2px solid yellow; */
 }
 #navigation_large a,
@@ -104,8 +74,8 @@ app-products-menu {
   /* border: 2px solid red; */
   position: relative;
   flex-grow: 1;
-  font-size: 0.75em;
-  margin: 0 0.5em 0 0.5em;
+  font-size: 0.65em;
+  margin: 0 1em 0 1em;
   flex-basis: auto;
   text-align: center;
   letter-spacing: 0.15em;
@@ -116,10 +86,10 @@ app-products-menu {
 #navigation_large a:before,
 app-products-menu:before {
   content: "";
-  width: calc(100% - 40px);
+  width: 100%;
   position: absolute;
   top: -25px;
-  left: 20px;
+  left: 0;
   border-top: 15px solid black;
   /* transition: opacity 0.25s ease-in; */
   opacity: 0;
@@ -135,7 +105,6 @@ app-products-menu:hover:before {
 }
 
 #social_links_container {
-  /* width: 20%; */
   max-width: 175px;
   display: flex;
   justify-content: center;
@@ -154,4 +123,18 @@ app-products-menu:hover:before {
   position: fixed;
   z-index: 1000;
   top: 0;
+}
+
+.speed {
+  color: var(--cg_speed);
+}
+.power {
+  color: var(--cg_power);
+}
+.agility {
+  color: var(--cg_agility);
+}
+
+.active {
+  color: white;
 }

@@ -13,33 +13,53 @@
     </div>
     <nav id="navigation_large">
       <a
+        [style.font-size]="
+          (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
+        "
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Home</a
       >
 
-      <app-products-menu #productsMenu></app-products-menu>
+      <app-products-menu
+        #productsMenu
+        [style.font-size]="
+          (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
+        "
+      ></app-products-menu>
 
       <a
+        [style.font-size]="
+          (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
+        "
         routerLink="/why-competition-grade"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >What is Competition Grade?</a
       >
       <a
+        [style.font-size]="
+          (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
+        "
         routerLink="/verification"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Making the Lineup</a
       >
       <a
+        [style.font-size]="
+          (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
+        "
         routerLink="/projects"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Projects</a
       >
       <a
+        [style.font-size]="
+          (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
+        "
         routerLink="/contact-us"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"

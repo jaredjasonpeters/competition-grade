@@ -18,6 +18,10 @@ export class LayoutService {
     false
   );
   isTablet$: Observable<boolean> = this.isTabletSubject$.asObservable();
+  private isDesktopSubject$: BehaviorSubject<boolean> = new BehaviorSubject(
+    false
+  );
+  isDesktop$: Observable<boolean> = this.isDesktopSubject$.asObservable();
 
   getScreenSize(): Observable<string> {
     return merge(
@@ -42,6 +46,11 @@ export class LayoutService {
           this.isTabletSubject$.next(true);
         } else {
           this.isTabletSubject$.next(false);
+        }
+        if (size === 'desktop') {
+          this.isDesktopSubject$.next(true);
+        } else {
+          this.isDesktopSubject$.next(false);
         }
       })
     );

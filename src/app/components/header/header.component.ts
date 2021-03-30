@@ -4,19 +4,23 @@ import {
   OnChanges,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { LayoutService } from 'src/app/shared/layout.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   disableProducts: boolean;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    public layoutService: LayoutService,
+    private renderer: Renderer2
+  ) {}
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   @ViewChild('navigation', { static: true }) navigation: ElementRef;
 

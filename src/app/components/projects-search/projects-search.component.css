@@ -11,7 +11,6 @@
 
 #search_form {
   width: 100%;
-  /* border: 2px solid red; */
   display: flex;
   align-items: center;
   padding-top: 1em;
@@ -19,12 +18,13 @@
 
 #search_field {
   width: 50%;
+  margin-bottom: 2em;
 }
 
 #search_input {
   font-family: Roboto;
   font-weight: 800;
-  font-size: 4em;
+  font-size: 3em;
   color: white;
 }
 
@@ -34,7 +34,7 @@
 
 #search_icon,
 #clear_icon {
-  font-size: 4em;
+  font-size: 3em;
   width: 100%;
   height: 100%;
 }
@@ -78,8 +78,12 @@
 .radioButton {
   font-family: Roboto;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1em;
   border-radius: 100%;
+}
+
+div.mat-radio-label-content {
+  padding-left: 4px;
 }
 
 .mat-form-field-underline::before {

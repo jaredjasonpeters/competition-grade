@@ -1,30 +1,26 @@
 import {
   Component,
-  ElementRef,
   EventEmitter,
-  Input,
-  OnChanges,
   OnInit,
   Output,
   Renderer2,
-  ViewChild,
-  ViewEncapsulation,
+  ViewEncapsulation
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MatRadioButton } from '@angular/material/radio';
+import { LayoutService } from 'src/app/shared/layout.service';
 
 @Component({
   selector: 'app-projects-search',
   templateUrl: './projects-search.component.html',
   styleUrls: ['./projects-search.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class ProjectsSearchComponent implements OnInit {
   searchBy: string = 'name';
   @Output() searchEvent = new EventEmitter();
   @Output() clearEvent = new EventEmitter();
 
-  constructor(private renderer: Renderer2) {}
+  constructor(public layoutService: LayoutService) {}
 
   ngOnInit(): void {}
 

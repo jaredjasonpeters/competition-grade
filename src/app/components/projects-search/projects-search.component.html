@@ -1,18 +1,98 @@
 <div id="search_container">
-    <form id="search_form" #searchForm="ngForm">
-        <mat-form-field id="search_field" appearance="fill" color="accent" >
-            <input id="search_input" name="searchTerm" placeholder="find a project" matInput type="search" search ngModel (keyup)="fetchProjects(searchForm)" color="primary"/>
-            <mat-icon *ngIf="searchForm.pristine || searchForm.value.searchTerm === ''; else clearBlock" id="search_icon" matSuffix (click)="fetchProjects(searchForm)" color="primary">search</mat-icon>
-            <ng-template #clearBlock>
-                <mat-icon id="clear_icon" matSuffix (click)="clearForm(searchForm)">clear</mat-icon>
-            </ng-template>
-        </mat-form-field>
-            <mat-radio-group id="checkbox_container" name="searchBy" ngModel>
-                <mat-radio-button class="radioButton" value="name" color="primary" name="searchBy" [(ngModel)]="searchBy" ngDefaultControl>name</mat-radio-button>
-                <mat-radio-button class="radioButton" value="product" color="primary" name="searchBy" [(ngModel)]="searchBy" ngDefaultControl>product</mat-radio-button>
-                <mat-radio-button class="radioButton" value="location" color="primary" name="searchBy" [(ngModel)]="searchBy" ngDefaultControl>location</mat-radio-button>
-                <mat-radio-button class="radioButton" value="distributor" color="primary" name="searchBy" [(ngModel)]="searchBy" ngDefaultControl>distributor</mat-radio-button>
-                <mat-radio-button class="radioButton" value="projectManager" color="primary" name="searchBy" [(ngModel)]="searchBy" ngDefaultControl>project manager</mat-radio-button>
-            </mat-radio-group>
-    </form>
+  <form
+    id="search_form"
+    #searchForm="ngForm"
+    [ngStyle]="{
+      'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row'
+    }"
+  >
+    <mat-form-field
+      id="search_field"
+      appearance="fill"
+      color="accent"
+      [style.width]="(layoutService.isMobile$ | async) ? '100%' : '50%'"
+    >
+      <input
+        id="search_input"
+        name="searchTerm"
+        placeholder="find a project"
+        matInput
+        type="search"
+        search
+        ngModel
+        (keyup)="fetchProjects(searchForm)"
+        color="primary"
+      />
+      <mat-icon
+        *ngIf="
+          searchForm.pristine || searchForm.value.searchTerm === '';
+          else clearBlock
+        "
+        id="search_icon"
+        matSuffix
+        (click)="fetchProjects(searchForm)"
+        color="primary"
+        >search</mat-icon
+      >
+      <ng-template #clearBlock>
+        <mat-icon id="clear_icon" matSuffix (click)="clearForm(searchForm)"
+          >clear</mat-icon
+        >
+      </ng-template>
+    </mat-form-field>
+    <mat-radio-group
+      id="checkbox_container"
+      name="searchBy"
+      ngModel
+      [ngStyle]="{
+        'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row'
+      }"
+    >
+      <mat-radio-button
+        class="radioButton"
+        value="name"
+        color="primary"
+        name="searchBy"
+        [(ngModel)]="searchBy"
+        ngDefaultControl
+        >name</mat-radio-button
+      >
+      <mat-radio-button
+        class="radioButton"
+        value="product"
+        color="primary"
+        name="searchBy"
+        [(ngModel)]="searchBy"
+        ngDefaultControl
+        >product</mat-radio-button
+      >
+      <mat-radio-button
+        class="radioButton"
+        value="location"
+        color="primary"
+        name="searchBy"
+        [(ngModel)]="searchBy"
+        ngDefaultControl
+        >location</mat-radio-button
+      >
+      <mat-radio-button
+        class="radioButton"
+        value="distributor"
+        color="primary"
+        name="searchBy"
+        [(ngModel)]="searchBy"
+        ngDefaultControl
+        >distributor</mat-radio-button
+      >
+      <mat-radio-button
+        class="radioButton"
+        value="projectManager"
+        color="primary"
+        name="searchBy"
+        [(ngModel)]="searchBy"
+        ngDefaultControl
+        >project manager</mat-radio-button
+      >
+    </mat-radio-group>
+  </form>
 </div>

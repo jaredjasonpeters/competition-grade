@@ -47,12 +47,6 @@ export class SeriesComponent implements OnInit {
       this.seriesTags = this.seriesFormulationService.getTags(params.series);
 
       this.renderer.setStyle(
-        this.overview.nativeElement,
-        'background',
-        `var(--cg_${params.series})`
-      );
-
-      this.renderer.setStyle(
         this.tagsContainer.nativeElement,
         'background',
         `url('/assets/${this.seriesName}_color_bg.jpg')`

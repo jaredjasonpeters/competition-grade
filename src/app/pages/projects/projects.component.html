@@ -1,6 +1,8 @@
 <div id="projects_container">
-  <app-section-header>Featured Projects</app-section-header>
-  <app-featured-projects></app-featured-projects>
+  <div *ngIf="!projects">
+    <app-section-header>Featured Projects</app-section-header>
+    <app-featured-projects></app-featured-projects>
+  </div>
   <div id="search_container">
     <app-projects-search
       (searchEvent)="fetchProjects($event)"
@@ -21,6 +23,9 @@
       class="project_container"
       [routerLink]="['/projects', project.id]"
       *ngFor="let project of projects"
+      [style.flex-direction]="
+        (layoutService.isMobile$ | async) ? 'column' : 'row'
+      "
     >
       <app-project-card [project]="project"></app-project-card>
       <div class="imageSliderContainer">

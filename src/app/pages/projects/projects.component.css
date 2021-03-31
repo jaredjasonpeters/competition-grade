@@ -10,7 +10,7 @@ app-project-card {
 }
 
 #search_container {
-  height: 285px;
+  min-height: 285px;
   width: 100%;
   background: black;
 }
@@ -28,6 +28,10 @@ app-projects-search {
 #found_projects_container {
   width: 100%;
   padding: 2%;
+}
+
+#found_projects_container .project_container:nth-child(even) {
+  background: var(--cg_gold);
 }
 
 #found_projects_container .project_container:nth-child(odd) {
@@ -55,9 +59,7 @@ app-projects-search {
 
 .imageSliderContainer {
   height: 500px;
-  min-width: 800px;
   position: relative;
-  /* border: 2px solid blue; */
 }
 
 .seperator {

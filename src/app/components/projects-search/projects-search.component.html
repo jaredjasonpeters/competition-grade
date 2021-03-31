@@ -55,6 +55,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
+        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
         >name</mat-radio-button
       >
       <mat-radio-button
@@ -64,6 +65,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
+        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
         >product</mat-radio-button
       >
       <mat-radio-button
@@ -73,6 +75,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
+        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
         >location</mat-radio-button
       >
       <mat-radio-button
@@ -82,6 +85,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
+        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
         >distributor</mat-radio-button
       >
       <mat-radio-button
@@ -91,6 +95,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
+        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
         >project manager</mat-radio-button
       >
     </mat-radio-group>

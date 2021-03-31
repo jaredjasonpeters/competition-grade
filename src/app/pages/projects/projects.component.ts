@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Project } from 'src/app/models/project.model';
+import { LayoutService } from 'src/app/shared/layout.service';
 import { ProjectsService } from '../../shared/projects.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css'],
+  styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[];
   currentSearchTerm: string;
   currentSearchBy: string;
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(
+    public layoutService: LayoutService,
+    private projectsService: ProjectsService
+  ) {}
 
   ngOnInit(): void {
     // this.fetchProjects();
@@ -38,7 +42,7 @@ export class ProjectsComponent implements OnInit {
     const currentSearchBy = form.value.searchBy;
     form.setValue({
       searchTerm: '',
-      searchBy: currentSearchBy,
+      searchBy: currentSearchBy
     });
     this.currentSearchTerm = '';
     this.currentSearchBy = '';

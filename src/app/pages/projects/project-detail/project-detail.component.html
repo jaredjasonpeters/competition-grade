@@ -7,7 +7,12 @@
       ><span style="color: white; margin-right: 1em; font-weight: 800;">>></span
       >{{ project.name }}</app-section-header
     >
-    <div id="images_details_container">
+    <div
+      id="images_details_container"
+      [style.flex-direction]="
+        (layoutService.isMobile$ | async) ? 'column' : 'row'
+      "
+    >
       <div id="details_container">
         <p class="bodyText">{{ project.icon }}</p>
         <p class="bodyText boxedText">{{ project.description }}</p>
@@ -65,11 +70,19 @@
         </section>
       </div>
 
-      <div id="images_container" *ngIf="!project.inProgress">
+      <div
+        id="images_container"
+        *ngIf="!project.inProgress"
+        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '50%'"
+      >
         <img *ngFor="let image of project.images" [src]="image.imagePath" />
       </div>
 
-      <div id="in_progress_container" *ngIf="project.inProgress">
+      <div
+        id="in_progress_container"
+        *ngIf="project.inProgress"
+        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '50%'"
+      >
         <div class="inProgressOverlay"></div>
         <img id="in_progress_image" [src]="project.images[0].imagePath" />
       </div>

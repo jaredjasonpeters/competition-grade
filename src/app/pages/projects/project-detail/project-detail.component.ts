@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Project } from 'src/app/models/project.model';
+import { ActivatedRoute } from '@angular/router';
 import { DistributorsService } from 'src/app/shared/distributors.service';
+import { LayoutService } from 'src/app/shared/layout.service';
 import { ProjectsService } from 'src/app/shared/projects.service';
 
 @Component({
@@ -12,6 +11,7 @@ import { ProjectsService } from 'src/app/shared/projects.service';
 })
 export class ProjectDetailComponent implements OnInit {
   constructor(
+    public layoutService: LayoutService,
     public projectsService: ProjectsService,
     public distributorService: DistributorsService,
     private route: ActivatedRoute

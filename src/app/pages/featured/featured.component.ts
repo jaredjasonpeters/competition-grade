@@ -12,6 +12,7 @@ import {
   Router
 } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LayoutService } from 'src/app/shared/layout.service';
 
 import { FeaturedProductService } from './featured-product.service';
 
@@ -38,6 +39,7 @@ export class FeaturedComponent implements OnInit, OnDestroy {
   productParamSubscription: Subscription;
 
   constructor(
+    public layoutService: LayoutService,
     private router: Router,
     private route: ActivatedRoute,
     private featuredService: FeaturedProductService,

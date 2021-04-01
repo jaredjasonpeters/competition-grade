@@ -7,17 +7,21 @@
   <div class="content_container">
     <div id="description_container">
       <p class="mat-body-strong">{{ product.description }}</p>
-      <a
-        href="{{ product.techsheet }}"
-        id="download_button"
-        mat-flat-button
-        download
-      >
+    </div>
+    <a href="{{ product.techsheet }}" id="download_button" download>
+      <div id="technical_data_link">
         <mat-icon>get_app</mat-icon>
         <p class="mat-body">Technical Data Sheet</p>
-      </a>
-    </div>
-    <div id="video_container" #vidContainer>
+      </div>
+    </a>
+    <div
+      id="video_container"
+      #vidContainer
+      [ngStyle]="{
+        height: (layoutService.isDesktop$ | async) ? '800px' : '400px',
+        padding: (layoutService.isDesktop$ | async) ? '10%' : '5%'
+      }"
+    >
       <app-featured-video
         [page]="product.name"
         [autoplayOptions]="{ autoplay: false, runOnce: true }"

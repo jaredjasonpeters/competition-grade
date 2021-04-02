@@ -4,7 +4,10 @@
     *ngFor="let project of (this.projectsService.selectedProject$ | async)"
   >
     <app-section-header
-      ><span style="color: white; margin-right: 1em; font-weight: 800;">>></span
+      ><span
+        *ngIf="!(layoutService.isMobile$ | async)"
+        style="color: white; margin-right: 1em; font-weight: 800;"
+        >>></span
       >{{ project.name }}</app-section-header
     >
     <div

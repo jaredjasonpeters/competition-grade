@@ -9,7 +9,18 @@
   </mat-toolbar-row>
   <mat-toolbar-row id="nav_container" #navigation>
     <div id="tagline_container">
-      <img id="tagline" src="/assets/Competition_Grade_Tagline.png" alt="" />
+      <img
+        *ngIf="!fixed"
+        id="tagline"
+        src="/assets/Competition_Grade_Tagline.png"
+        alt=""
+      />
+      <img
+        *ngIf="fixed"
+        id="tagline"
+        src="/assets/compgradeoneline.png"
+        alt=""
+      />
     </div>
     <nav id="navigation_large">
       <a

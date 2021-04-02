@@ -1,6 +1,6 @@
 .container {
-  height: 545px;
-  padding: 2%;
+  min-height: 650px;
+  padding: 2.5%;
   background: url("/assets/seed_backdrop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,6 +25,7 @@ h1 {
   text-decoration: overline;
   text-decoration-thickness: 4px;
   text-decoration-color: var(--cg_gold);
+  font-size: 1.5em;
 }
 
 img {

@@ -12,7 +12,6 @@ import { LayoutService } from '../../shared/layout.service';
   providers: []
 })
 export class HomepageComponent implements OnInit, OnChanges {
-  page;
   size: string;
 
   constructor(

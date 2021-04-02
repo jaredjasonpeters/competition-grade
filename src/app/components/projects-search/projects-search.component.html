@@ -3,7 +3,7 @@
     id="search_form"
     #searchForm="ngForm"
     [ngStyle]="{
-      'flex-direction': (layoutService.isMobile$ | async) ? 'column' : 'row'
+      'flex-direction': (layoutService.isDesktop$ | async) ? 'row' : 'column'
     }"
   >
     <mat-form-field
@@ -55,7 +55,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
-        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
+        [style.padding-left]="(layoutService.isMobile$ | async) ? '3%' : '1%'"
         >name</mat-radio-button
       >
       <mat-radio-button
@@ -65,7 +65,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
-        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
+        [style.padding-left]="(layoutService.isMobile$ | async) ? '3%' : '1%'"
         >product</mat-radio-button
       >
       <mat-radio-button
@@ -75,7 +75,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
-        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
+        [style.padding-left]="(layoutService.isMobile$ | async) ? '3%' : '1%'"
         >location</mat-radio-button
       >
       <mat-radio-button
@@ -85,7 +85,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
-        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
+        [style.padding-left]="(layoutService.isMobile$ | async) ? '3%' : '1%'"
         >distributor</mat-radio-button
       >
       <mat-radio-button
@@ -95,7 +95,7 @@
         name="searchBy"
         [(ngModel)]="searchBy"
         ngDefaultControl
-        [style.padding-left]="(layoutService.isDesktop$ | async) ? '1%' : '5%'"
+        [style.padding-left]="(layoutService.isMobile$ | async) ? '3%' : '1%'"
         >project manager</mat-radio-button
       >
     </mat-radio-group>

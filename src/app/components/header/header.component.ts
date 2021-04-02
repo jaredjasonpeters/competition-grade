@@ -16,6 +16,7 @@ import { LayoutService } from 'src/app/shared/layout.service';
 })
 export class HeaderComponent implements OnInit {
   disableProducts: boolean;
+  fixed: boolean;
 
   constructor(
     public layoutService: LayoutService,
@@ -31,8 +32,10 @@ export class HeaderComponent implements OnInit {
     this.renderer.listen(window, 'scroll', () => {
       if (window.pageYOffset <= offset - 20) {
         this.renderer.removeClass(nav, 'sticky');
+        this.fixed = false;
       } else {
         this.renderer.addClass(nav, 'sticky');
+        this.fixed = true;
       }
     });
   }

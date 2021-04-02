@@ -1,35 +1,3 @@
 #advert_container {
   height: 100vh;
-  background: black;
-}
-
-#gridlist {
-  min-height: 725px;
-  height: 100%;
-}
-app-menu-right {
-  width: 100%;
-  height: 100%;
-}
-.sideimage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-
-  mix-blend-mode: screen;
-  filter: grayscale();
-  opacity: 0.15;
-  position: relative;
-  /* border: 2px solid red; */
-}
-mat-grid-tile.sideimage_container:before {
-  content: "hi";
-  position: absolute;
-  background: black;
-  /* border: 2px solid red; */
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
 }

@@ -9,15 +9,20 @@
       (clearEvent)="clearForm($event)"
     ></app-projects-search>
   </div>
-  <div id="search_message_container" *ngIf="currentSearchTerm">
-    <h1 id="status_message" *ngIf="currentSearchTerm">
+
+  <div id="search_message_container">
+    <h1 class="status_message" *ngIf="currentSearchTerm">
       No project exists with the <i>{{ currentSearchBy }}</i
       >:
       <span>
         {{ currentSearchTerm }}
       </span>
     </h1>
+    <h1 class="status_message found" *ngIf="projects">
+      Found: ({{ projects.length }}) Projects
+    </h1>
   </div>
+
   <div id="found_projects_container">
     <div
       class="project_container"

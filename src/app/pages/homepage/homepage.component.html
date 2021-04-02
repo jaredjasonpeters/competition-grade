@@ -25,8 +25,8 @@
         </div>
         <div id="video_container">
           <app-featured-video
-            [page]="page"
-            [autoplayOptions]="{ autoplay: false, runOnce: true }"
+            [page]="'default'"
+            [autoplayOptions]="{ autoplay: true, runOnce: true }"
           ></app-featured-video>
         </div>
       </div>
@@ -50,8 +50,8 @@
   "
     >
       <app-featured-video
-        [page]="page"
-        [autoplayOptions]="{ autoplay: false, runOnce: true }"
+        [page]="'default'"
+        [autoplayOptions]="{ autoplay: true, runOnce: true }"
       ></app-featured-video>
     </div>
     <section id="featured_projects">

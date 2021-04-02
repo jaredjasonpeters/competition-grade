@@ -1,7 +1,7 @@
 #projects_container {
   width: 100%;
-  height: auto;
-  background: white;
+  min-height: 650px;
+  background: black;
   cursor: pointer;
 }
 
@@ -20,7 +20,6 @@ app-projects-search {
 
 #search_message_container {
   background: var(--cg_silver);
-  margin-top: -2.5%;
   padding: 0;
 }
 
@@ -69,7 +68,7 @@ app-projects-search {
   background: black;
 }
 
-#status_message {
+.status_message {
   color: black;
   padding-left: 1em;
   font-family: Roboto;
@@ -78,4 +77,8 @@ app-projects-search {
 
 #status_message span {
   text-decoration: underline;
+}
+
+.found {
+  background: var(--cg_gold);
 }

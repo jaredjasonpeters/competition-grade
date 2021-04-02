@@ -9,7 +9,10 @@
       (layoutService.isMobile$ | async) ? 'column' : 'row'
     "
   >
-    <p class="bodyText explanation">
+    <p
+      class="bodyText explanation"
+      [style.margin]="(layoutService.isMobile$ | async) ? '2.5%' : '1% 2.5%'"
+    >
       <span class="explanationHeader"
         >Competition Grade’s performance-tested genetics</span
       >
@@ -20,7 +23,10 @@
       include options for actively growing under lower light for stadiums, as
       well as earlier and later season play.
     </p>
-    <p class="bodyText explanation">
+    <p
+      class="bodyText explanation"
+      [style.margin]="(layoutService.isMobile$ | async) ? '2.5% 0' : '1% 2.5%'"
+    >
       <span class="explanationHeader"
         >Blends/mixtures specifically crafted to meet industry demands</span
       >

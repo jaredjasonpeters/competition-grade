@@ -9,22 +9,13 @@
 #footer_spacer {
   /* border-top: 2px solid white; */
   height: 150px;
-  background: var(--cg_silver);
-  background: black;
-  background-image: url("/assets/Competition_Grade_Footer_Spacer.png");
-  background-position: center;
-  background-size: contain;
-  background-size: 95%;
-  background-repeat: no-repeat;
 }
 
 #footer {
-  background: black;
-  /* height: 150px; */
-  /* border-top: 2px solid white; */
-  /* min-height: 130px; */
-  background: black;
-
+  background-image: url("/assets/seed_backdrop.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: white;
   cursor: context-menu;
 }

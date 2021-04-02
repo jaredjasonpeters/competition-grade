@@ -1,73 +1,7 @@
-<div id="footer_spacer"></div>
-<footer id="footer" *ngIf="!(this.layoutService.isMobile$ | async)">
-  <div class="internal_gridlist">
-    <mat-grid-list
-      id="footer_gridlist"
-      gutterSize="12px"
-      cols="{{ footerLength }}"
-      rowHeight="fit"
-    >
-      <!-- <mat-grid-tile id="company_block" rowspan="1" colspan="1">
-        <a href="https://dlfpickseed.com/usa">
-          <img
-            src="../../assets/Product_of_DLFPickseed.png"
-            alt="product of dlf pickseed"
-          />
-        </a>
-      </mat-grid-tile>
-      <mat-grid-tile
-        id="distributor_block"
-        rowspan="1"
-        colspan="{{ distributorsLength }}"
-      >
-        <app-distributors></app-distributors>
-      </mat-grid-tile>
-
-      <mat-grid-tile id="verified_seal" rowspan="1" colspan="1">
-        <img
-          src="../../assets/Competition_Grade_Verified_Seal.png"
-          alt="Competition Grade Verified Seal"
-        />
-      </mat-grid-tile>
-      <mat-grid-tile id="distributor_portal" rowspan="1" colspan="2">
-        <app-footer-list
-          *ngIf="distributorLoggedIn; else elseblock"
-          type="portal"
-          [limit]="4"
-          [links]="[
-            { text: 'Marketing Materials', url: 'portal/marketing/materials' },
-            { text: 'Marketing Assets', url: 'portal/marketing/assets' },
-            {
-              text: 'Marketing Guidelines',
-              url: 'portal/marketing/guidelines'
-            }
-          ]"
-        ></app-footer-list>
-        <ng-template #elseblock>
-          <app-login></app-login>
-        </ng-template>
-      </mat-grid-tile>
-      <mat-grid-tile id="distributor_info" rowspan="1" colspan="2">
-        <app-footer-list
-          type="info"
-          [limit]="4"
-          [links]="[
-            { text: 'Distributor Levels', url: '/distributor/levels' },
-            {
-              text: 'Benefits & Rewards',
-              url: '/distributor/benefits'
-            }
-          ]"
-        ></app-footer-list>
-      </mat-grid-tile>
-      <mat-grid-tile id="chat_block" rowspan="1" colspan="1">
-        <img
-          routerLink="contact-us"
-          id="chat_img"
-          src="../../assets/CompetitionGrade_ChatIcon.png"
-          alt="Chat Icon"
-        />
-      </mat-grid-tile> -->
-    </mat-grid-list>
-  </div>
+<footer id="footer">
+  <div
+    id="footer_spacer"
+    [style.height]="(layoutService.isMobile$ | async) ? '50px' : '150px'"
+  ></div>
+  <app-footer-detail></app-footer-detail>
 </footer>

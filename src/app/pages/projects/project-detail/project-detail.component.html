@@ -28,16 +28,15 @@
         <section>
           <span class="projectLabel">Products Used:</span>
           <div id="products_container">
-            <img
+            <!-- <img
               id="series_logo"
               style="background: black;"
               src="/assets/{{ project.series }}_series.png"
-            />
+            /> -->
             <div
               [routerLink]="['/products', project.series]"
               fragment="series_tags_container"
               id="tags_container"
-              [style.background]="this.getSeriesBg(project.series)"
             >
               <img
                 *ngFor="let tag of project.tags"

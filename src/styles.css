@@ -3,13 +3,19 @@
   box-sizing: border-box;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
   display: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  width: 100vw;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: url("/assets/grass_backdrop.jpg");

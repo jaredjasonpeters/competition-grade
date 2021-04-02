@@ -88,6 +88,10 @@ a:visited {
   font-size: 0.9em;
 }
 
+p.explanation {
+  margin-right: 1em;
+}
+
 .boxedText {
   background: var(--cg_gold);
   /* background: var(--cg_silver); */

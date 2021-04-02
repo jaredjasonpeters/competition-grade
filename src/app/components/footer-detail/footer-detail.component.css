@@ -19,9 +19,9 @@
 
 #footer_detail_container span {
   flex-basis: 40%;
+  width: 100%;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: calc(100vw / 9);
   margin-right: 5%;
   display: block;
   text-align: center;
@@ -45,6 +45,7 @@
 #mobile_footer_detail_options {
   width: 100%;
   display: flex;
+  justify-content: center;
   background: black;
 }
 
@@ -63,7 +64,6 @@
 
 #mobile_footer_detail_options ul li,
 #footer_detail_options ul li {
-  display: inline-flex;
   justify-content: center;
   align-self: center;
   font-size: 0.6em;
@@ -81,12 +81,10 @@
   padding-right: 10px;
   padding-left: 10px;
   cursor: pointer;
-
-  /* border: 2px solid red; */
 }
 
 #mobile_footer_detail_options ul li {
-  width: 100%;
+  /* width: 100%; */
   font-size: 0.7em;
   color: white;
   margin-bottom: 5px;
@@ -127,9 +125,9 @@
   font-family: Orbitron;
   font-size: 1.2em;
   font-weight: 800;
-  border-top: 3px solid var(--cg_gold);
+  /* border-top: 3px solid var(--cg_gold); */
   cursor: context-menu;
-  margin-left: 2em;
+
   margin-right: 0;
   letter-spacing: normal;
 }
@@ -137,7 +135,8 @@
 #mobile_footer_detail_options ul li span#website {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+
+  /* margin-top: 20px; */
 }
 
 #footer_detail_options ul li:hover:last-child {

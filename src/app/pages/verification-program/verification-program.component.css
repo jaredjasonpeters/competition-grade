@@ -33,7 +33,7 @@ span {
   text-align: center;
   margin: 0 auto 0 auto;
   color: black;
-  font-size: 1.25em;
+
   font-weight: 500;
 }
 
@@ -54,7 +54,7 @@ span {
 #cg_lineup_informative_text {
   width: 100%;
   background: var(--cg_silver);
-
+  font-size: 0.8em;
   color: black;
   text-align: center;
 
@@ -92,7 +92,7 @@ a:hover {
   text-decoration-color: var(--cg_gold);
   text-decoration-thickness: 4px;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: 1em;
   line-height: 1.3em;
   text-transform: uppercase;
 
@@ -113,8 +113,8 @@ a:hover {
   width: 100%;
   margin: 0 auto 0 auto;
 
-  padding: 3em;
-  padding-top: 0;
+  padding: 0 25%;
+
   text-align: center;
 
   position: relative;
@@ -206,6 +206,9 @@ a:hover {
   height: 400px;
   width: 100%;
   display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
   justify-content: center;
   align-items: center;
   cursor: pointer;

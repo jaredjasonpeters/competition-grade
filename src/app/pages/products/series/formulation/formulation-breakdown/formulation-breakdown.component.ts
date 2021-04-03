@@ -40,9 +40,9 @@ export class FormulationBreakdownComponent implements OnInit, OnDestroy {
   breakdownContainer: ElementRef;
   @ViewChild('primaryFormulation', { static: true })
   primaryFormulation: ElementRef;
-  @ViewChild('secondaryFormulation', { static: true })
+  @ViewChild('secondaryFormulation', { static: false })
   secondaryFormulation: ElementRef;
-  @ViewChild('fourTurfFormulation', { static: true })
+  @ViewChild('fourTurfFormulation', { static: false })
   fourTurfFormulation: ElementRef;
 
   constructor(

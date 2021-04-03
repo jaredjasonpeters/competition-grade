@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { SeriesFormulationService } from '../../../../../shared/series-formulation.service';
@@ -12,11 +12,11 @@ import { SeriesFormulationService } from '../../../../../shared/series-formulati
 @Component({
   selector: 'app-formulation-graphic',
   templateUrl: './formulation-graphic.component.html',
-  styleUrls: ['./formulation-graphic.component.css'],
+  styleUrls: ['./formulation-graphic.component.css']
 })
 export class FormulationGraphicComponent implements OnInit {
-  @ViewChild('Primary', { static: true }) primary: ElementRef;
-  @ViewChild('Secondary', { static: true }) secondary: ElementRef;
+  @ViewChild('Primary', { static: false }) primary: ElementRef;
+  @ViewChild('Secondary', { static: false }) secondary: ElementRef;
   @ViewChild('bag_clip', { static: true }) bagClip: ElementRef;
 
   seriesColor: string;
@@ -31,7 +31,7 @@ export class FormulationGraphicComponent implements OnInit {
   ngOnInit(): void {
     this.seriesFormulationService.formulation$.subscribe(
       ({ seriesName, formula }) => {
-        this.router.events.subscribe((routerEvent) => {
+        this.router.events.subscribe(routerEvent => {
           if (routerEvent instanceof NavigationEnd) {
             this.renderer.removeClass(this.bagClip.nativeElement, 'hideBag');
           }
@@ -142,9 +142,9 @@ export class FormulationGraphicComponent implements OnInit {
       85,
       90,
       95,
-      100,
+      100
     ];
-    percentages.forEach((percentage) => {
+    percentages.forEach(percentage => {
       if (percentage !== currentPercentage) {
         renderer.removeClass(element, `${prestring}${percentage}`);
       }

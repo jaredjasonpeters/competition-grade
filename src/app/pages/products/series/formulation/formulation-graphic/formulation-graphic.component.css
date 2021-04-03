@@ -12,6 +12,7 @@
 #seeds_clip {
   mix-blend-mode: multiply;
   opacity: 0.8;
+  -webkit-opacity: 0.8;
 }
 /* #bag_clip:hover {
     opacity: 0;
@@ -24,12 +25,14 @@
 #Outline {
   fill: var(--cg_gold);
   opacity: 1;
+  -webkit-opacity: 1;
   /* mix-blend-mode: multiply; */
 }
 
 #Primary {
   /* transform: translateY(-30%); */
   animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
   /* animation-play-state: paused; */
 }
 
@@ -47,6 +50,7 @@
 #Secondary {
   fill: var(--cg_silver);
   animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
   /* animation-play-state: paused; */
 }
 
@@ -309,28 +313,36 @@
 
 .showFourTurf20 {
   animation: four_turf_show_20 2s 1;
+  -webkit-animation: four_turf_show_20 2s 1;
 }
 .remainFourTurf20 {
   transform: translateY(-20%);
+  -webkit-transform: translateY(20%);
 }
 
 .showFourTurf15 {
   animation: four_turf_show_15 2s 1;
+  -webkit-animation: four_turf_show_15 2s 1;
 }
 .remainFourTurf15 {
   transform: translateY(-15%);
+  -webkit-transform: translateY(-15%);
 }
 .showFourTurf10 {
   animation: four_turf_show_10 2s 1;
+  -webkit-animation: four_turf_show_10 2s 1;
 }
 .remainFourTurf10 {
   transform: translateY(-10%);
+  -webkit-transform: translateY(-10%);
 }
 .showFourTurf5 {
   animation: four_turf_show_5 2s 1;
+  -webkit-animation: four_turf_show_5 2s 1;
 }
 .remainFourTurf5 {
   transform: translateY(-5%);
+  -webkit-transform: translateY(-5%);
 }
 .showFourTurf0 {
 }
@@ -342,57 +354,75 @@
 }
 .showPrimary90 {
   animation: primary_show_90 2s 1;
+  -webkit-animation: primary_show_90 2s 1;
 }
 .remainPrimary90 {
   transform: translateY(-10%);
+  -webkit-transform: translateY(-10%);
 }
 .showPrimary85 {
   animation: primary_show_85 2s 1;
+  -webkit-animation: primary_show_85 2s 1;
 }
 .remainPrimary85 {
   transform: translateY(-15%);
+  -webkit-transform: translateY(-15%);
 }
 .showPrimary80 {
   animation: primary_show_80 2s 1;
+  -webkit-animation: primary_show_80 2s 1;
 }
 .remainPrimary80 {
   transform: translateY(-20%);
+  -webkit-transform: translateY(-20%);
 }
 .showPrimary75 {
   animation: primary_show_75 2s 1;
+  -webkit-animation: primary_show_75 2s 1;
 }
 .remainPrimary75 {
   transform: translateY(-25%);
+  -webkit-transform: translateY(-25%);
 }
 .showPrimary70 {
   animation: primary_show_70 2s 1;
+  -webkit-animation: primary_show_70 2s 1;
 }
 .remainPrimary70 {
   transform: translateY(-30%);
+  -webkit-transform: translateY(-30%);
 }
 .showPrimary65 {
   animation: primary_show_65 2s 1;
+  -webkit-animation: primary_show_65 2s 1;
 }
 .remainPrimary65 {
   transform: translateY(-35%);
+  -webkit-transform: translateY(-35%);
 }
 .showPrimary60 {
   animation: primary_show_60 2s 1;
+  -webkit-animation: primary_show_60 2s 1;
 }
 .remainPrimary60 {
   transform: translateY(-40%);
+  -webkit-transform: translateY(-40%);
 }
 .showPrimary55 {
   animation: primary_show_55 2s 1;
+  -webkit-animation: primary_show_55 2s 1;
 }
 .remainPrimary55 {
   transform: translateY(-45%);
+  -webkit-transform: translateY(-45%);
 }
 .showPrimary50 {
   animation: primary_show_50 2s 1;
+  -webkit-animation: primary_show_50 2s 1;
 }
 .remainPrimary50 {
   transform: translateY(-45%);
+  -webkit-transform: translateY(-45%);
 }
 
 .fill_speed {
@@ -407,21 +437,29 @@
 
 .paused {
   animation-play-state: paused;
+  -webkit-animation-play-state: paused;
   opacity: 1;
+  -webkit-opacity: 1;
 }
 
 .running {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .fadeBagArtwork {
   transition: opacity 1.25s ease-in-out;
+  -webkit-transition: opacity 1.25s ease-in-out;
   animation: bag_artwork_fade 1s 1;
+  -webkit-animation: bag_artwork_fade 1s 1;
   opacity: 0;
+  -webkit-opacity: 0;
 }
 .showBag {
   opacity: 1;
+  -webkit-opacity: 1;
 }
 .hideBag {
   opacity: 0;
+  -webkit-opacity: 0;
 }

@@ -77,6 +77,24 @@
   }
 }
 
+@keyframes primary_show_100 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes primary_show_100 {
+  from {
+    -webkit-transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(0);
+  }
+}
+
 @keyframes primary_show_90 {
   from {
     transform: translateY(0);
@@ -311,13 +329,31 @@
   }
 }
 
+@keyframes four_turf_show_0 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes four_turf_show_0 {
+  from {
+    -webkit-transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(0);
+  }
+}
+
 .showFourTurf20 {
   animation: four_turf_show_20 2s 1;
   -webkit-animation: four_turf_show_20 2s 1;
 }
 .remainFourTurf20 {
   transform: translateY(-20%);
-  -webkit-transform: translateY(20%);
+  -webkit-transform: translateY(-20%);
 }
 
 .showFourTurf15 {
@@ -345,12 +381,20 @@
   -webkit-transform: translateY(-5%);
 }
 .showFourTurf0 {
+  animation: four_turf_show_0 2s 1;
+  -webkit-animation: four_turf_show_0 2s 1;
 }
 .remainFourTurf0 {
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
 }
 .showPrimary100 {
+  animation: primary_show_100 2s 1;
+  -webkit-animation: primary_show_100 2s 1;
 }
 .remainPrimary100 {
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
 }
 .showPrimary90 {
   animation: primary_show_90 2s 1;

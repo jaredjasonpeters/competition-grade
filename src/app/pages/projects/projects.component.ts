@@ -16,7 +16,7 @@ export class ProjectsComponent implements OnInit {
 
   constructor(
     public layoutService: LayoutService,
-    private projectsService: ProjectsService
+    public projectsService: ProjectsService
   ) {}
 
   ngOnInit(): void {

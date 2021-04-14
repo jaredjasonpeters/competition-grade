@@ -1,5 +1,5 @@
 <div id="projects_container">
-  <div *ngIf="!projects">
+  <div *ngIf="!projects || projectsService.projectsAvailable === false">
     <app-section-header>Featured Projects</app-section-header>
     <app-featured-projects></app-featured-projects>
   </div>

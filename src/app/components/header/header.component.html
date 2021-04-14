@@ -1,5 +1,13 @@
 <mat-toolbar id="header">
-  <mat-toolbar-row id="top_designs_container">
+  <mat-toolbar-row
+    id="top_designs_container"
+    [style.background-size]="
+      (layoutService.isDesktop$ | async) ? '50%' : '100%'
+    "
+    [style.background-repeat]="
+      (layoutService.isDesktop$ | async) ? 'repeat' : 'no-repeat'
+    "
+  >
     <a routerLink="" id="logo_link">
       <img
         src="/assets/Competition_Grade_Logo_Final.png"
@@ -59,6 +67,7 @@
         >Making the Lineup</a
       >
       <a
+        *ngIf="projectsService.projectsAvailable === true"
         [style.font-size]="
           (layoutService.isDesktop$ | async) ? '.8em' : '.65em'
         "

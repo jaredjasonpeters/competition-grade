@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { FeaturedVideoService } from 'src/app/shared/featured-video.service';
+import { ProjectsService } from 'src/app/shared/projects.service';
 import { LayoutService } from '../../shared/layout.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class HomepageComponent implements OnInit, OnChanges {
     private titleService: Title,
     private route: ActivatedRoute,
     public layoutService: LayoutService,
-    private videoService: FeaturedVideoService
+    private videoService: FeaturedVideoService,
+    private projectsService: ProjectsService
   ) {
     this.titleService.setTitle('Competition Grade Seed');
   }

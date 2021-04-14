@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { LayoutService } from 'src/app/shared/layout.service';
+import { ProjectsService } from 'src/app/shared/projects.service';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public layoutService: LayoutService,
+    public projectsService: ProjectsService,
     private renderer: Renderer2
   ) {}
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;

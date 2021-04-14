@@ -1,27 +1,10 @@
 <div id="page_container">
-  <mat-grid-list
-    id="contact_us_gridlist"
-    cols="3"
-    rowHeight="fit"
-    gutterSize="0"
-  >
-    <mat-grid-tile
-      id="image_left"
-      rowspan="1"
-      colspan="1"
-      *ngIf="!(layoutService.isMobile$ | async)"
-    >
-      <img src="../../../assets/seed_backdrop.jpg" />
-    </mat-grid-tile>
-    <mat-grid-tile
-      id="form_left"
-      rowspan="1"
-      [colspan]="(layoutService.isMobile$ | async) ? '3' : '2'"
-    >
+  <div id="contact_us_gridlist">
+    <div id="form_left">
       <app-form title="Contact Us" fieldApperance="standard"></app-form>
-    </mat-grid-tile>
-    <!-- <mat-grid-tile id="image_right" rowspan="1" colspan="1">
-      <img src="../../../assets/baseball_1500x1000.png" />
-    </mat-grid-tile> -->
-  </mat-grid-list>
+    </div>
+    <div id="image_right" *ngIf="!(layoutService.isMobile$ | async)">
+      <img src="/assets/baseball_home.jpg" />
+    </div>
+  </div>
 </div>

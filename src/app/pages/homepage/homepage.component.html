@@ -32,7 +32,10 @@
       </div>
     </section>
 
-    <section id="featured_projects">
+    <section
+      id="featured_projects"
+      *ngIf="projectsService.projectsAvailable === true"
+    >
       <app-section-header>Featured Projects</app-section-header>
       <app-featured-projects></app-featured-projects>
     </section>
@@ -54,7 +57,10 @@
         [autoplayOptions]="{ autoplay: true, runOnce: true }"
       ></app-featured-video>
     </div>
-    <section id="featured_projects">
+    <section
+      id="featured_projects"
+      *ngIf="projectsService.projectsAvailable === true"
+    >
       <app-section-header>Featured Projects</app-section-header>
       <app-featured-projects></app-featured-projects>
     </section>

@@ -11,11 +11,9 @@
   >
     <p
       class="bodyText explanation"
-      [style.margin]="(layoutService.isMobile$ | async) ? '2.5%' : '1% 2.5%'"
+      [style.padding]="!(layoutService.isMobile$ | async) ? '2% 10%' : '8%'"
     >
-      <span class="explanationHeader"
-        >Competition Grade’s performance-tested genetics</span
-      >
+      <span class="labelHeader">Performance-tested genetics</span>
       Provide higher shear strength and increase player safety, Respond better
       to wear and provide a more robust playing surface, Resist major diseases
       and lower maintenance budgets, Increase aesthetics through improved
@@ -25,24 +23,25 @@
     </p>
     <p
       class="bodyText explanation"
-      [style.margin]="(layoutService.isMobile$ | async) ? '2.5% 0' : '1% 2.5%'"
+      [style.padding]="!(layoutService.isMobile$ | async) ? '2% 10%' : '8%'"
     >
-      <span class="explanationHeader"
-        >Blends/mixtures specifically crafted to meet industry demands</span
-      >
-      The highest-level athletic surfaces in the world. Each contains varieties
-      chosen for attributes that will aid in quick self-repair, fast
-      establishment, early spring green-up, high wear tolerance and active cool
-      weather growth. To avoid planting tomorrow’s problems today, the
-      performance-tested genetics present in Competition Grade blends and
-      mixtures should be your only option.
+      <span class="labelHeader">Crafted to meet Industry demand</span>
+      The highest-level athletic surfaces in the world demand the highest-level
+      genetics. Each contains varieties chosen for attributes that will aid in
+      quick self-repair, fast establishment, early spring green-up, high wear
+      tolerance and active cool weather growth. To avoid planting tomorrow’s
+      problems today, the performance-tested genetics present in Competition
+      Grade blends and mixtures should be your only option.
     </p>
   </div>
 
   <app-section-header> SERIES APPLICATION </app-section-header>
 
   <div id="series_application_section_container" class="flex-c">
-    <div class="imageContainer flex">
+    <div
+      class="imageContainer flex"
+      [style.height]="(layoutService.isDesktop$ | async) ? '300px' : '100px'"
+    >
       <img
         id="first_image"
         src="../../../assets/soccer_ball_1000x1000.png"
@@ -75,6 +74,7 @@
       <p
         class="bodyText textBox "
         [style.width]="(layoutService.isMobile$ | async) ? '100%' : '33.3%'"
+        [style.padding]="(layoutService.isMobile$ | async) ? '5% 15%' : '1% 5%'"
       >
         Speed Series is an ideal choice in any region of the country either as
         an excellent winter over seed option on warm season turf, or as a
@@ -83,6 +83,7 @@
       <p
         class="bodyText textBox"
         [style.width]="(layoutService.isMobile$ | async) ? '100%' : '33.3%'"
+        [style.padding]="(layoutService.isMobile$ | async) ? '5% 15%' : '1% 5%'"
       >
         Power Series should be used where a high quality sports turf for cleated
         sports like football, soccer and baseball, that requires less watering
@@ -91,6 +92,7 @@
       <p
         class="bodyText textBox"
         [style.width]="(layoutService.isMobile$ | async) ? '100%' : '33.3%'"
+        [style.padding]="(layoutService.isMobile$ | async) ? '5% 15%' : '1% 5%'"
       >
         Agility Series gets its name because it has so many applications. This
         series is ideal for those maintaining 100% Kentucky Bluegrass fields

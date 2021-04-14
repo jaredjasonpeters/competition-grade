@@ -16,6 +16,7 @@ import { DistributorLocateComponent } from './pages/distributor/distributor-loca
 
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { AuthGuard } from './shared/auth.guard';
+import { ProjectsGuard } from './shared/projects.guard';
 import { CanDeactivateAdvGuard } from './shared/adv.guard';
 import { SiteDetailsComponent } from './pages/site-details/site-details.component';
 import { FeaturedComponent } from './pages/featured/featured.component';
@@ -65,6 +66,7 @@ export const routes: Routes = [
   },
   {
     path: 'projects',
+    canActivate: [ProjectsGuard],
     children: [
       { path: '', component: ProjectsComponent },
       { path: ':id', component: ProjectDetailComponent }

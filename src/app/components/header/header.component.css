@@ -19,7 +19,8 @@
   padding-bottom: 15px;
   background: url("/assets/Competition_Grade_Website_TopDesignBackground.png");
   background-position-y: 0px;
-  background-size: 40%;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #logo_link {

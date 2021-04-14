@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { DistributorsEnum } from '../models/distributor.model';
 import { Project } from '../models/project.model';
+import { projectsConfig } from '../configurations/projects.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
+  public projectsAvailable: boolean;
   private projects: Project[] = [
     {
       id: 1,
@@ -139,7 +141,9 @@ export class ProjectsService {
     Project | {}
   > = this.selectedProjectSubject$.asObservable();
 
-  constructor() {}
+  constructor() {
+    this.projectsAvailable = projectsConfig.showProjects;
+  }
 
   getAll(): Project[] {
     return this.projects;

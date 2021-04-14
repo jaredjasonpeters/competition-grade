@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MaterialModule } from './material.module';
@@ -123,6 +123,7 @@ import { ProjectDetailComponent } from './pages/projects/project-detail/project-
       multi: true
     }
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

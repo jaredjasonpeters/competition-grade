@@ -9,9 +9,10 @@
       <p
         id="explanation_paragraph"
         class="bodyText"
-        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '50%'"
+        [style.width]="(layoutService.isMobile$ | async) ? '100%' : '60%'"
+        [style.padding]="(layoutService.isMobile$ | async) ? '3% 5%' : '0%'"
       >
-        <span class="mat-body-strong"
+        <span class="labelHeader"
           >The cultivars approved for Competition Grade meet stringent
           characteristics for sports turf usage
         </span>
@@ -41,12 +42,11 @@
           class="featureLogoContainer"
           [routerLink]="getLink(product.name)"
           [style.background-image]="setBackgroundImage(product.images[0])"
+          [style.height]="(layoutService.isMobile$ | async) ? '300px' : '400px'"
         >
           <img class="featuredProductImage" [src]="getLogo(product.name)" />
         </div>
       </div>
-      <!-- <img routerLink="/featured/sombrero" src="/assets/sombrero_logo.jpg" />
-        <img routerLink="/featured/4turf" src="/assets/4turf_logo.jpg" /> -->
     </div>
   </div>
 

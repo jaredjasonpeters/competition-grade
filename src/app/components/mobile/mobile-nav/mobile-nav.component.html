@@ -75,6 +75,7 @@
       Making the Lineup
     </button>
     <button
+      *ngIf="projectsService.projectsAvailable === true"
       class="navOption"
       mat-menu-item
       routerLink="/projects"

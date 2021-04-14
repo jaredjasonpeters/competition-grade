@@ -195,14 +195,28 @@ app-formulation {
 }
 
 #series_description p {
-  margin: 10px 0 20px 0;
+  padding: 0 15%;
+  /* border: 2px solid red; */
 }
 #series_description ul {
   /* font-size: 1.25em; */
+  width: 100%;
+  text-align: center;
   font-weight: 500;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  list-style-type: none;
+  /* border: 2px solid red; */
 }
 
 #series_description_heading,
 #series_components_heading {
-  font-size: 1.25em;
+  /* font-size: 1.25em; */
+  height: 10%;
+  padding: 0.25%;
+  font-size: 1em;
+  width: 100%;
+  /* border: 2px solid red; */
+  margin-left: 0;
 }

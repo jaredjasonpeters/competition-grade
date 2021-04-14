@@ -5,8 +5,13 @@
     [backgroundImageStyles]="{ size: 'cover', positionY: -600 }"
   ></app-image-header>
   <div class="content_container">
-    <div id="description_container">
-      <p class="bodyText">{{ product.description }}</p>
+    <div
+      id="description_container"
+      [style.padding]="(layoutService.isMobile$ | async) ? '2% 10%' : '1% 30%'"
+    >
+      <p class="bodyText">
+        {{ product.description }}
+      </p>
     </div>
     <a href="{{ product.techsheet }}" id="download_button" download>
       <div id="technical_data_link">

@@ -118,7 +118,6 @@ p.explanation {
   margin-bottom: 15px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.8em;
   font-family: Orbitron;
   text-transform: uppercase;
   font-weight: 700;
@@ -126,5 +125,6 @@ p.explanation {
   color: white;
   padding: 2%;
   letter-spacing: var(--lspace);
+  line-height: normal;
   font-size: 1.25em;
 }

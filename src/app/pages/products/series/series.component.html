@@ -38,9 +38,14 @@
     </div>
     <div id="series_description">
       <span id="series_description_heading" class="labelHeader"
-        >Series Overview:</span
+        >Series Description:</span
       >
-      <p class="bodyText">{{ seriesInfo.description }}</p>
+      <p
+        class="bodyText"
+        [style.padding]="(layoutService.isMobile$ | async) ? '0 2.5%' : '0 15%'"
+      >
+        {{ seriesInfo.description }}
+      </p>
       <span id="series_components_heading" class="labelHeader"
         >Series Components:</span
       >
@@ -58,9 +63,15 @@
     Mixtures & Blends</app-section-header
   >
   <div
+    id="message_container"
+    [style.padding]="(layoutService.isMobile$ | async) ? '4%' : '1%'"
+  >
+    <h3>Select a tag to view the formulation</h3>
+  </div>
+  <div
     id="series_tags_container"
     #tagsContainer
-    [style.padding]="(layoutService.isDesktop$ | async) ? '0 15%' : '0'"
+    [style.padding]="(layoutService.isDesktop$ | async) ? '0 15%' : '5% 0'"
   >
     <div
       class="tagContainer"

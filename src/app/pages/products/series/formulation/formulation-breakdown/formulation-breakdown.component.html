@@ -1,7 +1,4 @@
 <div class="container" #breakdownContainer>
-  <div id="message_container" *ngIf="!this.formulations.primary.percentage">
-    <h3>Select a tag to view the formulation</h3>
-  </div>
   <div
     id="primary_formulation"
     [ngStyle]="{
@@ -27,7 +24,7 @@
           id="percentage_out"
           [ngStyle]="{
             width: 100 - formulations.primary.percentage + '%',
-            background: 'white'
+            background: 'rgba(255,255,255,0.05)'
           }"
         ></div>
       </div>
@@ -61,7 +58,7 @@
           id="percentage_out"
           [ngStyle]="{
             width: 100 - formulations.secondary.percentage + '%',
-            background: 'white'
+            background: 'rgba(255,255,255,0.05)'
           }"
         ></div>
       </div>
@@ -93,7 +90,7 @@
           id="percentage_out"
           [ngStyle]="{
             width: 100 - formulations.fourTurf.percentage + '%',
-            background: 'white'
+            background: 'rgba(255,255,255,0.05)'
           }"
         ></div>
       </div>

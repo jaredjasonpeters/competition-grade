@@ -12,10 +12,12 @@
 }
 
 #footer {
-  background-image: url("/assets/seed_backdrop.jpg");
-  background-position: center;
+  /* background-image: url("/assets/seed_backdrop.jpg");
+  background-position-y: 25%;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  border-top: 4px solid var(--cg_gold);
+  background: black;
   color: white;
   cursor: context-menu;
 }

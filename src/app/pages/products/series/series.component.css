@@ -137,7 +137,8 @@ app-formulation {
   background: black;
   color: black;
   color: white;
-  padding-right: 1em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   /* border: 2px solid red; */
 }
 
@@ -194,12 +195,40 @@ app-formulation {
   /* border: 2px solid green; */
 }
 
-#series_description p {
-  padding: 0 15%;
-  /* border: 2px solid red; */
+#message_container {
+  width: 100%;
+  cursor: default;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  color: white;
+  background: var(--cg_silver);
+  mix-blend-mode: multiply;
 }
+
+#message_container h3 {
+  width: 100%;
+  font-size: 1em;
+  text-align: center;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0;
+  color: black;
+}
+#message_container h3::before {
+  content: "< ";
+  color: var(--cg_gold);
+  color: black;
+}
+#message_container h3::after {
+  content: " >";
+  color: var(--cg_gold);
+  color: black;
+}
+
 #series_description ul {
   /* font-size: 1.25em; */
+  padding: 0%;
   width: 100%;
   text-align: center;
   font-weight: 500;

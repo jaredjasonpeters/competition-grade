@@ -5,12 +5,9 @@ import {
   OnChanges,
   OnDestroy,
   OnInit,
-  Renderer2,
   ViewChild
 } from '@angular/core';
-import { Router } from '@angular/router';
-import { first, take } from 'rxjs/operators';
-
+import { first, pluck, tap } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -21,6 +18,7 @@ import { environment } from '../../../environments/environment';
 export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
   appId = environment.appId;
   appSecret = environment.appSecret;
+  redirectUri = environment.redirectUri;
   imagesToShow: string[] = [];
   postsToFetch: string[] = ['CKAWF3usXj4', 'CKAWNXgI6sq', 'CKAWJAZrKP_'];
   imageCycleInterval;
@@ -28,23 +26,28 @@ export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
   imageUrl: string;
 
   @ViewChild('root', { static: true }) root: ElementRef;
+  @ViewChild('instagramContainer', { static: true }) ig: ElementRef;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.http
       .get(
-        `https://graph.facebook.com/oauth/access_token?client_id=${
-          this.appId
-        }&client_secret=${this.appSecret}&grant_type=client_credentials`
+        `https://graph.instagram.com/me/media?fields=media_url&access_token=${
+          environment.userToken
+        }`
       )
-      .subscribe((data: any) => {
-        let accessToken = data.access_token;
-        this.postsToFetch.forEach((post, i) => {
-          this.fetchPost(post, accessToken, i);
-        });
-      });
-    this.cycleImages();
+      .pipe(
+        first(),
+        pluck('data'),
+        tap((data: [{ media_url: string }]) => {
+          const urls = data.map(data => data.media_url);
+          this.imagesToShow = urls;
+          this.imageUrl = urls[0];
+          this.cycleImages();
+        })
+      )
+      .subscribe();
   }
 
   ngOnChanges(): void {}
@@ -53,23 +56,8 @@ export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
     clearTimeout(this.imageCycleInterval);
   }
 
-  fetchPost(url, accessToken, i) {
-    this.http
-      .get(
-        `https://graph.facebook.com/v8.0/instagram_oembed?url=https://www.instagram.com/p/${url}/&access_token=${accessToken}`
-      )
-      .pipe(first())
-      .subscribe((post: any) => {
-        if (i === 0) {
-          this.imageUrl = post.thumbnail_url;
-        }
-        this.imagesToShow.push(post.thumbnail_url);
-      });
-  }
-
   cycleImages() {
     let i = 1;
-
     this.imageCycleInterval = setInterval(() => {
       this.imageUrl = this.imagesToShow[i % this.imagesToShow.length];
       i++;

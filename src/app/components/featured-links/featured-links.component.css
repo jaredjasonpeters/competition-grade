@@ -47,7 +47,7 @@
   width: 100%;
   background: black;
   border-top: 4px solid var(--cg_gold);
-  border-bottom: 4px solid var(--cg_gold);
+  /* border-bottom: 4px solid var(--cg_gold); */
   display: flex;
 }
 

@@ -16,11 +16,7 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./instagram-feed.component.css']
 })
 export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
-  appId = environment.appId;
-  appSecret = environment.appSecret;
-  redirectUri = environment.redirectUri;
   imagesToShow: string[] = [];
-  postsToFetch: string[] = ['CKAWF3usXj4', 'CKAWNXgI6sq', 'CKAWJAZrKP_'];
   imageCycleInterval;
   cycleTiming: number = 10000;
   imageUrl: string;
@@ -53,7 +49,7 @@ export class InstagramFeedComponent implements OnInit, OnChanges, OnDestroy {
   ngOnChanges(): void {}
 
   ngOnDestroy(): void {
-    clearTimeout(this.imageCycleInterval);
+    clearInterval(this.imageCycleInterval);
   }
 
   cycleImages() {

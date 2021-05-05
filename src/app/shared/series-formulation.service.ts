@@ -3,7 +3,7 @@ import { BehaviorSubject, from, Observable, of, Subject } from 'rxjs';
 import { Formulation } from '../pages/products/series/formulation/formulation.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class SeriesFormulationService {
   private formulationSubject$ = new Subject<any>();
@@ -33,35 +33,35 @@ export class SeriesFormulationService {
       101: {
         primary: {
           percentage: 100,
-          description: '3-Way Perennial Ryegrass Blend',
+          description: '3-Way Perennial Ryegrass Blend'
         },
         secondary: {
-          percentage: 0,
+          percentage: 0
         },
         fourTurf: {
-          percentage: 0,
-        },
+          percentage: 0
+        }
       },
       104: {
         primary: {
           percentage: 80,
-          description: '3-Way Diploid Perennial Ryegrass Blend',
+          description: '3-Way Diploid Perennial Ryegrass Blend'
         },
         secondary: {
-          percentage: 0,
+          percentage: 0
         },
         fourTurf: {
           percentage: 20,
-          description: 'Tetraploid Perennial Ryegrass',
-        },
-      },
+          description: 'Tetraploid Perennial Ryegrass'
+        }
+      }
     },
     power: {
       overview: `Tall fescue-based blends and mixtures exhibiting rapid tillering and high rhizome production, high resistance to major diseases, high density, and low mowing tolerance`,
       components: [
         'Turf-Type Tall Fescue',
         'Kentucky Bluegrass',
-        '4Turf™ Perennial Ryegrass',
+        '4turf™ Perennial Ryegrass'
       ],
       description: `The longer lived, lower maintenance qualities of Turf-type Tall Fescues are often chosen for permanent sports fields
       in the transition zone.  Modern, high end, DLF Pickseed Turf-type Tall Fescue cultivars bring the best of this historic species
@@ -75,49 +75,49 @@ export class SeriesFormulationService {
       201: {
         primary: {
           percentage: 100,
-          description: '3-way Turf-Type Tall Fescue Blend',
+          description: '3-way Turf-Type Tall Fescue Blend'
         },
         secondary: {
-          percentage: 0,
+          percentage: 0
         },
         fourTurf: {
-          percentage: 0,
-        },
+          percentage: 0
+        }
       },
       202: {
         primary: {
           percentage: 90,
-          description: 'Turf-Type Tall Fescue',
+          description: 'Turf-Type Tall Fescue'
         },
         secondary: {
           percentage: 10,
-          description: 'Kentucky Bluegrass',
+          description: 'Kentucky Bluegrass'
         },
         fourTurf: {
-          percentage: 0,
-        },
+          percentage: 0
+        }
       },
       204: {
         primary: {
           percentage: 85,
-          description: 'Turf-Type Tall Fescue',
+          description: 'Turf-Type Tall Fescue'
         },
         secondary: {
           percentage: 5,
-          description: 'Kentucky Bluegrass',
+          description: 'Kentucky Bluegrass'
         },
         fourTurf: {
           percentage: 10,
-          description: 'Tetraploid Perennial Ryegrass',
-        },
-      },
+          description: 'Tetraploid Perennial Ryegrass'
+        }
+      }
     },
     agility: {
       overview: `Kentucky bluegrass-based blends and mixtures with quick establishment, high wear tolerance and recovery, early green-up in the Spring, disease resistance and quick drought recovery`,
       components: [
         'Kentucky Bluegrass',
         'Diploid Perennial Ryegrass',
-        '4Turf™ Perennial Ryegrass',
+        '4turf™ Perennial Ryegrass'
       ],
       description: `Kentucky bluegrass, long considered the species of choices for Sports Turf where agronomically correct, you cannot get better than the mixtures from the Agility Series Competition Grade mixtures from DLF Pickseed.
       Hitting the Three Hole and always delivering impressive shear strength and sod knitting is the Proprietary cultivar Sombrero.
@@ -132,43 +132,43 @@ export class SeriesFormulationService {
       301: {
         primary: {
           percentage: 100,
-          description: `4-way Kentucky Bluegrass Blend with wear-tolerant Sombrero`,
+          description: `4-way Kentucky Bluegrass Blend with wear-tolerant Sombrero`
         },
         secondary: {
-          percentage: 0,
+          percentage: 0
         },
         fourTurf: {
-          percentage: 0,
-        },
+          percentage: 0
+        }
       },
       304: {
         primary: {
           percentage: 80,
-          description: '4-way Kentucky Bluegrass Blend',
+          description: '4-way Kentucky Bluegrass Blend'
         },
         secondary: {
-          percentage: 0,
+          percentage: 0
         },
         fourTurf: {
           percentage: 20,
-          description: 'Tetraploid Perennial Ryegrass',
-        },
+          description: 'Tetraploid Perennial Ryegrass'
+        }
       },
       314: {
         primary: {
           percentage: 50,
-          description: '3-way Kentucky Bluegrass Blend',
+          description: '3-way Kentucky Bluegrass Blend'
         },
         secondary: {
           percentage: 35,
-          description: '2-way Diploid Perennial Ryegrass Blend',
+          description: '2-way Diploid Perennial Ryegrass Blend'
         },
         fourTurf: {
           percentage: 15,
-          description: 'Tetraploid Perennial Ryegrass',
-        },
-      },
-    },
+          description: 'Tetraploid Perennial Ryegrass'
+        }
+      }
+    }
   };
   private formulationsSubject$ = new BehaviorSubject<any>(this.formulations);
   formulations$: Observable<any> = this.formulationsSubject$.asObservable();
@@ -181,7 +181,7 @@ export class SeriesFormulationService {
 
     const formulationObject = {
       seriesName: series_name,
-      formula: this.formulations[series_name][series_number],
+      formula: this.formulations[series_name][series_number]
     };
     this.formulationSubject$.next(formulationObject);
   }
@@ -196,7 +196,7 @@ export class SeriesFormulationService {
       ) {
         let res = {
           seriesName,
-          seriesId: key,
+          seriesId: key
         };
         tags.push(res);
       }

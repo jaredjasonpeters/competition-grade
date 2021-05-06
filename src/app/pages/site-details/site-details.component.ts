@@ -1,33 +1,32 @@
 import { ViewportScroller } from '@angular/common';
+
 import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnChanges,
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  NavigationEnd,
-  Router,
-} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-site-details',
   templateUrl: './site-details.component.html',
-  styleUrls: ['./site-details.component.css'],
+  styleUrls: ['./site-details.component.css']
 })
-export class SiteDetailsComponent implements OnInit, AfterViewInit, OnDestroy {
+export class SiteDetailsComponent
+  implements OnInit, OnChanges, AfterViewInit, OnDestroy {
   fragmentSub: Subscription;
   @ViewChild('container', { static: true })
   container: ElementRef<HTMLDivElement>;
   @ViewChild('privacy', { static: true }) privacy: ElementRef<HTMLDivElement>;
   @ViewChild('terms', { static: true }) terms: ElementRef<HTMLDivElement>;
   @ViewChild('sitemap', { static: true }) sitemap: ElementRef<HTMLDivElement>;
+  fragmentPos: [number, number];
 
   termsConditionsData: string[] = [
     'TERMS: Payment by the Buyer of the purchase price shall be net cash on date of delivery, subject to sight draft, Order Notify Bill of Lading attached.',
@@ -47,7 +46,7 @@ export class SiteDetailsComponent implements OnInit, AfterViewInit, OnDestroy {
     'In the event this agreement provides for the sale of several installments, then separate and independent contracts for sale of the several installments agreed to be delivered, are intended, and no breach by the Seller as to a particular installment shall effect the contract for payment as provided, or to fulfill the terms of this, or any other agreement with the Seller, the Seller may, without prejudice to any other lawful remedy, defer further deliveries, or at its option, cancel this or any other contracts with the Buyer, saving to the Seller the right to recover any damage suffered by such cancellation.',
     'Failure by Seller at any time to require performance by purchaser of any of the provisions hereof shall in no way affect Seller’s rights hereunder to enforce the same, nor shall any waiver of any breach hereof be held to be a waiver of any other succeeding breach, or a waiver of this non-waiver clause.',
     'The Noramseed Trade Rules and Usages govern this agreement, except as the terms of this agreement provide to the contrary, and provide that in all cases payment must be made in full when due and that it is not permissible to withhold payment to offset claims which the Buyer may have on this agreement. The Rules further provide that payment does not constitute acceptance of the fulfillment of the contract. The parties agree that if payment is not made when due that the Buyer agrees not to assert any defense, setoff, recoupment, claim or counterclaim which Buyer may have against Seller on account of or relating to this agreement.',
-    'Any provisions hereof contrary to the law governing jurisdiction shall be deemed void to the extent of such prohibition, but without invalidating the remaining provisions hereof.',
+    'Any provisions hereof contrary to the law governing jurisdiction shall be deemed void to the extent of such prohibition, but without invalidating the remaining provisions hereof.'
   ];
 
   sitemapData: string;
@@ -59,11 +58,21 @@ export class SiteDetailsComponent implements OnInit, AfterViewInit, OnDestroy {
     private viewportScroller: ViewportScroller
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fragmentSub = this.route.fragment.subscribe(frag => {
+      const el: HTMLElement = this[frag].nativeElement;
+      const top = el.offsetTop - 60;
+      this.fragmentPos = [0, top];
+    });
+  }
+  ngOnChanges(): void {}
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    this.viewportScroller.scrollToPosition(this.fragmentPos);
+    this.fragmentSub.unsubscribe();
+  }
 
   ngOnDestroy(): void {
-    // this.fragmentSub.unsubscribe();
+    this.fragmentSub.unsubscribe();
   }
 }

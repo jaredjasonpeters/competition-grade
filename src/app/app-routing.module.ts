@@ -103,8 +103,9 @@ export const routes: Routes = [
       enableTracing: false,
       preloadingStrategy: PreloadAllModules,
       scrollPositionRestoration: 'enabled',
+      onSameUrlNavigation: 'reload',
       anchorScrolling: 'enabled',
-      scrollOffset: [0, 75]
+      scrollOffset: [0, 60]
     })
   ],
   exports: [RouterModule]

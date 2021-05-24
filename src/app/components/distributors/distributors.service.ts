@@ -4,7 +4,7 @@ import { Distributor, DistributorsEnum } from '../models/distributor.model';
 @Injectable({
   providedIn: 'root'
 })
-export class VendorService {
+export class DistributorsService {
   distributors: Distributor[] = [
     {
       companyName: DistributorsEnum['Walker Supply'],

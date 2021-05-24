@@ -29,14 +29,9 @@ export const routes: Routes = [
     component: SeriesComponent
   },
   {
-    path: 'adv',
-    children: [
-      {
-        path: ':distributor',
-        component: DistributorAdvertComponent,
-        canDeactivate: [CanDeactivateAdvGuard]
-      }
-    ]
+    path: 'adv/:distributor',
+    component: DistributorAdvertComponent,
+    canDeactivate: [CanDeactivateAdvGuard]
   },
   {
     path: 'contact-us',

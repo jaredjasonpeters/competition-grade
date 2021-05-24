@@ -26,6 +26,17 @@
       }}</mat-error>
     </mat-form-field>
 
+    <mat-form-field appearance="{{ fieldApperance }}" color="primary">
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        type="text"
+        name="name"
+        ngModel
+        placeholder="Any location information provided will help our agents assist you better"
+      />
+    </mat-form-field>
+
     <mat-form-field appearance="{{ fieldApperance }}">
       <mat-label>Message</mat-label>
       <textarea
@@ -35,11 +46,13 @@
         required
         ngModel
         name="message"
+        placeholder="Ex. What are you looking for? What would you like help with?"
       ></textarea>
       <mat-error *ngIf="form.invalid">{{
         formService.getErrorMessage()
       }}</mat-error>
     </mat-form-field>
+    <input type="text" name="_gotcha" style="display:none" />
     <div id="submission_error_container" *ngIf="formService.submissionError">
       <mat-icon color="warn">error</mat-icon
       ><span id="submission_error_message">{{

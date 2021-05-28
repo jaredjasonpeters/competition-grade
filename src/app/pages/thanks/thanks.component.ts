@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Distributor } from 'src/app/models/distributor.model';
@@ -20,6 +20,8 @@ export class ThanksComponent implements OnInit, OnDestroy {
   distributor: Distributor;
 
   constructor(
+    private document: Document,
+    private renderer: Renderer2,
     private route: ActivatedRoute,
     private router: Router,
     private distributorsService: DistributorsService
@@ -29,6 +31,9 @@ export class ThanksComponent implements OnInit, OnDestroy {
     this.queryParamsSubscription = this.route.queryParams.subscribe(
       ({ distributor }) => {
         this.distributor = this.distributorsService.getByName(distributor);
+        if (this.distributor) {
+          this.insertConversionTag();
+        }
       }
     );
 
@@ -37,11 +42,18 @@ export class ThanksComponent implements OnInit, OnDestroy {
     } else {
       setTimeout(() => {
         this.router.navigateByUrl('/');
-      }, 3000);
+      }, 3000000);
     }
   }
 
   ngOnDestroy(): void {
     this.queryParamsSubscription.unsubscribe();
+  }
+
+  insertConversionTag(): void {
+    const head = this.document.querySelector('head');
+    const script: HTMLScriptElement = this.renderer.createElement('script');
+    script.innerHTML = `gtag('event', 'conversion', {'send_to': 'AW-757443501/ci1rCMfN9KICEK3XlukC'})`;
+    head.appendChild(script);
   }
 }

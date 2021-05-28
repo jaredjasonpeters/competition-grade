@@ -7,7 +7,7 @@ import { DistributorsService } from 'src/app/shared/distributors.service';
 const createDistRedirect = distributor =>
   setTimeout(() => {
     window.location.href = distributor.websiteUrl;
-  }, 3000);
+  }, 3000000);
 
 @Component({
   selector: 'app-thanks',
@@ -42,7 +42,7 @@ export class ThanksComponent implements OnInit, OnDestroy {
     } else {
       setTimeout(() => {
         this.router.navigateByUrl('/');
-      }, 3000000);
+      }, 3000);
     }
   }
 
@@ -53,7 +53,10 @@ export class ThanksComponent implements OnInit, OnDestroy {
   insertConversionTag(): void {
     const head = this.document.querySelector('head');
     const script: HTMLScriptElement = this.renderer.createElement('script');
-    script.innerHTML = `gtag('event', 'conversion', {'send_to': 'AW-757443501/ci1rCMfN9KICEK3XlukC'})`;
+    script.type = 'text/javascript';
+    script.textContent = `gtag('event', 'conversion', {
+      send_to: 'AW-757443501/ci1rCMfN9KICEK3XlukC'
+    })`;
     head.appendChild(script);
   }
 }

@@ -7,7 +7,7 @@ import { DistributorsService } from 'src/app/shared/distributors.service';
 const createDistRedirect = distributor =>
   setTimeout(() => {
     window.location.href = distributor.websiteUrl;
-  }, 3000000);
+  }, 3000);
 
 @Component({
   selector: 'app-thanks',

@@ -36,27 +36,19 @@ export class DistributorsService {
       placement: 4
     }
   ];
-
   constructor() {}
-
   getAll(): Distributor[] {
     return this.distributors;
   }
-
   getPremium(): Distributor[] {
     return this.distributors
       .filter(distributor => distributor.partnerLevel === 'Premium')
       .sort((a, b) => a.placement - b.placement);
   }
-
   getLength(): number {
     return this.distributors.length;
   }
-
   getByName(name): Distributor {
-    if (name === null) {
-      return null;
-    }
     for (const distributor of this.distributors) {
       if (distributor.companyName.toLowerCase() === name.toLowerCase()) {
         return distributor;

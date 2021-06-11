@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, OnChanges, AfterContentChecked {
       this.displayPageHeader = event['needsPageHeader'];
       if (event.hasOwnProperty('pageHeaderTitle')) {
         this.pageHeaderTitle = event['pageHeaderTitle'];
-        console.log('PHT', this.pageHeaderTitle);
+       
       }
     } else {
       this.displayPageHeader = false;

@@ -12,7 +12,7 @@ export class DistributorAdvertComponent
   implements OnInit, CanComponentDeactivate {
   formSubmitted: boolean;
   subHeadingText =
-    'Your on your way to superior turfgrass performance, we just need some information to better serve your needs';
+    'Your well on your way to superior turfgrass performance! Please fill out this form to be directed to more information and a local sales agent that will be able to assist your needs';
 
   constructor(public layoutService: LayoutService) {}
 

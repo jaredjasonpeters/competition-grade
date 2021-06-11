@@ -17,51 +17,47 @@ export class FeaturedVideoService implements OnDestroy {
   };
 
   private featuredVideo: BehaviorSubject<SafeResourceUrl> = new BehaviorSubject(
-    this.pageVidMap.default
+   this.pageVidMap.default
   );
+
+  featuredVideo$ = this.featuredVideo.asObservable()
   requestedVideo: string = this.pageVidMap.default;
   hasPlayed = {};
 
   constructor(private sanitize: DomSanitizer, private router: Router) {}
 
-  private setRequestedVideo(url: string): void {
-    this.requestedVideo = url;
-  }
-
   private sanitizeUrl(url): SafeResourceUrl {
     return this.sanitize.bypassSecurityTrustResourceUrl(url);
   }
 
-  setVideoByPage(page): void {
+  setVideoByPage(page): string {
     let url = this.pageVidMap[page] || this.pageVidMap.default;
-    this.setRequestedVideo(url);
+    return url
   }
 
   getFeaturedVideo(options: {
     autoplay?: boolean;
     runOnce?: boolean;
-  }): Subject<SafeResourceUrl> {
+  }, page):void {
     let finalUrl: SafeResourceUrl;
-    let url = this.requestedVideo;
-    let params: { key: string; value: any }[] = [];
+    let url = this.setVideoByPage(page);
+    let paramsString: string;
 
-    if (options && options.autoplay) {
-      params = this.getParams([{ key: 'autoplay', value: 1 }]);
+    if (options?.autoplay) {
+     paramsString = this.getParams([{ key: 'autoplay', value: 1 }]);
     }
 
-    if (options && options.runOnce) {
+    if (options?.runOnce === true) {
       if (this.hasPlayed[url]) {
         finalUrl = this.sanitizeUrl(url);
       } else {
         this.hasPlayed[url] = true;
-        finalUrl = this.sanitizeUrl(url + params);
+        finalUrl = this.sanitizeUrl(url + paramsString);
       }
     } else {
-      finalUrl = this.sanitizeUrl(url + params);
+      finalUrl = this.sanitizeUrl(url + paramsString);
     }
-
     this.featuredVideo.next(finalUrl);
-    return this.featuredVideo;
   }
 
   getParams(params) {

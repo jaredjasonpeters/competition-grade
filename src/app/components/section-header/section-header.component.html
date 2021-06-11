@@ -1,7 +1,10 @@
-<h1
+
+<div id="container">
+  <h1
   id="header"
   [style.flex-direction]="(layoutService.isMobile$ | async) ? 'column' : 'row'"
->
+  >
   <img id="compgrade_sh" src="/assets/compgradeoneline.png" />
   <ng-content></ng-content>
 </h1>
+</div>

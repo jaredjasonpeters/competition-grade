@@ -19,7 +19,6 @@ import { Distributor } from '../../models/distributor.model';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit, OnDestroy {
-  @Input() title;
   @Input() fieldApperance;
   @Input() subHeading;
   @Output() formSubmitted = new EventEmitter();

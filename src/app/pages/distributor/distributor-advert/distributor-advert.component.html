@@ -6,9 +6,16 @@
       : '0'
   "
 >
+<app-section-header>Thanks for your interest!</app-section-header>
+<div id="content_container" >
+  <div id="video_container">
+    <app-featured-video
+    [autoplayOptions]="{ autoplay: true, runOnce: true }"
+    ></app-featured-video>
+  </div>
   <app-form
-    (formSubmitted)="setFormSubmitted($event)"
-    title="Thanks for your interest"
-    subHeading="{{ subHeadingText }}"
+  (formSubmitted)="setFormSubmitted($event)"
+  subHeading="{{ subHeadingText }}"
   ></app-form>
+</div>
 </div>

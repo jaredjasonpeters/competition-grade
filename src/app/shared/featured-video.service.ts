@@ -43,8 +43,12 @@ export class FeaturedVideoService implements OnDestroy {
     let url = this.setVideoByPage(page);
     let paramsString: string;
 
-    if (options?.autoplay) {
+    if (options?.autoplay === true) {
      paramsString = this.getParams([{ key: 'autoplay', value: 1 }]);
+    } 
+
+    if (options?.autoplay === false) {
+      paramsString = ''
     }
 
     if (options?.runOnce === true) {

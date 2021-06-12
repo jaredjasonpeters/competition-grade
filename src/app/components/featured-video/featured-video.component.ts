@@ -36,7 +36,7 @@ export class FeaturedVideoComponent implements OnInit, OnChanges, AfterViewInit 
     document.querySelector('iframe').click()
   player.setVolume(0).then(() => {
  
-    player.play()
+    // player.play()
   })
   }
   

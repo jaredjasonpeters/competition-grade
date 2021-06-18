@@ -32,8 +32,6 @@ export class FeaturedVideoComponent implements OnInit, OnChanges, AfterViewInit 
 
   ngAfterViewInit() {
     const player = new Player(this.video.nativeElement)
-    document.querySelector('iframe').click()
-    document.querySelector('iframe').click()
   player.setVolume(0).then(() => {
  
     // player.play()
